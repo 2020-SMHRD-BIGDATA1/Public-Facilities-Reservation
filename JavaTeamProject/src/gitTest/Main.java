@@ -10,6 +10,7 @@ public class Main {
 		System.out.println("호잉,,?ㅇㅇㅇ");
 		System.out.println("한번더 테스트");
 		System.out.println("한번더 테1트");
+		System.out.println("연동 완료 기념~");
 		
 	}
 
