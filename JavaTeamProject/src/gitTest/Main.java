@@ -7,7 +7,7 @@ public class Main {
 		System.out.println("ÇÏÀ×,,?");
 		
 		System.out.println("test12");
-		System.out.println("..");
+		System.out.println(",,,,");
 		
 	}
 
