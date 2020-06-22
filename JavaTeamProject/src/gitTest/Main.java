@@ -7,6 +7,7 @@ public class Main {
 		System.out.println("ÇÏÀ×,,?");
 		
 		System.out.println("È£À×,,?");
+		System.out.println("È£À×,,?2");
 		
 	}
 
