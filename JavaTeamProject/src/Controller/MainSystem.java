@@ -9,25 +9,9 @@ import Model.MainVO;
 
 
 public class MainSystem {
-	
 	private MainDAO dao = new MainDAO();
-	private MainVO loginUser;
+	private MainVO User;
 	
-	
-	
-	
-	
-	public MainVO getLoginUser() {
-		return loginUser;
-	}
-	public int Update(MainVO joinUser) {
-		int cnt = dao.update(joinUser);
-		return cnt;
-
-	}
-
-
-
 	
 	
 	
