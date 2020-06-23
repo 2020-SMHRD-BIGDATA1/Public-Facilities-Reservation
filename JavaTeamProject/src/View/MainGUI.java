@@ -1,6 +1,49 @@
 package View;
 
 import java.awt.EventQueue;
+<<<<<<< HEAD
+
+import javax.swing.JFrame;
+
+public class MainGUI {
+
+	private JFrame frame;
+	
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainGUI window = new MainGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MainGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 360, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+=======
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -142,4 +185,5 @@ public class MainGUI {
 		btnNewButton_1.setBounds(169, 454, 97, 23);
 		panel.add(btnNewButton_1);
 	}
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 }

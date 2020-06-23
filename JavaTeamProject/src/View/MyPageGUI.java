@@ -121,10 +121,6 @@ public class MyPageGUI {
 					JOptionPane.showMessageDialog(frame, "수정실패", "수정 결과", JOptionPane.PLAIN_MESSAGE);
 				}
 			
-
-				
-			
-			
 			}
 		});
 		btnmdfy.setBounds(122, 456, 97, 23);
