@@ -1,7 +1,12 @@
 package Controller;
 
+
+
+
+
 import Model.MemberDAO;
 import Model.MemberVO;
+
 
 public class MemberManagementSystem {
 	private MemberDAO dao = new MemberDAO();
@@ -24,5 +29,8 @@ public class MemberManagementSystem {
 		int cnt = dao.insert(joinUser);
 		return cnt;
 	}
+	
+	
+	
 }
 			

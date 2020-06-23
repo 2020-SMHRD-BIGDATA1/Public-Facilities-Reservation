@@ -18,12 +18,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
+import javax.swing.JPasswordField;
 
 public class JoinGUI {
 
+	
 	private JFrame frame;
 	private JTextField textFieldID;
-	private JTextField textFieldPW;
+	private JPasswordField textFieldPW;
 	private JTextField textFieldName;
 	private JTextField textFieldAge;
 	private JTextField textFieldPhone;
@@ -52,8 +54,13 @@ public class JoinGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 360, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setBounds(135, 149, 57, 15);
+		frame.getContentPane().add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("\uC774\uBA54\uC77C");
 		lblNewLabel_2_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,11 +87,6 @@ public class JoinGUI {
 		lblNewLabel_2_1.setBounds(135, 209, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("\uBE44\uBC00\uBC88\uD638");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(135, 151, 57, 15);
-		frame.getContentPane().add(lblNewLabel_2);
-		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 10, 324, 40);
 		frame.getContentPane().add(panel);
@@ -101,26 +103,18 @@ public class JoinGUI {
 		lblNewLabel.setFont(new Font("HY목각파임B", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JButton btnPrev = new JButton("< \uC774\uC804");
-		btnPrev.setBounds(50, 512, 97, 39);
-		btnPrev.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		frame.getContentPane().add(btnPrev);
-		
 		JButton btn_JoinComple = new JButton("\uD68C\uC6D0\uAC00\uC785");
 		btn_JoinComple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = textFieldID.getText();
 				String pw = textFieldPW.getText();
 				String name = textFieldName.getText();
-				String age = textFieldAge.getText();
+				int age = Integer.parseInt(textFieldAge.getText());
 				String phone = textFieldPhone.getText();
 				String address = textFieldAddress.getText();
 				String mail = textFieldEmail.getText();
 				
-				MemberVO joinUser = new MemberVO(id, pw, name);
+				MemberVO joinUser = new MemberVO(id, pw, name, age, phone, address, mail);
 				int cnt = controller.join(joinUser);
 				if(cnt != 0) {
 					JOptionPane.showMessageDialog(frame, "회원가입 성공",
@@ -133,7 +127,7 @@ public class JoinGUI {
 				
 			}
 		});
-		btn_JoinComple.setBounds(195, 512, 97, 39);
+		btn_JoinComple.setBounds(116, 496, 97, 39);
 		frame.getContentPane().add(btn_JoinComple);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC544\uC774\uB514");
@@ -145,11 +139,6 @@ public class JoinGUI {
 		textFieldID.setBounds(60, 74, 218, 32);
 		frame.getContentPane().add(textFieldID);
 		textFieldID.setColumns(10);
-		
-		textFieldPW = new JTextField();
-		textFieldPW.setColumns(10);
-		textFieldPW.setBounds(60, 143, 218, 32);
-		frame.getContentPane().add(textFieldPW);
 		
 		textFieldName = new JTextField();
 		textFieldName.setColumns(10);
@@ -176,14 +165,20 @@ public class JoinGUI {
 		textFieldEmail.setBounds(60, 426, 218, 32);
 		frame.getContentPane().add(textFieldEmail);
 		
-		JButton btn_dupleCheck = new JButton("New button");
-		btn_dupleCheck.setBounds(195, 114, 18, 19);
-		frame.getContentPane().add(btn_dupleCheck);
+		JButton btn_idCheck = new JButton("New button");
+		btn_idCheck.setBounds(195, 114, 18, 19);
+		frame.getContentPane().add(btn_idCheck);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
 		lblNewLabel_3.setFont(new Font("굴림", Font.PLAIN, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(70, 116, 97, 15);
 		frame.getContentPane().add(lblNewLabel_3);
+		
+		textFieldPW = new JPasswordField();
+		textFieldPW.setBounds(60, 141, 218, 32);
+		frame.getContentPane().add(textFieldPW);
 	}
+
+
 }

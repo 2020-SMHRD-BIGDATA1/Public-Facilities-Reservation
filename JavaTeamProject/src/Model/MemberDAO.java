@@ -49,13 +49,12 @@ import java.sql.SQLException;
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, user.getID());
 			pst.setString(2, user.getPw());
+			rs = pst.executeQuery();
 			
 			if(rs.next()) {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
-				String name = rs.getString("name");
-				loginUser = new MemberVO(id, pw, name);
-						
+				loginUser = new MemberVO(id, pw);						
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -67,13 +66,18 @@ import java.sql.SQLException;
 	
 	public int insert(MemberVO joinUser) {
 		getConnection();
-		String sql = "insert into members values(?, ?, ?)";
+		String sql = "insert into members values(?, ?, ?, ?, ?, ?, ?, 0)";
 		int row = 0;
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, joinUser.getID());
 			pst.setString(2,  joinUser.getPw());
 			pst.setString(3, joinUser.getName());
+			pst.setInt(4, joinUser.getAge());
+			pst.setString(5, joinUser.getPhone());
+			pst.setString(6, joinUser.getAddress());
+			pst.setString(7, joinUser.getMail());
+			
 			row = pst.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -82,6 +86,28 @@ import java.sql.SQLException;
 		}
 		return row;
 	}
+	
+//	public boolean findExistID(String id) {
+//		getConnection();
+//		
+//		try {
+//			String sql = "SELECT count(*) cnt FROM members WHERE id = ?";
+//			pst = conn.prepareStatement(sql);
+//			pst.setString(1, id);
+//			rs = pst.executeQuery();
+//			if(rs.next()) {
+//				int cnt = rs.getInt("cnt");
+//				if(cnt > 0) {
+//					return true;
+//				}
+//			}
+//		}catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally {
+//			close();
+//		}
+//		return false;
+//	}
 	
 	
 }
