@@ -1,48 +1,142 @@
 package Model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class MatchingVO {
-	private Connection conn;
-	private PreparedStatement pst;
-	private ResultSet rs;
+	private String name;
+	private String division;
+	private String closure;
+	private String weekday;
+	private String weekend;
+	private String charge;
+	private int pay;
+	private int people;
+	private String address;
+	private String phone;
+	private String homepage;
+	private String lat;
+	private String lon;
 
-	private void getConnection() {
-
-		// 1.JDBC드라이버 동적로딩
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "hr";
-			String password = "hr";
-			// 2.DB연결
-			conn = DriverManager.getConnection(url, user, password);
-
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public MatchingVO(String name, String division, String closure, String weekday, String weekend, String charge,
+			int pay, int people, String address, String phone, String homepage, String lat, String lon) {
+		this.name = name;
+		this.division = division;
+		this.closure = closure;
+		this.weekday = weekday;
+		this.weekend = weekend;
+		this.charge = charge;
+		this.pay = pay;
+		this.people = people;
+		this.address = address;
+		this.phone = phone;
+		this.homepage = homepage;
+		this.lat = lat;
+		this.lon = lon;
 	}
 
-	private void close() {
-		// 6.DB연결종료
-		try {
-			if (rs != null) {
-				rs.close();
-			}
-			if (pst != null) {
-				pst.close();
-			}
-			if (conn != null) {
-				conn.close();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public MatchingVO(MatchingVO division) {
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDivision() {
+		return division;
+	}
+
+	public void setDivision(String division) {
+		this.division = division;
+	}
+
+	public String getClosure() {
+		return closure;
+	}
+
+	public void setClosure(String closure) {
+		this.closure = closure;
+	}
+
+	public String getWeekday() {
+		return weekday;
+	}
+
+	public void setWeekday(String weekday) {
+		this.weekday = weekday;
+	}
+
+	public String getWeekend() {
+		return weekend;
+	}
+
+	public void setWeekend(String weekend) {
+		this.weekend = weekend;
+	}
+
+	public String getCharge() {
+		return charge;
+	}
+
+	public void setCharge(String charge) {
+		this.charge = charge;
+	}
+
+	public int getPay() {
+		return pay;
+	}
+
+	public void setPay(int pay) {
+		this.pay = pay;
+	}
+
+	public int getPeople() {
+		return people;
+	}
+
+	public void setPeople(int people) {
+		this.people = people;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getHomepage() {
+		return homepage;
+	}
+
+	public void setHomepage(String homepage) {
+		this.homepage = homepage;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLon() {
+		return lon;
+	}
+
+	public void setLon(String lon) {
+		this.lon = lon;
+	}
+
 }
