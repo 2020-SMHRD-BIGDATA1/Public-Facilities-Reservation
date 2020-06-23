@@ -6,22 +6,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MatchingVO {
+public class MainDAO {
+
 	private Connection conn;
 	private PreparedStatement pst;
 	private ResultSet rs;
 
 	private void getConnection() {
 
-		// 1.JDBC드라이버 동적로딩
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "hr";
 			String password = "hr";
-			// 2.DB연결
 			conn = DriverManager.getConnection(url, user, password);
-
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -30,7 +28,6 @@ public class MatchingVO {
 	}
 
 	private void close() {
-		// 6.DB연결종료
 		try {
 			if (rs != null) {
 				rs.close();
@@ -45,4 +42,7 @@ public class MatchingVO {
 			e.printStackTrace();
 		}
 	}
+
+
+
 }
