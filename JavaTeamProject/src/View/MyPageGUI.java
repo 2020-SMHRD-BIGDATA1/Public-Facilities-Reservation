@@ -98,10 +98,6 @@ public class MyPageGUI {
 				String point = inPutPoint.getText();
 				
 			
-
-				
-			
-			
 			}
 		});
 		btnmdfy.setBounds(122, 456, 97, 23);
