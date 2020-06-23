@@ -80,9 +80,7 @@ public class MemberVO {
 
 
 
-	public String getId() {
-		return id;
-	}
+
 
 
 

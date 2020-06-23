@@ -11,9 +11,9 @@ import javax.swing.SwingConstants;
 import Controller.MainSystem;
 import Model.MainDAO;
 import Model.MainVO;
-import controller.MemberManagementSystem;
-import model.MemberVO;
-import view.MemberLoginGUI;
+import Controller.MemberManagementSystem;
+import Model.MemberVO;
+
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -30,9 +30,8 @@ public class MyPageGUI {
 	private JTextField inPutEmail;
 	private JTextField inPutPoint;
 	MainDAO dao = new MainDAO();
-	public static MainSystem controller = new MainSystem();
 	private JTextField inPutName;
-	
+	private MemberManagementSystem controller = LoginGUI.controller;
 	
 	
 
@@ -42,6 +41,8 @@ public class MyPageGUI {
 	public MyPageGUI() {
 		initialize();
 		frame.setVisible(true);
+
+	
 		
 	}
 	
@@ -126,10 +127,7 @@ public class MyPageGUI {
 		btnmdfy.setBounds(122, 456, 97, 23);
 		panel.add(btnmdfy);
 		
-		inPutID = new JTextField();
-		inPutID.setBounds(116, 114, 116, 21);
-		panel.add(inPutID);
-		inPutID.setColumns(10);
+	
 		
 		inPutPW = new JTextField();
 		inPutPW.setColumns(10);
@@ -176,5 +174,16 @@ public class MyPageGUI {
 		inPutName.setColumns(10);
 		inPutName.setBounds(116, 157, 116, 21);
 		panel.add(inPutName);
+		
+		
+		
+		JLabel lb_id = new JLabel("New label");
+		lb_id.setBounds(116, 117, 57, 15);
+		panel.add(lb_id);
+		lb_id.setText(controller.getLoginUser().getID());
+		
+		
+		
+		
 	}
 }

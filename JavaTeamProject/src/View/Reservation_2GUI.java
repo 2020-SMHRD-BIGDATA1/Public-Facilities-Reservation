@@ -15,7 +15,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
+import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
+
+
 import java.text.SimpleDateFormat;
 
 
@@ -32,8 +35,9 @@ public class Reservation_2GUI {
 		frame.setVisible(true);
 	
 	}
-
 	
+	
+	private MemberManagementSystem MMCON=LoginGUI.controller;
 	
 	private void initialize() {
 		frame = new JFrame();
@@ -58,6 +62,8 @@ public class Reservation_2GUI {
 		JLabel lb_name = new JLabel("New label");
 		panel.add(lb_name);
 		
+//		lb_name.setText(MMCON.getLoginUser().getId());
+	
 	
 		JLabel lblNewLabel_7 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_7.setFont(new Font("±¼¸²", Font.BOLD, 12));

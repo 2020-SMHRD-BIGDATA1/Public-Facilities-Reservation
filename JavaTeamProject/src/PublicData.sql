@@ -32,7 +32,7 @@ create table MemberMactching(
 );
 
 select * from Publics;
-
+select * from members;
 drop table members;
 create table MEMBERS(
 	id varchar(30),

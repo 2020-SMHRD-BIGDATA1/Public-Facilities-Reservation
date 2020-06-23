@@ -8,6 +8,7 @@ import Model.MemberDAO;
 import Model.MemberVO;
 
 
+
 public class MemberManagementSystem {
 	private MemberDAO dao = new MemberDAO();
 	private MemberVO loginUser;
@@ -18,6 +19,7 @@ public class MemberManagementSystem {
 	
 	public boolean login(MemberVO user) {
 		loginUser = dao.selectOne(user);
+		
 		if(loginUser == null) {
 			return false;
 		}else {
@@ -30,6 +32,7 @@ public class MemberManagementSystem {
 		return cnt;
 	}
 	
+
 	
 	
 }
