@@ -138,7 +138,6 @@ public class Reservation_1GUI {
 			
 			Reservation_2GUI RE2= new Reservation_2GUI();
 				
-				
 			
 			}
 		});

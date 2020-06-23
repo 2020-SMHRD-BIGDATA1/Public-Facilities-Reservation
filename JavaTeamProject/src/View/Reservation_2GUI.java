@@ -10,12 +10,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
 import Controller.Reservation_1Controller;
-
+import java.text.SimpleDateFormat;
 
 
 public class Reservation_2GUI {
@@ -53,23 +54,32 @@ public class Reservation_2GUI {
 		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uC124\uBA85");
 		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_2);
+
+		JLabel lb_name = new JLabel("New label");
+		panel.add(lb_name);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		panel.add(lblNewLabel_4);
-		
+	
 		JLabel lblNewLabel_7 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_7.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_9 = new JLabel("New label");
-		panel.add(lblNewLabel_9);
+		JLabel lb_phone = new JLabel("New label");
+		panel.add(lb_phone);
+		
+		lb_phone.setText(con.getphone());
+		
+		
 		
 		JLabel lblNewLabel_8 = new JLabel("\uC811\uC218\uC77C");
 		lblNewLabel_8.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		panel.add(lblNewLabel_3);
+		JLabel lb_sysdate = new JLabel("New label");
+		panel.add(lb_sysdate);
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
+		String format_time1 = format1.format (System.currentTimeMillis());
+		System.out.println(format_time1);
+		lb_sysdate.setText(format_time1+"");
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC0AC\uC6A9\uC77C");
 		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
@@ -78,22 +88,21 @@ public class Reservation_2GUI {
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_6 = new JLabel("\uC774\uC6A9\uC815\uBCF4");
+		JLabel lblNewLabel_6 = new JLabel("\uC774\uC6A9\uC2DC\uAC04");
 		lblNewLabel_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_10 = new JLabel("New label");
 		panel.add(lblNewLabel_10);
 		
-		JLabel lblNewLabel_11 = new JLabel("\uC774\uC6A9\uB8CC");
-		lblNewLabel_11.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		panel.add(lblNewLabel_11);
+		JLabel lb_charge = new JLabel("\uC774\uC6A9\uB8CC");
+		lb_charge.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		panel.add(lb_charge);
 		
-		JLabel lbl_fee = new JLabel("New label");
-		panel.add(lbl_fee);
-		
+		JLabel lb_fee = new JLabel("New label");
+		panel.add(lb_fee);
 		int fee = con.getfee();
-		lbl_fee.setText(fee+"");
+		lb_fee.setText(fee+"");
 		
 		JLabel lblNewLabel_13 = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel_13.setBounds(12, 84, 57, 15);
@@ -143,13 +152,11 @@ public class Reservation_2GUI {
 		panel_2.add(lb_point);
 		
 		point = con.getpoint();
-		
-		
+
 
 		//lb_point.setText(String.valueOf(point));
 		lb_point.setText(point+"");
-		
-		
+
 		
 		JButton btn_use = new JButton("\uC0AC\uC6A9\uD558\uAE30 ");
 		btn_use.setFont(new Font("±¼¸²", Font.BOLD, 12));
@@ -182,7 +189,7 @@ public class Reservation_2GUI {
 		lb_remainpoint.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lb_remainpoint);
 		
-		
+		lb_remainpoint.setText(0+"");
 		
 		
 		JButton btn_charge = new JButton("\uCDA9\uC804\uD558\uAE30");
