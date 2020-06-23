@@ -59,7 +59,7 @@ public class FCdetailGUI {
 		JPanel panel = new JPanel();
 		panel.setBounds(12, 255, 320, 223);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(6, 2, 0, 0));
+		panel.setLayout(new GridLayout(8, 2, 0, 0));
 		
 		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uC124\uAD6C\uBD84");
 		lblNewLabel_2.setFont(new Font("±º∏≤", Font.BOLD, 12));
@@ -77,26 +77,40 @@ public class FCdetailGUI {
 		JLabel lb_closure = new JLabel("New label");
 		panel.add(lb_closure);
 		
-		lb_closure.setText(con.closure());
+		lb_closure.setText(con.getclosure());
+		
+		JLabel lb_weekday_1 = new JLabel("");
+		panel.add(lb_weekday_1);
 		
 		JLabel lb_weekday = new JLabel("New label");
 		panel.add(lb_weekday);
 		
-		lb_weekday.setText("∆Ú¿œ "+con.weekday());
+		lb_weekday.setText("∆Ú¿œ "+con.getweekday());
 		
 		JLabel lb_weekend = new JLabel("New label");
 		panel.add(lb_weekend);
 		
-		lb_weekend.setText("¡÷∏ª "+con.weekend());
+		lb_weekend.setText("");
 		
-		JLabel lblNewLabel_1_1 = new JLabel("\uC804\uD654\uBC88\uD638");
-		lblNewLabel_1_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
-		panel.add(lblNewLabel_1_1);
+		JLabel lb_weekend_1 = new JLabel("\uC8FC\uB9D0 8:00~23:00");
+		panel.add(lb_weekend_1);
 		
-		JLabel lb_phone = new JLabel("New label");
+		JLabel lb_1 = new JLabel("\uCD5C\uB300 \uC218\uC6A9\uC778\uC6D0");
+		lb_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
+		panel.add(lb_1);
+		
+		JLabel lb_people = new JLabel("New label");
+		panel.add(lb_people);
+		
+		lb_people.setText(con.getpeople());
+		
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("\uC804\uD654\uBC88\uD638");
+		lblNewLabel_1_1_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
+		panel.add(lblNewLabel_1_1_1);
+		
+		JLabel lb_phone = new JLabel("062-960-8723");
 		panel.add(lb_phone);
-		
-		lb_phone.setText(con.getphone());
 		
 		JLabel lblNewLabel_1_1_3_1 = new JLabel("\uD648\uD398\uC774\uC9C0");
 		lblNewLabel_1_1_3_1.setFont(new Font("±º∏≤", Font.BOLD, 12));

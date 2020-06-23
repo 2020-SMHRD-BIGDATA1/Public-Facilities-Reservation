@@ -293,6 +293,61 @@ public class ReservationDAO {
 		
 		return homepage;
 	}
+
+	public String getpeople() {
+		
+		getconnection();
+
+		String sql = "select people from publics where name=?";
+
+		String people = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				people= rs.getString("people");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return people;
+	
+	}
+
+	public String getcharge() {
+		
+		getconnection();
+
+		String sql = "select charge from publics where name=?";
+
+		String  charge = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				 charge= rs.getString("charge");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return  charge;
+	
+	}
 		
 
 	}

@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+
+import Controller.Reservation_1Controller;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ItemListener;
@@ -27,14 +30,11 @@ public class InventoryGUI {
 	private JComboBox comboBox;
 	private JComboBox comboBox_1;
 	private JLabel name_lbl;
-	private JLabel address_lbl;
 	private JLabel charge_lbl;
 	private JButton resrveation_btn;
-	private JLabel hp_lbl;
-	private JLabel maxperson_lbl;
 	private JLabel closure_lbl;
 	
-
+	Reservation_1Controller con= new Reservation_1Controller();
 	
 	public InventoryGUI() {
 		initialize();
@@ -68,48 +68,52 @@ public class InventoryGUI {
 				
 			}
 		});
-		panel1.setBounds(12, 111, 308, 111);
+		panel1.setBounds(12, 107, 308, 111);
 		panel.add(panel1);
 		panel1.setLayout(null);
 		
 		img_panel = new JPanel();
-		img_panel.setBounds(0, 22, 70, 70);
+		img_panel.setBounds(0, 22, 103, 70);
 		panel1.add(img_panel);
 		
 		name_lbl = new JLabel("\uC2DC\uC124 \uBA85");
 		name_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		name_lbl.setBounds(0, 0, 98, 21);
+		name_lbl.setBounds(0, 0, 70, 21);
 		panel1.add(name_lbl);
 		
 		charge_lbl = new JLabel("\uC720\uB8CC/\uBB34\uB8CC");
 		charge_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		charge_lbl.setBounds(70, 43, 98, 15);
+		charge_lbl.setBounds(115, 40, 98, 15);
 		panel1.add(charge_lbl);
 		
-		address_lbl = new JLabel("\uC8FC\uC18C");
-		address_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		address_lbl.setBounds(70, 22, 98, 21);
-		panel1.add(address_lbl);
+		String yn=con.getcharge();
+		System.out.println(yn);
+		
+		if(yn.equals("Y")) {
+			yn.equals("유료");
+		}else {
+			yn.equals("무료");
+		}
+		
+		charge_lbl.setText(yn);
 		
 		resrveation_btn = new JButton("\uC608\uC57D");
+		resrveation_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Reservation_1GUI re1=new Reservation_1GUI();
+				
+			}
+		});
 		resrveation_btn.setBounds(249, 40, 59, 52);
 		panel1.add(resrveation_btn);
 		
-		hp_lbl = new JLabel("\uD648\uD398\uC774\uC9C0");
-		hp_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		hp_lbl.setBounds(139, 3, 98, 15);
-		panel1.add(hp_lbl);
-		
-		maxperson_lbl = new JLabel("\uC218\uC6A9\uC778\uC6D0");
-		maxperson_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		maxperson_lbl.setBounds(210, 22, 98, 15);
-		panel1.add(maxperson_lbl);
-		
 		closure_lbl = new JLabel("\uD734\uAD00\uC77C");
 		closure_lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		closure_lbl.setBounds(70, 68, 98, 15);
+		closure_lbl.setBounds(115, 65, 98, 15);
 		panel1.add(closure_lbl);
 		
+		closure_lbl.setText(con.getclosure());
 	
 
 		JLabel lblNewLabel_3 = new JLabel("\uC9C0\uC5ED");

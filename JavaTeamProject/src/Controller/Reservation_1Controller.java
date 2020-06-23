@@ -77,17 +77,10 @@ public class Reservation_1Controller {
 
 
 
-	public String closure() {
-		
-	String closure=dao.getclosure();	
-	
-	     return closure;
-	}
 
 
 
-
-	public String weekday() {
+	public String getweekday() {
 		
 		
    String weekday=dao.getweekday();	
@@ -99,7 +92,7 @@ public class Reservation_1Controller {
 
 
 
-	public String weekend() {
+	public String getweekend() {
 		
 	String weekend=dao.getweekend();		
 		
@@ -116,7 +109,48 @@ public class Reservation_1Controller {
 		
 		return homepage;
 	}
+
+
+
+
+	public String getpeople() {
+		
+		String people=dao.getpeople();
+		
+		return people;
+	}
+
+
+
+
+	public String getcharge() {
 	
+	String charge=dao.getcharge();
+		return charge;
+	}
+
+
+
+
+	public String getclosure() {
+
+
+			
+		String closure=dao.getclosure();	
+		
+		     return closure;
+		
+
+	}
+
+
+
+
+
+
+
+
+
 	
 
 }
