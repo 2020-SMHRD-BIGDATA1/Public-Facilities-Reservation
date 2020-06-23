@@ -62,7 +62,95 @@ public class Reservation_1Controller {
 		 return count;
 		
 	}
+
+
+
+
+	public String getvision() {
+		
+	String division=dao.getdivision();
+		
+		
+		return division;
+	}
+
+
+
+
+
+
+
+	public String getweekday() {
+		
+		
+   String weekday=dao.getweekday();	
+			
+		
+		return weekday;
+	}
+
+
+
+
+	public String getweekend() {
+		
+	String weekend=dao.getweekend();		
+		
+	     return weekend;
+	}
+
+
+
+
+	public String gethomepage() {
+		
+		String homepage=dao.gethomepage();	
+		
+		
+		return homepage;
+	}
+
+
+
+
+	public String getpeople() {
+		
+		String people=dao.getpeople();
+		
+		return people;
+	}
+
+
+
+
+	public char getcharge() {
 	
+	char charge=dao.getcharge();
+		return charge;
+	}
+
+
+
+
+	public String getclosure() {
+
+
+			
+		String closure=dao.getclosure();	
+		
+		     return closure;
+		
+
+	}
+
+
+
+
+
+
+
+
+
 	
 
 }

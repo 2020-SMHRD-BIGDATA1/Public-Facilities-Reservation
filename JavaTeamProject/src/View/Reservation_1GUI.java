@@ -13,13 +13,17 @@ import java.awt.GridLayout;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class Reservation_1GUI {
 	
-	Reservation_1Controller recon= new Reservation_1Controller();
+	Reservation_1Controller con= new Reservation_1Controller();
 
 	private JFrame frame;
 
@@ -63,32 +67,62 @@ public class Reservation_1GUI {
 		JLabel lblNewLabel_2 = new JLabel("\uB0A0\uC9DC ");
 		panel.add(lblNewLabel_2);
 		
-		JLabel label = new JLabel("000");
-		panel.add(label);
+		JLabel lb_date = new JLabel("000");
+		lb_date.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lb_date);
 		
 		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
 	    SimpleDateFormat format2 = new SimpleDateFormat ( "EEE",Locale.KOREAN);
 
-	     String format_time2 = format2.format (System.currentTimeMillis());
+	    String format_time2 = format2.format (System.currentTimeMillis());
 			
-			System.out.println(format_time2);
+		System.out.println(format_time2);
 			
-		   String format_time1 = format1.format (System.currentTimeMillis());
+		String format_time1 = format1.format (System.currentTimeMillis());
 			
-			System.out.println(format_time1);
+		System.out.println(format_time1);
 		
-		label.setText(format_time1);
+		lb_date.setText(format_time1);
 		
-		JLabel lb_date = new JLabel("New label");
-		panel.add(lb_date);
+		JLabel lb_date1 = new JLabel("New label");
+		lb_date1.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lb_date1);
+		
+		String ddate = format_time1;
+		String[] dddate = ddate.split("-");
+		
+		int month = Integer.parseInt(dddate[1]);
+		int day = Integer.parseInt(dddate[2]);
 		
 		
+		day = day+1;
+		String date1 = dddate[0]+"-"+dddate[1]+"-"+day;
+		lb_date1.setText(date1);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		panel.add(lblNewLabel_1);
+
 		
-		JLabel lblNewLabel_1_2 = new JLabel("New label");
-		panel.add(lblNewLabel_1_2);
+		JLabel lb_date2 = new JLabel("New label");
+		lb_date2.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lb_date2);
+		
+		day = day+1;
+		String date2  = dddate[0]+"-"+dddate[1]+"-"+day;
+		lb_date2.setText(date2);
+
+		
+		
+		JLabel lb_date3 = new JLabel("New label");
+		lb_date3.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lb_date3);
+		
+		day = day+1;
+		String date3 = dddate[0]+"-"+dddate[1]+"-"+day;
+		lb_date3.setText(date3);
+		
+		
+	
+		
+		
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 22, 193, 37);
@@ -106,20 +140,27 @@ public class Reservation_1GUI {
 		JLabel lblNewLabel_5 = new JLabel("\uC694\uC77C");
 		panel_2.add(lblNewLabel_5);
 		
+		JLabel lb_day = new JLabel("New label");
+		lb_day.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lb_day);
+		
+		
+		lb_day.setText(format_time2);
+		
 		JLabel lb_day1 = new JLabel("New label");
+		lb_day1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lb_day1);
+		lb_day1.setText(getDate(date1));
 		
+		JLabel lb_day2 = new JLabel("New label");
+		lb_day2.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lb_day2);
+		lb_day2.setText(getDate(date2));
 		
-		lb_day1.setText(format_time2);
-		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		panel_2.add(lblNewLabel_4);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("New label");
-		panel_2.add(lblNewLabel_1_1);
-		
-		JLabel lblNewLabel_7 = new JLabel("New label");
-		panel_2.add(lblNewLabel_7);
+		JLabel lb_day3 = new JLabel("New label");
+		lb_day3.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lb_day3);
+		lb_day3.setText(getDate(date3));
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(189, 78, 143, 421);
@@ -181,5 +222,68 @@ public class Reservation_1GUI {
 		panel_4_2.add(btnNewButton_1_2);
 		frame.setBounds(100, 100,360,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public String getDate(String date) {
+		
+		Calendar cal = Calendar.getInstance(); 
+		 
+		 
+		SimpleDateFormat formatter =new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
+		 
+		//현재 일자의 요일
+	
+		
+		try {
+			cal.setTime(formatter.parse(date));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		int dayNum = cal.get(Calendar.DAY_OF_WEEK);
+		 
+		String day = "";
+		switch(dayNum){
+		    case 1:
+		        day = "일";
+		        break ;
+		    case 2:
+		        day = "월";
+		        break ;
+		    case 3:
+		        day = "화";
+		        break ;
+		    case 4:
+		        day = "수";
+		        break ;
+		    case 5:
+		        day = "목";
+		        break ;    
+		    case 6:
+		        day = "금";
+		        break ;
+		    case 7:
+		        day = "토";
+		        break ;
+
+
+		       
+	}
+		
+		return day;
 	}
 }

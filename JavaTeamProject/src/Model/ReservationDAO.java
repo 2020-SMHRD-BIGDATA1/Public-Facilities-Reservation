@@ -83,15 +83,15 @@ public class ReservationDAO {
 		getconnection();
 		int fee = 0;
 
-		String sql = "select fee from reservations where FC_NAME=?";
+		String sql = "select pay from Publics where NAME=?";
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "각화풋살장");
+			pst.setString(1, "풍영체육시설단지 축구장");
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
-				fee = rs.getInt("fee");
+				fee = rs.getInt("pay");
 				System.out.println(fee);
 			}
 
@@ -111,12 +111,12 @@ public class ReservationDAO {
 		
 		getconnection();
 		
-		String sql= "select phone where name=?";
+		String sql= "select phone from publics where name=?";
 		String phone = null;
 		
 		try {
 			pst= conn.prepareStatement(sql);
-			pst.setString(1,"각화1교하부 족구장");
+			pst.setString(1,"풍영체육시설단지 축구장");
 			rs=pst.executeQuery();
 			
 			if(rs.next()) {
@@ -157,7 +157,201 @@ public class ReservationDAO {
 		
 		return count;
 	}
+
+	public String getdivision() {
+	
+		getconnection();
+			
+			String sql= "select division from publics where name=?";
+			
+			String division=null;
+			try {
+				pst= conn.prepareStatement(sql);
+				pst.setString(1,"풍영체육시설단지 축구장");
+				rs=pst.executeQuery();
+				
+				if(rs.next()) {
+					
+				division=rs.getString("division");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			
+			return division;
 		
+	}
+
+	public String getclosure() {
 		
+		getconnection();
+		
+		String sql= "select closure from publics where name=?";
+		
+		String closure=null;
+		try {
+			pst= conn.prepareStatement(sql);
+			pst.setString(1,"풍영체육시설단지 축구장");
+			rs=pst.executeQuery();
+			
+			if(rs.next()) {
+				
+			closure=rs.getString("closure");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		
+		return closure;
 	
 }
+
+	public String getweekday() {
+		
+		getconnection();
+
+		String sql = "select weekday from publics where name=?";
+
+		String weekday = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				weekday = rs.getString("weekday");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return weekday;
+	}
+
+
+	public String getweekend() {
+		
+		getconnection();
+
+		String sql = "select weekend from publics where name=?";
+
+		String weekend = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				weekend = rs.getString("weekend");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return weekend;
+	}
+
+	public String gethomepage() {
+		getconnection();
+
+		String sql = "select homepage from publics where name=?";
+
+		String homepage = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				homepage = rs.getString("homepage");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return homepage;
+	}
+
+	public String getpeople() {
+		
+		getconnection();
+
+		String sql = "select people from publics where name=?";
+
+		String people = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				people= rs.getString("people");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return people;
+	
+	}
+
+	public char getcharge() {
+		
+		getconnection();
+
+		String sql = "select charge from publics where name=?";
+
+		char charge1 = 0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, "풍영체육시설단지 축구장");
+			rs = pst.executeQuery();
+		
+			
+			if (rs.next()) {
+
+				int charge=rs.getInt("charge");
+			    charge1=(char)charge;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return charge1;
+	
+	}
+		
+
+	}
+
+	

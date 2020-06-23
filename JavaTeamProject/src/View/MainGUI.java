@@ -96,6 +96,11 @@ public class MainGUI {
 		panel.add(btnBadMinton);
 		
 		btnteam = new JButton("\uD300 \uAD6C\uD558\uAE30");
+		btnteam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MatchingGUI matching = new MatchingGUI();
+			}
+		});
 		btnteam.setBounds(103, 352, 112, 67);
 		panel.add(btnteam);
 		

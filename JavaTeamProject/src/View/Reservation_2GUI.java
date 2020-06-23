@@ -250,4 +250,7 @@ public class Reservation_2GUI {
 		frame.setBounds(100, 100, 360 , 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	
+	
 }

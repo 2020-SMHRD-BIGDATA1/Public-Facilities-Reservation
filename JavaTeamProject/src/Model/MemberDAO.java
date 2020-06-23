@@ -87,27 +87,56 @@ import java.sql.SQLException;
 		return row;
 	}
 	
-//	public boolean findExistID(String id) {
-//		getConnection();
-//		
-//		try {
-//			String sql = "SELECT count(*) cnt FROM members WHERE id = ?";
-//			pst = conn.prepareStatement(sql);
-//			pst.setString(1, id);
-//			rs = pst.executeQuery();
-//			if(rs.next()) {
-//				int cnt = rs.getInt("cnt");
-//				if(cnt > 0) {
-//					return true;
-//				}
-//			}
-//		}catch (SQLException e) {
-//			e.printStackTrace();
-//		}finally {
-//			close();
-//		}
-//		return false;
-//	}
-	
+	public MemberVO check(MemberVO id_check) {
+		MemberVO id_duple = null;
+		getConnection();
+		
+		try {
+			String sql = "SELECT id FROM members WHERE id = ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, id_check.getId());
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				String id = rs.getString("id");
+				id_duple = new MemberVO(id);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+			return id_duple;
+	}
+
+	public String check_id(String id) {
+
+		
+		getConnection();
+		String cid = "";
+		try {
+			String sql = "SELECT id FROM members WHERE id = ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1,id);
+			rs = pst.executeQuery();
+			
+			if(rs.next()) {
+			cid = rs.getString("id");	
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+			return cid;
+	}
 	
 }
+	
+	
+	
+	
+	
+				
+					
+				
