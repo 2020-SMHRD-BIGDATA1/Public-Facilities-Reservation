@@ -3,7 +3,9 @@ package View;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +28,8 @@ public class MainGUI {
 	private JButton btnSoccer;
 	public static MainSystem controller = new MainSystem();
 	MainDAO dao = new MainDAO();
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
 	/**
 	 * Launch the application.
 	 */
@@ -63,11 +67,13 @@ public class MainGUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
+	
+		
+		
 		btnSoccer = new JButton("\uCD95\uAD6C");
 		btnSoccer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//축구 클릭시
-				SoccerGUI soccer = new SoccerGUI();
+		
 			}
 		});
 		btnSoccer.setBounds(38, 131, 68, 67);
@@ -127,5 +133,13 @@ public class MainGUI {
 		textField.setBounds(12, 10, 296, 49);
 		panel.add(textField);
 		textField.setColumns(10);
+		
+		btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.setBounds(38, 454, 97, 23);
+		panel.add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton_1.setBounds(169, 454, 97, 23);
+		panel.add(btnNewButton_1);
 	}
 }
