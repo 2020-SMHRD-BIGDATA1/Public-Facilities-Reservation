@@ -123,6 +123,7 @@ public class JoinGUI {
 				}else {
 					JOptionPane.showMessageDialog(frame, "회원가입 실패",
 											"회원가입 결과", JOptionPane.PLAIN_MESSAGE);
+					
 				}
 				
 			}

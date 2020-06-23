@@ -16,7 +16,7 @@ public class MatchingDAO {
 	private PreparedStatement pst;
 	private ResultSet rs;
 	
-	MatchingGUI gui = new MatchingGUI();
+	
 	
 	
 	private void getConnection() {
@@ -54,25 +54,97 @@ public class MatchingDAO {
 		}
 	}
 
-	public MatchingVO check(MatchingVO area) {
-		MatchingVO division = null;
+
+	public String division(String place){
+		String result = "";
+		
 		getConnection();
 		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
 		
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, area.getDivision());
+			pst.setString(1,place);
 			rs = pst.executeQuery();
 			
 			if (rs.next()) {
-				String id = rs.getString("division");
-				division = new MatchingVO(division);
+				result = rs.getString(1);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return division;
+		
+		
+		return result;
+	}
+	public String addr(String place){
+		String result = "";
+		
+		getConnection();
+		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+		
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1,place);
+			rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getString(9);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return result;
+	}
+	public String time(String place){
+		String result = "";
+		
+		getConnection();
+		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+		
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1,place);
+			rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getString(4);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return result;
+	}
+
+	public String img(String place) {
+		String result = "";
+		
+		getConnection();
+		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+		
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1,place);
+			rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getString(12);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
 	}
 }

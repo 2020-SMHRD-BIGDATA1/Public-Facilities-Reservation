@@ -8,9 +8,8 @@ public class MemberVO {
 	private String phone;
 	private String address;
 	private String mail;
-	
-	public MemberVO(String id, String pw, String name, int age,
-			String phone, String address, String mail ) {
+
+	public MemberVO(String id, String pw, String name, int age, String phone, String address, String mail) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -28,6 +27,8 @@ public class MemberVO {
 	
 	
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -36,80 +37,63 @@ public class MemberVO {
 		this.id = id;
 	}
 
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	public int getAge() {
 		return age;
 	}
-
-
 
 	public void setAge(int age) {
 		this.age = age;
 	}
 
-
-
 	public String getPhone() {
 		return phone;
 	}
-
-
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
-
-
 	public String getAddress() {
 		return address;
 	}
-
-
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-
-
 	public String getMail() {
 		return mail;
 	}
-
-
 
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
-
-
 	public String getId() {
 		return id;
 	}
 
-
-
 	public String getID() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public String getPw() {
 		return pw;
 	}
-	
+
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}

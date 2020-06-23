@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import Controller.MainSystem;
+import Controller.MainSystemCon;
 import Model.MainDAO;
 
 public class MainGUI {
@@ -27,31 +27,13 @@ public class MainGUI {
 	private JButton btnBaseBall;
 	private JButton btnjokgu;
 	private JButton btnSoccer;
-	public static MainSystem controller = new MainSystem();
+	public static MainSystemCon con = new MainSystemCon();
 	MainDAO dao = new MainDAO();
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainGUI window = new MainGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public MainGUI() {
 		initialize();
+		frame.setVisible(true);
+
 	}
 
 	/**
@@ -74,7 +56,7 @@ public class MainGUI {
 		btnSoccer = new JButton("\uCD95\uAD6C");
 		btnSoccer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		
+				
 			}
 		});
 		btnSoccer.setBounds(38, 131, 68, 67);
@@ -83,6 +65,7 @@ public class MainGUI {
 		btnjokgu = new JButton("\uC871\uAD6C");
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				InventoryGUI inventory = new InventoryGUI();
 			}
 		});
 		btnjokgu.setBounds(118, 131, 68, 67);
@@ -139,13 +122,5 @@ public class MainGUI {
 		textField.setBounds(12, 10, 296, 49);
 		panel.add(textField);
 		textField.setColumns(10);
-		
-		btnNewButton = new JButton("\uB85C\uADF8\uC778");
-		btnNewButton.setBounds(38, 454, 97, 23);
-		panel.add(btnNewButton);
-		
-		btnNewButton_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btnNewButton_1.setBounds(169, 454, 97, 23);
-		panel.add(btnNewButton_1);
 	}
 }
