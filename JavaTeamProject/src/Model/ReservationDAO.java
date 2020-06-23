@@ -103,4 +103,61 @@ public class ReservationDAO {
 
 		return fee;
 	}
+
+
+
+
+	public String getphone() {
+		
+		getconnection();
+		
+		String sql= "select phone where name=?";
+		String phone = null;
+		
+		try {
+			pst= conn.prepareStatement(sql);
+			pst.setString(1,"각화1교하부 족구장");
+			rs=pst.executeQuery();
+			
+			if(rs.next()) {
+				
+				phone=rs.getString("phone");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		
+		return phone;
+	}
+
+	public int insert(String string, int cnt, String title, String body) {
+		
+        getconnection();
+		
+		String sql= "insert into MemberMactching values(?,?,?,?)";
+		int count = 0;
+		try {
+			pst= conn.prepareStatement(sql);
+			pst.setString(1,string);
+			pst.setInt(2, cnt);
+			pst.setString(3,title);
+			pst.setString(4,body);
+			count=pst.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		
+		return count;
+	}
+		
+		
+	
 }

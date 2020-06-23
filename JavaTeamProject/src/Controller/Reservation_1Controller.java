@@ -40,6 +40,28 @@ public class Reservation_1Controller {
 	public static void setVo(reservationvo vo) {
 		Reservation_1Controller.vo = vo;
 	}
+
+
+
+
+
+	public String getphone() {
+
+		String phone = dao.getphone();
+		
+		return phone;
+	}
+
+
+
+
+	public int insert(String string, int cnt, String title, String body) {
+		
+		int count= dao.insert(string, cnt, title, body);
+		
+		 return count;
+		
+	}
 	
 	
 
