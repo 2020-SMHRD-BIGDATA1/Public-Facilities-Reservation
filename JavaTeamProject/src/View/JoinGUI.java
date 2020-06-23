@@ -32,6 +32,7 @@ public class JoinGUI {
 	private JTextField textFieldEmail;
 	private MemberManagementSystem controller
 							= LoginGUI.controller;
+	private int id_check = 0;
 	
 
 	/**
@@ -114,10 +115,10 @@ public class JoinGUI {
 				String mail = textFieldEmail.getText();
 				
 				MemberVO joinUser = new MemberVO(id, pw, name, age, phone, address, mail);
-				int cnt = controller.join(joinUser);
-				if(cnt != 0) {
+				if(id_check == 1) {
 					JOptionPane.showMessageDialog(frame, "회원가입 성공",
 											"회원가입 결과", JOptionPane.PLAIN_MESSAGE);
+					controller.join(joinUser);
 					frame.setVisible(false);
 				}else {
 					JOptionPane.showMessageDialog(frame, "회원가입 실패",
@@ -172,10 +173,12 @@ public class JoinGUI {
 				if(check_id.equals("") ) {
 					JOptionPane.showMessageDialog(frame, "사용 가능한 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
+					id_check = 1;
 					
 				}else {
 					JOptionPane.showMessageDialog(frame, "중복된 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
+					id_check = 0;
 					
 				}
 			}

@@ -48,7 +48,7 @@ create table MEMBERS(
 	name varchar(10),
 	age NUMBER (10),
 	phone varchar(20),
-	address varchar(60),
+	address varchar(100),
 	mail varchar(100),
 	point NUMBER(30));
 select * from members;
