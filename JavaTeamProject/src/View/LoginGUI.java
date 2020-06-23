@@ -29,7 +29,7 @@ public class LoginGUI {
 	private JButton btnLogin;
 	private JButton btnJoin;
 	public static MemberManagementSystem controller = new MemberManagementSystem();
-
+	MemberVO user1;
 	/**
 	 * Launch the application.
 	 */
@@ -146,21 +146,23 @@ public class LoginGUI {
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
 		btn_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String id = inputID.getText();
 				String pw = String.valueOf(inputPW.getPassword());
 				MemberVO user = new MemberVO(id, pw);
+				MemberVO user1 = user;
 				boolean isSuccess = controller.login(user);
 				
-				if(isSuccess == true) {
-					JOptionPane.showMessageDialog(frame, "로그인 성공",
-											"로그인 결과", JOptionPane.PLAIN_MESSAGE);
+				if (isSuccess == true) {
+					JOptionPane.showMessageDialog(frame, "로그인 성공", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
 					MainGUI mainGUI = new MainGUI();
 					frame.setVisible(false);
-				}else {
-					JOptionPane.showMessageDialog(frame, "로그인 실패",
-											"로그인 결과", JOptionPane.PLAIN_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(frame, "로그인 실패", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
 				}
 			}
+			
+		
 		});
 		btn_Login.setBounds(0, 0, 95, 40);
 		panel_6.add(btn_Login);

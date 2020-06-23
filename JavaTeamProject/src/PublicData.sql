@@ -31,8 +31,9 @@ body varchar2(30)
 );
 
 select * from MemberMactching;
+select * from members;
 
-
+drop table members;
 create table MEMBERS(
 	id varchar(30),
 	pw varchar(30),
@@ -43,6 +44,13 @@ create table MEMBERS(
 	mail varchar(100),
 	point NUMBER(30));
 insert into MEMBERS values ('mty6893', 1234, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('123', 123, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
+
+UPDATE MEMBERS SET pw = 1234, name = 'жжж', age = 27, PHONE = '010-5555-6666', mail = 'fff@naver.com' WHERE id ='123';
+
+delete members where id='12';
 	
 
 

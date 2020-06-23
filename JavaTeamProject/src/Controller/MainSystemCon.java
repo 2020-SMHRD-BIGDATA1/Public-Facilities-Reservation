@@ -8,10 +8,13 @@ import Model.MainVO;
 
 
 
-public class MainSystem {
-	private MainDAO dao = new MainDAO();
-	private MainVO User;
+public class MainSystemCon{
 	
+	MainDAO dao=new MainDAO();
+	
+
+
+
 	
 	
 	
