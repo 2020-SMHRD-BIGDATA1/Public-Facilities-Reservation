@@ -17,7 +17,8 @@ public class MatchingDAO {
 	private ResultSet rs;
 	
 	MatchingGUI gui = new MatchingGUI();
-
+	
+	
 	private void getConnection() {
 
 		// 1.JDBC드라이버 동적로딩

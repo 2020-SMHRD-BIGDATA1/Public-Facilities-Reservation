@@ -15,6 +15,8 @@ create table Publics(
 	lon varchar2(15)
 
 );
+ALTER TABLE publics DROP COLUMN lat;
+ALTER TABLE publics DROP COLUMN lon;
 
 drop table publics
 
@@ -31,7 +33,7 @@ create table MemberMactching(
 
 select * from MemberMactching;
 
-
+drop table members;
 create table MEMBERS(
 	id varchar(30),
 	pw varchar(30),
