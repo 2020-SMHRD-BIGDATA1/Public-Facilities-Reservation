@@ -19,15 +19,14 @@ create table Publics(
 drop table publics
 
 
-
 drop table reservations;
 
 
 create table MemberMactching(
-id varchar2(30),
-addnum number,
-title varchar2(30),
-body varchar2(30)
+	id varchar2(30),
+	addnum number,
+	title varchar2(30),
+	body varchar2(30)
 );
 
 select * from MemberMactching;
