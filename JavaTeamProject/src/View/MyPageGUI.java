@@ -8,8 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import Controller.MainSystem;
+import Model.MainDAO;
 import Model.MainVO;
+import controller.MemberManagementSystem;
 import model.MemberVO;
+import view.MemberLoginGUI;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -19,18 +23,26 @@ import java.awt.event.ActionEvent;
 public class MyPageGUI {
 
 	private JFrame frame;
-	private JTextField inPutName;
 	private JTextField inPutID;
 	private JTextField inPutPW;
 	private JTextField inPutPhone;
 	private JTextField inPutaddr;
 	private JTextField inPutEmail;
 	private JTextField inPutPoint;
+	MainDAO dao = new MainDAO();
+	public static MainSystem controller = new MainSystem();
+	private JTextField inPutName;
+	
+	
+	
 
+	
+	
 	
 	public MyPageGUI() {
 		initialize();
 		frame.setVisible(true);
+		
 	}
 	
 	
@@ -45,18 +57,19 @@ public class MyPageGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
+		//이미지 경로 새로운변수 , new image icon(변수); 
 		panel.setBounds(12, 10, 320, 541);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JLabel text_Name = new JLabel("\uC774\uB984");
 		text_Name.setHorizontalAlignment(SwingConstants.CENTER);
-		text_Name.setBounds(47, 117, 57, 15);
+		text_Name.setBounds(47, 160, 57, 15);
 		panel.add(text_Name);
 		
 		JLabel text_id = new JLabel("ID");
 		text_id.setHorizontalAlignment(SwingConstants.CENTER);
-		text_id.setBounds(47, 159, 57, 15);
+		text_id.setBounds(47, 117, 57, 15);
 		panel.add(text_id);
 		
 		JLabel text_PW = new JLabel("PW");
@@ -88,34 +101,35 @@ public class MyPageGUI {
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 회원정보 수정
-				
-				MainVO vo = new MainVO(name,id,pW,addr,phone,point);
-				String name = inPutName.getText();
 				String id = inPutID.getText();
 				String pw = inPutPW.getText();
-				String addr = inPutaddr.getText();
-				String phone = inPutPhone.getText();
-				String point = inPutPoint.getText();
+				String addr =inPutaddr.getText();
+				String email =inPutEmail.getText();
+				String phone =inPutPhone.getText();
+				String point =inPutPoint.getText();
+				String name =inPutName.getText();
+				MainVO vo = new MainVO(id, pw, name, addr, email, phone, point);
 				
-			
+				
+				
+				int cnt = dao.update(vo);
+				// 1이면성공 0이면 실패
 
-				
-			
+				if (cnt > 0) {
+					JOptionPane.showMessageDialog(frame, "수정성공", "수정 결과", JOptionPane.PLAIN_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(frame, "수정실패", "수정 결과", JOptionPane.PLAIN_MESSAGE);
+				}
 			
 			}
 		});
 		btnmdfy.setBounds(122, 456, 97, 23);
 		panel.add(btnmdfy);
 		
-		inPutName = new JTextField();
-		inPutName.setBounds(116, 114, 116, 21);
-		panel.add(inPutName);
-		inPutName.setColumns(10);
-		
 		inPutID = new JTextField();
-		inPutID.setColumns(10);
-		inPutID.setBounds(116, 156, 116, 21);
+		inPutID.setBounds(116, 114, 116, 21);
 		panel.add(inPutID);
+		inPutID.setColumns(10);
 		
 		inPutPW = new JTextField();
 		inPutPW.setColumns(10);
@@ -151,11 +165,16 @@ public class MyPageGUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-			
+				PointGUI MyPoint = new PointGUI();
 			
 			}
 		});
 		btnNewButton.setBounds(244, 385, 64, 28);
 		panel.add(btnNewButton);
+		
+		inPutName = new JTextField();
+		inPutName.setColumns(10);
+		inPutName.setBounds(116, 157, 116, 21);
+		panel.add(inPutName);
 	}
 }

@@ -6,33 +6,39 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MainDAO {
+import javax.swing.ComboBoxEditor;
+import javax.swing.JComboBox;
 
+import View.MatchingGUI;
+
+public class MatchingDAO {
 	private Connection conn;
 	private PreparedStatement pst;
 	private ResultSet rs;
 	
+	MatchingGUI gui = new MatchingGUI();
+	
+	
 	private void getConnection() {
 
+		// 1.JDBC드라이버 동적로딩
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "hr";
 			String password = "hr";
-
+			// 2.DB연결
 			conn = DriverManager.getConnection(url, user, password);
-		} catch (ClassNotFoundException e) {
 
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
-
 	}
 
 	private void close() {
-
+		// 6.DB연결종료
 		try {
 			if (rs != null) {
 				rs.close();
@@ -44,48 +50,29 @@ public class MainDAO {
 				conn.close();
 			}
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
 	}
 
-	
-	
-	public int update(MainVO vo) {
-		int cnt = 0;
-		
+	public MatchingVO check(MatchingVO area) {
+		MatchingVO division = null;
 		getConnection();
-	
+		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
 		
 		try {
-			//UPDATE SET WHERE
-			String sql = "UPDATE Publics SET  pw = ?, name = ?, addr = ?, email=?, phone=?, point=?  WHERE NAME =?";
-			pst = conn.prepareCall(sql);
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, area.getDivision());
+			rs = pst.executeQuery();
 			
-			
-			pst.setString(1, vo.getPw());
-			pst.setString(2, vo.getName());
-			pst.setString(3, vo.getAddr());
-			pst.setString(4, vo.getEmail());
-			pst.setString(5, vo.getPhone());
-			pst.setString(6, vo.getPoint());
-			pst.setString(7, vo.getName());
-			
-			cnt =pst.executeUpdate();
-			
-			
-			
+			if (rs.next()) {
+				String id = rs.getString("division");
+				division = new MatchingVO(division);
+			}
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
-			
-		}finally {
+		} finally {
 			close();
 		}
-		
-		return cnt;
+		return division;
 	}
-
-	
-	
 }
