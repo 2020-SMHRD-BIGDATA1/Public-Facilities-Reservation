@@ -33,7 +33,16 @@ body varchar2(30)
 select * from MemberMactching;
 
 
-
-)
+create table MEMBERS(
+	id varchar(30),
+	pw varchar(30),
+	name varchar(30),
+	age NUMBER (10),
+	phone varchar(100),
+	address varchar(100),
+	mail varchar(100),
+	point NUMBER(30));
+insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
+	
 
 
