@@ -74,7 +74,7 @@ public class MainGUI {
 		btnSoccer = new JButton("\uCD95\uAD6C");
 		btnSoccer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		
+				
 			}
 		});
 		btnSoccer.setBounds(38, 131, 68, 67);
@@ -83,6 +83,7 @@ public class MainGUI {
 		btnjokgu = new JButton("\uC871\uAD6C");
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				InventoryGUI inventory = new InventoryGUI();
 			}
 		});
 		btnjokgu.setBounds(118, 131, 68, 67);

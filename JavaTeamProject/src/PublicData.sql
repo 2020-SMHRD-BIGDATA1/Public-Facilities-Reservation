@@ -11,12 +11,10 @@ create table Publics(
 	address varchar2(50),
 	phone varchar2(20),
 	homepage varchar2(50),
-	lat varchar2(15),
-	lon varchar2(15)
+	img varchar2(50)
 
 );
-ALTER TABLE publics DROP COLUMN lat;
-ALTER TABLE publics DROP COLUMN lon;
+
 
 drop table publics
 
