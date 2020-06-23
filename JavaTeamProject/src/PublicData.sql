@@ -28,7 +28,7 @@ title varchar2(30),
 body varchar2(30)
 );
 
-select * from MemberMactching;
+select * from Publics;
 
 
 

@@ -62,6 +62,60 @@ public class Reservation_1Controller {
 		 return count;
 		
 	}
+
+
+
+
+	public String getvision() {
+		
+	String division=dao.getdivision();
+		
+		
+		return division;
+	}
+
+
+
+
+	public String closure() {
+		
+	String closure=dao.getclosure();	
+	
+	     return closure;
+	}
+
+
+
+
+	public String weekday() {
+		
+		
+   String weekday=dao.getweekday();	
+			
+		
+		return weekday;
+	}
+
+
+
+
+	public String weekend() {
+		
+	String weekend=dao.getweekend();		
+		
+	     return weekend;
+	}
+
+
+
+
+	public String gethomepage() {
+		
+		String homepage=dao.gethomepage();	
+		
+		
+		return homepage;
+	}
 	
 	
 
