@@ -16,3 +16,13 @@ create table Publics(
 
 drop table publics
 
+create table Ratings(
+	Name varchar(30),
+	Rating varchar(5),
+	Review varchar(1000));
+	
+select *from Ratings;
+
+
+
+
