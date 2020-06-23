@@ -168,16 +168,15 @@ public class JoinGUI {
 		btn_idCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String id = textFieldID.getText();
-				String check_id=controller.check(id);
-				
+				String check_id = controller.check(id);
 				if(check_id.equals("") ) {
 					JOptionPane.showMessageDialog(frame, "사용 가능한 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
 					
-					
 				}else {
 					JOptionPane.showMessageDialog(frame, "중복된 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
+					
 				}
 			}
 		});
