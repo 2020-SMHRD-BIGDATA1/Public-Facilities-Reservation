@@ -123,9 +123,9 @@ public class Reservation_1Controller {
 
 
 
-	public String getcharge() {
+	public char getcharge() {
 	
-	String charge=dao.getcharge();
+	char charge=dao.getcharge();
 		return charge;
 	}
 

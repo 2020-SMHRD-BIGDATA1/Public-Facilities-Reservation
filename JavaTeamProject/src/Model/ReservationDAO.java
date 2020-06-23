@@ -322,21 +322,23 @@ public class ReservationDAO {
 	
 	}
 
-	public String getcharge() {
+	public char getcharge() {
 		
 		getconnection();
 
 		String sql = "select charge from publics where name=?";
 
-		String  charge = null;
+		char charge1 = 0;
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, "풍영체육시설단지 축구장");
 			rs = pst.executeQuery();
-
+		
+			
 			if (rs.next()) {
 
-				 charge= rs.getString("charge");
+				int charge=rs.getInt("charge");
+			    charge1=(char)charge;
 			}
 
 		} catch (SQLException e) {
@@ -345,7 +347,7 @@ public class ReservationDAO {
 			close();
 		}
 
-		return  charge;
+		return charge1;
 	
 	}
 		

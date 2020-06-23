@@ -86,16 +86,17 @@ public class InventoryGUI {
 		charge_lbl.setBounds(115, 40, 98, 15);
 		panel1.add(charge_lbl);
 		
-		String yn=con.getcharge();
+		char yn=con.getcharge();
 		System.out.println(yn);
+		String str;
 		
-		if(yn.equals("Y")) {
-			yn.equals("유료");
+		if(yn=='Y') {
+			str="유료";
 		}else {
-			yn.equals("무료");
+			str="유료";
 		}
 		
-		charge_lbl.setText(yn);
+		charge_lbl.setText(str);
 		
 		resrveation_btn = new JButton("\uC608\uC57D");
 		resrveation_btn.addActionListener(new ActionListener() {
