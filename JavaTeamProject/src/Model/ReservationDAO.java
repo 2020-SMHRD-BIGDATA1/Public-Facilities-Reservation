@@ -345,7 +345,6 @@ public class ReservationDAO {
 		
 			
 			if (rs.next()) {
-
 				int charge=rs.getInt("charge");
 			    charge1=(char)charge;
 			}
@@ -359,7 +358,63 @@ public class ReservationDAO {
 		return charge1;
 	
 	}
+
+	public String getfac_id(String fac_name) {
+		getconnection();
+
+		String sql = "select fac_id from publics where name=?";
+		String	fac_id = null;
+	
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, fac_name);
+			rs = pst.executeQuery();
+		   
 		
+			
+			if (rs.next()) {
+
+			fac_id=rs.getString("fac_id");
+			
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return fac_id;
+
+	
+}
+
+	public int insertReservation(ReserVO revo) {
+		 getconnection();
+
+		 String sql= "insert into reservation values(?,?,?,?,?,?,?)";
+			int count = 0;
+			try {
+				pst= conn.prepareStatement(sql);
+				pst.setString(1,revo.getUser_id());
+				pst.setString(2, revo.getFac_id());
+				pst.setString(3,revo.getFac_name());
+				pst.setString(4,revo.getReserdate());
+				pst.setString(5, revo.getUsedate());
+				pst.setString(6,revo.getUsetime());
+				pst.setString(7,revo.getFee());
+				
+				count=pst.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			
+			return count;
+		}
 
 	}
 

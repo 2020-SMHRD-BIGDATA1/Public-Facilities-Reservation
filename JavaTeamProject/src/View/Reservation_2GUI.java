@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
-
+import Model.ReserVO;
 
 import java.text.SimpleDateFormat;
 
@@ -28,7 +28,7 @@ public class Reservation_2GUI {
 	int point=0;
 	JLabel lb_remainpoint;
 	private int remainpoint;
-	
+	MemberManagementSystem controller= new MemberManagementSystem();
 	Reservation_1Controller con= new Reservation_1Controller();
 	public Reservation_2GUI() {
 		initialize();
@@ -38,6 +38,7 @@ public class Reservation_2GUI {
 	
 	
 	private MemberManagementSystem MMCON=LoginGUI.controller;
+	private final JButton btn_back = new JButton("<");
 	
 	private void initialize() {
 		frame = new JFrame();
@@ -47,7 +48,7 @@ public class Reservation_2GUI {
 		
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 12));
-		lblNewLabel.setBounds(12, 22, 193, 37);
+		lblNewLabel.setBounds(124, 22, 193, 37);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
@@ -59,8 +60,11 @@ public class Reservation_2GUI {
 		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_2);
 
-		JLabel lb_name = new JLabel("New label");
-		panel.add(lb_name);
+		JLabel lb_fcname = new JLabel("New label");
+		panel.add(lb_fcname);
+		String fac_name= "fcname 가져와야되";
+		lb_fcname.setText(fac_name);
+		
 		
 //		lb_name.setText(MMCON.getLoginUser().getId());
 	
@@ -91,15 +95,19 @@ public class Reservation_2GUI {
 		lblNewLabel_5.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		panel.add(lblNewLabel_1);
+		JLabel lb_usedate = new JLabel("New label");
+		panel.add(lb_usedate);
+		String usedate="가져와야되";
+		lb_usedate.setText(usedate);
 		
 		JLabel lblNewLabel_6 = new JLabel("\uC774\uC6A9\uC2DC\uAC04");
 		lblNewLabel_6.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_10 = new JLabel("New label");
-		panel.add(lblNewLabel_10);
+		JLabel lb_usetime = new JLabel("New label");
+		panel.add(lb_usetime);
+		String usetime = "100:00~200:00";
+		lb_usetime.setText(usetime);
 		
 		JLabel lb_charge = new JLabel("\uC774\uC6A9\uB8CC");
 		lb_charge.setFont(new Font("굴림", Font.BOLD, 12));
@@ -123,22 +131,28 @@ public class Reservation_2GUI {
 		lblNewLabel_2_1.setFont(new Font("굴림", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_4_1);
+		JLabel lb_username = new JLabel("New label");
+		panel_1.add(lb_username);
+		
+		lb_username.setText(LoginGUI.controller.getLoginUser().getId());
+		
 		
 		JLabel lblNewLabel_7_1 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_7_1.setFont(new Font("굴림", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_7_1);
 		
-		JLabel lblNewLabel_9_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_9_1);
+		JLabel lb_userphone = new JLabel("New label");
+		panel_1.add(lb_userphone);
+		
+		lb_userphone.setText(LoginGUI.controller.getLoginUser().getPhone());
 		
 		JLabel lblNewLabel_8_1 = new JLabel("\uC774\uBA54\uC77C ");
 		lblNewLabel_8_1.setFont(new Font("굴림", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_8_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_3_1);
+		JLabel lb_useremail = new JLabel("New label");
+		panel_1.add(lb_useremail);
+		lb_useremail.setText(LoginGUI.controller.getLoginUser().getMail());
 		
 		JLabel lblNewLabel_13_1 = new JLabel("\uACB0\uC81C");
 		lblNewLabel_13_1.setBounds(12, 189, 57, 15);
@@ -203,7 +217,7 @@ public class Reservation_2GUI {
 		btn_charge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				PointGUI pointgui= new PointGUI();
 			}
 		});
 		panel_2.add(btn_charge);
@@ -235,13 +249,34 @@ public class Reservation_2GUI {
 
 			public void actionPerformed(ActionEvent e) {
 				
+//				String fac_id=con.getfac_id(fac_name);
+				String fac_id="1";
+			    String	user_id=LoginGUI.controller.getLoginUser().getId();
 				
-					if (remainpoint>0) {
+			    ReserVO revo= new ReserVO(user_id, fac_id, fac_name, format_time1, usedate, usetime, (fee+""));
+				
+				int cnt1=con.insertreservation(revo);
+				
+				
+				
+					if (remainpoint>0 && cnt1>0 ) {
 						JOptionPane.showMessageDialog(frame, "예약 성공","예약신청결과",JOptionPane.PLAIN_MESSAGE);
 						
 //						main main= new main();
 						
 						System.out.println("예약 성공");
+						int cnt=controller.updatepoint(remainpoint);
+						
+						if(cnt>0) {
+							System.out.println("포인트 업데이트 성공");
+						}else {
+							System.out.println("포인트 업데이트 실패");
+							
+						}
+						
+//						
+						
+						frame.dispose();
 					
 					}else {
 						JOptionPane.showMessageDialog(frame, "예약 실패","예약신청결과",JOptionPane.PLAIN_MESSAGE);
@@ -253,6 +288,13 @@ public class Reservation_2GUI {
 		});
 		btnNewButton_2.setBounds(235, 499, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btn_back.setBounds(0, 28, 72, 31);
+		frame.getContentPane().add(btn_back);
 		frame.setBounds(100, 100, 360 , 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

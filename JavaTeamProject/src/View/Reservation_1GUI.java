@@ -26,7 +26,7 @@ public class Reservation_1GUI {
 	
 	Reservation_1Controller con= new Reservation_1Controller();
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -126,7 +126,7 @@ public class Reservation_1GUI {
 		
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 22, 193, 37);
+		panel_1.setBounds(139, 22, 193, 37);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -179,7 +179,7 @@ public class Reservation_1GUI {
 			public void actionPerformed(ActionEvent e) {
 			
 			Reservation_2GUI RE2= new Reservation_2GUI();
-				
+			frame.dispose();	
 			
 			}
 		});
@@ -222,10 +222,21 @@ public class Reservation_1GUI {
 		JButton btnNewButton_1_2 = new JButton("New button");
 		panel_4_2.add(btnNewButton_1_2);
 		
+
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uBCF4\uB77C\uBC30\uACBD.png"));
 		lblNewLabel_1.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(lblNewLabel_1);
+
+		JButton btn_back = new JButton("\uB4A4\uB85C");
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btn_back.setBounds(12, 22, 97, 23);
+		frame.getContentPane().add(btn_back);
+
 		frame.setBounds(100, 100,360,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

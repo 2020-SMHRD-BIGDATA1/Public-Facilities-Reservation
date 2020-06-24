@@ -1,20 +1,32 @@
 package Model;
 
 public class MatchingVO {
+	private int Fac_ID;
 	private String name;
 	private String division;
 	private String closure;
 	private String weekday;
 	private String weekend;
 	private String charge;
+
+	public int getFac_ID() {
+		return Fac_ID;
+	}
+
+	public void setFac_ID(int fac_ID) {
+		Fac_ID = fac_ID;
+	}
+
 	private int pay;
 	private int people;
 	private String address;
 	private String phone;
 	private String homepage;
+	private String img;
 
-	public MatchingVO(String name, String division, String closure, String weekday, String weekend, String charge,
-			int pay, int people, String address, String phone, String homepage) {
+	public MatchingVO(int Fac_ID, String name, String division, String closure, String weekday, String weekend,
+			String charge, int pay, int people, String address, String phone, String homepage, String img) {
+		this.Fac_ID = Fac_ID;
 		this.name = name;
 		this.division = division;
 		this.closure = closure;
@@ -26,12 +38,23 @@ public class MatchingVO {
 		this.address = address;
 		this.phone = phone;
 		this.homepage = homepage;
+		this.img = img;
 	}
 
-	public MatchingVO(MatchingVO division) {
+	public String getImg() {
+		return img;
 	}
 
-	public MatchingVO(String division, String address) {
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public MatchingVO(int Fac_ID,String Name, String addr, String time, String img) {
+		this.Fac_ID = Fac_ID;
+		this.name = Name;
+		this.address = addr;
+		this.weekday = time;
+		this.img = img;
 	}
 
 	public String getName() {

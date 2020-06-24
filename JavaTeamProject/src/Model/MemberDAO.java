@@ -166,7 +166,30 @@ import View.LoginGUI;
 		
 		
 	}
+
+	public int updatepoint(int remainpoint) {
 		
+		getConnection();
+		String sql = "update members set point=? where id=?";
+		int row = 0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, remainpoint);
+			pst.setString(2, logingui.controller.getLoginUser().getId() );
+
+			
+			row = pst.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return row;
+	}
+		
+		
+		
+	
 	}
 
 	

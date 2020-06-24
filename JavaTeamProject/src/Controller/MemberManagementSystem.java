@@ -58,6 +58,14 @@ public class MemberManagementSystem {
 		return cnt;
 	}
 
+	public int updatepoint(int remainpoint) {
+		
+		int cnt=dao.updatepoint(remainpoint);
+		
+		return cnt;
+		
+	}
+
 	
 		
 		
