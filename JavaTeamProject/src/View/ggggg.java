@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ScrollPaneConstants;
 
 public class ggggg {
 
@@ -40,11 +41,13 @@ public class ggggg {
 	private JComboBox<String> comboBox;
 	private String fc_name;
 	private JPanel panel;
+	private String index;
+	
 
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 360, 600);
+		frame.setBounds(100, 100, 400, 599);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		SpringLayout springLayout = new SpringLayout();
 //		frame.getContentPane().setLayout(springLayout);
@@ -52,27 +55,49 @@ public class ggggg {
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(99, 17, 106, 21);
-
-		comboBox.addItem("축구장");
+		
+		
+		comboBox.addItem("족구장");
 		comboBox.addItem("야구장");
 		comboBox.addItem("풋살경기장");
-		comboBox.addItem("족구장");
+		comboBox.addItem("축구장");
 		comboBox.addItem("농구장");
 		comboBox.addItem("배드맨턴장");
 		frame.getContentPane().add(comboBox);
+		
+		
 		list = dao.divide(comboBox.getSelectedItem().toString());
+		
+		comboBox.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+		            JComboBox cb = (JComboBox) e.getSource(); // 콤보박스 알아내
+//		            index = cb.getSelectedItem().toString();// 선택된 아이템의 인덱스
+//		      
+//		           System.out.println(index);
+		           list = dao.divide(cb.getSelectedItem().toString());
+		       }
+		  });
 
-//		if (comboBox.getSelectedItem().toString().equals("축구장")) {
-//			System.out.println(list.get(0).getName());
-//		}
 
+
+//		   list = dao.divide(comboBox.getSelectedItem().toString());
+//		   list = dao.divide(index);
+	
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 48, 700, 700);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(12, 48, 360 , 500 );
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		
+		
+
 
 		for (int i = 0; i < list.size(); i++) {
 
@@ -87,6 +112,7 @@ public class ggggg {
 		panel_7 = new JPanel();
 		panel.add(panel_7);
 		panel_7.setLayout(null);
+		panel_7.setPreferredSize(new Dimension(0, 150)); 
 
 		lb_closure = new JLabel("\uD734\uBB34");
 		lb_closure.setBounds(115, 72, 106, 39);
@@ -104,7 +130,7 @@ public class ggggg {
 		}
 
 		lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
-		lb_fcname.setBounds(0, 0, 106, 39);
+		lb_fcname.setBounds(0, 0, 300, 39);
 		panel_7.add(lb_fcname);
 		
 		lb_fcname.setText(list.get(i).getName());

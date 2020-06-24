@@ -116,7 +116,7 @@ public class ReservationDAO {
 
 
 
-	public String getphone() {
+	public String getphone(String fc_name) {
 		
 		getconnection();
 		
@@ -125,7 +125,7 @@ public class ReservationDAO {
 		
 		try {
 			pst= conn.prepareStatement(sql);
-			pst.setString(1,"풍영체육시설단지 축구장");
+			pst.setString(1,fc_name);
 			rs=pst.executeQuery();
 			
 			if(rs.next()) {
@@ -167,7 +167,7 @@ public class ReservationDAO {
 		return count;
 	}
 
-	public String getdivision() {
+	public String getdivision(String fc_name) {
 	
 		getconnection();
 			
@@ -176,7 +176,7 @@ public class ReservationDAO {
 			String division=null;
 			try {
 				pst= conn.prepareStatement(sql);
-				pst.setString(1,"풍영체육시설단지 축구장");
+				pst.setString(1,fc_name);
 				rs=pst.executeQuery();
 				
 				if(rs.next()) {
@@ -195,7 +195,7 @@ public class ReservationDAO {
 		
 	}
 
-	public String getclosure() {
+	public String getclosure(String fc_name) {
 		
 		getconnection();
 		
@@ -204,7 +204,7 @@ public class ReservationDAO {
 		String closure=null;
 		try {
 			pst= conn.prepareStatement(sql);
-			pst.setString(1,"풍영체육시설단지 축구장");
+			pst.setString(1,fc_name);
 			rs=pst.executeQuery();
 			
 			if(rs.next()) {
@@ -223,7 +223,7 @@ public class ReservationDAO {
 	
 }
 
-	public String getweekday() {
+	public String getweekday(String fc_name) {
 		
 		getconnection();
 
@@ -232,7 +232,7 @@ public class ReservationDAO {
 		String weekday = null;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "풍영체육시설단지 축구장");
+			pst.setString(1, fc_name);
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
@@ -250,7 +250,7 @@ public class ReservationDAO {
 	}
 
 
-	public String getweekend() {
+	public String getweekend(String fc_name) {
 		
 		getconnection();
 
@@ -259,7 +259,7 @@ public class ReservationDAO {
 		String weekend = null;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "풍영체육시설단지 축구장");
+			pst.setString(1,  fc_name);
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
@@ -277,7 +277,7 @@ public class ReservationDAO {
 		return weekend;
 	}
 
-	public String gethomepage() {
+	public String gethomepage(String fc_name) {
 		getconnection();
 
 		String sql = "select homepage from publics where name=?";
@@ -285,7 +285,7 @@ public class ReservationDAO {
 		String homepage = null;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "풍영체육시설단지 축구장");
+			pst.setString(1, fc_name);
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
@@ -303,7 +303,7 @@ public class ReservationDAO {
 		return homepage;
 	}
 
-	public String getpeople() {
+	public String getpeople(String fc_name) {
 		
 		getconnection();
 
@@ -312,7 +312,7 @@ public class ReservationDAO {
 		String people = null;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "풍영체육시설단지 축구장");
+			pst.setString(1, fc_name);
 			rs = pst.executeQuery();
 
 			if (rs.next()) {

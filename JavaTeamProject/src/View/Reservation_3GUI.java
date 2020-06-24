@@ -122,42 +122,42 @@ public class Reservation_3GUI {
 		
 		
 
-		JButton btnNewButton_1 = new JButton("\uD655\uC778");
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBackground(new Color(123, 104, 238));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				String body = textField_body.getText();
-				String title = textField_title.getText();
-				if (title.equals("") && body.equals("")) {
-
-					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-
-				} else {
-
-					int count = con.insert(con.getVo().getId(), cnt, title, body);
-					if (count > 0) {
-						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-					}
-
-					frame.dispose();
-
-				}
-
-			}
-		});
-		btnNewButton_1.setBounds(235, 487, 97, 23);
-		frame.getContentPane().add(btnNewButton_1);
-		
-		JButton btn_back = new JButton("<");
-		btn_back.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-			}
-		});
-		btn_back.setBounds(4, 34, 97, 23);
-		frame.getContentPane().add(btn_back);
+//		JButton btnNewButton_1 = new JButton("\uD655\uC778");
+//		btnNewButton_1.setForeground(new Color(255, 255, 255));
+//		btnNewButton_1.setBackground(new Color(123, 104, 238));
+//		btnNewButton_1.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				
+//				String body = textField_body.getText();
+//				String title = textField_title.getText();
+//				if (title.equals("") && body.equals("")) {
+//
+//					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+//
+//				} else {
+//
+//					int count = con.insert(con.getVo().getId(), cnt, title, body);
+//					if (count > 0) {
+//						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+//					}
+//
+//					frame.dispose();
+//
+//				}
+//
+//			}
+//		});
+//		btnNewButton_1.setBounds(235, 487, 97, 23);
+//		frame.getContentPane().add(btnNewButton_1);
+//		
+//		JButton btn_back = new JButton("<");
+//		btn_back.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//			}
+//		});
+//		btn_back.setBounds(4, 34, 97, 23);
+//		frame.getContentPane().add(btn_back);
 
 	}
 }
