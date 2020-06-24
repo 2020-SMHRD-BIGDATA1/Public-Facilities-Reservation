@@ -11,6 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+<<<<<<< HEAD
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
+=======
 
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
@@ -18,6 +26,7 @@ import Model.GradeDAO;
 import Model.GradeVO;
 import Model.MainVO;
 import Model.MemberDAO;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 import javax.swing.ImageIcon;
 
 public class PointGUI {
@@ -41,12 +50,15 @@ public class PointGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 235, 205));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 235, 205));
 		panel.setBackground(Color.WHITE);
 		panel.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(panel);

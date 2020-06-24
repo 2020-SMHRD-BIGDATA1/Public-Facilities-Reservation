@@ -22,7 +22,19 @@ import javax.swing.SwingConstants;
 
 import Model.MatchingDAO;
 import Model.MatchingVO;
+<<<<<<< HEAD
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+=======
 import Model.RoomMatchingVO;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 public class MatchingGUI {
 
@@ -43,6 +55,7 @@ public class MatchingGUI {
 	private void initialize() {
 
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -54,6 +67,7 @@ public class MatchingGUI {
 		JButton back_btn = new JButton("");
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 			}
 		});
 		back_btn.setSelectedIcon(new ImageIcon(MatchingGUI.class.getResource("/View/back.png")));
@@ -117,12 +131,13 @@ public class MatchingGUI {
 									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
 									System.out.println(list.get(i).getAddress());
 									panel1.add(jyp);
+									frame.setVisible(true);
 								}
 							}
 						}
 					}
 				}
-				frame.setVisible(true);
+				
 
 				for (int i = 0; i < list.size(); i++) {
 					for (int j = 0; j < infolist.size(); j++) {

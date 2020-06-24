@@ -20,6 +20,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Reservation_1GUI {
 	
@@ -49,6 +51,7 @@ public class Reservation_1GUI {
 	public Reservation_1GUI() {
 		initialize();
 		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
 	}
 
 	/**
@@ -56,15 +59,18 @@ public class Reservation_1GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
 		panel.setBounds(12, 78, 83, 421);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(5, 3, 0, 0));
 		
 		JLabel lblNewLabel_2 = new JLabel("\uB0A0\uC9DC ");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lb_date = new JLabel("000");
@@ -125,19 +131,27 @@ public class Reservation_1GUI {
 		
 		
 		JPanel panel_1 = new JPanel();
+<<<<<<< HEAD
+		panel_1.setBackground(new Color(230, 230, 250));
+		panel_1.setBounds(12, 22, 193, 37);
+=======
 		panel_1.setBounds(139, 22, 193, 37);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC815\uBCF4");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBounds(94, 78, 97, 421);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(5, 0, 0, 0));
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC694\uC77C");
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_5);
 		
 		JLabel lb_day = new JLabel("New label");
@@ -163,17 +177,21 @@ public class Reservation_1GUI {
 		lb_day3.setText(getDate(date3));
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(255, 255, 255));
 		panel_3.setBounds(189, 78, 143, 421);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(new GridLayout(5, 0, 0, 0));
 		
 		JLabel lblNewLabel_10 = new JLabel("\uC2DC\uAC04 ");
+		lblNewLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_10);
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(255, 255, 255));
 		panel_3.add(panel_4);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("16:00-18:00");
+		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -193,6 +211,7 @@ public class Reservation_1GUI {
 		panel_4.add(btnNewButton_1);
 		
 		JPanel panel_4_1 = new JPanel();
+		panel_4_1.setBackground(new Color(255, 255, 255));
 		panel_3.add(panel_4_1);
 		
 		JButton btnNewButton_2 = new JButton("New button");
@@ -204,6 +223,7 @@ public class Reservation_1GUI {
 		panel_4_1.add(btnNewButton_1_1);
 		
 		JPanel panel_4_2_1 = new JPanel();
+		panel_4_2_1.setBackground(new Color(255, 255, 255));
 		panel_3.add(panel_4_2_1);
 		
 		JButton btnNewButton_3_1 = new JButton("New button");
@@ -213,6 +233,7 @@ public class Reservation_1GUI {
 		panel_4_2_1.add(btnNewButton_1_2_1);
 		
 		JPanel panel_4_2 = new JPanel();
+		panel_4_2.setBackground(new Color(255, 255, 255));
 		panel_3.add(panel_4_2);
 		
 		JButton btnNewButton_3 = new JButton("New button");
@@ -221,6 +242,12 @@ public class Reservation_1GUI {
 		JButton btnNewButton_1_2 = new JButton("New button");
 		panel_4_2.add(btnNewButton_1_2);
 		
+
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uBCF4\uB77C\uBC30\uACBD.png"));
+		lblNewLabel_1.setBounds(0, 0, 344, 561);
+		frame.getContentPane().add(lblNewLabel_1);
+
 		JButton btn_back = new JButton("\uB4A4\uB85C");
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -229,6 +256,7 @@ public class Reservation_1GUI {
 		});
 		btn_back.setBounds(12, 22, 97, 23);
 		frame.getContentPane().add(btn_back);
+
 		frame.setBounds(100, 100,360,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
