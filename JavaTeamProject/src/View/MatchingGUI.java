@@ -107,7 +107,7 @@ public class MatchingGUI {
 				ArrayList<MatchingVO> list = dao.divide(comboBox.getSelectedItem().toString());
 				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
 				lmg_lbl.setBounds(0, 40, 100, 100);
-
+				
 				MyMatching matching = new MyMatching();
 				if (comboBox.getSelectedItem().toString().equals("√‡±∏¿Â")) {
 					for (int i = 0; i < list.size(); i++) {

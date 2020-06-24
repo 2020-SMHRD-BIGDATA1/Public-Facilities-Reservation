@@ -18,7 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Reservation_1updateGUI {
+public class ggggg {
 
 	private JFrame frame;
 	private JTable table;
@@ -42,7 +42,7 @@ public class Reservation_1updateGUI {
 	 * Launch the application.
 	 */
 
-	public Reservation_1updateGUI() {
+	public  ggggg () {
 		initialize();
 		frame.setVisible(true);
 	}
@@ -64,32 +64,14 @@ public class Reservation_1updateGUI {
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-
-
-//		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
-//		format_time1 = format1.format (System.currentTimeMillis());
-//		lb_date.setText(format_time1);
-
-		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
-		format_time1 = format1.format (System.currentTimeMillis());
-		ddate = format_time1;
 		
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 5; i++) {
 		
 			addItem();
-			day=day+i;
-			System.out.println(day);
 
 		}
 		
-		table.addMouseListener(new java.awt.event.MouseAdapter(){
-		 public void mouseClicked(java.awt.event.MouseEvent e){
-			 int row=table.rowAtPoint(e.getPoint());
-			 int col= table.columnAtPoint(e.getPoint());
-			 JOptionPane.showMessageDialog(null,"Value in the cell clicked :"+ ""+table.getValueAt(row,col).toString());
-			 System.out.println(" Value in the cell clicked :"+ " " +table.getValueAt(row,col).toString()); 
-		 }
-		});
+
 		
 	}
 	
