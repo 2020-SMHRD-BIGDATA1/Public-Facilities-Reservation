@@ -220,8 +220,10 @@ public class MyPageGUI {
 		btn예약확인.setBorderPainted(false);
 		btn예약확인.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				confirmGUI con = new confirmGUI();
-				con.view("");
+//				confirmGUI con = new confirmGUI();
+//				con.view("");
+				
+				tableUpdateGUI table =new tableUpdateGUI(); 
 			}
 		});
 		btn예약확인.setBounds(57, 406, 97, 41);

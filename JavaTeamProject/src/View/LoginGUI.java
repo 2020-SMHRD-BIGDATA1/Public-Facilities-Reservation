@@ -145,7 +145,8 @@ public class LoginGUI {
 				}else {
 					JOptionPane.showMessageDialog(frame, "로그인 실패",
 											"로그인 결과", JOptionPane.PLAIN_MESSAGE);
-					frame.setVisible(false);
+					frame.setVisible(true);
+				
 				} 
 			}
 			
