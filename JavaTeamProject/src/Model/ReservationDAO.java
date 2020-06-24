@@ -345,7 +345,6 @@ public class ReservationDAO {
 		
 			
 			if (rs.next()) {
-
 				int charge=rs.getInt("charge");
 			    charge1=(char)charge;
 			}

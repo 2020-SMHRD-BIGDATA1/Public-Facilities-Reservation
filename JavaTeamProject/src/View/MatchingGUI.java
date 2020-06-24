@@ -29,7 +29,6 @@ public class MatchingGUI {
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
 	private JComboBox comboBox;
-	private JComboBox comboBox_1;
 	private JLabel lmg_lbl;
 
 	public MatchingGUI() {
@@ -108,7 +107,7 @@ public class MatchingGUI {
 				ArrayList<MatchingVO> list = dao.divide(comboBox.getSelectedItem().toString());
 				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
 				lmg_lbl.setBounds(0, 40, 100, 100);
-
+				
 				MyMatching matching = new MyMatching();
 				if (comboBox.getSelectedItem().toString().equals("√‡±∏¿Â")) {
 					for (int i = 0; i < list.size(); i++) {
