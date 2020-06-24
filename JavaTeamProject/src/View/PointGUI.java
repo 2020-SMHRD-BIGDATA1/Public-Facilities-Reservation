@@ -109,6 +109,14 @@ public class PointGUI {
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\public_background1.png"));
 		lblNewLabel_3.setBounds(0, 0, 344, 561);
 		panel.add(lblNewLabel_3);
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(0, 10, 64, 38);
+		panel.add(btnNewButton_1);
 		
 		
 	}

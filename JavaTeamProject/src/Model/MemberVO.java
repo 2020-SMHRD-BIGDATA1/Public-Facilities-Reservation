@@ -37,11 +37,9 @@ public class MemberVO {
 
 
 
-
 	public MemberVO(String id) {
 		this.id = id;
 	}
-
 
 	public int getAge() {
 		return age;

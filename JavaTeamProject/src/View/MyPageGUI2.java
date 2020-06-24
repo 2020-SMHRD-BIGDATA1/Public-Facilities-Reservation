@@ -147,7 +147,7 @@ public class MyPageGUI2 {
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				frame.setVisible(false);
 				
 			
 			}
@@ -174,5 +174,14 @@ public class MyPageGUI2 {
 		lbPoint.setBounds(116, 392, 116, 15);
 		panel.add(lbPoint);
 		lbPoint.setText(controller.getpoint()+"");
+		
+		JButton btnback = new JButton("New button");
+		btnback.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnback.setBounds(0, 10, 41, 37);
+		panel.add(btnback);
 	}
 }

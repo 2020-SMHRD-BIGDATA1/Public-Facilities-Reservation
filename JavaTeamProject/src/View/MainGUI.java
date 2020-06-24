@@ -32,6 +32,11 @@ public class MainGUI {
 
 
 	MainDAO dao = new MainDAO();
+	
+	
+	
+	
+	
 
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
@@ -97,9 +102,7 @@ public class MainGUI {
 		btnBaseBall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
-			
-			
-			
+
 			
 			}
 		});

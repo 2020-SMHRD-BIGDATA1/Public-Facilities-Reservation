@@ -13,6 +13,8 @@ import Model.GradeDAO;
 import Model.GradeVO;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ReviewcheckGUI {
 
@@ -58,15 +60,15 @@ public class ReviewcheckGUI {
 		String gg2="¾È³ç";
 		String gg3="¾È³ç";
 		
-		ArrayList<GradeVO> result = dao.search(gg);
-		for (int i = 0; i < result.size(); i++) {
-			gg += result.get(i).getName();
-			gg2+=result.get(i).getRating();
-			gg3+=result.get(i).getReview();
-		}
-		output.setText("\uC2DC\uC124\uBA85");
-		
-		
+//		ArrayList<GradeVO> result = dao.search(gg);
+//		for (int i = 0; i < result.size(); i++) {
+//			gg += result.get(i).getName();
+//			gg2+=result.get(i).getRating();
+//			gg3+=result.get(i).getReview();
+//		}
+//		output.setText("\uC2DC\uC124\uBA85");
+//		
+//		
 		
 		
 		frame.getContentPane().add(output);
@@ -99,5 +101,14 @@ public class ReviewcheckGUI {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		lblNewLabel_1.setText(LoginGUI.controller.getLoginUser().getId()+"´Ô");
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(0, 10, 57, 44);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

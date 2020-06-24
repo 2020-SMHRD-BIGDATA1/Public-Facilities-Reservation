@@ -31,7 +31,6 @@ public class GradeGUI {
 		initialize();
 		frame.setVisible(true);
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -63,9 +62,11 @@ public class GradeGUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				
+				
 				String rating=input1.getText();
 				String review=input2.getText();
 				String id= LoginGUI.controller.getLoginUser().getId();
+				System.out.println(id);
 				String name= "fcname";
 				
 				GradeVO userReview= new GradeVO(id, name, rating, review);
@@ -74,8 +75,10 @@ public class GradeGUI {
 				dao.insert(userReview);
 				
 				ReviewcheckGUI reviews = new ReviewcheckGUI();
-		}});
-		btnNewButton_1.setBounds(58, 371, 106, 35);
+			}
+		});
+
+		btnNewButton_1.setBounds(65, 416, 102, 50);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uCDE8\uC18C");
@@ -92,5 +95,15 @@ public class GradeGUI {
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(12, 10, 48, 50);
+		frame.getContentPane().add(btnNewButton);
+
 	}
-}
+	}

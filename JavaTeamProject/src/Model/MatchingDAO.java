@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.ComboBoxEditor;
 import javax.swing.JComboBox;
@@ -15,10 +16,7 @@ public class MatchingDAO {
 	private Connection conn;
 	private PreparedStatement pst;
 	private ResultSet rs;
-	
-	
-	
-	
+
 	private void getConnection() {
 
 		// 1.JDBC드라이버 동적로딩
@@ -54,97 +52,126 @@ public class MatchingDAO {
 		}
 	}
 
+	public ArrayList<MatchingVO> divide(String place) {
+		ArrayList<MatchingVO> list = new ArrayList<MatchingVO>();
+		getConnection();
+		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, place);
+			rs = pst.executeQuery();
 
-	public String division(String place){
-		String result = "";
-		
-		getConnection();
-		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
-		
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setString(1,place);
-			rs = pst.executeQuery();
-			
-			if (rs.next()) {
-				result = rs.getString(1);
+			while (rs.next()) {
+				int Fac_ID = Integer.parseInt(rs.getString("Fac_ID"));
+				String Name = rs.getString("Name");
+				String addr = rs.getString("ADDRESS");
+				String time =rs.getString("WEEKDAY");
+				String img = rs.getString("IMG");
+				MatchingVO vo = new MatchingVO(Fac_ID,Name,addr,time,img);
+				list.add(vo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
-		
-		return result;
+		return list;
 	}
-	public String addr(String place){
-		String result = "";
-		
+	
+	public ArrayList<RoomMatchingVO> roomInfo() {
+		ArrayList<RoomMatchingVO> infolist = new ArrayList<RoomMatchingVO>();
 		getConnection();
-		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
-		
+		String sql = "SELECT * FROM MEMBERMACTCHING";
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1,place);
 			rs = pst.executeQuery();
-			
-			if (rs.next()) {
-				result = rs.getString(9);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		
-		return result;
-	}
-	public String time(String place){
-		String result = "";
-		
-		getConnection();
-		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
-		
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setString(1,place);
-			rs = pst.executeQuery();
-			
-			if (rs.next()) {
-				result = rs.getString(4);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		
-		return result;
-	}
 
-	public String img(String place) {
-		String result = "";
-		
-		getConnection();
-		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
-		
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setString(1,place);
-			rs = pst.executeQuery();
-			
-			if (rs.next()) {
-				result = rs.getString(12);
+			while (rs.next()) {
+				int Fac_ID = Integer.parseInt(rs.getString("Fac_ID"));
+				String ID = rs.getString("id");
+				String addnum = rs.getString("addnum");
+				String title =rs.getString("title");
+				String body = rs.getString("body");
+				RoomMatchingVO vo = new RoomMatchingVO(Fac_ID,ID,addnum,title,body);
+				infolist.add(vo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return result;
+		return infolist;
 	}
+	
+
+
+
+//	public String addr(String place) {
+//		String result = "";
+//
+//		getConnection();
+//		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+//
+//		try {
+//			pst = conn.prepareStatement(sql);
+//			pst.setString(1, place);
+//			rs = pst.executeQuery();
+//
+//			if (rs.next()) {
+//				result = rs.getString(9);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//
+//		return result;
+//	}
+//
+//	public String time(String place) {
+//		String result = "";
+//
+//		getConnection();
+//		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+//
+//		try {
+//			pst = conn.prepareStatement(sql);
+//			pst.setString(1, place);
+//			rs = pst.executeQuery();
+//
+//			if (rs.next()) {
+//				result = rs.getString(4);
+//			}
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//
+//		return result;
+//	}
+//
+//	public String img(String place) {
+//		String result = "";
+//
+//		getConnection();
+//		String sql = "SELECT * FROM PUBLICS WHERE DIVISION=?";
+//
+//		try {
+//			pst = conn.prepareStatement(sql);
+//			pst.setString(1, place);
+//			rs = pst.executeQuery();
+//
+//			if (rs.next()) {
+//				result = rs.getString(12);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return result;
+//	}
 }
