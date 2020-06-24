@@ -17,8 +17,9 @@ create table Publics(
 
 drop table publics
 
-
+drop table Ratings;
 create table Ratings(
+id varchar(30),
 	Name varchar(30),
 	Rating varchar(5),
 	Review varchar(1000));
@@ -45,8 +46,12 @@ insert into MEMBERMACTCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
 select * from MemberMactching;
 select * from members;
 select * from Publics;
+<<<<<<< HEAD
+=======
+select * from members;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
-drop table members;
+drop table reservation;
 create table MEMBERS(
 	id varchar(20),
 	pw varchar(20),
@@ -56,7 +61,10 @@ create table MEMBERS(
 	address varchar(60),
 	mail varchar(100),
 	point NUMBER(30));
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
@@ -66,6 +74,28 @@ UPDATE MEMBERS SET pw = 1234, name = '하하하', age = 27, PHONE = '010-5555-6666'
 
 delete members where id='12';
 	
+CREATE TABLE reservations(
+FC_NAME varchar2(30),
+TIMESLOT VARCHAR2(30));
+insert into reservations values('각화풋살장',
+'6,8,10,12,14,16,18');
 
+<<<<<<< HEAD
 select * from members;
+=======
+select * from ratings;
+
+create table reservation(
+    user_id varchar(20),
+    fac_id varchar(20),
+	fac_name varchar(20),
+	usedate varchar(20),
+	usetime varchar(20),
+	fee varchar(20)
+
+)
+
+
+
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 

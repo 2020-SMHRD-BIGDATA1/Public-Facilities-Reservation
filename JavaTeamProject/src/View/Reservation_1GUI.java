@@ -178,7 +178,7 @@ public class Reservation_1GUI {
 			public void actionPerformed(ActionEvent e) {
 			
 			Reservation_2GUI RE2= new Reservation_2GUI();
-				
+			frame.dispose();	
 			
 			}
 		});

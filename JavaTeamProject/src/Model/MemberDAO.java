@@ -6,10 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Controller.Reservation_1Controller;
+import View.LoginGUI;
+
 	public class MemberDAO {
 		private Connection conn;
 		private PreparedStatement pst;
 		private ResultSet rs;
+		LoginGUI logingui = new LoginGUI();
+		Reservation_1Controller re_controller =new Reservation_1Controller();
+		
+		
 		
 		private void close() {
 			try {
@@ -47,14 +54,20 @@ import java.sql.SQLException;
 		try {
 			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, user.getID());
+			pst.setString(1, user.getId());
 			pst.setString(2, user.getPw());
 			rs = pst.executeQuery();
 			
 			if(rs.next()) {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
-				loginUser = new MemberVO(id, pw);						
+				String name=rs.getString("name");
+				int age =rs.getInt("age");
+				String phone=rs.getString("phone");
+				String address=rs.getString("address");
+				String mail=rs.getString("mail");
+			
+				loginUser = new MemberVO(id, pw, name, age, phone, address, mail);						
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -70,7 +83,7 @@ import java.sql.SQLException;
 		int row = 0;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, joinUser.getID());
+			pst.setString(1, joinUser.getId());
 			pst.setString(2,  joinUser.getPw());
 			pst.setString(3, joinUser.getName());
 			pst.setInt(4, joinUser.getAge());
@@ -130,12 +143,55 @@ import java.sql.SQLException;
 		}
 			return cid;
 	}
+
+	public  int insertpoint(int point) {
+		getConnection();
+		String sql = "update members set point=?  where id=?";
+	int row=0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, point+re_controller.getpoint());
+			pst.setString(2, logingui.controller.getLoginUser().getId() );
 	
-}
+			row = pst.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
 	
+		return row;
+		
+		
+		
+		
+	}
+
+	public int updatepoint(int remainpoint) {
+		
+		getConnection();
+		String sql = "update members set point=? where id=?";
+		int row = 0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, remainpoint);
+			pst.setString(2, logingui.controller.getLoginUser().getId() );
+
+			
+			row = pst.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return row;
+	}
+		
+		
+		
 	
-	
-	
+	}
+
 	
 				
 					

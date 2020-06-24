@@ -1,18 +1,23 @@
 package View;
 
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import Controller.Reservation_1Controller;
+import Model.GradeDAO;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import javax.swing.JTabbedPane;
 
 public class FCdetailGUI {
 
@@ -37,8 +42,38 @@ public class FCdetailGUI {
 	/**
 	 * Create the application.
 	 */
+	
+	JLabel lb_fcname;
+	GradeDAO dao=new GradeDAO();
 	public FCdetailGUI() {
 		initialize();
+		frame.setVisible(true);
+		lb_fcname.setText("°¢È­Ç²»ìÀå");
+
+				
+		JPanel panel_table = new JPanel();
+		panel_table.setBounds(12, 433, 320, 61);
+		frame.getContentPane().add(panel_table);
+		
+		String[] headings = new String[] {"¾ÆÀÌµð","ÆòÁ¡","¸®ºä"};
+		Object[][] data = new Object[][] {
+			{con.getVo().getId(),dao.search("°¢È­Ç²»ìÀå").getRating(),dao.search("°¢È­Ç²»ìÀå").getReview()}
+		};
+		
+		
+		JTable table = new JTable(data,headings);
+		table.setPreferredScrollableViewportSize(new Dimension(360,61));
+		
+		table.setFillsViewportHeight(true);
+		
+		panel_table.add(new JScrollPane(table));
+		
+		JLabel lblNewLabel_5 = new JLabel("\uB9AC\uBDF0");
+		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_5.setBounds(12, 412, 132, 27);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		
 	}
 	Reservation_1Controller con= new Reservation_1Controller();
 
@@ -51,13 +86,13 @@ public class FCdetailGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\uC2DC\uC124\uBA85");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel.setBounds(12, 10, 167, 38);
-		frame.getContentPane().add(lblNewLabel);
+	    lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
+		lb_fcname.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lb_fcname.setBounds(12, 10, 167, 38);
+		frame.getContentPane().add(lb_fcname);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 255, 320, 223);
+		panel.setBounds(12, 184, 320, 223);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(8, 2, 0, 0));
 		
@@ -130,7 +165,7 @@ public class FCdetailGUI {
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC2DC\uC124\uC124\uBA85");
 		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel_5.setBounds(12, 70, 132, 27);
+		lblNewLabel_5.setBounds(12, 158, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("\uC608\uC57D");
@@ -141,11 +176,11 @@ public class FCdetailGUI {
 				
 			}
 		});
-		btnNewButton.setBounds(235, 503, 97, 23);
+		btnNewButton.setBounds(235, 517, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
-		lblNewLabel_1.setBounds(12, 107, 320, 138);
+		lblNewLabel_1.setBounds(12, 47, 320, 101);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
 }

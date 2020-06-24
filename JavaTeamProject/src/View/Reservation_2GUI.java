@@ -15,7 +15,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 
+import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
+
+
 import java.text.SimpleDateFormat;
 
 
@@ -25,15 +28,16 @@ public class Reservation_2GUI {
 	int point=0;
 	JLabel lb_remainpoint;
 	private int remainpoint;
-	
+	MemberManagementSystem controller= new MemberManagementSystem();
 	Reservation_1Controller con= new Reservation_1Controller();
 	public Reservation_2GUI() {
 		initialize();
 		frame.setVisible(true);
 	
 	}
-
 	
+	
+	private MemberManagementSystem MMCON=LoginGUI.controller;
 	
 	private void initialize() {
 		frame = new JFrame();
@@ -58,6 +62,8 @@ public class Reservation_2GUI {
 		JLabel lb_name = new JLabel("New label");
 		panel.add(lb_name);
 		
+//		lb_name.setText(MMCON.getLoginUser().getId());
+	
 	
 		JLabel lblNewLabel_7 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_7.setFont(new Font("굴림", Font.BOLD, 12));
@@ -197,7 +203,7 @@ public class Reservation_2GUI {
 		btn_charge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				PointGUI pointgui= new PointGUI();
 			}
 		});
 		panel_2.add(btn_charge);
@@ -236,6 +242,15 @@ public class Reservation_2GUI {
 //						main main= new main();
 						
 						System.out.println("예약 성공");
+						int cnt=controller.updatepoint(remainpoint);
+						
+						if(cnt>0) {
+							System.out.println("포인트 업데이트 성공");
+						}else {
+							System.out.println("포인트 업데이트 실패");
+						}
+						
+						frame.dispose();
 					
 					}else {
 						JOptionPane.showMessageDialog(frame, "예약 실패","예약신청결과",JOptionPane.PLAIN_MESSAGE);

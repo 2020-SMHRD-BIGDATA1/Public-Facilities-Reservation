@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import View.LoginGUI;
+
 public class MainDAO {
 
 	private Connection conn;
@@ -70,7 +72,7 @@ public class MainDAO {
 			pst.setString(4, vo.getPhone());
 			pst.setString(5, vo.getMail());
 			pst.setString(6, vo.getAddress());
-			pst.setString(7, vo.getId());
+			pst.setString(7,LoginGUI.controller.getLoginUser().getId());
 			
 			cnt =pst.executeUpdate();
 			

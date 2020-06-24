@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import Controller.Reservation_1Controller;
+import Model.fcnamevo;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -80,6 +81,12 @@ public class InventoryGUI {
 		name_lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		name_lbl.setBounds(0, 0, 70, 21);
 		panel1.add(name_lbl);
+		name_lbl.setText("∞¢»≠«≤ªÏ¿Â");
+		String fcname=name_lbl.getText();
+		fcnamevo vo= new fcnamevo(fcname);
+		
+		con.fcname(vo);
+		
 		
 		charge_lbl = new JLabel("\uC720\uB8CC/\uBB34\uB8CC");
 		charge_lbl.setHorizontalAlignment(SwingConstants.CENTER);
@@ -98,15 +105,15 @@ public class InventoryGUI {
 		
 		charge_lbl.setText(str);
 		
-		resrveation_btn = new JButton("\uC608\uC57D");
+		resrveation_btn = new JButton("\uB354\uBCF4\uAE30");
 		resrveation_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Reservation_1GUI re1=new Reservation_1GUI();
+				FCdetailGUI fcgui= new FCdetailGUI();
 				
 			}
 		});
-		resrveation_btn.setBounds(249, 40, 59, 52);
+		resrveation_btn.setBounds(225, 40, 83, 52);
 		panel1.add(resrveation_btn);
 		
 		closure_lbl = new JLabel("\uD734\uAD00\uC77C");

@@ -25,24 +25,10 @@ public class GradeGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GradeGUI window = new GradeGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
 	public GradeGUI() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -54,7 +40,7 @@ public class GradeGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\uC885\uD569\uC6B4\uB3D9\uC7A5 \uB9AC\uBDF0/\uD3C9\uC810");
+		JLabel lblNewLabel = new JLabel("\uB9AC\uBDF0/\uD3C9\uC810");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(65, 70, 205, 44);
 		frame.getContentPane().add(lblNewLabel);
@@ -71,14 +57,26 @@ public class GradeGUI {
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ReviewcheckGUI reviews = new ReviewcheckGUI();
+<<<<<<< HEAD
+=======
 				
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 				String rating=input1.getText();
 				String review=input2.getText();
+				String id= LoginGUI.controller.getLoginUser().getId();
+				System.out.println(id);
+				String name= "fcname";
 				
-				GradeVO userReview=new GradeVO("¾È³ç",rating, review);
+				GradeVO userReview= new GradeVO(id, name, rating, review);
+				
 				GradeDAO dao = new GradeDAO();
 				dao.insert(userReview);
+				
+				ReviewcheckGUI reviews = new ReviewcheckGUI();
+<<<<<<< HEAD
+				
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		}});
 		btnNewButton_1.setBounds(65, 416, 102, 50);
 		frame.getContentPane().add(btnNewButton_1);
@@ -95,5 +93,14 @@ public class GradeGUI {
 		JLabel lblNewLabel_2 = new JLabel("\uD3C9\uC810");
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(12, 10, 48, 50);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

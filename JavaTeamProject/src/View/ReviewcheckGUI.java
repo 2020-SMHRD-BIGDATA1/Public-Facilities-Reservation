@@ -8,8 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import Controller.GradeController;
+import Controller.Reservation_1Controller;
 import Model.GradeDAO;
 import Model.GradeVO;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ReviewcheckGUI {
 
@@ -19,8 +23,8 @@ public class ReviewcheckGUI {
 	private GradeController controller;
 	private String gg = null; 
 	
-
-	
+	Reservation_1Controller re_controller= new Reservation_1Controller();
+	GradeDAO dao= new GradeDAO();
 	public ReviewcheckGUI() {
 		initialize();
 		
@@ -46,34 +50,35 @@ public class ReviewcheckGUI {
 		
 		JLabel output = new JLabel("New label");
 		output.setHorizontalAlignment(SwingConstants.CENTER);
-		output.setBounds(27, 150, 38, 201);
+		output.setBounds(28, 150, 38, 201);
 		
 		GradeDAO dao = new GradeDAO();
 		String gg = "¾È³ç";
 		String gg2="¾È³ç";
 		String gg3="¾È³ç";
 		
-		ArrayList<GradeVO> result = dao.search(gg);
-		for (int i = 0; i < result.size(); i++) {
-			gg += result.get(i).getName();
-			gg2+=result.get(i).getRating();
-			gg3+=result.get(i).getReview();
-		}
-		output.setText("<html>"+gg+"<br/></html>");
-		
-		
+//		ArrayList<GradeVO> result = dao.search(gg);
+//		for (int i = 0; i < result.size(); i++) {
+//			gg += result.get(i).getName();
+//			gg2+=result.get(i).getRating();
+//			gg3+=result.get(i).getReview();
+//		}
+//		output.setText("\uC2DC\uC124\uBA85");
+//		
+//		
 		
 		
 		frame.getContentPane().add(output);
 		
 		JLabel output2 = new JLabel("New label");
 		output2.setHorizontalAlignment(SwingConstants.CENTER);
-		output2.setBounds(85, 144, 43, 212);
+		output2.setBounds(113, 153, 43, 194);
 				
 		frame.getContentPane().add(output2);
 		
-		output2.setText("<html>"+gg2+"<br/></html>");
+		output2.setText("RATING");
 		
+		output2.setText(dao.select().getRating());
 		
 		
 		JLabel output3 = new JLabel("New label");
@@ -81,10 +86,23 @@ public class ReviewcheckGUI {
 		output3.setBounds(158, 147, 162, 206);
 		frame.getContentPane().add(output3);
 		
-		output3.setText("<html>"+gg3+"<br/></html>");
+		output3.setText("REVIEW");
 		
+		output3.setText(dao.select().getReview());
 		
+		JLabel lblNewLabel_1 = new JLabel("ID");
+		lblNewLabel_1.setBounds(25, 132, 57, 15);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		lblNewLabel_1.setText(LoginGUI.controller.getLoginUser().getId()+"´Ô");
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(0, 10, 57, 44);
+		frame.getContentPane().add(btnNewButton);
 	}
-		
-		
 }
