@@ -48,7 +48,17 @@ public class MemberManagementSystem {
 		return dao.check_id(id);
 		
 	}
+
+	
+	public int insertpoint(int point) {
+
+		int cnt=dao.insertpoint(point);
 		
+	
+		return cnt;
+	}
+
+	
 		
 		
 	

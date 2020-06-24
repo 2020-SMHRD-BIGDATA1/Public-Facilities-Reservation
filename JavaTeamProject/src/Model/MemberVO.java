@@ -25,7 +25,14 @@ public class MemberVO {
 		this.pw = pw;
 	}
 	
-	
+	public MemberVO(String pw, String name, int age, String phone, String address, String mail){
+		this.pw = pw;
+		this.name = name;
+		this.age = age;
+		this.phone = phone;
+		this.address = address;
+		this.mail = mail;
+	}
 
 
 
@@ -34,6 +41,7 @@ public class MemberVO {
 	public MemberVO(String id) {
 		this.id = id;
 	}
+
 
 	public int getAge() {
 		return age;

@@ -7,10 +7,18 @@ public class MainVO {
 	private String name;
 	private String age;
 	private String phone;
+
+	private String point;
+	public MainVO() {
+		
+	}
+
 	private String address;
 	private String mail;
+	
+	
 	public MainVO(String id, String pw, String name, String age, String phone, String address, String mail) {
-		
+
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -20,6 +28,9 @@ public class MainVO {
 		this.mail = mail;
 	}
 	
+
+	
+
 	public String getId() {
 		return id;
 	}

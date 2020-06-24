@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import View.LoginGUI;
+
 public class GradeDAO {
 	int cnt = 0;
 
@@ -50,11 +52,12 @@ public class GradeDAO {
 	
 
 	public static ArrayList<GradeVO> selectAll() {
-		ArrayList<GradeVO> list = new ArrayList<GradeVO>();
+//		ArrayList<GradeVO> list = new ArrayList<GradeVO>();
 		getConnection();
 		try {
-			String sql = "select*from Ratings";
+			String sql = "select*from Ratings where id=?";
 			pst = conn.prepareStatement(sql);
+			pst.setString(1,LoginGUI.controller.getLoginUser().getId());
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
@@ -62,9 +65,8 @@ public class GradeDAO {
 				String rating = rs.getString("Rating");
 				String review = rs.getString("Review");
 				GradeVO vo = new GradeVO(rating, review);
-				list.add(vo);
+//				list.add(vo);
 
-	
 			}} catch (SQLException e) {
 
 				e.printStackTrace();
@@ -76,14 +78,15 @@ public class GradeDAO {
 		}
 public int insert(GradeVO userReview) {
 	getConnection();// ¿¬°á
-	String sql="insert into Ratings values(?,?,?)";
+	String sql="insert into Ratings values(?,?,?,?)";
 	int row=0;
 	try {
 		pst=conn.prepareStatement(sql);
 		
-		pst.setString(1, userReview.getName());
-		pst.setString(2, userReview.getRating());
-		pst.setString(3, userReview.getReview());
+		pst.setString(1, userReview.getId());
+		pst.setString(2, userReview.getName());
+		pst.setString(3, userReview.getRating());
+		pst.setString(4, userReview.getReview());
 		row=pst.executeUpdate();
 		
 	}catch(Exception e) {
@@ -109,8 +112,10 @@ public ArrayList<GradeVO> search(String gg) {
 			String name = rs.getString(1);
 			String rating = rs.getString(2);
 			String review = rs.getString(3);
+			String id= LoginGUI.controller.getLoginUser().getId();
 			
-			result = new GradeVO(name, rating, review);
+			
+			result = new GradeVO(id,name, rating, review);
 			list.add(result);
 		}
 	} catch (SQLException e) {
@@ -124,5 +129,29 @@ public ArrayList<GradeVO> search(String gg) {
 	return list;
 
 }
+public static GradeVO select() {
+	GradeVO vo = null;
+	getConnection();
+	try {
+		String sql = "select*from Ratings where id=?";
+		pst = conn.prepareStatement(sql);
+		pst.setString(1,LoginGUI.controller.getLoginUser().getId());
+		rs = pst.executeQuery();
 
+		while (rs.next()) {
+			String name = rs.getString("Name");
+			String rating = rs.getString("Rating");
+			String review = rs.getString("Review");
+			 vo = new GradeVO(rating, review);
+
+
+		}} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+
+		return vo;
+	}
 }
