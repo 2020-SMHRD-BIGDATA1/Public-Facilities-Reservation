@@ -13,6 +13,8 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class FCdetailGUI {
 
@@ -47,6 +49,7 @@ public class FCdetailGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100,360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -57,6 +60,7 @@ public class FCdetailGUI {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
 		panel.setBounds(12, 255, 320, 223);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(8, 2, 0, 0));
@@ -134,6 +138,9 @@ public class FCdetailGUI {
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("\uC608\uC57D");
+		btnNewButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(106, 90, 205));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -145,6 +152,7 @@ public class FCdetailGUI {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
+		lblNewLabel_1.setFont(new Font("HY견명조", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(12, 107, 320, 138);
 		frame.getContentPane().add(lblNewLabel_1);
 	}

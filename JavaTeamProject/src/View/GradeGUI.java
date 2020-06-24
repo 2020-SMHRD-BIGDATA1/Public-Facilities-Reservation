@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 
 import Model.GradeDAO;
 import Model.GradeVO;
+import java.awt.Toolkit;
 
 public class GradeGUI {
 
@@ -50,6 +51,7 @@ public class GradeGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

@@ -1,12 +1,12 @@
 package View;
 
-import java.awt.EventQueue;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,8 +42,11 @@ public class MainGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 360, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(12, 10, 320, 541);
@@ -123,4 +126,9 @@ public class MainGUI {
 		panel.add(textField);
 		textField.setColumns(10);
 	}
-}
+	
+	}
+
+	
+	
+
