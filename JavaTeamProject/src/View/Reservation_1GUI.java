@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class Reservation_1GUI {
 	
@@ -220,6 +221,11 @@ public class Reservation_1GUI {
 		
 		JButton btnNewButton_1_2 = new JButton("New button");
 		panel_4_2.add(btnNewButton_1_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uBCF4\uB77C\uBC30\uACBD.png"));
+		lblNewLabel_1.setBounds(0, 0, 344, 561);
+		frame.getContentPane().add(lblNewLabel_1);
 		frame.setBounds(100, 100,360,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
