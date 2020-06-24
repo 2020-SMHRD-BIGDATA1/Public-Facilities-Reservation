@@ -83,17 +83,17 @@ insert into reservations values('각화풋살장',
 <<<<<<< HEAD
 select * from members;
 =======
-select * from ratings;
+select * from reservation;
 
-
+drop table reservation;
 create table reservation(
-    user_id varchar2(20),
-    fac_id varchar2(20),
-	fac_name varchar2(20),
-	reserdate varchar2(20),
-	usedate varchar2(20),
-	usetime varchar2(20),
-	fee varchar2(20)
+    user_id varchar2(200),
+    fac_id varchar2(200),
+	fac_name varchar2(200),
+	reserdate varchar2(200),
+	usedate varchar2(200),
+	usetime varchar2(200),
+	fee varchar2(200)
 
 )
 
@@ -113,4 +113,4 @@ insert into test values('있어라','04:00~06:00');
 
 >>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
-select * from test;
+select * from reservation;

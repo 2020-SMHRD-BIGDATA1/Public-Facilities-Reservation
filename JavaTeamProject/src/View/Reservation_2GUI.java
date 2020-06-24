@@ -60,8 +60,11 @@ public class Reservation_2GUI {
 		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_2);
 
-		JLabel lb_name = new JLabel("New label");
-		panel.add(lb_name);
+		JLabel lb_fcname = new JLabel("New label");
+		panel.add(lb_fcname);
+		String fac_name= "fcname 가져와야되";
+		lb_fcname.setText(fac_name);
+		
 		
 //		lb_name.setText(MMCON.getLoginUser().getId());
 	
@@ -92,15 +95,19 @@ public class Reservation_2GUI {
 		lblNewLabel_5.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		panel.add(lblNewLabel_1);
+		JLabel lb_usedate = new JLabel("New label");
+		panel.add(lb_usedate);
+		String usedate="가져와야되";
+		lb_usedate.setText(usedate);
 		
 		JLabel lblNewLabel_6 = new JLabel("\uC774\uC6A9\uC2DC\uAC04");
 		lblNewLabel_6.setFont(new Font("굴림", Font.BOLD, 12));
 		panel.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_10 = new JLabel("New label");
-		panel.add(lblNewLabel_10);
+		JLabel lb_usetime = new JLabel("New label");
+		panel.add(lb_usetime);
+		String usetime = "100:00~200:00";
+		lb_usetime.setText(usetime);
 		
 		JLabel lb_charge = new JLabel("\uC774\uC6A9\uB8CC");
 		lb_charge.setFont(new Font("굴림", Font.BOLD, 12));
@@ -242,8 +249,17 @@ public class Reservation_2GUI {
 
 			public void actionPerformed(ActionEvent e) {
 				
+//				String fac_id=con.getfac_id(fac_name);
+				String fac_id="1";
+			    String	user_id=LoginGUI.controller.getLoginUser().getId();
 				
-					if (remainpoint>0) {
+			    ReserVO revo= new ReserVO(user_id, fac_id, fac_name, format_time1, usedate, usetime, (fee+""));
+				
+				int cnt1=con.insertreservation(revo);
+				
+				
+				
+					if (remainpoint>0 && cnt1>0 ) {
 						JOptionPane.showMessageDialog(frame, "예약 성공","예약신청결과",JOptionPane.PLAIN_MESSAGE);
 						
 //						main main= new main();
@@ -255,10 +271,10 @@ public class Reservation_2GUI {
 							System.out.println("포인트 업데이트 성공");
 						}else {
 							System.out.println("포인트 업데이트 실패");
+							
 						}
-						ReserVO revo= new ReserVO(user_id, fac_id, fac_name, format_time1+"", usetime, fee);
 						
-						con.insertreservation();
+//						
 						
 						frame.dispose();
 					
