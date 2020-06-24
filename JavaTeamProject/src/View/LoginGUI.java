@@ -22,6 +22,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.Toolkit;
 
 public class LoginGUI {
 
@@ -59,76 +60,66 @@ public class LoginGUI {
 	private void initialize() {
 		
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 360, 600);
+		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 344, 561);
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setBounds(0, -25, 434, 586);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 38, 324, 200);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\33.png"));
+		lblNewLabel_1.setBounds(110, 132, 207, 63);
+		panel.add(lblNewLabel_1);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(10, 350, 324, 40);
-		
-		JLabel lblNewLabel = new JLabel("\uB85C\uADF8\uC778 \uBA54\uC778\uD654\uBA74(\uB85C\uACE0)");
-		lblNewLabel.setBounds(0, 0, 324, 200);
-		panel_1.add(lblNewLabel);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(10, 396, 324, 40);
-		panel_2.setLayout(null);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(0, 0, 105, 80);
-		panel_2.add(panel_4);
-		panel_4.setLayout(null);
-		
-		JLabel lbl_id = new JLabel("ID");
-		lbl_id.setBounds(0, 0, 105, 40);
-		panel_4.add(lbl_id);
-		lbl_id.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
-		lbl_id.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		inputID = new JTextField();
-		inputID.setBounds(105, 0, 195, 40);
-		panel_2.add(inputID);
-		inputID.setColumns(10);
-		panel.add(panel_3);
-		panel_3.setLayout(null);
-		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 105, 80);
-		panel_3.add(panel_5);
-		panel_5.setLayout(null);
-		
-		JLabel lbl_pw = new JLabel("PW");
-		lbl_pw.setBounds(0, 0, 105, 40);
-		panel_5.add(lbl_pw);
-		lbl_pw.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
-		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(20, 495, 95, 40);
-		panel.add(panel_6);
-		
-		JPanel panel_6_1 = new JPanel();
-		panel_6_1.setBounds(228, 495, 95, 40);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\22.png"));
+		lblNewLabel.setBounds(20, 43, 108, 79);
+		panel.add(lblNewLabel);
 		
 		inputPW = new JPasswordField();
-		inputPW.setBounds(105, 0, 195, 40);
-		panel_3.add(inputPW);
-		panel_6.setLayout(null);
+		inputPW.setBounds(272, 258, 150, 30);
+		panel.add(inputPW);
+		
+		JLabel lbl_id = new JLabel("ID");
+		lbl_id.setBounds(182, 219, 118, 29);
+		panel.add(lbl_id);
+		lbl_id.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_id.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
+		
+		inputID = new JTextField();
+		inputID.setToolTipText("");
+		inputID.setBounds(272, 218, 150, 30);
+		panel.add(inputID);
+		inputID.setColumns(10);
+		
+		JButton btn_Join = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btn_Join.setForeground(new Color(255, 255, 255));
+		btn_Join.setBackground(new Color(135, 206, 250));
+		btn_Join.setBounds(296, 526, 80, 30);
+		panel.add(btn_Join);
+		btn_Join.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JoinGUI join = new JoinGUI();
+			}
+		});
+		btn_Join.setFont(new Font("굴림", Font.PLAIN, 11));
+		
+		
 		
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
+		btn_Login.setBounds(59, 526, 80, 30);
+		panel.add(btn_Login);
+		btn_Login.setFont(new Font("한컴 고딕", Font.BOLD, 12));
+		btn_Login.setForeground(new Color(255, 255, 255));
+		btn_Login.setBackground(new Color(135, 206, 250));
 		btn_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -145,33 +136,29 @@ public class LoginGUI {
 				}else {
 					JOptionPane.showMessageDialog(frame, "로그인 실패",
 											"로그인 결과", JOptionPane.PLAIN_MESSAGE);
-					frame.setVisible(false);
+					frame.setVisible(true);
+				
 				} 
 			}
 			
 		
 		});
-		btn_Login.setBounds(0, 0, 95, 40);
-		panel_6.add(btn_Login);
-		panel.add(panel_6_1);
-		panel_6_1.setLayout(null);
 		
-		JButton btn_Join = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btn_Join.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JoinGUI join = new JoinGUI();
-			}
-		});
-		btn_Join.setBounds(0, 0, 95, 40);
-		panel_6_1.add(btn_Join);
-		btn_Join.setFont(new Font("굴림", Font.PLAIN, 11));
+		JLabel lbl_pw = new JLabel("PW");
+		lbl_pw.setBounds(182, 258, 117, 30);
+		panel.add(lbl_pw);
+		lbl_pw.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
+		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\이미지\\images.jpg";
+		String path = "C:\\Users\\SMHRD\\Desktop\\image\\login.jpg";
 		
-		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(path));
-		lblNewLabel_1.setBounds(0, 0, 324, 200);
-		panel_1.add(lblNewLabel_1);
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(panel_2);
+		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(path));
+		lblNewLabel_2.setBounds(20, 446, 95, 40);
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\real1.jpg"));
+		lblNewLabel_3.setBounds(0, 25, 434, 561);
+		panel.add(lblNewLabel_3);
 	}
 }

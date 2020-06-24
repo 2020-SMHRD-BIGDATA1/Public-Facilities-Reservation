@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.ReserVO;
 import Model.ReservationDAO;
 import Model.fcnamevo;
 import Model.reservationvo;
@@ -108,10 +109,24 @@ public class Reservation_1Controller {
 
 
 
-	public void insertreservation() {
+	public int insertreservation(ReserVO revo) {
 		
-		dao.insertReservation();
+		int cnt=dao.insertReservation(revo);
 		
+		return cnt;
+	}
+
+
+
+
+
+
+
+	public String getfac_id(String fac_name) {
+	  
+		String fac_id =dao.getfac_id(fac_name);
+		
+		return fac_id;
 	}
 
 }

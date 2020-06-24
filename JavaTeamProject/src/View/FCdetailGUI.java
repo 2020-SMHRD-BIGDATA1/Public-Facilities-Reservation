@@ -16,8 +16,14 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+<<<<<<< HEAD
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.UIManager;
+=======
 import javax.swing.JTable;
 import javax.swing.JTabbedPane;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 public class FCdetailGUI {
 
@@ -81,7 +87,10 @@ public class FCdetailGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(240, 255, 255));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100,360, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -91,11 +100,12 @@ public class FCdetailGUI {
 		frame.getContentPane().add(lb_fcname);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 184, 320, 223);
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setBounds(12, 255, 320, 223);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(8, 2, 0, 0));
 		
-		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uC124\uAD6C\uBD84");
+		JLabel lblNewLabel_2 = new JLabel(" \uC2DC\uC124\uAD6C\uBD84");
 		lblNewLabel_2.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lblNewLabel_2);
 		
@@ -104,7 +114,7 @@ public class FCdetailGUI {
 		
 		lb_division.setText(con.getvision());
 		
-		JLabel lblNewLabel_4 = new JLabel("\uC774\uC6A9\uC2DC\uAC04");
+		JLabel lblNewLabel_4 = new JLabel(" \uC774\uC6A9\uC2DC\uAC04");
 		lblNewLabel_4.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lblNewLabel_4);
 		
@@ -129,7 +139,7 @@ public class FCdetailGUI {
 		JLabel lb_weekend_1 = new JLabel("\uC8FC\uB9D0 8:00~23:00");
 		panel.add(lb_weekend_1);
 		
-		JLabel lb_1 = new JLabel("\uCD5C\uB300 \uC218\uC6A9\uC778\uC6D0");
+		JLabel lb_1 = new JLabel(" \uCD5C\uB300 \uC218\uC6A9\uC778\uC6D0");
 		lb_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lb_1);
 		
@@ -139,14 +149,14 @@ public class FCdetailGUI {
 		lb_people.setText(con.getpeople());
 		
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("\uC804\uD654\uBC88\uD638");
+		JLabel lblNewLabel_1_1_1 = new JLabel(" \uC804\uD654\uBC88\uD638");
 		lblNewLabel_1_1_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lblNewLabel_1_1_1);
 		
 		JLabel lb_phone = new JLabel("062-960-8723");
 		panel.add(lb_phone);
 		
-		JLabel lblNewLabel_1_1_3_1 = new JLabel("\uD648\uD398\uC774\uC9C0");
+		JLabel lblNewLabel_1_1_3_1 = new JLabel(" \uD648\uD398\uC774\uC9C0");
 		lblNewLabel_1_1_3_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lblNewLabel_1_1_3_1);
 		
@@ -155,7 +165,7 @@ public class FCdetailGUI {
 		
 		lb_homepage.setText(con.gethomepage());
 		
-		JLabel lblNewLabel_1_1_2 = new JLabel("\uCDE8\uC18C/\uD658\uBD88\uADDC\uC815");
+		JLabel lblNewLabel_1_1_2 = new JLabel(" \uCDE8\uC18C/\uD658\uBD88\uADDC\uC815");
 		lblNewLabel_1_1_2.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		panel.add(lblNewLabel_1_1_2);
 		
@@ -168,6 +178,9 @@ public class FCdetailGUI {
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("\uC608\uC57D");
+		btnNewButton.setFont(new Font("HY∞ﬂ∞ÌµÒ", Font.PLAIN, 12));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(123, 104, 238));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -180,7 +193,8 @@ public class FCdetailGUI {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
-		lblNewLabel_1.setBounds(12, 47, 320, 101);
+		lblNewLabel_1.setFont(new Font("HY∞ﬂ∏Ì¡∂", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(12, 107, 320, 138);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
 }

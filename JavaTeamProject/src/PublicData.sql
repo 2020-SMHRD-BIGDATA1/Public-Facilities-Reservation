@@ -38,19 +38,26 @@ create table MEMBERS(
 	name varchar(10),
 	age NUMBER (10),
 	phone varchar(20),
-	address varchar(60),
+	address varchar(100),
 	mail varchar(100),
 	point NUMBER(30));
 	
 create table reservation(
-    user_id varchar2(20),
-    fac_id varchar2(20),
-	fac_name varchar2(20),
-	reserdate varchar2(20),
-	usedate varchar2(20),
-	usetime varchar2(20),
-	fee varchar2(20)
+user_id varchar2(200),
+    fac_id varchar2(200),
+	fac_name varchar2(200),
+	reserdate varchar2(200),
+	usedate varchar2(200),
+	usetime varchar2(200),
+	fee varchar2(200)
 );
+	
+insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('123', 123, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
+
+	
 insert into MEMBERMACTCHING values (2,'ljh2723',3,'³îÀÚ~~','Ãà±¸ÇÒ»ç¶÷ ±¸ÇØ¿é');
 insert into MEMBERMACTCHING values (13,'ljh2723',2,'³îÀÚ~~','Ãà±¸ÇÒ»ç¶÷ ±¸ÇØ¿é');
 insert into MEMBERMACTCHING values (12,'ljh',2,'³îÀÚ~!!','¾ß±¸ÇÒ»ç¶÷ ±¸ÇØ¿é');
@@ -62,7 +69,6 @@ insert into MEMBERS values ('123', 123, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı',
 insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
 	
-
 
 -- º¸¶ó²¨
 create table test(
@@ -79,4 +85,4 @@ insert into test values('¸ô¶ó','44:00~66:00');
 insert into test values('ÀÖ¾î¶ó','04:00~06:00');
 
 
-select * from test;
+select * from reservation;
