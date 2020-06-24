@@ -61,7 +61,7 @@ public class Reservation_3GUI {
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel.setBounds(12, 38, 164, 15);
+		lblNewLabel.setBounds(113, 38, 164, 15);
 		frame.getContentPane().add(lblNewLabel);
 
 		JPanel panel = new JPanel();
@@ -143,6 +143,15 @@ public class Reservation_3GUI {
 		});
 		btnNewButton_1.setBounds(235, 487, 97, 23);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btn_back = new JButton("<");
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btn_back.setBounds(4, 34, 97, 23);
+		frame.getContentPane().add(btn_back);
 
 	}
 }

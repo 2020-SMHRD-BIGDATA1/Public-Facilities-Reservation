@@ -67,6 +67,20 @@ public class InventoryGUI {
 		item.add(img_lbl);
 
 		JButton resrveation_btn = new JButton("\uB354\uBCF4\uAE30");
+		
+		char yn=con.getcharge();
+		System.out.println(yn);
+		String str;
+		
+		if(yn=='Y') {
+			str="유료";
+		}else {
+			str="유료";
+		}
+		
+		charge_lbl.setText(str);
+		
+		resrveation_btn = new JButton("\uB354\uBCF4\uAE30");
 		resrveation_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FCdetailGUI detail= new FCdetailGUI();

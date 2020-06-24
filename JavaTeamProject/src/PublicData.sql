@@ -27,7 +27,7 @@ id varchar(30),
 select *from Ratings;
 
 
-drop table reservations;
+drop table reservation;
 
 
 create table MemberMactching(
@@ -85,17 +85,32 @@ select * from members;
 =======
 select * from ratings;
 
+
 create table reservation(
-    user_id varchar(20),
-    fac_id varchar(20),
-	fac_name varchar(20),
-	usedate varchar(20),
-	usetime varchar(20),
-	fee varchar(20)
+    user_id varchar2(20),
+    fac_id varchar2(20),
+	fac_name varchar2(20),
+	reserdate varchar2(20),
+	usedate varchar2(20),
+	usetime varchar2(20),
+	fee varchar2(20)
+
+)
+
+create table test(
+fcname varchar2(30),
+fctime varchar2(100)
 
 )
 
 
+insert into test values('각화풋살장','14:00~16:00');
+
+insert into test values('보라','18:00~20:00');
+insert into test values('아니야','24:00~02:00');
+insert into test values('몰라','44:00~66:00');
+insert into test values('있어라','04:00~06:00');
 
 >>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
+select * from test;

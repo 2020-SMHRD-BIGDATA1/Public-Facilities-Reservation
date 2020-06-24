@@ -30,7 +30,6 @@ public class GradeGUI {
 		initialize();
 		frame.setVisible(true);
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -57,10 +56,8 @@ public class GradeGUI {
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
-=======
 				
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+				
 				String rating=input1.getText();
 				String review=input2.getText();
 				String id= LoginGUI.controller.getLoginUser().getId();
@@ -73,11 +70,9 @@ public class GradeGUI {
 				dao.insert(userReview);
 				
 				ReviewcheckGUI reviews = new ReviewcheckGUI();
-<<<<<<< HEAD
-				
-=======
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
-		}});
+			}
+		});
+
 		btnNewButton_1.setBounds(65, 416, 102, 50);
 		frame.getContentPane().add(btnNewButton_1);
 		
@@ -102,5 +97,6 @@ public class GradeGUI {
 		});
 		btnNewButton.setBounds(12, 10, 48, 50);
 		frame.getContentPane().add(btnNewButton);
+
 	}
-}
+	}

@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
-
+import Model.ReserVO;
 
 import java.text.SimpleDateFormat;
 
@@ -38,6 +38,7 @@ public class Reservation_2GUI {
 	
 	
 	private MemberManagementSystem MMCON=LoginGUI.controller;
+	private final JButton btn_back = new JButton("<");
 	
 	private void initialize() {
 		frame = new JFrame();
@@ -47,7 +48,7 @@ public class Reservation_2GUI {
 		
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel.setBounds(12, 22, 193, 37);
+		lblNewLabel.setBounds(124, 22, 193, 37);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
@@ -123,22 +124,28 @@ public class Reservation_2GUI {
 		lblNewLabel_2_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_4_1);
+		JLabel lb_username = new JLabel("New label");
+		panel_1.add(lb_username);
+		
+		lb_username.setText(LoginGUI.controller.getLoginUser().getId());
+		
 		
 		JLabel lblNewLabel_7_1 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_7_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_7_1);
 		
-		JLabel lblNewLabel_9_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_9_1);
+		JLabel lb_userphone = new JLabel("New label");
+		panel_1.add(lb_userphone);
+		
+		lb_userphone.setText(LoginGUI.controller.getLoginUser().getPhone());
 		
 		JLabel lblNewLabel_8_1 = new JLabel("\uC774\uBA54\uC77C ");
 		lblNewLabel_8_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_8_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_3_1);
+		JLabel lb_useremail = new JLabel("New label");
+		panel_1.add(lb_useremail);
+		lb_useremail.setText(LoginGUI.controller.getLoginUser().getMail());
 		
 		JLabel lblNewLabel_13_1 = new JLabel("\uACB0\uC81C");
 		lblNewLabel_13_1.setBounds(12, 189, 57, 15);
@@ -249,6 +256,9 @@ public class Reservation_2GUI {
 						}else {
 							System.out.println("Æ÷ÀÎÆ® ¾÷µ¥ÀÌÆ® ½ÇÆÐ");
 						}
+						ReserVO revo= new ReserVO(user_id, fac_id, fac_name, format_time1+"", usetime, fee);
+						
+						con.insertreservation();
 						
 						frame.dispose();
 					
@@ -262,6 +272,13 @@ public class Reservation_2GUI {
 		});
 		btnNewButton_2.setBounds(235, 499, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btn_back.setBounds(0, 28, 72, 31);
+		frame.getContentPane().add(btn_back);
 		frame.setBounds(100, 100, 360 , 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
