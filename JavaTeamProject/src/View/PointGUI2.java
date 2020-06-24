@@ -13,6 +13,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class PointGUI2 {
 
@@ -21,6 +22,7 @@ public class PointGUI2 {
 
 	JLabel lb_charge;
 	Reservation_1Controller re_controller =new Reservation_1Controller();
+	private JLabel lblNewLabel;
 	public  PointGUI2(int point2) {
 		initialize();
 		frame.setVisible(true);
@@ -28,13 +30,19 @@ public class PointGUI2 {
 		lb_charge.setText(point2+"가 충전이 되었습니다~ ");
 		
 		JButton btnNewButton = new JButton("\uD655\uC778");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(35, 289, 183, 52);
+		btnNewButton.setBounds(96, 282, 141, 38);
 		frame.getContentPane().add(btnNewButton);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\public_background3.png"));
+		lblNewLabel.setBounds(0, 0, 344, 561);
+		frame.getContentPane().add(lblNewLabel);
 	}
 
 	/**

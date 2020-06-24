@@ -18,6 +18,7 @@ import Model.GradeDAO;
 import Model.GradeVO;
 import Model.MainVO;
 import Model.MemberDAO;
+import javax.swing.ImageIcon;
 
 public class PointGUI {
 
@@ -47,7 +48,7 @@ public class PointGUI {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 10, 320, 541);
+		panel.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -70,7 +71,7 @@ public class PointGUI {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(60, 262, 209, 38);
+		btnNewButton.setBounds(60, 244, 209, 38);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("\uD3EC\uC778\uD2B8 \uAD00\uB9AC");
@@ -81,16 +82,16 @@ public class PointGUI {
 		
 		JLabel lblNewLabel_1 = new JLabel("\uD604\uC7AC\uD3EC\uC778\uD2B8");
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(60, 150, 85, 31);
+		lblNewLabel_1.setBounds(60, 121, 85, 31);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uCDA9\uC804\uD3EC\uC778\uD2B8");
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
-		lblNewLabel_2.setBounds(60, 191, 97, 31);
+		lblNewLabel_2.setBounds(60, 162, 97, 31);
 		panel.add(lblNewLabel_2);
 		
 		inputText = new JTextField();
-		inputText.setBounds(153, 197, 116, 24);
+		inputText.setBounds(153, 168, 116, 24);
 		panel.add(inputText);
 		inputText.setColumns(10);
 		
@@ -98,11 +99,16 @@ public class PointGUI {
 	
 		
 		JLabel nowPoint = new JLabel("New label");
-		nowPoint.setBounds(153, 150, 116, 21);
+		nowPoint.setBounds(157, 128, 116, 21);
 		panel.add(nowPoint);
 
 		
 		nowPoint.setText(controller.getpoint()+"");
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\public_background1.png"));
+		lblNewLabel_3.setBounds(0, 0, 344, 561);
+		panel.add(lblNewLabel_3);
 		
 		
 	}
