@@ -1,22 +1,23 @@
 package View;
 
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Controller.MemberManagementSystem;
+import Controller.Reservation_1Controller;
+import Model.GradeDAO;
 import Model.GradeVO;
 import Model.MainVO;
-
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Font;
+import Model.MemberDAO;
 
 public class PointGUI {
 
@@ -30,6 +31,9 @@ public class PointGUI {
 		frame.setVisible(true);
 	}
 
+	Reservation_1Controller controller =new Reservation_1Controller();
+	
+	MemberManagementSystem con= new MemberManagementSystem();
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -64,7 +68,7 @@ public class PointGUI {
 		
 		JLabel lblNewLabel_1 = new JLabel("\uD604\uC7AC\uD3EC\uC778\uD2B8");
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(56, 141, 85, 31);
+		lblNewLabel_1.setBounds(60, 150, 85, 31);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uCDA9\uC804\uD3EC\uC778\uD2B8");
@@ -77,17 +81,22 @@ public class PointGUI {
 		panel.add(inputText);
 		inputText.setColumns(10);
 		
+//       int point=Integer.parseInt(inputText.getText());
+		String point=inputText.getText();
 		
+		int cnt=con.insertpoint(point);
+		if (cnt>0) {
+			System.out.println("¼º°ø");
+		}else {
+			System.out.println("½ÇÆÐ");
+		}
 		
 		JLabel nowPoint = new JLabel("New label");
-		nowPoint.setBounds(153, 151, 116, 21);
+		nowPoint.setBounds(153, 150, 116, 21);
 		panel.add(nowPoint);
+
 		
-		
-		
-		MainVO vo= new MainVO();
-		
-		nowPoint.setText(vo.getPoint());
+		nowPoint.setText(controller.getpoint()+"");
 		
 		
 	}

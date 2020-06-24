@@ -11,17 +11,16 @@ create table Publics(
 	address varchar2(50),
 	phone varchar2(20),
 	homepage varchar2(50),
-	lat varchar2(15),
-	lon varchar2(15)
+	img varchar2(50)
 
 );
-ALTER TABLE publics DROP COLUMN lat;
-ALTER TABLE publics DROP COLUMN lon;
+
 
 drop table publics
 
 
 create table Ratings(
+id varchar(30),
 	Name varchar(30),
 	Rating varchar(5),
 	Review varchar(1000));
@@ -39,7 +38,10 @@ create table MemberMactching(
 	body varchar2(30)
 );
 
+select * from MemberMactching;
+select * from members;
 select * from Publics;
+select * from members;
 
 drop table members;
 create table MEMBERS(
@@ -51,5 +53,24 @@ create table MEMBERS(
 	address varchar(60),
 	mail varchar(100),
 	point NUMBER(30));
+insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('123', 123, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
+insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
+
+UPDATE MEMBERS SET pw = 1234, name = 'ÇÏÇÏÇÏ', age = 27, PHONE = '010-5555-6666', mail = 'fff@naver.com' WHERE id ='123';
+
+delete members where id='12';
+	
+CREATE TABLE reservations(
+FC_NAME varchar2(30),
+TIMESLOT VARCHAR2(30));
+insert into reservations values('°¢È­Ç²»ìÀå',
+'6,8,10,12,14,16,18');
+
 select * from members;
+drop table Ratings;
+
+
+update members set point=  where id=
 

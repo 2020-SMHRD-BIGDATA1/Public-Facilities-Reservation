@@ -12,11 +12,9 @@ public class MatchingVO {
 	private String address;
 	private String phone;
 	private String homepage;
-	private String lat;
-	private String lon;
 
 	public MatchingVO(String name, String division, String closure, String weekday, String weekend, String charge,
-			int pay, int people, String address, String phone, String homepage, String lat, String lon) {
+			int pay, int people, String address, String phone, String homepage) {
 		this.name = name;
 		this.division = division;
 		this.closure = closure;
@@ -28,11 +26,12 @@ public class MatchingVO {
 		this.address = address;
 		this.phone = phone;
 		this.homepage = homepage;
-		this.lat = lat;
-		this.lon = lon;
 	}
 
 	public MatchingVO(MatchingVO division) {
+	}
+
+	public MatchingVO(String division, String address) {
 	}
 
 	public String getName() {
@@ -121,22 +120,6 @@ public class MatchingVO {
 
 	public void setHomepage(String homepage) {
 		this.homepage = homepage;
-	}
-
-	public String getLat() {
-		return lat;
-	}
-
-	public void setLat(String lat) {
-		this.lat = lat;
-	}
-
-	public String getLon() {
-		return lon;
-	}
-
-	public void setLon(String lon) {
-		this.lon = lon;
 	}
 
 }

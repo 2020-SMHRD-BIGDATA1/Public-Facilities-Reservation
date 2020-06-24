@@ -6,10 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import View.LoginGUI;
+
 	public class MemberDAO {
 		private Connection conn;
 		private PreparedStatement pst;
 		private ResultSet rs;
+		LoginGUI logingui = new LoginGUI();
+		
 		
 		private void close() {
 			try {
@@ -47,7 +51,7 @@ import java.sql.SQLException;
 		try {
 			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, user.getID());
+			pst.setString(1, user.getId());
 			pst.setString(2, user.getPw());
 			rs = pst.executeQuery();
 			
@@ -70,7 +74,7 @@ import java.sql.SQLException;
 		int row = 0;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, joinUser.getID());
+			pst.setString(1, joinUser.getId());
 			pst.setString(2,  joinUser.getPw());
 			pst.setString(3, joinUser.getName());
 			pst.setInt(4, joinUser.getAge());
@@ -129,6 +133,31 @@ import java.sql.SQLException;
 			close();
 		}
 			return cid;
+	}
+
+	public  int insertpoint(String point) {
+		getConnection();
+		String sql = "update members set point=?  where id=?";
+	int row=0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, point);
+			pst.setString(2, logingui.controller.getLoginUser().getId() );
+	
+			row = pst.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	
+		return row;
+		
+		
+		
+		
+		
+		
 	}
 	
 }
