@@ -29,7 +29,6 @@ public class MatchingGUI {
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
 	private JComboBox comboBox;
-	private JComboBox comboBox_1;
 	private JLabel lmg_lbl;
 
 	public MatchingGUI() {
