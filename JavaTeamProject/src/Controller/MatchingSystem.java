@@ -8,7 +8,7 @@ public class MatchingSystem {
 	private MatchingVO area_name;
 
 	public boolean name(MatchingVO area) {
-		area_name = dao.check(area);
+        area_name = dao.check(area);
 		if (area_name == null) {
 			return false;
 		} else {

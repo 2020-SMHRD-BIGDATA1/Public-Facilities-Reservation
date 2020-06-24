@@ -54,15 +54,15 @@ public class ReviewcheckGUI {
 		String gg2="¾È³ç";
 		String gg3="¾È³ç";
 		
-		ArrayList<GradeVO> result = dao.search(gg);
-		for (int i = 0; i < result.size(); i++) {
-			gg += result.get(i).getName();
-			gg2+=result.get(i).getRating();
-			gg3+=result.get(i).getReview();
-		}
-		output.setText("\uC2DC\uC124\uBA85");
-		
-		
+//		ArrayList<GradeVO> result = dao.search(gg);
+//		for (int i = 0; i < result.size(); i++) {
+//			gg += result.get(i).getName();
+//			gg2+=result.get(i).getRating();
+//			gg3+=result.get(i).getReview();
+//		}
+//		output.setText("\uC2DC\uC124\uBA85");
+//		
+//		
 		
 		
 		frame.getContentPane().add(output);
