@@ -20,6 +20,7 @@ drop table publics
 
 
 create table Ratings(
+id varchar(30),
 	Name varchar(30),
 	Rating varchar(5),
 	Review varchar(1000));
@@ -67,5 +68,8 @@ TIMESLOT VARCHAR2(30));
 insert into reservations values('∞¢»≠«≤ªÏ¿Â',
 '6,8,10,12,14,16,18');
 
-select * from members;
+select * from ratings;
+drop table Ratings;
+
+
 

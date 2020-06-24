@@ -16,9 +16,14 @@ import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
 import Model.MemberVO;
 
+
+
+
 import Controller.MainSystemCon;
 import Controller.MemberManagementSystem;
 import Model.MemberVO;
+
+
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -136,6 +141,11 @@ public class MyPageGUI {
 		});
 		btnNewButton.setBounds(244, 325, 64, 28);
 		panel.add(btnNewButton);
+		
+		
+		
+		
+
 
 		JLabel lblNewLabel = new JLabel("\uB098\uC774");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -206,9 +216,9 @@ public class MyPageGUI {
 			
 			}
 		});
-		btn예약확인.setBounds(103, 385, 97, 23);
+		btn예약확인.setBounds(103, 411, 97, 23);
 		panel.add(btn예약확인);
-		
+
 		JButton btnback = new JButton("New button");
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -217,6 +227,26 @@ public class MyPageGUI {
 		});
 		btnback.setBounds(7, 10, 41, 37);
 		panel.add(btnback);
+
+		JButton btnNewButton_1 = new JButton("\uB9AC\uBDF0\uC4F0\uAE30");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				GradeGUI gradegui= new GradeGUI();
+			}
+		});
+		btnNewButton_1.setBounds(211, 363, 97, 23);
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton_1_1 = new JButton("\uB9AC\uBDF0\uBCF4\uAE30");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ReviewcheckGUI review= new ReviewcheckGUI();
+			}
+		});
+		btnNewButton_1_1.setBounds(211, 385, 97, 23);
+		panel.add(btnNewButton_1_1);
+
 
 	}
 }

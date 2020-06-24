@@ -6,10 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Controller.Reservation_1Controller;
+import View.LoginGUI;
+
 	public class MemberDAO {
 		private Connection conn;
 		private PreparedStatement pst;
 		private ResultSet rs;
+		LoginGUI logingui = new LoginGUI();
+		Reservation_1Controller re_controller =new Reservation_1Controller();
+		
+		
 		
 		private void close() {
 			try {
@@ -136,12 +143,32 @@ import java.sql.SQLException;
 		}
 			return cid;
 	}
+
+	public  int insertpoint(int point) {
+		getConnection();
+		String sql = "update members set point=?  where id=?";
+	int row=0;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, point+re_controller.getpoint());
+			pst.setString(2, logingui.controller.getLoginUser().getId() );
 	
-}
+			row = pst.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
 	
-	
-	
-	
+		return row;
+		
+		
+		
+		
+	}
+		
+	}
+
 	
 				
 					

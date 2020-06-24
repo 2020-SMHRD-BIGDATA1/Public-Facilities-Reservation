@@ -16,6 +16,8 @@ public class ReservationDAO {
 	private ResultSet rs;
 //	private ResultSet rev_rs;
 //	private int cnt;
+	
+	
 
 	LoginGUI logingui= new LoginGUI();
 	
@@ -64,7 +66,11 @@ public class ReservationDAO {
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1,logingui.controller.getLoginUser().getId());
+
+			pst.setString(1, logingui.controller.getLoginUser().getId());
+
+		
+
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
