@@ -156,9 +156,13 @@ public class Reservation_1Controller {
 
 
 
-	public void minuspoint() {
 	
+
+
+
+	public void insertreservation() {
 		
+		dao.insertReservation();
 		
 	}
 

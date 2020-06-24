@@ -28,7 +28,7 @@ id varchar(30),
 select *from Ratings;
 
 
-drop table reservations;
+drop table reservation;
 
 
 create table MemberMactching(
@@ -70,13 +70,15 @@ insert into reservations values('∞¢»≠«≤ªÏ¿Â',
 
 select * from ratings;
 
+
 create table reservation(
-    user_id varchar(20),
-    fac_id varchar(20),
-	fac_name varchar(20),
-	usedate varchar(20),
-	usetime varchar(20),
-	fee varchar(20)
+    user_id varchar2(20),
+    fac_id varchar2(20),
+	fac_name varchar2(20),
+	reserdate varchar2(20),
+	usedate varchar2(20),
+	usetime varchar2(20),
+	fee varchar2(20)
 
 )
 

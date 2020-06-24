@@ -83,9 +83,7 @@ public class InventoryGUI {
 		panel1.add(name_lbl);
 		name_lbl.setText("∞¢»≠«≤ªÏ¿Â");
 		String fcname=name_lbl.getText();
-		fcnamevo vo= new fcnamevo(fcname);
-		
-		con.fcname(vo);
+	
 		
 		
 		charge_lbl = new JLabel("\uC720\uB8CC/\uBB34\uB8CC");

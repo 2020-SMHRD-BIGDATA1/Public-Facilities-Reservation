@@ -41,24 +41,10 @@ public class Reservation_1updateGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Reservation_1updateGUI window = new Reservation_1updateGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
 	public Reservation_1updateGUI() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -96,6 +82,15 @@ public class Reservation_1updateGUI {
 
 		}
 		
+		table.addMouseListener(new java.awt.event.MouseAdapter(){
+		 public void mouseClicked(java.awt.event.MouseEvent e){
+			 int row=table.rowAtPoint(e.getPoint());
+			 int col= table.columnAtPoint(e.getPoint());
+			 JOptionPane.showMessageDialog(null,"Value in the cell clicked :"+ ""+table.getValueAt(row,col).toString());
+			 System.out.println(" Value in the cell clicked :"+ " " +table.getValueAt(row,col).toString()); 
+		 }
+		});
+		
 	}
 	
 	public void addItem() {
@@ -124,18 +119,11 @@ public class Reservation_1updateGUI {
 		
         String[] colummn= new String[]{""};
 		
-		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"},{"    "}};
+		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
 		
 		JTable table_2 = new JTable(rows,colummn);
 		panel_4.add(table_2);
-//		table.addMouseListener(new java.awt.event.MouseAdapter(){
-//		 public void mouseClicked(java.awt.event.MouseEvent e){
-//			 int row=table.rowAtPoint(e.getPoint());
-//			 int col= table.columnAtPoint(e.getPoint());
-//			 JOptionPane.showMessageDialog(null,"Value in the cell clicked :"+ ""+table.getValueAt(row,col).toString());
-//			 System.out.println(" Value in the cell clicked :"+ " " +table.getValueAt(row,col).toString()); 
-//		 }
-//		});
+
 	
 		
 	}

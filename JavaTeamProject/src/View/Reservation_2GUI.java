@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
-
+import Model.ReserVO;
 
 import java.text.SimpleDateFormat;
 
@@ -256,6 +256,9 @@ public class Reservation_2GUI {
 						}else {
 							System.out.println("포인트 업데이트 실패");
 						}
+						ReserVO revo= new ReserVO(user_id, fac_id, fac_name, format_time1+"", usetime, fee);
+						
+						con.insertreservation();
 						
 						frame.dispose();
 					

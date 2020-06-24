@@ -182,7 +182,8 @@ public class FCdetailGUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			Reservation_1GUI re1=new Reservation_1GUI();
+		Reservation_1GUI re1 = new Reservation_1GUI();
+//        	Reservation_1updateGUI re1test=new Reservation_1updateGUI();
 				
 			}
 		});
