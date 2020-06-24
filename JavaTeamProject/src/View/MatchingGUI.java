@@ -54,6 +54,7 @@ public class MatchingGUI {
 		JButton back_btn = new JButton("");
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 			}
 		});
 		back_btn.setSelectedIcon(new ImageIcon(MatchingGUI.class.getResource("/View/back.png")));
@@ -117,12 +118,13 @@ public class MatchingGUI {
 									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
 									System.out.println(list.get(i).getAddress());
 									panel1.add(jyp);
+									frame.setVisible(true);
 								}
 							}
 						}
 					}
 				}
-				frame.setVisible(true);
+				
 
 				for (int i = 0; i < list.size(); i++) {
 					for (int j = 0; j < infolist.size(); j++) {

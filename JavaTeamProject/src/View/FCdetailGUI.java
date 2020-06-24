@@ -26,18 +26,6 @@ public class FCdetailGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FCdetailGUI window = new FCdetailGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -45,10 +33,12 @@ public class FCdetailGUI {
 	
 	JLabel lb_fcname;
 	GradeDAO dao=new GradeDAO();
-	public FCdetailGUI() {
+	
+	
+	public FCdetailGUI(String fcname) {
 		initialize();
 		frame.setVisible(true);
-		lb_fcname.setText("각화풋살장");
+		lb_fcname.setText(fcname);
 
 				
 		JPanel panel_table = new JPanel();
@@ -73,15 +63,14 @@ public class FCdetailGUI {
 		lblNewLabel_5.setBounds(12, 412, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 		
-		JButton btn_back = new JButton("뒤로");
-		btn_back.addActionListener(new ActionListener() {
+		JButton btnNewButton_1 = new JButton("\uB4A4\uB85C");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				frame.dispose();
 			}
 		});
-		
-		btn_back.setBounds(19, 18, 57, 23);
-		frame.getContentPane().add(btn_back);
+		btnNewButton_1.setBounds(0, 18, 97, 23);
+		frame.getContentPane().add(btnNewButton_1);
 		
 		
 	}

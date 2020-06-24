@@ -92,7 +92,9 @@ public class MainGUI {
 		btnjokgu = new JButton("\uC871\uAD6C");
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InventoryGUI inventory = new InventoryGUI();
+//				InventoryGUI inventory = new InventoryGUI();
+				
+				ggggg gg=new ggggg();
 			}
 		});
 		btnjokgu.setBounds(118, 131, 68, 67);
