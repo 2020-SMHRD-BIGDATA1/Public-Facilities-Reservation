@@ -104,6 +104,15 @@ public class PointGUI {
 		
 		nowPoint.setText(controller.getpoint()+"");
 		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(0, 10, 64, 38);
+		panel.add(btnNewButton_1);
+		
 		
 	}
 }

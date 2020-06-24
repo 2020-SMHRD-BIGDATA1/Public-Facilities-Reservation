@@ -57,7 +57,6 @@ public class GradeGUI {
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ReviewcheckGUI reviews = new ReviewcheckGUI();
 				
 				String rating=input1.getText();
 				String review=input2.getText();
@@ -68,6 +67,8 @@ public class GradeGUI {
 				
 				GradeDAO dao = new GradeDAO();
 				dao.insert(userReview);
+				
+				ReviewcheckGUI reviews = new ReviewcheckGUI();
 		}});
 		btnNewButton_1.setBounds(65, 416, 102, 50);
 		frame.getContentPane().add(btnNewButton_1);
@@ -84,5 +85,14 @@ public class GradeGUI {
 		JLabel lblNewLabel_2 = new JLabel("\uD3C9\uC810");
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(12, 10, 48, 50);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

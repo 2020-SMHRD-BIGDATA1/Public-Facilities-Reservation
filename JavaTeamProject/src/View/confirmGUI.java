@@ -28,7 +28,7 @@ public class confirmGUI {
 	}
 
 	public void view(String name) {
-		System.out.println("아이디 값"+name);
+		System.out.println(""+name);
 		
 		JFrame frame = new JFrame("Table Prac.");
 		JPanel panel = new JPanel();

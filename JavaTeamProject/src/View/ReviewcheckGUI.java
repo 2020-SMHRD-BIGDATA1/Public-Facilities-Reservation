@@ -11,6 +11,9 @@ import Controller.GradeController;
 import Controller.Reservation_1Controller;
 import Model.GradeDAO;
 import Model.GradeVO;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ReviewcheckGUI {
 
@@ -92,5 +95,14 @@ public class ReviewcheckGUI {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		lblNewLabel_1.setText(LoginGUI.controller.getLoginUser().getId()+"ดิ");
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(0, 10, 57, 44);
+		frame.getContentPane().add(btnNewButton);
 	}
 }
