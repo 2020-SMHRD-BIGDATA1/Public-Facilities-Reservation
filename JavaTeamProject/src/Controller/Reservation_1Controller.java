@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ReservationDAO;
+import Model.fcnamevo;
 import Model.reservationvo;
 
 public class Reservation_1Controller {
@@ -141,6 +142,15 @@ public class Reservation_1Controller {
 		     return closure;
 		
 
+	}
+
+
+
+
+
+	public String fcname(fcnamevo vo2) {
+	
+		return	vo2.getfcName();
 	}
 
 

@@ -45,5 +45,10 @@ create table MEMBERS(
 	point NUMBER(30));
 insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
 	
+CREATE TABLE reservations(
+FC_NAME varchar2(30),
+TIMESLOT VARCHAR2(30));
+insert into reservations values('°¢È­Ç²»ìÀå',
+'6,8,10,12,14,16,18');
 
 
