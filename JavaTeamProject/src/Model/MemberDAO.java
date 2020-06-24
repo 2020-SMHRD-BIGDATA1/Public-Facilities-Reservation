@@ -58,7 +58,13 @@ import View.LoginGUI;
 			if(rs.next()) {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
-				loginUser = new MemberVO(id, pw);						
+				String name=rs.getString("name");
+				int age =rs.getInt("age");
+				String phone=rs.getString("phone");
+				String address=rs.getString("address");
+				String mail=rs.getString("mail");
+			
+				loginUser = new MemberVO(id, pw, name, age, phone, address, mail);						
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

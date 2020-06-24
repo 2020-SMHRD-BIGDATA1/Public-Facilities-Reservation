@@ -49,10 +49,12 @@ public class MemberManagementSystem {
 		
 	}
 
+	
 	public int insertpoint(String point) {
-		
+
 		int cnt=dao.insertpoint(point);
 		
+	
 		return cnt;
 	}
 

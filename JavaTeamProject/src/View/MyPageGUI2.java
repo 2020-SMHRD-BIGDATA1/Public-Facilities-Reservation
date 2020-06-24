@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import Controller.MemberManagementSystem;
+import Controller.Reservation_1Controller;
 import Model.MainDAO;
 import Model.MemberVO;
 
@@ -19,7 +21,6 @@ import java.awt.event.ActionEvent;
 public class MyPageGUI2 {
 
 	private JFrame frame;
-	private JTextField inPutid;
 	private JTextField inPutidPhone;
 	private JTextField inPutidAddr;
 	private JTextField inPutEmail;
@@ -27,7 +28,8 @@ public class MyPageGUI2 {
 	private JTextField inPutidAge;
 	private JTextField inPutidPW;
 	MainDAO dao = new MainDAO();
-	
+	MemberManagementSystem conn= LoginGUI.controller;
+	Reservation_1Controller controller= new Reservation_1Controller();
 	public MyPageGUI2() {
 		initialize();
 		frame.setVisible(true);
@@ -39,7 +41,7 @@ public class MyPageGUI2 {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 360, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -81,7 +83,7 @@ public class MyPageGUI2 {
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String id = inPutid.getText();
+			
 				String pw = inPutidPW.getText();
 				String name =inPutidName.getText();
 				int age = Integer.parseInt(inPutidAge.getText());
@@ -89,7 +91,7 @@ public class MyPageGUI2 {
 				String address =inPutidAddr.getText();
 				String mail =inPutEmail.getText();
 				
-				MemberVO vo = new MemberVO(id, pw, name, age, phone, address, mail);
+				MemberVO vo = new MemberVO(pw, name, age, phone, address, mail);
 				
 				
 				int cnt = dao.update(vo);
@@ -97,6 +99,7 @@ public class MyPageGUI2 {
 
 				if (cnt > 0) {
 					JOptionPane.showMessageDialog(frame, "수정성공", "수정 결과", JOptionPane.PLAIN_MESSAGE);
+					frame.setVisible(false);
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정실패", "수정 결과", JOptionPane.PLAIN_MESSAGE);
 				}
@@ -105,12 +108,7 @@ public class MyPageGUI2 {
 		});
 		btnmdfy.setBounds(47, 460, 97, 23);
 		panel.add(btnmdfy);
-		
-		inPutid = new JTextField();
-		inPutid.setColumns(10);
-		inPutid.setBounds(116, 114, 116, 21);
-		panel.add(inPutid);
-		
+
 		inPutidPhone = new JTextField();
 		inPutidPhone.setColumns(10);
 		inPutidPhone.setBounds(116, 259, 116, 21);
@@ -131,10 +129,6 @@ public class MyPageGUI2 {
 		text_Email_1.setBounds(47, 392, 57, 15);
 		panel.add(text_Email_1);
 		
-		JButton btnNewButton = new JButton("\uAD00\uB9AC");
-		btnNewButton.setBounds(244, 385, 64, 28);
-		panel.add(btnNewButton);
-		
 		inPutidName = new JTextField();
 		inPutidName.setColumns(10);
 		inPutidName.setBounds(116, 176, 116, 21);
@@ -150,11 +144,14 @@ public class MyPageGUI2 {
 		lblNewLabel.setBounds(47, 219, 57, 15);
 		panel.add(lblNewLabel);
 		
-		JLabel lb_point = new JLabel("New label");
-		lb_point.setBounds(114, 392, 118, 15);
-		panel.add(lb_point);
-		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
+		btnmdfy_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				
+			
+			}
+		});
 		btnmdfy_1.setBounds(166, 460, 97, 23);
 		panel.add(btnmdfy_1);
 		
@@ -167,6 +164,15 @@ public class MyPageGUI2 {
 		inPutidPW.setColumns(10);
 		inPutidPW.setBounds(116, 142, 116, 21);
 		panel.add(inPutidPW);
+		
+		JLabel lb_ID = new JLabel("New label");
+		lb_ID.setBounds(116, 117, 116, 15);
+		lb_ID.setText(conn.getLoginUser().getId());
+		panel.add(lb_ID);
+		
+		JLabel lbPoint = new JLabel("New label");
+		lbPoint.setBounds(116, 392, 116, 15);
+		panel.add(lbPoint);
+		lbPoint.setText(controller.getpoint()+"");
 	}
-
 }

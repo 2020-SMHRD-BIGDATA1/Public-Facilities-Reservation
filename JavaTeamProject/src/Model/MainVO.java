@@ -10,9 +10,13 @@ public class MainVO {
 
 	private String point;
 	public MainVO() {
+		
+	}
 
 	private String address;
 	private String mail;
+	
+	
 	public MainVO(String id, String pw, String name, String age, String phone, String address, String mail) {
 
 		this.id = id;
