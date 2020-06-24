@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -34,6 +35,9 @@ public class MyPageGUI {
 
 	MainSystemCon con = new MainSystemCon();
 
+	
+	
+	
 	public MyPageGUI() {
 		initialize();
 		frame.setVisible(true);
@@ -197,11 +201,22 @@ public class MyPageGUI {
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
 		btn예약확인.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				confirmGUI con = new confirmGUI();
+				con.view("박병관");
+			
 			}
 		});
 		btn예약확인.setBounds(103, 385, 97, 23);
 		panel.add(btn예약확인);
+		
+		JButton btnback = new JButton("New button");
+		btnback.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnback.setBounds(7, 10, 41, 37);
+		panel.add(btnback);
 
 	}
 }
