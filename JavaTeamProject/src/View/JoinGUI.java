@@ -19,6 +19,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class JoinGUI {
 	
@@ -32,6 +35,7 @@ public class JoinGUI {
 	private JTextField textFieldEmail;
 	private MemberManagementSystem controller
 							= LoginGUI.controller;
+	private int id_check = 0;
 	
 
 	/**
@@ -52,9 +56,18 @@ public class JoinGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 360, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\uD68C\uC6D0\uAC00\uC785");
+		lblNewLabel.setForeground(new Color(255, 255, 0));
+		lblNewLabel.setBounds(12, 24, 324, 40);
+		frame.getContentPane().add(lblNewLabel);
+		lblNewLabel.setFont(new Font("HY헤드라인M", Font.BOLD, 25));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,23 +99,10 @@ public class JoinGUI {
 		lblNewLabel_2_1.setBounds(135, 209, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 10, 324, 40);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 324, 40);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("\uD68C\uC6D0\uAC00\uC785");
-		lblNewLabel.setBounds(0, 0, 324, 40);
-		panel_1.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("HY목각파임B", Font.BOLD, 18));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JButton btn_JoinComple = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		JButton btn_JoinComple = new JButton("\uAC00\uC785\uD558\uAE30");
+		btn_JoinComple.setFont(new Font("휴먼둥근헤드라인", Font.BOLD | Font.ITALIC, 14));
+		btn_JoinComple.setForeground(new Color(0, 0, 0));
+		btn_JoinComple.setBackground(new Color(255, 255, 255));
 		btn_JoinComple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = textFieldID.getText();
@@ -114,10 +114,10 @@ public class JoinGUI {
 				String mail = textFieldEmail.getText();
 				
 				MemberVO joinUser = new MemberVO(id, pw, name, age, phone, address, mail);
-				int cnt = controller.join(joinUser);
-				if(cnt != 0) {
+				if(id_check == 1) {
 					JOptionPane.showMessageDialog(frame, "회원가입 성공",
 											"회원가입 결과", JOptionPane.PLAIN_MESSAGE);
+					controller.join(joinUser);
 					frame.setVisible(false);
 				}else {
 					JOptionPane.showMessageDialog(frame, "회원가입 실패",
@@ -173,10 +173,12 @@ public class JoinGUI {
 				if(check_id.equals("") ) {
 					JOptionPane.showMessageDialog(frame, "사용 가능한 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
+					id_check = 1;
 					
 				}else {
 					JOptionPane.showMessageDialog(frame, "중복된 아이디 입니다.",
 							"결과", JOptionPane.PLAIN_MESSAGE);
+					id_check = 0;
 					
 				}
 			}
@@ -193,6 +195,12 @@ public class JoinGUI {
 		textFieldPW = new JPasswordField();
 		textFieldPW.setBounds(60, 141, 218, 32);
 		frame.getContentPane().add(textFieldPW);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\frame.jpg"));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(0, 0, 344, 561);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
 	
 	

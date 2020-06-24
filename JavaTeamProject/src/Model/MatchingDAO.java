@@ -67,7 +67,9 @@ public class MatchingDAO {
 				String addr = rs.getString("ADDRESS");
 				String time =rs.getString("WEEKDAY");
 				String img = rs.getString("IMG");
-				MatchingVO vo = new MatchingVO(Fac_ID,Name,addr,time,img);
+				String closure =rs.getString("CLOSURE");
+				String charge = rs.getString("CHARGE");
+				MatchingVO vo = new MatchingVO(Fac_ID,Name,addr,time,img,closure,charge);
 				list.add(vo);
 			}
 		} catch (SQLException e) {

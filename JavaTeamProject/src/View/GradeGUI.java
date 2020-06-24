@@ -13,6 +13,9 @@ import javax.swing.SwingConstants;
 
 import Model.GradeDAO;
 import Model.GradeVO;
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 import java.awt.Font;
 
 public class GradeGUI {
@@ -36,7 +39,10 @@ public class GradeGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 235, 205));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 360, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -52,11 +58,13 @@ public class GradeGUI {
 		input2.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC774\uC6A9\uD6C4\uAE30\uB97C \uB0A8\uACA8\uC8FC\uC138\uC694");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(57, 202, 185, 21);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1.setBackground(new Color(220, 220, 220));
 		btnNewButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -82,6 +90,8 @@ public class GradeGUI {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uCDE8\uC18C");
+		btnNewButton_2.setBackground(new Color(220, 220, 220));
+		btnNewButton_2.setBounds(179, 416, 107, 50);
 		btnNewButton_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		btnNewButton_2.setBounds(176, 371, 110, 35);
 		frame.getContentPane().add(btnNewButton_2);
@@ -92,10 +102,15 @@ public class GradeGUI {
 		input1.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uD3C9\uC810");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\thumb_l_A4A5ADD9DF8C6A98D4C2ECB3416FEA8A.png"));
+		lblNewLabel_3.setBounds(12, 10, 320, 541);
+		frame.getContentPane().add(lblNewLabel_3);
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

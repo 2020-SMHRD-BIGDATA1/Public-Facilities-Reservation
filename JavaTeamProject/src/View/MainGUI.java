@@ -1,5 +1,8 @@
 package View;
 
+
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -15,6 +18,7 @@ import javax.swing.SwingConstants;
 
 import Controller.MemberManagementSystem;
 import Model.MainDAO;
+import java.awt.Toolkit;
 
 
 public class MainGUI {
@@ -32,7 +36,6 @@ public class MainGUI {
 
 
 	MainDAO dao = new MainDAO();
-	
 	
 	
 	
@@ -76,10 +79,14 @@ public class MainGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		
 		frame.setBounds(100, 100, 360, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		
 		
 		JPanel panel = new JPanel();
 		
@@ -112,7 +119,9 @@ public class MainGUI {
 		btnjokgu.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uC871\uAD6C\uD558\uB294\uADF8\uB9BC.jpg"));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InventoryGUI inventory = new InventoryGUI();
+//				InventoryGUI inventory = new InventoryGUI();
+				
+				ggggg gg=new ggggg();
 			}
 		});
 		btnjokgu.setBounds(121, 161, 68, 67);
@@ -254,4 +263,9 @@ public class MainGUI {
 
 
 	}
-}
+	
+	}
+
+	
+	
+

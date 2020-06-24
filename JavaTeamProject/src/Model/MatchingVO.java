@@ -49,12 +49,14 @@ public class MatchingVO {
 		this.img = img;
 	}
 
-	public MatchingVO(int Fac_ID,String Name, String addr, String time, String img) {
+	public MatchingVO(int Fac_ID,String Name, String addr, String time, String img,String Closure,String charge) {
 		this.Fac_ID = Fac_ID;
 		this.name = Name;
 		this.address = addr;
 		this.weekday = time;
 		this.img = img;
+		this.closure=Closure;
+		this.charge=charge;
 	}
 
 	public String getName() {

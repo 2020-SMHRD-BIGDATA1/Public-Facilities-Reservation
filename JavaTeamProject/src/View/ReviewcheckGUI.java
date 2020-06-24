@@ -12,6 +12,7 @@ import Controller.Reservation_1Controller;
 import Model.GradeDAO;
 import Model.GradeVO;
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -39,6 +40,8 @@ public class ReviewcheckGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.getContentPane().setBackground(new Color(255, 239, 213));
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

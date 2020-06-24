@@ -22,6 +22,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.awt.event.ItemEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class InventoryGUI {
 	MatchingDAO dao = new MatchingDAO();
@@ -37,6 +39,12 @@ public class InventoryGUI {
 	private JLabel name_lbl;
 	private JButton resrveation_btn_1;
 	private JLabel address;
+	private JPanel panel_1;
+	private JPanel item;
+	private JPanel panel;
+	private JPanel panel1;
+	private JPanel img_panel;
+	private JPanel resrveation_btn;
 
 	public InventoryGUI() {
 		initialize();
@@ -46,24 +54,32 @@ public class InventoryGUI {
 	private void initialize() {
 
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		panel.setBackground(new Color(240, 255, 255));
+		panel.setBounds(0, 0, 344, 561);
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 93, 410, 458);
 		frame.getContentPane().add(scrollPane);
+		
+		
+		panel_1 = new JPanel();
+		scrollPane.setViewportView(panel_1);
+		panel_1.setLayout(new GridLayout(0, 1, 0, 0));
+		
+
 
 		addItem();
 
 	}
 
 	public void addItem() {
-		JPanel panel_1 = new JPanel();
-		scrollPane.setViewportView(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
+	
 
-		JPanel item = new JPanel();
+		item = new JPanel();
 		item.setLayout(null);
 		panel_1.add(item);
 
@@ -88,12 +104,11 @@ public class InventoryGUI {
 //		
 //		System.out.println(yn);
 //		String str;
-//		
 
 		resrveation_btn_1 = new JButton("\uB354\uBCF4\uAE30");
 		resrveation_btn_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FCdetailGUI detail = new FCdetailGUI();
+//				FCdetailGUI detail = new FCdetailGUI();
 				frame.dispose();
 			}
 		});
@@ -114,7 +129,82 @@ public class InventoryGUI {
 		panel.setBounds(12, 10, 410, 78);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		
+		JButton back_btn = new JButton("");
+		back_btn.setForeground(new Color(0, 0, 0));
+		back_btn.setBackground(new Color(255, 255, 255));
+		back_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		back_btn.setSelectedIcon(new ImageIcon(MatchingGUI.class.getResource("/View/back.png")));
+		back_btn.setBounds(10, 10, 24, 23);
+		panel.add(back_btn);
+		
+		panel1 = new JPanel();
+		panel1.setBackground(new Color(240, 248, 255));
+		
+		panel1.setBounds(12, 107, 308, 111);
+		panel.add(panel1);
+		panel1.setLayout(null);
+		
+		img_panel = new JPanel();
+		img_panel.setBounds(0, 22, 103, 70);
+		panel1.add(img_panel);
+		
+		name_lbl = new JLabel("\uC2DC\uC124 \uBA85");
+		name_lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		name_lbl.setBounds(0, 0, 70, 21);
+		panel1.add(name_lbl);
+		
+		charge_lbl = new JLabel("\uC720\uB8CC/\uBB34\uB8CC");
+		charge_lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		charge_lbl.setBounds(115, 40, 98, 15);
+		panel1.add(charge_lbl);
+		
+		char yn=con.getcharge();
+		System.out.println(yn);
+		String str;
+		
+		if(yn=='Y') {
+			str="유료";
+		}else {
+			str="유료";
+		}
+		
+		charge_lbl.setText(str);
+		
+		resrveation_btn = new JButton("\uC608\uC57D");
+		resrveation_btn.setBackground(new Color(123, 104, 238));
+		resrveation_btn.setForeground(new Color(255, 255, 255));
+		resrveation_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Reservation_1GUI re1=new Reservation_1GUI();
+				
+			}
+		});
+		resrveation_btn.setBounds(249, 40, 59, 52);
+		panel1.add(resrveation_btn);
+		
+		closure_lbl = new JLabel("\uD734\uAD00\uC77C");
+		closure_lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		closure_lbl.setBounds(115, 65, 98, 15);
+		panel1.add(closure_lbl);
+		closure_lbl.setText(con.getclosure());
+	
 
+		
+	
+
+		JLabel menu = new JLabel("\uC885\uBAA9");
+		menu.setBounds(95, 23, 63, 15);
+		menu.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(menu);
+
+		JButton back_btn = new JButton("");
+		back_btn.setBounds(12, 20, 24, 21);
+		panel.add(back_btn);
 		JComboBox<String> comboBox_2 = new JComboBox<String>();
 		comboBox_2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
@@ -128,23 +218,57 @@ public class InventoryGUI {
 				ArrayList<MatchingVO> list = dao.divide(comboBox_2.getSelectedItem().toString());
 				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
 				img_lbl.setBounds(0, 40, 100, 100);
-				String str = null;
-				if (list.get(0).getClosure()=="Y"){
-					str = "유료";
-				} else {
-					str = "무료";
-				}
 				if (comboBox_2.getSelectedItem().toString().equals("축구장")) {
 					name_lbl.setText(list.get(0).getName());
 					address.setText(list.get(0).getAddress());
-					charge_lbl.setText(str);
+					charge_lbl.setText("유료");
+					time_lbl.setText(list.get(0).getWeekday());
+					String path = list.get(0).getImg();
+					img_lbl.setIcon(new ImageIcon(path));
+					item.add(img_lbl);
+				} else if (comboBox_2.getSelectedItem().toString().equals("야구장")) {
+					name_lbl.setText(list.get(0).getName());
+					address.setText(list.get(0).getAddress());
+					charge_lbl.setText("유료");
+					time_lbl.setText(list.get(0).getWeekday());
+					String path = list.get(0).getImg();
+					img_lbl.setIcon(new ImageIcon(path));
+					item.add(img_lbl);
+				} else if (comboBox_2.getSelectedItem().toString().equals("농구장")) {
+					name_lbl.setText(list.get(0).getName());
+					address.setText(list.get(0).getAddress());
+					charge_lbl.setText("유료");
+					time_lbl.setText(list.get(0).getWeekday());
+					String path = list.get(0).getImg();
+					img_lbl.setIcon(new ImageIcon(path));
+					item.add(img_lbl);
+				} else if (comboBox_2.getSelectedItem().toString().equals("배드맨턴장")) {
+					name_lbl.setText(list.get(0).getName());
+					address.setText(list.get(0).getAddress());
+					charge_lbl.setText("유료");
+					time_lbl.setText(list.get(0).getWeekday());
+					String path = list.get(0).getImg();
+					img_lbl.setIcon(new ImageIcon(path));
+					item.add(img_lbl);
+				} else if (comboBox_2.getSelectedItem().toString().equals("족구장")) {
+					name_lbl.setText(list.get(0).getName());
+					address.setText(list.get(0).getAddress());
+					charge_lbl.setText("유료");
+					time_lbl.setText(list.get(0).getWeekday());
+					String path = list.get(0).getImg();
+					img_lbl.setIcon(new ImageIcon(path));
+					item.add(img_lbl);
+				} else if (comboBox_2.getSelectedItem().toString().equals("풋살경기장")) {
+					name_lbl.setText(list.get(0).getName());
+					address.setText(list.get(0).getAddress());
+					charge_lbl.setText("유료");
 					time_lbl.setText(list.get(0).getWeekday());
 					String path = list.get(0).getImg();
 					img_lbl.setIcon(new ImageIcon(path));
 					item.add(img_lbl);
 				}
 			}
-		});
+		});	
 		comboBox_2.setBounds(158, 20, 113, 21);
 		comboBox_2.addItem("축구장");
 		comboBox_2.addItem("야구장");
@@ -153,15 +277,5 @@ public class InventoryGUI {
 		comboBox_2.addItem("농구장");
 		comboBox_2.addItem("배드맨턴장");
 		panel.add(comboBox_2);
-
-		JLabel menu = new JLabel("\uC885\uBAA9");
-		menu.setBounds(95, 23, 63, 15);
-		menu.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(menu);
-
-		JButton back_btn = new JButton("");
-		back_btn.setBounds(12, 20, 24, 21);
-		panel.add(back_btn);
-
 	}
 }

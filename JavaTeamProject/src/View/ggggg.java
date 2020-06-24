@@ -5,156 +5,153 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.SpringLayout;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.ArrayList;
 
-import javax.swing.JTable;
-import javax.swing.table.TableModel;
+import Model.MatchingDAO;
+import Model.MatchingVO;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ScrollPaneConstants;
 
 public class ggggg {
 
 	private JFrame frame;
-	private JTable table;
-	private JPanel panel;
-	private JPanel panel_1;
-	private JPanel panel_2;
-	private JLabel lb_date;
-	private JLabel lb_day;
-	private JTable table_1;
-	private JPanel panel_3;
-	private JTable table_3;
-	private String format_time1 ;
-	int day;
-	private JPanel panel_4;
-	private JPanel panel_5;
-	private JLabel lb_date1;
-	private JLabel lb_day1;
-	private JTable table_2;
-	String ddate ;
-	/**
-	 * Launch the application.
-	 */
+	private JPanel panel_7;
+	private JLabel lb_closure;
+	private JLabel lb_charge;
+	private JLabel lb_fcname;
+	private JLabel lb_pic;
+	private JButton btn;
 
-	public  ggggg () {
+	public ggggg() {
 		initialize();
 		frame.setVisible(true);
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	MatchingDAO dao = new MatchingDAO();
+	ArrayList<MatchingVO> list;
+	private JComboBox<String> comboBox;
+	private String fc_name;
+	private JPanel panel;
+	private String index;
+	
+
 	private void initialize() {
+
 		frame = new JFrame();
-		frame.setBounds(100, 100, 360, 600);
+		frame.setBounds(100, 100, 400, 599);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		SpringLayout springLayout = new SpringLayout();
+//		frame.getContentPane().setLayout(springLayout);
 		frame.getContentPane().setLayout(null);
+
+		comboBox = new JComboBox<String>();
+		comboBox.setBounds(99, 17, 106, 21);
 		
+		
+		comboBox.addItem("족구장");
+		comboBox.addItem("야구장");
+		comboBox.addItem("풋살경기장");
+		comboBox.addItem("축구장");
+		comboBox.addItem("농구장");
+		comboBox.addItem("배드맨턴장");
+		frame.getContentPane().add(comboBox);
+		
+		
+		list = dao.divide(comboBox.getSelectedItem().toString());
+		
+		comboBox.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+		            JComboBox cb = (JComboBox) e.getSource(); // 콤보박스 알아내
+//		            index = cb.getSelectedItem().toString();// 선택된 아이템의 인덱스
+//		      
+//		           System.out.println(index);
+		           list = dao.divide(cb.getSelectedItem().toString());
+		       }
+		  });
+
+
+
+//		   list = dao.divide(comboBox.getSelectedItem().toString());
+//		   list = dao.divide(index);
+	
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 48, 320, 478);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(12, 48, 360 , 500 );
 		frame.getContentPane().add(scrollPane);
-		
+
 		panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		
-		for (int i = 0; i < 5; i++) {
 		
-			addItem();
+
+
+		for (int i = 0; i < list.size(); i++) {
+
+			addItem(i);
 
 		}
-		
 
-		
 	}
-	
-	public void addItem() {
-		panel_4 = new JPanel();
-		panel.add(panel_4);
-		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
-		
-		lb_date1 = new JLabel("New label");
-		panel_4.add(lb_date1);
-//		lb_date.setText(format_time1);
-//		ddate = format_time1;
-		String[] dddate = ddate.split("-");
-		int month = Integer.parseInt(dddate[1]);
-		day = Integer.parseInt(dddate[2]);
-		String date1 = dddate[0]+"-"+dddate[1]+"-"+day;
-		day++;
-		lb_date1.setText(date1);
-	
-	  System.out.println(day);
-	
-		
-		lb_day1 = new JLabel("New label");
-		panel_4.add(lb_day1);
-		lb_day1.setText(getDate(date1));
-	
-		
-        String[] colummn= new String[]{""};
-		
-		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
-		
-		JTable table_2 = new JTable(rows,colummn);
-		panel_4.add(table_2);
 
-	
+	public void addItem(int i) {
+
+		panel_7 = new JPanel();
+		panel.add(panel_7);
+		panel_7.setLayout(null);
+		panel_7.setPreferredSize(new Dimension(0, 150)); 
+
+		lb_closure = new JLabel("\uD734\uBB34");
+		lb_closure.setBounds(115, 72, 106, 39);
+		panel_7.add(lb_closure);
+		lb_closure.setText(list.get(i).getClosure());
+
+		lb_charge = new JLabel("\uC720\uB8CC");
+		lb_charge.setBounds(115, 39, 106, 39);
+		panel_7.add(lb_charge);
+//		System.out.println(list.get(i).getCharge());
+		if (list.get(i).getCharge().equals("N")) {
+			lb_charge.setText("무료");
+		} else {
+			lb_charge.setText("유료");
+		}
+
+		lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
+		lb_fcname.setBounds(0, 0, 300, 39);
+		panel_7.add(lb_fcname);
 		
-	}
-	
-	public String getDate(String date) {
-		
-		Calendar cal = Calendar.getInstance(); 
-			 
-			 
-		SimpleDateFormat formatter =new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
-			 
-		//현재 일자의 요일
-		
-			
-			try {
-				cal.setTime(formatter.parse(date));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		lb_fcname.setText(list.get(i).getName());
+
+		lb_pic = new JLabel("fefe");
+		lb_pic.setBounds(0, 39, 106, 72);
+		panel_7.add(lb_pic);
+		String path = list.get(i).getImg();
+		lb_pic.setIcon(new ImageIcon(path));
+		panel_7.add(lb_pic);
+
+		btn = new JButton("\uB354\uBCF4\uAE30");
+		btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				FCdetailGUI fcdetailgui = new FCdetailGUI(list.get(i).getName());
+
 			}
-			
-			int dayNum = cal.get(Calendar.DAY_OF_WEEK);
-			 
-			String day = "";
-			switch(dayNum){
-			    case 1:
-			        day = "일";
-			        break ;
-			    case 2:
-			        day = "월";
-			        break ;
-			    case 3:
-			        day = "화";
-			        break ;
-			    case 4:
-			        day = "수";
-			        break ;
-			    case 5:
-			        day = "목";
-			        break ;    
-			    case 6:
-			        day = "금";
-			        break ;
-			    case 7:
-			        day = "토";
-			        break ;
+		});
+		btn.setBounds(212, 56, 106, 39);
+		panel_7.add(btn);
 
-
-			       
-		}
-			return day;
-}}
+	}
+}
