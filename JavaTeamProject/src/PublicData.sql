@@ -37,12 +37,10 @@ create table MemberMactching(
 	body varchar2(30)
 );
 
-<<<<<<< HEAD
 select * from MemberMactching;
 select * from members;
-=======
 select * from Publics;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+select * from members;
 
 drop table members;
 create table MEMBERS(
@@ -54,7 +52,6 @@ create table MEMBERS(
 	address varchar(60),
 	mail varchar(100),
 	point NUMBER(30));
-<<<<<<< HEAD
 insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);
@@ -64,8 +61,11 @@ UPDATE MEMBERS SET pw = 1234, name = 'ÇÏÇÏÇÏ', age = 27, PHONE = '010-5555-6666'
 
 delete members where id='12';
 	
+CREATE TABLE reservations(
+FC_NAME varchar2(30),
+TIMESLOT VARCHAR2(30));
+insert into reservations values('°¢È­Ç²»ìÀå',
+'6,8,10,12,14,16,18');
 
-=======
 select * from members;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 

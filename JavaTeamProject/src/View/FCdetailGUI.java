@@ -57,7 +57,7 @@ public class FCdetailGUI {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 255, 320, 223);
+		panel.setBounds(12, 184, 320, 223);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(8, 2, 0, 0));
 		
@@ -130,7 +130,7 @@ public class FCdetailGUI {
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC2DC\uC124\uC124\uBA85");
 		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel_5.setBounds(12, 70, 132, 27);
+		lblNewLabel_5.setBounds(12, 158, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("\uC608\uC57D");
@@ -145,7 +145,14 @@ public class FCdetailGUI {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
-		lblNewLabel_1.setBounds(12, 107, 320, 138);
+		lblNewLabel_1.setBounds(12, 47, 320, 101);
 		frame.getContentPane().add(lblNewLabel_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(12, 417, 320, 61);
+		frame.getContentPane().add(panel_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("\uB9AC\uBDF0");
+		panel_1.add(lblNewLabel_3);
 	}
 }

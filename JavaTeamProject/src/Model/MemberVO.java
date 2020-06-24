@@ -25,7 +25,15 @@ public class MemberVO {
 		this.pw = pw;
 	}
 	
-	
+	public MemberVO(String pw, String name, int age, String phone, String address, String mail){
+		this.pw = pw;
+		this.name = name;
+		this.age = age;
+		this.phone = phone;
+		this.address = address;
+		this.mail = mail;
+	}
+
 
 
 
@@ -67,13 +75,14 @@ public class MemberVO {
 		this.mail = mail;
 	}
 
+
+
+
+
 	public String getId() {
 		return id;
 	}
 
-	public String getID() {
-		return id;
-	}
 
 	public void setId(String id) {
 		this.id = id;

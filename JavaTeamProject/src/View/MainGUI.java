@@ -13,8 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import Controller.MainSystemCon;
+
+import Controller.MemberManagementSystem;
+
+
 import Model.MainDAO;
+import javax.swing.JLabel;
+
 
 public class MainGUI {
 
@@ -27,13 +32,35 @@ public class MainGUI {
 	private JButton btnBaseBall;
 	private JButton btnjokgu;
 	private JButton btnSoccer;
-	public static MainSystemCon con = new MainSystemCon();
+
+	private MemberManagementSystem controller= LoginGUI.controller;
+
+
+
 	MainDAO dao = new MainDAO();
-	
+
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JLabel lb_id;
+	/**
+	 * Launch the application.
+	 */
+	/*
+	 * public static void main(String[] args) { EventQueue.invokeLater(new
+	 * Runnable() { public void run() { try { MainGUI window = new MainGUI();
+	 * window.frame.setVisible(true); } catch (Exception e) { e.printStackTrace(); }
+	 * } }); }
+	 */
+
+	/**
+	 * Create the application.
+	 */
+
 	public MainGUI() {
 		initialize();
-		frame.setVisible(true);
 
+		frame.setVisible(true); // 새로운창으로 띄울시 적어야하는 코드
+	
 	}
 
 	/**
@@ -119,8 +146,24 @@ public class MainGUI {
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setText("\uD558\uB791\uAED8");
+		textField.setText("하랑께");
 		textField.setBounds(12, 10, 296, 49);
 		panel.add(textField);
 		textField.setColumns(10);
+
+		
+		btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.setBounds(38, 454, 97, 23);
+		panel.add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton_1.setBounds(169, 454, 97, 23);
+		panel.add(btnNewButton_1);
+		
+		lb_id = new JLabel("New label");
+		lb_id.setBounds(142, 102, 57, 15);
+		panel.add(lb_id);
+		lb_id.setText(controller.getLoginUser().getId()+"님");
+
 	}
 }

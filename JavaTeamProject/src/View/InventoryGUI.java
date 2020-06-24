@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import Controller.Reservation_1Controller;
+import Model.fcnamevo;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -64,7 +65,7 @@ public class InventoryGUI {
 		panel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+				Reservation_1GUI re1= new Reservation_1GUI();
 				
 			}
 		});
@@ -80,6 +81,12 @@ public class InventoryGUI {
 		name_lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		name_lbl.setBounds(0, 0, 70, 21);
 		panel1.add(name_lbl);
+		name_lbl.setText("∞¢»≠«≤ªÏ¿Â");
+		String fcname=name_lbl.getText();
+		fcnamevo vo= new fcnamevo(fcname);
+		
+		con.fcname(vo);
+		
 		
 		charge_lbl = new JLabel("\uC720\uB8CC/\uBB34\uB8CC");
 		charge_lbl.setHorizontalAlignment(SwingConstants.CENTER);

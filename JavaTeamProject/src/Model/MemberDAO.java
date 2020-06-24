@@ -47,14 +47,20 @@ import java.sql.SQLException;
 		try {
 			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, user.getID());
+			pst.setString(1, user.getId());
 			pst.setString(2, user.getPw());
 			rs = pst.executeQuery();
 			
 			if(rs.next()) {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
-				loginUser = new MemberVO(id, pw);						
+				String name=rs.getString("name");
+				int age =rs.getInt("age");
+				String phone=rs.getString("phone");
+				String address=rs.getString("address");
+				String mail=rs.getString("mail");
+			
+				loginUser = new MemberVO(id, pw, name, age, phone, address, mail);						
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -70,7 +76,7 @@ import java.sql.SQLException;
 		int row = 0;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, joinUser.getID());
+			pst.setString(1, joinUser.getId());
 			pst.setString(2,  joinUser.getPw());
 			pst.setString(3, joinUser.getName());
 			pst.setInt(4, joinUser.getAge());

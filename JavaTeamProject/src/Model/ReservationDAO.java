@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Controller.Reservation_1Controller;
+import View.LoginGUI;
 
 public class ReservationDAO {
 
@@ -16,6 +17,8 @@ public class ReservationDAO {
 //	private ResultSet rev_rs;
 //	private int cnt;
 
+	LoginGUI logingui= new LoginGUI();
+	
 	private void getconnection() {
 
 		try {
@@ -57,11 +60,11 @@ public class ReservationDAO {
 		getconnection();
 		int point = 0;
 
-		String sql = "select point from members5 where id=?";
+		String sql = "select point from members where id=?";
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, Reservation_1Controller.getVo().getId());
+			pst.setString(1,logingui.controller.getLoginUser().getId());
 			rs = pst.executeQuery();
 
 			if (rs.next()) {

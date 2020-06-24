@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import Controller.MemberManagementSystem;
+import Controller.Reservation_1Controller;
 import Model.MainDAO;
 import Model.MemberVO;
 
@@ -19,7 +21,6 @@ import java.awt.event.ActionEvent;
 public class MyPageGUI2 {
 
 	private JFrame frame;
-	private JTextField inPutid;
 	private JTextField inPutidPhone;
 	private JTextField inPutidAddr;
 	private JTextField inPutEmail;
@@ -27,8 +28,8 @@ public class MyPageGUI2 {
 	private JTextField inPutidAge;
 	private JTextField inPutidPW;
 	MainDAO dao = new MainDAO();
-	private JTextField inPutpoint;
-	
+	MemberManagementSystem conn= LoginGUI.controller;
+	Reservation_1Controller controller= new Reservation_1Controller();
 	public MyPageGUI2() {
 		initialize();
 		frame.setVisible(true);
@@ -82,7 +83,7 @@ public class MyPageGUI2 {
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String id = inPutid.getText();
+			
 				String pw = inPutidPW.getText();
 				String name =inPutidName.getText();
 				int age = Integer.parseInt(inPutidAge.getText());
@@ -90,7 +91,7 @@ public class MyPageGUI2 {
 				String address =inPutidAddr.getText();
 				String mail =inPutEmail.getText();
 				
-				MemberVO vo = new MemberVO(id, pw, name, age, phone, address, mail);
+				MemberVO vo = new MemberVO(pw, name, age, phone, address, mail);
 				
 				
 				int cnt = dao.update(vo);
@@ -107,12 +108,6 @@ public class MyPageGUI2 {
 		});
 		btnmdfy.setBounds(47, 460, 97, 23);
 		panel.add(btnmdfy);
-		
-		inPutid = new JTextField();
-		inPutid.setColumns(10);
-		inPutid.setBounds(116, 114, 116, 21);
-		panel.add(inPutid);
-		inPutid.setEditable(false);
 
 		inPutidPhone = new JTextField();
 		inPutidPhone.setColumns(10);
@@ -170,10 +165,14 @@ public class MyPageGUI2 {
 		inPutidPW.setBounds(116, 142, 116, 21);
 		panel.add(inPutidPW);
 		
-		inPutpoint = new JTextField();
-		inPutpoint.setColumns(10);
-		inPutpoint.setBounds(116, 389, 116, 21);
-		panel.add(inPutpoint);
-		inPutpoint.setEditable(false);
+		JLabel lb_ID = new JLabel("New label");
+		lb_ID.setBounds(116, 117, 116, 15);
+		lb_ID.setText(conn.getLoginUser().getId());
+		panel.add(lb_ID);
+		
+		JLabel lbPoint = new JLabel("New label");
+		lbPoint.setBounds(116, 392, 116, 15);
+		panel.add(lbPoint);
+		lbPoint.setText(controller.getpoint()+"");
 	}
 }

@@ -10,9 +10,17 @@ import javax.swing.SwingConstants;
 
 import Model.MainDAO;
 import Model.MainVO;
+
+import Controller.MemberManagementSystem;
+import Controller.Reservation_1Controller;
+import Model.MemberVO;
+
+
+
 import Controller.MainSystemCon;
 import Controller.MemberManagementSystem;
 import Model.MemberVO;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -22,8 +30,9 @@ public class MyPageGUI {
 
 	private JFrame frame;
 	MainDAO dao = new MainDAO();
-	
-	
+
+
+	Reservation_1Controller controller= new Reservation_1Controller();
 	MemberManagementSystem conn= LoginGUI.controller;
 
 	MainSystemCon con= new MainSystemCon();
@@ -97,6 +106,30 @@ public class MyPageGUI {
 		btnmdfy.setBounds(47, 460, 97, 23);
 		panel.add(btnmdfy);
 		
+
+	
+		
+//		inPutPW = new JTextField();
+//		inPutPW.setColumns(10);
+//		inPutPW.setBounds(116, 209, 116, 21);
+//		panel.add(inPutPW);
+//		
+//		inPutPhone = new JTextField();
+//		inPutPhone.setColumns(10);
+//		inPutPhone.setBounds(116, 259, 116, 21);
+//		panel.add(inPutPhone);
+//		
+//		inPutaddr = new JTextField();
+//		inPutaddr.setColumns(10);
+//		inPutaddr.setBounds(116, 301, 116, 21);
+//		panel.add(inPutaddr);
+//		
+//		inPutEmail = new JTextField();
+//		inPutEmail.setColumns(10);
+//		inPutEmail.setBounds(116, 348, 116, 21);
+//		panel.add(inPutEmail);
+		
+
 		JLabel text_Email_1 = new JLabel("\uD3EC\uC778\uD2B8");
 		text_Email_1.setHorizontalAlignment(SwingConstants.CENTER);
 		text_Email_1.setBounds(47, 332, 57, 15);
@@ -113,6 +146,10 @@ public class MyPageGUI {
 		btnNewButton.setBounds(244, 325, 64, 28);
 		panel.add(btnNewButton);
 		
+		
+		
+		
+
 		JLabel lblNewLabel = new JLabel("\uB098\uC774");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(47, 159, 57, 15);
@@ -121,6 +158,8 @@ public class MyPageGUI {
 		JLabel lb_point = new JLabel("New label");
 		lb_point.setBounds(114, 332, 118, 15);
 		panel.add(lb_point);
+		
+		lb_point.setText(controller.getpoint()+"");
 		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.addActionListener(new ActionListener() {
@@ -154,7 +193,7 @@ public class MyPageGUI {
 		panel.add(lb_Phone);
 		
 		JLabel lb_AGE = new JLabel("New label");
-		
+		lb_AGE.setText(conn.getLoginUser().getAge()+"");
 		lb_AGE.setBounds(116, 159, 118, 15);
 		panel.add(lb_AGE);
 		
@@ -169,7 +208,7 @@ public class MyPageGUI {
 		panel.add(lb_PW);
 		
 		JLabel lb_ID = new JLabel("New label");
-		lb_ID.setText(conn.getLoginUser().getID());
+		lb_ID.setText(conn.getLoginUser().getId());
 		lb_ID.setBounds(114, 57, 118, 15);
 		panel.add(lb_ID);
 		
@@ -187,5 +226,6 @@ public class MyPageGUI {
 		});
 		btn예약확인.setBounds(103, 385, 97, 23);
 		panel.add(btn예약확인);
+
 	}
 }
