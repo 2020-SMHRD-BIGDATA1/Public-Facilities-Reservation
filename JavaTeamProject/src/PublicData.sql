@@ -80,6 +80,19 @@ create table reservation(
 
 )
 
+create table test(
+fcname varchar2(30),
+fctime varchar2(100)
+
+)
 
 
+insert into test values('각화풋살장','14:00~16:00');
 
+insert into test values('보라','18:00~20:00');
+insert into test values('아니야','24:00~02:00');
+insert into test values('몰라','44:00~66:00');
+insert into test values('있어라','04:00~06:00');
+
+
+select * from test;

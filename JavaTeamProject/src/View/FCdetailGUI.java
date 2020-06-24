@@ -73,6 +73,16 @@ public class FCdetailGUI {
 		lblNewLabel_5.setBounds(12, 412, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 		
+		JButton btn_back = new JButton("µÚ·Î");
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+		});
+		
+		btn_back.setBounds(19, 18, 57, 23);
+		frame.getContentPane().add(btn_back);
+		
 		
 	}
 	Reservation_1Controller con= new Reservation_1Controller();
@@ -88,7 +98,7 @@ public class FCdetailGUI {
 		
 	    lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
 		lb_fcname.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lb_fcname.setBounds(12, 10, 167, 38);
+		lb_fcname.setBounds(85, 10, 167, 38);
 		frame.getContentPane().add(lb_fcname);
 		
 		JPanel panel = new JPanel();
