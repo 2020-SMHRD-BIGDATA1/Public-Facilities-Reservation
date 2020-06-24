@@ -9,7 +9,7 @@ public class MainVO {
 	private String email;
 	private String phone;
 	private String point;
-	public MainVO(String id, String pw, String name, String addr, String email, String phone, String point) {
+	public MainVO() {
 		
 		this.id = id;
 		this.pw = pw;
@@ -19,6 +19,8 @@ public class MainVO {
 		this.phone = phone;
 		this.point = point;
 	}
+	
+	
 	public String getId() {
 		return id;
 	}
