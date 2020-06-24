@@ -28,7 +28,7 @@ public class Reservation_2GUI {
 	int point=0;
 	JLabel lb_remainpoint;
 	private int remainpoint;
-	
+	MemberManagementSystem controller= new MemberManagementSystem();
 	Reservation_1Controller con= new Reservation_1Controller();
 	public Reservation_2GUI() {
 		initialize();
@@ -203,7 +203,7 @@ public class Reservation_2GUI {
 		btn_charge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				PointGUI pointgui= new PointGUI();
 			}
 		});
 		panel_2.add(btn_charge);
@@ -242,6 +242,15 @@ public class Reservation_2GUI {
 //						main main= new main();
 						
 						System.out.println("예약 성공");
+						int cnt=controller.updatepoint(remainpoint);
+						
+						if(cnt>0) {
+							System.out.println("포인트 업데이트 성공");
+						}else {
+							System.out.println("포인트 업데이트 실패");
+						}
+						
+						frame.dispose();
 					
 					}else {
 						JOptionPane.showMessageDialog(frame, "예약 실패","예약신청결과",JOptionPane.PLAIN_MESSAGE);

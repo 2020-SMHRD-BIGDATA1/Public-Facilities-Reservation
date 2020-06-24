@@ -57,17 +57,19 @@ public class GradeGUI {
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ReviewcheckGUI reviews = new ReviewcheckGUI();
-				
 				String rating=input1.getText();
 				String review=input2.getText();
 				String id= LoginGUI.controller.getLoginUser().getId();
+				System.out.println(id);
 				String name= "fcname";
 				
 				GradeVO userReview= new GradeVO(id, name, rating, review);
 				
 				GradeDAO dao = new GradeDAO();
 				dao.insert(userReview);
+				
+				ReviewcheckGUI reviews = new ReviewcheckGUI();
+				
 		}});
 		btnNewButton_1.setBounds(65, 416, 102, 50);
 		frame.getContentPane().add(btnNewButton_1);

@@ -18,7 +18,7 @@ create table Publics(
 
 drop table publics
 
-
+drop table Ratings;
 create table Ratings(
 id varchar(30),
 	Name varchar(30),
@@ -43,7 +43,7 @@ select * from members;
 select * from Publics;
 select * from members;
 
-drop table members;
+drop table reservation;
 create table MEMBERS(
 	id varchar(20),
 	pw varchar(20),
@@ -69,7 +69,17 @@ insert into reservations values('∞¢»≠«≤ªÏ¿Â',
 '6,8,10,12,14,16,18');
 
 select * from ratings;
-drop table Ratings;
+
+create table reservation(
+    user_id varchar(20),
+    fac_id varchar(20),
+	fac_name varchar(20),
+	usedate varchar(20),
+	usetime varchar(20),
+	fee varchar(20)
+
+)
+
 
 
 

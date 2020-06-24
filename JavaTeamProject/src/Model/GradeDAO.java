@@ -51,31 +51,31 @@ public class GradeDAO {
 
 	
 
-	public static ArrayList<GradeVO> selectAll() {
-//		ArrayList<GradeVO> list = new ArrayList<GradeVO>();
-		getConnection();
-		try {
-			String sql = "select*from Ratings where id=?";
-			pst = conn.prepareStatement(sql);
-			pst.setString(1,LoginGUI.controller.getLoginUser().getId());
-			rs = pst.executeQuery();
-
-			while (rs.next()) {
-				String name = rs.getString("Name");
-				String rating = rs.getString("Rating");
-				String review = rs.getString("Review");
-				GradeVO vo = new GradeVO(rating, review);
-//				list.add(vo);
-
-			}} catch (SQLException e) {
-
-				e.printStackTrace();
-			}finally {
-				close();
-			}
-
-			return list;
-		}
+//	public static ArrayList<GradeVO> selectAll() {
+////		ArrayList<GradeVO> list = new ArrayList<GradeVO>();
+//		getConnection();
+//		try {
+//			String sql = "select*from Ratings where id=?";
+//			pst = conn.prepareStatement(sql);
+//			pst.setString(1,LoginGUI.controller.getLoginUser().getId());
+//			rs = pst.executeQuery();
+//
+//			while (rs.next()) {
+//				String name = rs.getString("Name");
+//				String rating = rs.getString("Rating");
+//				String review = rs.getString("Review");
+//				GradeVO vo = new GradeVO(rating, review);
+////				list.add(vo);
+//
+//			}} catch (SQLException e) {
+//
+//				e.printStackTrace();
+//			}finally {
+//				close();
+//			}
+//
+//			return list;
+//		}
 public int insert(GradeVO userReview) {
 	getConnection();// ¿¬°á
 	String sql="insert into Ratings values(?,?,?,?)";
@@ -95,9 +95,9 @@ public int insert(GradeVO userReview) {
 	return row;
 }
 
-public ArrayList<GradeVO> search(String gg) {
+public GradeVO search(String gg) {
 	
-	ArrayList<GradeVO> list = new ArrayList<GradeVO>();
+
 	GradeVO result = null;
 	
 	getConnection();
@@ -116,7 +116,7 @@ public ArrayList<GradeVO> search(String gg) {
 			
 			
 			result = new GradeVO(id,name, rating, review);
-			list.add(result);
+		
 		}
 	} catch (SQLException e) {
 
@@ -126,7 +126,7 @@ public ArrayList<GradeVO> search(String gg) {
 	}
 	
 
-	return list;
+	return result;
 
 }
 public static GradeVO select() {

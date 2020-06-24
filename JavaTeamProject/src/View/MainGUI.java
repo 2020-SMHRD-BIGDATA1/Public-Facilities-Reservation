@@ -97,9 +97,7 @@ public class MainGUI {
 		btnBaseBall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
-			
-			
-			
+
 			
 			}
 		});

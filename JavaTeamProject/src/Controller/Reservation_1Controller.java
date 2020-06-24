@@ -156,6 +156,15 @@ public class Reservation_1Controller {
 
 
 
+	public void minuspoint() {
+	
+		
+		
+	}
+
+
+
+
 
 
 
