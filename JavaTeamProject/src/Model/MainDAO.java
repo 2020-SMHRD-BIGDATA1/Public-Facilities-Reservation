@@ -11,6 +11,7 @@ public class MainDAO {
 	private Connection conn;
 	private PreparedStatement pst;
 	private ResultSet rs;
+
 	
 	private void getConnection() {
 
@@ -51,7 +52,7 @@ public class MainDAO {
 
 	
 	
-	public int update(MainVO vo) {
+	public int update(MemberVO vo) {
 		int cnt = 0;
 		
 		getConnection();
@@ -59,17 +60,17 @@ public class MainDAO {
 		
 		try {
 			//UPDATE SET WHERE
-			String sql = "UPDATE Publics SET  pw = ?, name = ?, addr = ?, email=?, phone=?, point=?  WHERE NAME =?";
+			String sql = "UPDATE MEMBERS SET pw = ?, name = ?, age = ?, PHONE = ?, mail = ?, Address = ? WHERE id =?";
 			pst = conn.prepareCall(sql);
 			
 			
 			pst.setString(1, vo.getPw());
 			pst.setString(2, vo.getName());
-			pst.setString(3, vo.getAddr());
-			pst.setString(4, vo.getEmail());
-			pst.setString(5, vo.getPhone());
-			pst.setString(6, vo.getPoint());
-			pst.setString(7, vo.getName());
+			pst.setInt(3, vo.getAge());
+			pst.setString(4, vo.getPhone());
+			pst.setString(5, vo.getMail());
+			pst.setString(6, vo.getAddress());
+			pst.setString(7, vo.getId());
 			
 			cnt =pst.executeUpdate();
 			
@@ -86,6 +87,29 @@ public class MainDAO {
 		return cnt;
 	}
 
-	
+	public String getpw(MemberVO vo) {
+		getConnection();
+		
+		String sql= "select pw from members where id=?";
+		String pw = null;
+		try {
+			pst=conn.prepareStatement(sql);
+			pst.setString(1,vo.getId() );
+			rs=pst.executeQuery();
+			
+			if(rs.next()) {
+				pw=rs.getString("pw");
+			}
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		return pw ;
+	}
+
 	
 }

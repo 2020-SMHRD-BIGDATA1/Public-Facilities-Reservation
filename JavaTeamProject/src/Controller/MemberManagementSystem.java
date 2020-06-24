@@ -12,6 +12,7 @@ import Model.MemberVO;
 public class MemberManagementSystem {
 	private MemberDAO dao = new MemberDAO();
 	private MemberVO loginUser;
+	private MemberVO id_check;
 	
 	public MemberVO getLoginUser() {
 		return loginUser;
@@ -33,6 +34,24 @@ public class MemberManagementSystem {
 	}
 	
 
+	public boolean check(MemberVO id_check) {
+		id_check = dao.selectOne(id_check);
+		if(id_check == null) {
+			return false;
+		}else {
+			return true;
+		}
+		
+	}
+
+	public String check(String id) {
+		return dao.check_id(id);
+		
+	}
+		
+		
+		
+	
 	
 	
 }

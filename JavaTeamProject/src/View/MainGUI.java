@@ -13,8 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import Controller.MainSystem;
+
 import Controller.MemberManagementSystem;
+
+
 import Model.MainDAO;
 import javax.swing.JLabel;
 
@@ -30,8 +32,13 @@ public class MainGUI {
 	private JButton btnBaseBall;
 	private JButton btnjokgu;
 	private JButton btnSoccer;
+
 	private MemberManagementSystem controller= LoginGUI.controller;
-	MainDAO dao = new MainDAO();
+
+
+
+	MainDAO dao = new MainDAO();s
+
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
 	private JLabel lb_id;
@@ -48,10 +55,12 @@ public class MainGUI {
 	/**
 	 * Create the application.
 	 */
+
 	public MainGUI() {
 		initialize();
+
 		frame.setVisible(true); // 새로운창으로 띄울시 적어야하는 코드
-		
+	
 	}
 
 	/**
@@ -74,7 +83,7 @@ public class MainGUI {
 		btnSoccer = new JButton("\uCD95\uAD6C");
 		btnSoccer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		
+				
 			}
 		});
 		btnSoccer.setBounds(38, 131, 68, 67);
@@ -83,6 +92,7 @@ public class MainGUI {
 		btnjokgu = new JButton("\uC871\uAD6C");
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				InventoryGUI inventory = new InventoryGUI();
 			}
 		});
 		btnjokgu.setBounds(118, 131, 68, 67);
@@ -140,6 +150,7 @@ public class MainGUI {
 		textField.setBounds(12, 10, 296, 49);
 		panel.add(textField);
 		textField.setColumns(10);
+
 		
 		btnNewButton = new JButton("\uB85C\uADF8\uC778");
 		btnNewButton.setBounds(38, 454, 97, 23);
@@ -153,5 +164,6 @@ public class MainGUI {
 		lb_id.setBounds(142, 102, 57, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getID()+"님");
+
 	}
 }

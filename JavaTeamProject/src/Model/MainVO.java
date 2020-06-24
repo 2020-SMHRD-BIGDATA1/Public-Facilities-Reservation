@@ -5,20 +5,21 @@ public class MainVO {
 	private String id;
 	private String pw;
 	private String name;
-	private String addr;
-	private String email;
+	private String age;
 	private String phone;
-	private String point;
-	public MainVO(String id, String pw, String name, String addr, String email, String phone, String point) {
+	private String address;
+	private String mail;
+	public MainVO(String id, String pw, String name, String age, String phone, String address, String mail) {
 		
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
-		this.addr = addr;
-		this.email = email;
+		this.age = age;
 		this.phone = phone;
-		this.point = point;
+		this.address = address;
+		this.mail = mail;
 	}
+	
 	public String getId() {
 		return id;
 	}
@@ -37,17 +38,11 @@ public class MainVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAge() {
+		return age;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAge(String age) {
+		this.age = age;
 	}
 	public String getPhone() {
 		return phone;
@@ -55,12 +50,20 @@ public class MainVO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPoint() {
-		return point;
+	public String getAddress() {
+		return address;
 	}
-	public void setPoint(String point) {
-		this.point = point;
+	public void setAddress(String address) {
+		this.address = address;
 	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+	
+	
 	
 	
 	

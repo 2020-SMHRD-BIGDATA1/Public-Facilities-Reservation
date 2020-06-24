@@ -21,7 +21,6 @@ import java.awt.GridLayout;
 import javax.swing.JPasswordField;
 
 public class JoinGUI {
-
 	
 	private JFrame frame;
 	private JTextField textFieldID;
@@ -123,6 +122,7 @@ public class JoinGUI {
 				}else {
 					JOptionPane.showMessageDialog(frame, "회원가입 실패",
 											"회원가입 결과", JOptionPane.PLAIN_MESSAGE);
+					
 				}
 				
 			}
@@ -165,8 +165,23 @@ public class JoinGUI {
 		textFieldEmail.setBounds(60, 426, 218, 32);
 		frame.getContentPane().add(textFieldEmail);
 		
-		JButton btn_idCheck = new JButton("New button");
-		btn_idCheck.setBounds(195, 114, 18, 19);
+		JButton btn_idCheck = new JButton("@");
+		btn_idCheck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String id = textFieldID.getText();
+				String check_id = controller.check(id);
+				if(check_id.equals("") ) {
+					JOptionPane.showMessageDialog(frame, "사용 가능한 아이디 입니다.",
+							"결과", JOptionPane.PLAIN_MESSAGE);
+					
+				}else {
+					JOptionPane.showMessageDialog(frame, "중복된 아이디 입니다.",
+							"결과", JOptionPane.PLAIN_MESSAGE);
+					
+				}
+			}
+		});
+		btn_idCheck.setBounds(179, 116, 18, 17);
 		frame.getContentPane().add(btn_idCheck);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
@@ -179,6 +194,13 @@ public class JoinGUI {
 		textFieldPW.setBounds(60, 141, 218, 32);
 		frame.getContentPane().add(textFieldPW);
 	}
-
-
+	
+	
+	
+	
 }
+
+		
+				
+
+				
