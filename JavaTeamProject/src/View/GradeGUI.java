@@ -25,24 +25,10 @@ public class GradeGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GradeGUI window = new GradeGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
 	public GradeGUI() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -54,7 +40,7 @@ public class GradeGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\uC885\uD569\uC6B4\uB3D9\uC7A5 \uB9AC\uBDF0/\uD3C9\uC810");
+		JLabel lblNewLabel = new JLabel("\uB9AC\uBDF0/\uD3C9\uC810");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(65, 70, 205, 44);
 		frame.getContentPane().add(lblNewLabel);
@@ -75,8 +61,11 @@ public class GradeGUI {
 				
 				String rating=input1.getText();
 				String review=input2.getText();
+				String id= LoginGUI.controller.getLoginUser().getId();
+				String name= "fcname";
 				
-				GradeVO userReview=new GradeVO("¾È³ç",rating, review);
+				GradeVO userReview= new GradeVO(id, name, rating, review);
+				
 				GradeDAO dao = new GradeDAO();
 				dao.insert(userReview);
 		}});

@@ -29,6 +29,7 @@ public class PointGUI {
 	public PointGUI() {
 		initialize();
 		frame.setVisible(true);
+		
 	}
 
 	Reservation_1Controller controller =new Reservation_1Controller();
@@ -54,7 +55,19 @@ public class PointGUI {
 		btnNewButton.setFont(new Font("맑은 고딕", Font.BOLD, 17));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PointGUI2 reviews = new PointGUI2();
+				
+				int point=Integer.parseInt(inputText.getText());
+			
+				int cnt=con.insertpoint(point);
+				if (cnt>0) {
+					System.out.println("성공");
+				}else {
+					System.out.println("실패");
+				}
+				
+				
+				PointGUI2 reviews = new PointGUI2(point);
+				frame.dispose();
 			}
 		});
 		btnNewButton.setBounds(60, 262, 209, 38);
@@ -82,14 +95,7 @@ public class PointGUI {
 		inputText.setColumns(10);
 		
 //       int point=Integer.parseInt(inputText.getText());
-		String point=inputText.getText();
-		
-		int cnt=con.insertpoint(point);
-		if (cnt>0) {
-			System.out.println("성공");
-		}else {
-			System.out.println("실패");
-		}
+	
 		
 		JLabel nowPoint = new JLabel("New label");
 		nowPoint.setBounds(153, 150, 116, 21);

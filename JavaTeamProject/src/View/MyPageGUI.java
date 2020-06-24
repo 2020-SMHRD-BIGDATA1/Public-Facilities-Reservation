@@ -10,28 +10,20 @@ import javax.swing.SwingConstants;
 
 import Model.MainDAO;
 import Model.MainVO;
-<<<<<<< HEAD
 
-=======
-
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
 import Model.MemberVO;
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 import Controller.MainSystemCon;
 import Controller.MemberManagementSystem;
 import Model.MemberVO;
-<<<<<<< HEAD
 
-=======
 
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -218,8 +210,27 @@ public class MyPageGUI {
 
 			}
 		});
-		btn예약확인.setBounds(103, 385, 97, 23);
+		btn예약확인.setBounds(103, 411, 97, 23);
 		panel.add(btn예약확인);
+		
+		JButton btnNewButton_1 = new JButton("\uB9AC\uBDF0\uC4F0\uAE30");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				GradeGUI gradegui= new GradeGUI();
+			}
+		});
+		btnNewButton_1.setBounds(211, 363, 97, 23);
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton_1_1 = new JButton("\uB9AC\uBDF0\uBCF4\uAE30");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ReviewcheckGUI review= new ReviewcheckGUI();
+			}
+		});
+		btnNewButton_1_1.setBounds(211, 385, 97, 23);
+		panel.add(btnNewButton_1_1);
 
 	}
 }

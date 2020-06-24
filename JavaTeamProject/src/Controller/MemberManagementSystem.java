@@ -50,7 +50,7 @@ public class MemberManagementSystem {
 	}
 
 	
-	public int insertpoint(String point) {
+	public int insertpoint(int point) {
 
 		int cnt=dao.insertpoint(point);
 		
