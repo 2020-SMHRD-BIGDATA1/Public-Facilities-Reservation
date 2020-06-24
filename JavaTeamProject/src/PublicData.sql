@@ -113,4 +113,4 @@ insert into test values('ÀÖ¾î¶ó','04:00~06:00');
 
 >>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
-select * from reservation;
+select * from publics;
