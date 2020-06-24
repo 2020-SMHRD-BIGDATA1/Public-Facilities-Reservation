@@ -19,6 +19,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.Toolkit;
+import java.awt.Color;
 
 public class InventoryGUI {
 
@@ -49,11 +50,14 @@ public class InventoryGUI {
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		panel.setBackground(new Color(240, 255, 255));
 		panel.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JButton back_btn = new JButton("");
+		back_btn.setForeground(new Color(0, 0, 0));
+		back_btn.setBackground(new Color(255, 255, 255));
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -63,6 +67,7 @@ public class InventoryGUI {
 		panel.add(back_btn);
 		
 		panel1 = new JPanel();
+		panel1.setBackground(new Color(240, 248, 255));
 		panel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -101,6 +106,8 @@ public class InventoryGUI {
 		charge_lbl.setText(str);
 		
 		resrveation_btn = new JButton("\uC608\uC57D");
+		resrveation_btn.setBackground(new Color(123, 104, 238));
+		resrveation_btn.setForeground(new Color(255, 255, 255));
 		resrveation_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

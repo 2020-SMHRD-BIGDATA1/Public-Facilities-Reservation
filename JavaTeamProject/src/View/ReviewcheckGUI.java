@@ -10,6 +10,8 @@ import javax.swing.SwingConstants;
 import Controller.GradeController;
 import Model.GradeDAO;
 import Model.GradeVO;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ReviewcheckGUI {
 
@@ -34,6 +36,8 @@ public class ReviewcheckGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.getContentPane().setBackground(new Color(255, 239, 213));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

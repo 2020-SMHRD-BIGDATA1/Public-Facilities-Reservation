@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 
 import Controller.MainSystemCon;
 import Model.MainDAO;
+import java.awt.Toolkit;
 
 public class MainGUI {
 
@@ -41,6 +42,7 @@ public class MainGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

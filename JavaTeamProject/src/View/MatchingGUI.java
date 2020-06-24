@@ -22,6 +22,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class MatchingGUI {
 
@@ -59,6 +60,7 @@ public class MatchingGUI {
 	private void initialize() {
 
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

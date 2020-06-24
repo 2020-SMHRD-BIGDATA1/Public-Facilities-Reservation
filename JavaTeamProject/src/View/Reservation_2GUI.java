@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 
 import Controller.Reservation_1Controller;
 import java.text.SimpleDateFormat;
+import java.awt.Toolkit;
 
 
 public class Reservation_2GUI {
@@ -30,6 +31,7 @@ public class Reservation_2GUI {
 	public Reservation_2GUI() {
 		initialize();
 		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
 	
 	}
 
@@ -37,9 +39,11 @@ public class Reservation_2GUI {
 	
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.BOLD, 12));
-		frame.getContentPane().setBackground(Color.WHITE);
+		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
+		
 		
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
@@ -51,7 +55,7 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(3, 4, 0, 0));
 		
-		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uC124\uBA85");
+		JLabel lblNewLabel_2 = new JLabel(" \uC2DC\uC124\uBA85");
 		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_2);
 
@@ -70,7 +74,7 @@ public class Reservation_2GUI {
 		
 		
 		
-		JLabel lblNewLabel_8 = new JLabel("\uC811\uC218\uC77C");
+		JLabel lblNewLabel_8 = new JLabel(" \uC811\uC218\uC77C");
 		lblNewLabel_8.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_8);
 		
@@ -88,7 +92,7 @@ public class Reservation_2GUI {
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_6 = new JLabel("\uC774\uC6A9\uC2DC\uAC04");
+		JLabel lblNewLabel_6 = new JLabel(" \uC774\uC6A9\uC2DC\uAC04");
 		lblNewLabel_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel.add(lblNewLabel_6);
 		
@@ -113,21 +117,21 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel lblNewLabel_2_1 = new JLabel("\uC774\uB984");
+		JLabel lblNewLabel_2_1 = new JLabel(" \uC774\uB984");
 		lblNewLabel_2_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("New label");
 		panel_1.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_7_1 = new JLabel("\uC804\uD654\uBC88\uD638");
+		JLabel lblNewLabel_7_1 = new JLabel(" \uC804\uD654\uBC88\uD638");
 		lblNewLabel_7_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_7_1);
 		
 		JLabel lblNewLabel_9_1 = new JLabel("New label");
 		panel_1.add(lblNewLabel_9_1);
 		
-		JLabel lblNewLabel_8_1 = new JLabel("\uC774\uBA54\uC77C ");
+		JLabel lblNewLabel_8_1 = new JLabel(" \uC774\uBA54\uC77C ");
 		lblNewLabel_8_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_1.add(lblNewLabel_8_1);
 		
@@ -143,7 +147,7 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		JLabel lblNewLabel_14 = new JLabel("\uBCF4\uC720\uD3EC\uC778\uD2B8");
+		JLabel lblNewLabel_14 = new JLabel(" \uBCF4\uC720\uD3EC\uC778\uD2B8");
 		lblNewLabel_14.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_2.add(lblNewLabel_14);
 		
@@ -159,6 +163,7 @@ public class Reservation_2GUI {
 
 		
 		JButton btn_use = new JButton("\uC0AC\uC6A9\uD558\uAE30 ");
+		btn_use.setBackground(new Color(255, 255, 255));
 		btn_use.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		btn_use.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -181,7 +186,7 @@ public class Reservation_2GUI {
 		});
 		panel_2.add(btn_use);
 		
-		JLabel lblNewLabel_16 = new JLabel("\uC794\uC5EC\uD3EC\uC778\uD2B8");
+		JLabel lblNewLabel_16 = new JLabel(" \uC794\uC5EC\uD3EC\uC778\uD2B8");
 		lblNewLabel_16.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		panel_2.add(lblNewLabel_16);
 		
@@ -193,6 +198,7 @@ public class Reservation_2GUI {
 		
 		
 		JButton btn_charge = new JButton("\uCDA9\uC804\uD558\uAE30");
+		btn_charge.setBackground(new Color(255, 255, 255));
 		btn_charge.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		btn_charge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -207,13 +213,14 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(lblNewLabel_13_2);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(12, 399, 320, 30);
+		panel_3.setBounds(12, 399, 320, 37);
 		frame.getContentPane().add(panel_3);
 		
 		JLabel label = new JLabel("? \uD300\uC6D0\uC774 \uBD80\uC871\uD558\uC2ED\uB2C8\uAE4C?");
 		panel_3.add(label);
 		
 		JButton btnNewButton_3 = new JButton("\uB124");
+		btnNewButton_3.setBackground(new Color(211, 211, 211));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -224,6 +231,8 @@ public class Reservation_2GUI {
 		
 
 		JButton btnNewButton_2 = new JButton("\uC608\uC57D\uD558\uAE30");
+		btnNewButton_2.setBackground(new Color(123, 104, 238));
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			
 
