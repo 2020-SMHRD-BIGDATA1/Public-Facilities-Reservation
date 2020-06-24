@@ -167,13 +167,13 @@ public class MainGUI {
 			
 			}
 		});
-		btnMyPage.setBounds(245, 69, 52, 58);
+		btnMyPage.setBounds(231, 101, 52, 48);
 		panel.add(btnMyPage);
 		
 		
 		
 		lb_id = new JLabel("New label");
-		lb_id.setBounds(160, 102, 57, 15);
+		lb_id.setBounds(175, 123, 57, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId()+"´Ô");
 		
@@ -187,15 +187,15 @@ public class MainGUI {
 		lblNewLabel_8 = new JLabel("\uD558\uB791\uAED8");
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_8.setFont(new Font("±¼¸²", Font.BOLD, 16));
-		lblNewLabel_8.setBounds(12, 10, 285, 38);
+		lblNewLabel_8.setBounds(12, 43, 285, 38);
 		panel.add(lblNewLabel_8);
 		
 		
 		
 		lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBA54\uC778 \uBC30\uACBD\uD654\uBA74.PNG"));
+		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uAF43.jpg"));
 		lblNewLabel_7.setBackground(Color.WHITE);
-		lblNewLabel_7.setBounds(-15, -8, 347, 67);
+		lblNewLabel_7.setBounds(-15, 25, 347, 67);
 		panel.add(lblNewLabel_7);
 		
 		
@@ -236,14 +236,19 @@ public class MainGUI {
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
 		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 14));
-		lblNewLabel_5.setBounds(105, 466, 112, 23);
+		lblNewLabel_5.setBounds(105, 452, 112, 23);
 		panel.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBA54\uC778 \uBC30\uACBD\uD654\uBA74.PNG"));
+		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uAF43.jpg1.jpg"));
 		lblNewLabel_6.setBackground(Color.WHITE);
 		lblNewLabel_6.setBounds(-15, 487, 347, 67);
 		panel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uC5B4\uD50C\uC5B4\uD50C.PNG"));
+		lblNewLabel_9.setBounds(0, 0, 320, 27);
+		panel.add(lblNewLabel_9);
 		
 		
 
