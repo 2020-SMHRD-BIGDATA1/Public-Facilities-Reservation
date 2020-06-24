@@ -16,6 +16,9 @@ public class MainVO {
 	private String address;
 	private String mail;
 	
+	public MainVO(String id) {
+		this.id = id;
+	}
 	
 	public MainVO(String id, String pw, String name, String age, String phone, String address, String mail) {
 
