@@ -48,18 +48,17 @@ public class LoginGUI {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
 	public LoginGUI() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -133,10 +132,13 @@ public class LoginGUI {
 				if (isSuccess == true) {
 					JOptionPane.showMessageDialog(frame, "로그인 성공", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
 					MainGUI mainGUI = new MainGUI();
-					frame.setVisible(false);
-				} else {
-					JOptionPane.showMessageDialog(frame, "로그인 실패", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
-				}
+					
+				}else {
+					JOptionPane.showMessageDialog(frame, "로그인 실패",
+											"로그인 결과", JOptionPane.PLAIN_MESSAGE);
+					frame.setVisible(true);
+				
+				} 
 			}
 			
 		

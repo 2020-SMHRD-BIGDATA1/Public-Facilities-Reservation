@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Controller.Reservation_1Controller;
+import View.LoginGUI;
 
 public class ReservationDAO {
 
@@ -15,7 +16,11 @@ public class ReservationDAO {
 	private ResultSet rs;
 //	private ResultSet rev_rs;
 //	private int cnt;
+	
+	
 
+	LoginGUI logingui= new LoginGUI();
+	
 	private void getconnection() {
 
 		try {
@@ -57,11 +62,15 @@ public class ReservationDAO {
 		getconnection();
 		int point = 0;
 
-		String sql = "select point from members5 where id=?";
+		String sql = "select point from members where id=?";
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, Reservation_1Controller.getVo().getId());
+
+			pst.setString(1, logingui.controller.getLoginUser().getId());
+
+		
+
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
@@ -336,7 +345,6 @@ public class ReservationDAO {
 		
 			
 			if (rs.next()) {
-
 				int charge=rs.getInt("charge");
 			    charge1=(char)charge;
 			}
@@ -350,7 +358,63 @@ public class ReservationDAO {
 		return charge1;
 	
 	}
+
+	public String getfac_id(String fac_name) {
+		getconnection();
+
+		String sql = "select fac_id from publics where name=?";
+		String	fac_id = null;
+	
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, fac_name);
+			rs = pst.executeQuery();
+		   
 		
+			
+			if (rs.next()) {
+
+			fac_id=rs.getString("fac_id");
+			
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return fac_id;
+
+	
+}
+
+	public int insertReservation(ReserVO revo) {
+		 getconnection();
+
+		 String sql= "insert into reservation values(?,?,?,?,?,?,?)";
+			int count = 0;
+			try {
+				pst= conn.prepareStatement(sql);
+				pst.setString(1,revo.getUser_id());
+				pst.setString(2, revo.getFac_id());
+				pst.setString(3,revo.getFac_name());
+				pst.setString(4,revo.getReserdate());
+				pst.setString(5, revo.getUsedate());
+				pst.setString(6,revo.getUsetime());
+				pst.setString(7,revo.getFee());
+				
+				count=pst.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			
+			return count;
+		}
 
 	}
 
