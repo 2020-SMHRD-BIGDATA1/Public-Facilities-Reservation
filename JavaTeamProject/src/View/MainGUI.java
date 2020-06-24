@@ -1,24 +1,18 @@
 package View;
 
-import java.awt.EventQueue;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-
 import Controller.MemberManagementSystem;
-
-
 import Model.MainDAO;
-import javax.swing.JLabel;
 
 
 public class MainGUI {
@@ -38,9 +32,6 @@ public class MainGUI {
 
 
 	MainDAO dao = new MainDAO();
-
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
 	private JLabel lb_id;
 	/**
 	 * Launch the application.
@@ -68,6 +59,7 @@ public class MainGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -150,15 +142,6 @@ public class MainGUI {
 		textField.setBounds(12, 10, 296, 49);
 		panel.add(textField);
 		textField.setColumns(10);
-
-		
-		btnNewButton = new JButton("\uB85C\uADF8\uC778");
-		btnNewButton.setBounds(38, 454, 97, 23);
-		panel.add(btnNewButton);
-		
-		btnNewButton_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btnNewButton_1.setBounds(169, 454, 97, 23);
-		panel.add(btnNewButton_1);
 		
 		lb_id = new JLabel("New label");
 		lb_id.setBounds(142, 102, 57, 15);
@@ -166,4 +149,5 @@ public class MainGUI {
 		lb_id.setText(controller.getLoginUser().getId()+"ดิ");
 
 	}
+
 }
