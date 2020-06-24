@@ -37,7 +37,7 @@ public class MainGUI {
 
 
 
-	MainDAO dao = new MainDAO();s
+	MainDAO dao = new MainDAO();
 
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
@@ -163,7 +163,7 @@ public class MainGUI {
 		lb_id = new JLabel("New label");
 		lb_id.setBounds(142, 102, 57, 15);
 		panel.add(lb_id);
-		lb_id.setText(controller.getLoginUser().getID()+"ดิ");
+		lb_id.setText(controller.getLoginUser().getId()+"ดิ");
 
 	}
 }
