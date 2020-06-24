@@ -1,5 +1,5 @@
 create table Publics(
-
+	Fac_ID number,
 	Name varchar2(50),
 	Division varchar2(30),
 	closure varchar2(30),
@@ -12,7 +12,6 @@ create table Publics(
 	phone varchar2(20),
 	homepage varchar2(50),
 	img varchar2(50)
-
 );
 
 
@@ -31,18 +30,21 @@ drop table reservations;
 
 
 create table MemberMactching(
+	Fac_ID number,
 	id varchar2(30),
 	addnum number,
 	title varchar2(30),
 	body varchar2(30)
 );
+insert into MEMBERMACTCHING values (2,'ljh2723',3,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMACTCHING values (13,'ljh2723',2,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMACTCHING values (12,'ljh',2,'놀자~!!','야구할사람 구해욥');
+insert into MEMBERMACTCHING values (15,'ljh2723',5,'덤벼라!!','축구할사람!!');
+insert into MEMBERMACTCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
 
-<<<<<<< HEAD
 select * from MemberMactching;
 select * from members;
-=======
 select * from Publics;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 drop table members;
 create table MEMBERS(
@@ -54,7 +56,7 @@ create table MEMBERS(
 	address varchar(60),
 	mail varchar(100),
 	point NUMBER(30));
-<<<<<<< HEAD
+	
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
@@ -65,7 +67,5 @@ UPDATE MEMBERS SET pw = 1234, name = '하하하', age = 27, PHONE = '010-5555-6666'
 delete members where id='12';
 	
 
-=======
 select * from members;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 

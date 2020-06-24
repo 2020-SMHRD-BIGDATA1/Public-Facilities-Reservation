@@ -47,18 +47,17 @@ public class LoginGUI {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
 	public LoginGUI() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 360, 600);

@@ -30,6 +30,10 @@ public class MainGUI {
 	public static MainSystemCon con = new MainSystemCon();
 	MainDAO dao = new MainDAO();
 	
+	
+	
+	
+	
 	public MainGUI() {
 		initialize();
 		frame.setVisible(true);

@@ -115,12 +115,6 @@ public class InventoryGUI {
 		panel1.add(closure_lbl);
 		
 		closure_lbl.setText(con.getclosure());
-	
-
-		JLabel lblNewLabel_3 = new JLabel("\uC9C0\uC5ED");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(65, 56, 57, 15);
-		panel.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("\uC885\uBAA9");
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -165,40 +159,6 @@ public class InventoryGUI {
 		comboBox.addItem("족구장");
 		comboBox.addItem("농구장");
 		comboBox.addItem("배드민턴장");
-		
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent e) {
-				if(comboBox_1.getSelectedItem().toString().equals("서구")) {
-					if (e.getStateChange() == ItemEvent.SELECTED) {
-				        System.out.println("서구선택");
-				}
-				}else if(comboBox_1.getSelectedItem().toString().equals("동구")) {
-					if (e.getStateChange() == ItemEvent.SELECTED) {
-				        System.out.println("동구선택");
-				}
-				}else if(comboBox_1.getSelectedItem().toString().equals("북구")) {
-					if (e.getStateChange() == ItemEvent.SELECTED) {
-				        System.out.println("북구선택");
-				}
-				}else if(comboBox_1.getSelectedItem().toString().equals("남구")) {
-					if (e.getStateChange() == ItemEvent.SELECTED) {
-				        System.out.println("남구선택");
-				}
-				}else if(comboBox_1.getSelectedItem().toString().equals("광산구")) {
-					if (e.getStateChange() == ItemEvent.SELECTED) {
-				        System.out.println("광산구");
-				}
-				}
-			}
-		});
-		comboBox_1.setBounds(134, 53, 90, 21);
-		panel.add(comboBox_1);
-		comboBox_1.addItem("동구");
-		comboBox_1.addItem("서구");
-		comboBox_1.addItem("남구");
-		comboBox_1.addItem("북구");
-		comboBox_1.addItem("광산구");
 		
 	}
 }
