@@ -27,6 +27,7 @@ public class MyPageGUI2 {
 	private JTextField inPutidAge;
 	private JTextField inPutidPW;
 	MainDAO dao = new MainDAO();
+	private JTextField inPutpoint;
 	
 	public MyPageGUI2() {
 		initialize();
@@ -39,7 +40,7 @@ public class MyPageGUI2 {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 360, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -97,6 +98,7 @@ public class MyPageGUI2 {
 
 				if (cnt > 0) {
 					JOptionPane.showMessageDialog(frame, "수정성공", "수정 결과", JOptionPane.PLAIN_MESSAGE);
+					frame.setVisible(false);
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정실패", "수정 결과", JOptionPane.PLAIN_MESSAGE);
 				}
@@ -110,7 +112,8 @@ public class MyPageGUI2 {
 		inPutid.setColumns(10);
 		inPutid.setBounds(116, 114, 116, 21);
 		panel.add(inPutid);
-		
+		inPutid.setEditable(false);
+
 		inPutidPhone = new JTextField();
 		inPutidPhone.setColumns(10);
 		inPutidPhone.setBounds(116, 259, 116, 21);
@@ -131,10 +134,6 @@ public class MyPageGUI2 {
 		text_Email_1.setBounds(47, 392, 57, 15);
 		panel.add(text_Email_1);
 		
-		JButton btnNewButton = new JButton("\uAD00\uB9AC");
-		btnNewButton.setBounds(244, 385, 64, 28);
-		panel.add(btnNewButton);
-		
 		inPutidName = new JTextField();
 		inPutidName.setColumns(10);
 		inPutidName.setBounds(116, 176, 116, 21);
@@ -150,11 +149,14 @@ public class MyPageGUI2 {
 		lblNewLabel.setBounds(47, 219, 57, 15);
 		panel.add(lblNewLabel);
 		
-		JLabel lb_point = new JLabel("New label");
-		lb_point.setBounds(114, 392, 118, 15);
-		panel.add(lb_point);
-		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
+		btnmdfy_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				
+			
+			}
+		});
 		btnmdfy_1.setBounds(166, 460, 97, 23);
 		panel.add(btnmdfy_1);
 		
@@ -167,6 +169,11 @@ public class MyPageGUI2 {
 		inPutidPW.setColumns(10);
 		inPutidPW.setBounds(116, 142, 116, 21);
 		panel.add(inPutidPW);
+		
+		inPutpoint = new JTextField();
+		inPutpoint.setColumns(10);
+		inPutpoint.setBounds(116, 389, 116, 21);
+		panel.add(inPutpoint);
+		inPutpoint.setEditable(false);
 	}
-
 }

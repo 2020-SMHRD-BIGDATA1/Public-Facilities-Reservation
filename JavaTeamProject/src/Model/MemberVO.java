@@ -27,9 +27,6 @@ public class MemberVO {
 	
 	
 
-<<<<<<< HEAD
-=======
-
 
 
 
@@ -37,7 +34,7 @@ public class MemberVO {
 		this.id = id;
 	}
 
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 	public int getAge() {
 		return age;
 	}

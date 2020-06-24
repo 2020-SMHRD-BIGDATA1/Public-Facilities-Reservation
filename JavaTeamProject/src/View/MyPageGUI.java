@@ -24,7 +24,7 @@ public class MyPageGUI {
 	MainDAO dao = new MainDAO();
 	
 	
-	MemberManagementSystem conn= new MemberManagementSystem();
+	MemberManagementSystem conn= LoginGUI.controller;
 
 	MainSystemCon con= new MainSystemCon();
 
@@ -125,8 +125,8 @@ public class MyPageGUI {
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-			
+				frame.setVisible(false);
+				
 			
 			}
 		});
@@ -139,45 +139,53 @@ public class MyPageGUI {
 		panel.add(text_NAME_1);
 		
 		JLabel lb_email = new JLabel("New label");
+		lb_email.setText(conn.getLoginUser().getMail());
 		lb_email.setBounds(114, 291, 118, 15);
 		panel.add(lb_email);
 		
 		JLabel lb_addr = new JLabel("New label");
+		lb_addr.setText(conn.getLoginUser().getAddress());
 		lb_addr.setBounds(114, 244, 118, 15);
 		panel.add(lb_addr);
 		
 		JLabel lb_Phone = new JLabel("New label");
+		lb_Phone.setText(conn.getLoginUser().getPhone());
 		lb_Phone.setBounds(114, 202, 118, 15);
 		panel.add(lb_Phone);
 		
 		JLabel lb_AGE = new JLabel("New label");
+		
 		lb_AGE.setBounds(116, 159, 118, 15);
 		panel.add(lb_AGE);
 		
 		JLabel lb_NAME = new JLabel("New label");
+		lb_NAME.setText(conn.getLoginUser().getName());
 		lb_NAME.setBounds(114, 119, 118, 15);
 		panel.add(lb_NAME);
 		
 		JLabel lb_PW = new JLabel("New label");
+		lb_PW.setText(conn.getLoginUser().getPw());
 		lb_PW.setBounds(114, 85, 118, 15);
 		panel.add(lb_PW);
 		
 		JLabel lb_ID = new JLabel("New label");
+		lb_ID.setText(conn.getLoginUser().getID());
 		lb_ID.setBounds(114, 57, 118, 15);
 		panel.add(lb_ID);
 		
-		
-		JLabel text_Email_1_1 = new JLabel("\uC608\uC57D\uD604\uD669");
-		text_Email_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		text_Email_1_1.setBounds(47, 391, 57, 15);
-		panel.add(text_Email_1_1);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(114, 357, 106, 78);
-		panel.add(lblNewLabel_1);
-		
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
-		btn예약확인.setBounds(223, 387, 97, 23);
+		btn예약확인.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			
+				
+				
+			
+			
+			
+			}
+		});
+		btn예약확인.setBounds(103, 385, 97, 23);
 		panel.add(btn예약확인);
 	}
 }
