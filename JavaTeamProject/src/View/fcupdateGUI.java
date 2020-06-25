@@ -94,9 +94,10 @@ public class fcupdateGUI extends JFrame {
 	private void initialize(String name) {
 
 		frame = new JFrame();
-		frame.setBounds(500, 500, 450, 600);
+		frame.setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 27, 410, 490);
@@ -105,7 +106,7 @@ public class fcupdateGUI extends JFrame {
 		panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
-
+		frame.setBounds(500, 500, 450, 600);
 		panel_1 = new JPanel();
 		panel.add(panel_1);
 		panel_1.setLayout(null);
