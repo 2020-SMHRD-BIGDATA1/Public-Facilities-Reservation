@@ -66,7 +66,6 @@ references Publics(fac_id);
 alter table MemberMatching
 add constraint memmat_u_id_fk foreign key(user_id)
 references MEMBERS(user_id); 
-
 	
 alter table reservation
 add constraint reserv_u_id_fk foreign key(user_id)
@@ -93,7 +92,6 @@ insert into MEMBERS values ('123', 123, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı',
 insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áı', 'eliote_min@naver.com', 0);
 	
-
 -- º¸¶ó²¨
 create table test(
 fcname varchar2(30),

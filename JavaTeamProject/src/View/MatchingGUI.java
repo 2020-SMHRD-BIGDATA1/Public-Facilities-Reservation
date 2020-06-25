@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 
 import Model.MatchingDAO;
@@ -89,8 +90,12 @@ public class MatchingGUI {
 		panel.add(comboBox);
 
 		scrollPane = new JScrollPane();
+		
 		scrollPane.setBounds(10, 62, 412, 476);
-
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(12, 48, 410, 503);
+		
 		panel1 = new JPanel();
 		panel1.setBackground(new Color(255, 250, 250));
 
@@ -133,7 +138,6 @@ public class MatchingGUI {
 						}
 					}
 				}
-				
 
 				for (int i = 0; i < list.size(); i++) {
 					for (int j = 0; j < infolist.size(); j++) {
