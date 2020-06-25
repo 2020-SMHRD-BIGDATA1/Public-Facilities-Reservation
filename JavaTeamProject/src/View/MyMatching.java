@@ -10,6 +10,8 @@ import javax.swing.SwingConstants;
 
 import Model.MatchingVO;
 import Model.RoomMatchingVO;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MyMatching extends JPanel {
 	private JPanel panel;
@@ -73,6 +75,11 @@ public class MyMatching extends JPanel {
 		panel.add(contents_lbl);
 		
 		apply_btn = new JButton("\uC2E0\uCCAD");
+		apply_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		apply_btn.setBounds(342, 238, 70, 62);
 		apply_btn.setFont(new Font("HY목각파임B", Font.PLAIN, 12));
 		panel.add(apply_btn);

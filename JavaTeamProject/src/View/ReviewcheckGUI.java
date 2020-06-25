@@ -66,6 +66,7 @@ public class ReviewcheckGUI {
 		btnNewButton.setIcon(new ImageIcon(ReviewcheckGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MyPageGUI my = new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});

@@ -83,6 +83,8 @@ public class GradeGUI {
 				dao.insert(userReview);
 
 				ReviewcheckGUI reviews = new ReviewcheckGUI();
+				frame.setVisible(false);
+				
 			}
 		});
 		frame.getContentPane().add(btnNewButton_1);
@@ -90,6 +92,8 @@ public class GradeGUI {
 		JButton btnNewButton_2 = new JButton("\uCDE8\uC18C");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				MyPageGUI my =new MyPageGUI();
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_2.setBounds(216, 424, 110, 35);
@@ -112,6 +116,7 @@ public class GradeGUI {
 		btnNewButton.setIcon(new ImageIcon(GradeGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MyPageGUI my= new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});

@@ -33,7 +33,7 @@ public class tableUpdateGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(tableUpdateGUI.class.getResource("/img/frame.jpg")));
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -62,7 +62,7 @@ public class tableUpdateGUI {
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				MyPageGUI my =new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});

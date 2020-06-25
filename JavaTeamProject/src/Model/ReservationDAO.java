@@ -67,16 +67,12 @@ public class ReservationDAO {
 
 		try {
 			pst = conn.prepareStatement(sql);
-
 			pst.setString(1, logingui.controller.getLoginUser().getId());
-
 		
-
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
 				point = rs.getInt("point");
-				System.out.println(point);
 			}
 
 		} catch (SQLException e) {
@@ -446,7 +442,7 @@ public class ReservationDAO {
 	public ArrayList<RatingVO> getrating(String name) {
 		getconnection();
 
-		String sql = "select id,rating,review from ratings where name=?";
+		String sql = "select user_id,rating,review from ratings where name=?";
 		ArrayList<RatingVO> arr= new ArrayList<RatingVO>(); 
 	
 		try {
@@ -456,7 +452,7 @@ public class ReservationDAO {
 
 			if (rs.next()) {
 			
-			String id= rs.getString("id");
+			String id= rs.getString("user_id");
 			String rating= rs.getString("rating");
 			String review= rs.getString("review");
 			RatingVO ra_vo= new RatingVO(id, rating, review);
