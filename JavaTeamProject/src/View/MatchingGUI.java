@@ -79,7 +79,7 @@ public class MatchingGUI {
 
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(175, 20, 90, 21);
-
+		
 		comboBox.addItem("축구장");
 		comboBox.addItem("야구장");
 		comboBox.addItem("풋살경기장");
