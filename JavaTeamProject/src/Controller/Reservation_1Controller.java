@@ -1,5 +1,8 @@
 package Controller;
 
+import java.util.ArrayList;
+
+import Model.RatingVO;
 import Model.ReserVO;
 import Model.ReservationDAO;
 import Model.fcnamevo;
@@ -128,6 +131,12 @@ public class Reservation_1Controller {
 		int fac_id =dao.getfac_id(fac_name);
 		
 		return fac_id;
+	}
+	
+
+	public ArrayList<RatingVO> getrating(String name) {
+		
+       return dao.getrating(name);
 	}
 
 }

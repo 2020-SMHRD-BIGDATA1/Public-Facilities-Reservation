@@ -22,6 +22,10 @@ create table Publics(
 );
 
 create table Ratings(
+	id varchar2(30),
+	Name varchar2(300),
+	Rating varchar2(5),
+	Review varchar2(600));
 	user_id varchar(20),
 	Fac_Name varchar2(100),
 	Rating varchar(5) NOT NULL,
@@ -29,6 +33,23 @@ create table Ratings(
 	);
 	
 create table MEMBERS(
+	id varchar(20),
+	pw varchar(20),
+	name varchar(10),
+	age NUMBER (10),
+	phone varchar(20),
+	address varchar(100),
+	mail varchar(100),
+	point NUMBER(30));
+	
+create table reservation(
+   user_id varchar2(200),
+    fac_id varchar2(200),
+	fac_name varchar2(200),
+	reserdate varchar2(200),
+	usedate varchar2(200),
+	usetime varchar2(200),
+	fee varchar2(200)
 	user_id varchar(20) ,
 	pw varchar(20) not null,
 	name varchar(10) not null,
@@ -45,6 +66,7 @@ create table MemberMatching(
 	addnum number,
 	title varchar2(30) not null,
 	body varchar2(100) not null
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 );
 create table reservation(
 	user_id varchar2(20),
@@ -74,10 +96,8 @@ references MEMBERS(user_id);
 alter table reservation
 add constraint reserv_fac_id_fk foreign key(fac_id)
 references Publics(fac_id); 
-<<<<<<< HEAD
 
 select * from MEMBERS
-=======
 -----------------------------------
 >>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
@@ -112,4 +132,5 @@ insert into test values('몰라','44:00~66:00');
 insert into test values('있어라','04:00~06:00');
 
 
-select * from publics;
+select * from Ratings ;
+insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');

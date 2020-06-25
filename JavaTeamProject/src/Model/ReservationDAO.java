@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Controller.Reservation_1Controller;
 import View.LoginGUI;
@@ -415,6 +416,39 @@ public class ReservationDAO {
 			
 			return count;
 		}
+
+	public ArrayList<RatingVO> getrating(String name) {
+		getconnection();
+
+		String sql = "select id,rating,review from ratings where name=?";
+		ArrayList<RatingVO> arr= new ArrayList<RatingVO>(); 
+	
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, name);
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+			
+			String id= rs.getString("id");
+			String rating= rs.getString("rating");
+			String review= rs.getString("review");
+			RatingVO ra_vo= new RatingVO(id, rating, review);
+				
+			arr.add(ra_vo);
+			
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+		
+
+	}
 
 	}
 

@@ -49,9 +49,8 @@ public class tableUpdateGUI {
 		
 		table.setFillsViewportHeight(true);
 		
-		panel.add(new JScrollPane(table));
-		
-		table = new JTable();
 		panel.add(table);
+	
+	
 	}
 }
