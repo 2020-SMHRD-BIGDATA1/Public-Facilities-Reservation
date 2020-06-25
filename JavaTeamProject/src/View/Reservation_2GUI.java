@@ -35,9 +35,8 @@ public class Reservation_2GUI {
 		initialize();
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
-
 	}
-
+	
 	private MemberManagementSystem MMCON = LoginGUI.controller;
 	private final JButton btn_back = new JButton("<");
 
