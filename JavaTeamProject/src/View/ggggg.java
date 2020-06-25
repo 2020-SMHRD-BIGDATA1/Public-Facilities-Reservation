@@ -67,8 +67,6 @@ public class ggggg {
 		comboBox.addItem("배드맨턴장");
 		frame.getContentPane().add(comboBox);
 
-		list = dao.divide(comboBox.getSelectedItem().toString());
-
 //		   list = dao.divide(comboBox.getSelectedItem().toString());
 //		   list = dao.divide(index);
 
@@ -82,6 +80,11 @@ public class ggggg {
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 
+		list= dao.divide("족구장");
+		for (int i = 0; i < list.size(); i++) {
+			addItem(i);
+		}
+		
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				Component[] componentList = panel.getComponents();
