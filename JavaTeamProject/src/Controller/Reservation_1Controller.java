@@ -59,7 +59,8 @@ public class Reservation_1Controller {
 
 		return weekday;
 	}
-
+	
+	
 	public String getweekend(String fc_name) {
 
 		String weekend = dao.getweekend(fc_name);
@@ -122,9 +123,9 @@ public class Reservation_1Controller {
 
 
 
-	public String getfac_id(String fac_name) {
+	public int getfac_id(String fac_name) {
 	  
-		String fac_id =dao.getfac_id(fac_name);
+		int fac_id =dao.getfac_id(fac_name);
 		
 		return fac_id;
 	}
