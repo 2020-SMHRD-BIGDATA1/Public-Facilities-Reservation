@@ -77,6 +77,12 @@ public class Reservation_1Controller {
 
 		return homepage;
 	}
+	
+	public String getImg(String fc_name) {
+		String Img = dao.getimg(fc_name);
+		
+		return Img;
+	}
 
 	public String getpeople(String fc_name) {
 

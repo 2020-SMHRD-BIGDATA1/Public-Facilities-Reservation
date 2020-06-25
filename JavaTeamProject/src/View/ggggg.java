@@ -91,6 +91,12 @@ public class ggggg {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton.setBounds(12, 10, 23, 23);
 		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
 		frame.getContentPane().add(btnNewButton);

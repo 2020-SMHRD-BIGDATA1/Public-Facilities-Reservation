@@ -1,11 +1,16 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ReservationGUI {
 
@@ -47,11 +52,24 @@ public class ReservationGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\uC2DC\uC124\uBA85");
-		lblNewLabel.setBounds(12, 10, 101, 47);
+		lblNewLabel.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
+		lblNewLabel.setBounds(12, 40, 101, 47);
+		
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
-		lblNewLabel_1.setBounds(12, 79, 101, 47);
+		lblNewLabel_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
+		lblNewLabel_1.setBounds(12, 97, 101, 47);
 		frame.getContentPane().add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon(ReservationGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton.setBounds(12, 10, 23, 23);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

@@ -90,7 +90,7 @@ public class MainGUI {
 		JPanel panel = new JPanel();
 
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 10, 422, 551);
+		panel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(panel);
 
 		btnSoccer = new JButton("");
@@ -134,6 +134,12 @@ public class MainGUI {
 				ggggg gg = new ggggg("≥Û±∏¿Â");
 			}
 		});
+<<<<<<< HEAD
+=======
+	
+
+		btnbasketBall.setBounds(229, 161, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnbasketBall);
 
 		btnFutSal = new JButton("");

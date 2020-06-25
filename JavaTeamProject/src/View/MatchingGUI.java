@@ -56,6 +56,7 @@ public class MatchingGUI {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MatchingGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(panel);
@@ -67,7 +68,7 @@ public class MatchingGUI {
 		back_btn.setIcon(new ImageIcon(MatchingGUI.class.getResource("/img/prev.jpg")));
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				frame.setVisible(false);
 			}
 		});
 		back_btn.setBounds(10, 10, 23, 23);

@@ -331,7 +331,33 @@ public class ReservationDAO {
 		return people;
 	
 	}
+	public String getimg(String fc_name) {
+		
+		getconnection();
 
+		String sql = "select img from publics where fac_name=?";
+
+		String img = null;
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, fc_name);
+			rs = pst.executeQuery();
+
+			if (rs.next()) {
+
+				img= rs.getString("img");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return img;
+	
+	}
 	public char getcharge() {
 		
 		getconnection();
