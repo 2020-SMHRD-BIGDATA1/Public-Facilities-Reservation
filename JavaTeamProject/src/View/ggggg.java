@@ -60,6 +60,7 @@ public class ggggg {
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ggggg.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		comboBox = new JComboBox<String>();
