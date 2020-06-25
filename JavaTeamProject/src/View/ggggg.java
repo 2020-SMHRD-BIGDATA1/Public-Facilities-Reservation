@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.ScrollPaneConstants;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class ggggg {
 
@@ -49,15 +51,18 @@ public class ggggg {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 400, 599);
+		frame.getContentPane().setBackground(new Color(240, 255, 255));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ggggg.class.getResource("/img/frame.jpg")));
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		SpringLayout springLayout = new SpringLayout();
 //		frame.getContentPane().setLayout(springLayout);
 		frame.getContentPane().setLayout(null);
 
 		comboBox = new JComboBox<String>();
+		comboBox.setBackground(new Color(255, 250, 250));
 
-		comboBox.setBounds(99, 17, 106, 21);
+		comboBox.setBounds(155, 17, 106, 21);
 
 		comboBox.addItem("족구장");
 		comboBox.addItem("야구장");
@@ -75,12 +80,18 @@ public class ggggg {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(12, 48, 360, 500);
+		scrollPane.setBounds(12, 48, 410, 503);
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
+		panel.setBackground(new Color(255, 250, 250));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
+		btnNewButton.setBounds(12, 16, 23, 23);
+		frame.getContentPane().add(btnNewButton);
 
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {

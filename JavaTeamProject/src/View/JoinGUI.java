@@ -56,7 +56,7 @@ public class JoinGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(JoinGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -199,7 +199,7 @@ public class JoinGUI {
 		frame.getContentPane().add(textFieldPW);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\frame.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon(JoinGUI.class.getResource("/img/frame.jpg")));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(lblNewLabel_2);

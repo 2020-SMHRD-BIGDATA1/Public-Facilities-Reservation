@@ -23,6 +23,8 @@ import javax.swing.JTable;
 import javax.swing.JTabbedPane;
 
 import javax.swing.ScrollPaneConstants;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 public class FCdetailGUI {
 
 	private JFrame frame;
@@ -46,7 +48,8 @@ public class FCdetailGUI {
 		fc_name=fcname;
 				
 		JPanel panel_table = new JPanel();
-		panel_table.setBounds(12, 433, 320, 61);
+		panel_table.setBackground(new Color(255, 250, 250));
+		panel_table.setBounds(12, 433, 410, 74);
 		frame.getContentPane().add(panel_table);
 		
 		String[] headings = new String[] {"¾ÆÀÌµð","ÆòÁ¡","¸®ºä"};
@@ -67,13 +70,14 @@ public class FCdetailGUI {
 		lblNewLabel_5.setBounds(12, 408, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(FCdetailGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnNewButton_1.setBounds(12, 18, 38, 23);
+		btnNewButton_1.setBounds(12, 18, 23, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		
@@ -88,8 +92,8 @@ public class FCdetailGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
-		frame.setBounds(100, 100,360, 600);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(FCdetailGUI.class.getResource("/img/frame.jpg")));
+		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -100,13 +104,14 @@ public class FCdetailGUI {
 //	    frame.getContentPane().add(scrollPane);
 		
 	    lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
+	    lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_fcname.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		lb_fcname.setBounds(85, 10, 167, 38);
 		frame.getContentPane().add(lb_fcname);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(12, 152, 320, 223);
+		panel.setBounds(12, 152, 410, 246);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(8, 2, 0, 0));
 		
@@ -196,7 +201,7 @@ public class FCdetailGUI {
 				
 			}
 		});
-		btnNewButton.setBounds(235, 517, 97, 23);
+		btnNewButton.setBounds(325, 517, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
