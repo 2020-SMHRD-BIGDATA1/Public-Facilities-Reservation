@@ -80,7 +80,7 @@ public class Reservation_2GUI {
 		JLabel lb_phone = new JLabel("New label");
 		panel.add(lb_phone);
 		
-		lb_phone.setText(con.getphone());
+		lb_phone.setText(con.getphone(fac_name));
 		
 		
 		

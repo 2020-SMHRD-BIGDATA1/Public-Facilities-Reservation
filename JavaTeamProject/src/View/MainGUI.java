@@ -27,7 +27,7 @@ public class MainGUI {
 	private JButton btnMyPage;
 	private JButton btnteam;
 	private JButton btnFutSal;
-	private JButton btnBaseBall;
+	private JButton btnbasketBall;
 	private JButton btnjokgu;
 	private JButton btnSoccer;
 
@@ -53,6 +53,8 @@ public class MainGUI {
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
+	private JButton btnBaseBall;
+	private JLabel lblNewLabel_9;
 	/**
 	 * Launch the application.
 	 */
@@ -103,10 +105,10 @@ public class MainGUI {
 		btnSoccer.setSelectedIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uCD95\uAD6C.PNG"));
 		btnSoccer.setBorderPainted(false);
 		btnSoccer.addActionListener(new ActionListener() {
-			
-			
+	
 			public void actionPerformed(ActionEvent e) {
 				
+				ggggg gg=new ggggg("√‡±∏¿Â");
 			}
 		});
 		btnSoccer.setBounds(26, 161, 68, 67);
@@ -119,38 +121,38 @@ public class MainGUI {
 		btnjokgu.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uC871\uAD6C\uD558\uB294\uADF8\uB9BC.jpg"));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				InventoryGUI inventory = new InventoryGUI();
-				
-				ggggg gg=new ggggg();
+
+				ggggg gg=new ggggg("¡∑±∏¿Â");
 			}
 		});
 		btnjokgu.setBounds(121, 161, 68, 67);
 		panel.add(btnjokgu);
 		
-		btnBaseBall = new JButton("");
-		btnBaseBall.setBackground(Color.WHITE);
-		btnBaseBall.setBorderPainted(false);
-		btnBaseBall.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
-		btnBaseBall.addActionListener(new ActionListener() {
+		btnbasketBall = new JButton("");
+		btnbasketBall.setBackground(Color.WHITE);
+		btnbasketBall.setBorderPainted(false);
+		btnbasketBall.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
+		btnbasketBall.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 			
-
+				ggggg gg=new ggggg("≥Û±∏¿Â");
 			
 			}
 		});
-		btnBaseBall.setBounds(229, 161, 68, 67);
-		panel.add(btnBaseBall);
+		btnbasketBall.setBounds(229, 161, 68, 67);
+		panel.add(btnbasketBall);
 		
 		btnFutSal = new JButton("");
 		btnFutSal.setBackground(Color.WHITE);
 		btnFutSal.setBorderPainted(false);
 		btnFutSal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ggggg gg=new ggggg("«≤ªÏ∞Ê±‚¿Â");
 			}
 		});
 		btnFutSal.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uD48B\uC0B4\uC0AC\uB78C.jpg"));
-		btnFutSal.setBounds(67, 261, 68, 67);
+		btnFutSal.setBounds(26, 263, 68, 67);
 		panel.add(btnFutSal);
 		
 		btnteam = new JButton("");
@@ -224,7 +226,7 @@ public class MainGUI {
 		lblNewLabel_3 = new JLabel("\uD48B\uC0B4");
 		lblNewLabel_3.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(67, 338, 57, 15);
+		lblNewLabel_3.setBounds(36, 340, 57, 15);
 		panel.add(lblNewLabel_3);
 		
 		btnBadMinton = new JButton("");
@@ -232,15 +234,16 @@ public class MainGUI {
 		btnBadMinton.setBorderPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ggggg gg=new ggggg("πËµÂ∏«≈œ¿Â");
 			}
 		});
 		btnBadMinton.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBC30\uBBFC\uC0AC\uB78C.jpg"));
-		btnBadMinton.setBounds(164, 261, 68, 67);
+		btnBadMinton.setBounds(121, 261, 68, 67);
 		panel.add(btnBadMinton);
 		
 		lblNewLabel_4 = new JLabel("\uBC30\uB4DC\uBBFC\uD134");
 		lblNewLabel_4.setFont(new Font("±º∏≤", Font.BOLD, 12));
-		lblNewLabel_4.setBounds(164, 338, 57, 15);
+		lblNewLabel_4.setBounds(136, 338, 57, 15);
 		panel.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
@@ -253,6 +256,22 @@ public class MainGUI {
 		lblNewLabel_6.setBackground(Color.WHITE);
 		lblNewLabel_6.setBounds(-15, 487, 347, 67);
 		panel.add(lblNewLabel_6);
+		
+		btnBaseBall = new JButton("");
+		btnBaseBall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnBaseBall.setBorderPainted(false);
+		btnBaseBall.setBackground(Color.WHITE);
+		btnBaseBall.setBounds(229, 263, 68, 67);
+		panel.add(btnBaseBall);
+		
+		lblNewLabel_9 = new JLabel("\uC57C\uAD6C");
+		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_9.setFont(new Font("±º∏≤", Font.BOLD, 12));
+		lblNewLabel_9.setBounds(240, 340, 57, 15);
+		panel.add(lblNewLabel_9);
 		
 		
 

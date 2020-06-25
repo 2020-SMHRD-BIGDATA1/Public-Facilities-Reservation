@@ -47,6 +47,7 @@ public class PointGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

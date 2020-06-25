@@ -43,9 +43,15 @@ public class ggggg {
 	private JPanel panel;
 	private String index;
 
-	public ggggg() {
+	public ggggg(String string) {
 		initialize();
 		frame.setVisible(true);
+		
+	    list = dao.divide(string);
+		for (int i = 0; i <list.size(); i++) {
+			addItem(i);
+		}
+	
 	}
 
 	private void initialize() {
@@ -64,6 +70,8 @@ public class ggggg {
 
 		comboBox.setBounds(155, 17, 106, 21);
 
+		comboBox.setBounds(99, 17, 106, 21);
+		comboBox.addItem("선택하기");
 		comboBox.addItem("족구장");
 		comboBox.addItem("야구장");
 		comboBox.addItem("풋살경기장");
@@ -71,8 +79,6 @@ public class ggggg {
 		comboBox.addItem("농구장");
 		comboBox.addItem("배드맨턴장");
 		frame.getContentPane().add(comboBox);
-
-		list = dao.divide(comboBox.getSelectedItem().toString());
 
 //		   list = dao.divide(comboBox.getSelectedItem().toString());
 //		   list = dao.divide(index);
@@ -92,6 +98,12 @@ public class ggggg {
 		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
 		btnNewButton.setBounds(12, 16, 23, 23);
 		frame.getContentPane().add(btnNewButton);
+
+//		list= dao.divide("족구장");
+//		for (int i = 0; i < list.size(); i++) {
+//			addItem(i);
+//		}
+		
 
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
@@ -141,8 +153,9 @@ public class ggggg {
 				}
 			}
 		});
-
+		
 	}
+		
 
 	public void addItem(int i) {
 

@@ -122,6 +122,8 @@ public class Reservation_1GUI {
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(230, 230, 250));
+//		panel_1.setBounds(12, 22, 193, 37);
+		
 		panel_1.setBounds(12, 22, 193, 37);
 		panel_1.setBounds(139, 22, 193, 37);
 		frame.getContentPane().add(panel_1);
