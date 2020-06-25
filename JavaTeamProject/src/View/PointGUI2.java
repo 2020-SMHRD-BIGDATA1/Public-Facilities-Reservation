@@ -56,8 +56,9 @@ public class PointGUI2 {
 				dao.updatepoint(point);
 				
 				PointGUI pt = new PointGUI();
-
+				
 				frame.setVisible(false);
+     	
 			}
 		});
 		btnNewButton.setBounds(147, 382, 141, 38);

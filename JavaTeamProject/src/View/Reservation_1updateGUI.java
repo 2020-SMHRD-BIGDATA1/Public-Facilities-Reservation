@@ -53,6 +53,7 @@ public class Reservation_1updateGUI implements MouseListener{
 	private String date1;
 	String name;
 	private JButton btnNewButton;
+	private String[] list;
 	/**
 	 * Launch the application.
 	 * @param fcname 
@@ -99,13 +100,6 @@ public class Reservation_1updateGUI implements MouseListener{
 		
 
 
-//		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
-//		format_time1 = format1.format (System.currentTimeMillis());
-//		lb_date.setText(format_time1);
-
-		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
-		format_time1 = format1.format (System.currentTimeMillis());
-		ddate = format_time1;
 		
 		panel_4 = new JPanel();
 		panel.add(panel_4);
@@ -113,23 +107,26 @@ public class Reservation_1updateGUI implements MouseListener{
 		panel_4.setLayout(null);
 		lb_date1 = new JLabel("New label");
 		lb_date1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
-		lb_date1.setBounds(0, 0, 144, 559);
+		lb_date1.setBounds(0, 43, 144, 516);
 		panel_4.add(lb_date1);
 //		lb_date.setText(format_time1);
 //		ddate = format_time1;
+	
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
+		format_time1 = format1.format (System.currentTimeMillis());
+		ddate = format_time1;
+		lb_date1.setText(date1);
+		
 		String[] dddate = ddate.split("-");
 		int month = Integer.parseInt(dddate[1]);
-	    month++;
 	    System.out.println(month);
 		day = Integer.parseInt(dddate[2]);
-		String date1 = dddate[0]+"-"+dddate[1]+"-"+day;
-		day++;
+	    String date1 = dddate[0]+"-"+dddate[1]+"-"+day;
 		lb_date1.setText(date1);
-	
-	
+
 		
 		lb_day1 = new JLabel("New label");
-		lb_day1.setBounds(144, 0, 144, 559);
+		lb_day1.setBounds(144, 43, 144, 516);
 		panel_4.add(lb_day1);
 		lb_day1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		lb_day1.setText(getDate(date1));
@@ -140,7 +137,7 @@ public class Reservation_1updateGUI implements MouseListener{
 		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
 		
 		JTable table_2 = new JTable(rows,colummn);
-		table_2.setBounds(276, 0, 144, 559);
+		table_2.setBounds(276, 114, 144, 445);
 		
 		panel_4.add(table_2);
 		
@@ -161,9 +158,10 @@ public class Reservation_1updateGUI implements MouseListener{
 		
 		for (int i = 0; i < 20; i++) {
 			
-			addItem();
+			addItem(i);
 //			day=day+i;
-
+	
+		
 		}
 		
 		table.addMouseListener(this);
@@ -172,7 +170,7 @@ public class Reservation_1updateGUI implements MouseListener{
 		
 	}
 	
-	public void addItem() {
+	public void addItem(int i) {
 		
 		panel_4 = new JPanel();
 		panel.add(panel_4);
@@ -211,8 +209,13 @@ public class Reservation_1updateGUI implements MouseListener{
 		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
 		
 		JTable table_2 = new JTable(rows,colummn);
+		table_2.setName(i+"");
 		table_2.addMouseListener(this);
 		panel_4.add(table_2);
+		
+		String list[] = new String[20];
+		list[i]=date1;
+		System.out.println("asdasd"+list[i]);
 		
 		
 			}
@@ -297,11 +300,20 @@ public class Reservation_1updateGUI implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent e) {
 		JTable table = (JTable)e.getSource();
+	String num = table.getName();
+		System.out.println(num);
 		time = (String) table.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
 		// 클릭한 데이터
-	
+		Integer.parseInt(num);
+		for (int i = 0; i < list.length-1; i++) {
+			System.out.println(list[i]);
+		}
 		
-		timevo timevo= new timevo(name, date1, time);
+	    String date8=list[Integer.parseInt(num)+1];
+	    
+		System.out.println("sdfsdfsdfsdfsdf"+date8);
+		
+		timevo timevo= new timevo(name, "date8", time);
 		Reservation_2GUI re2= new Reservation_2GUI(timevo);
 		frame.setVisible(false);
 //		System.out.println(time);

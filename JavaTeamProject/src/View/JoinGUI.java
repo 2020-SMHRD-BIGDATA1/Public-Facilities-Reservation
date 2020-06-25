@@ -114,7 +114,7 @@ public class JoinGUI {
 				if (id_check == 1) {
 					JOptionPane.showMessageDialog(frame, "회원가입 성공", "회원가입 결과", JOptionPane.PLAIN_MESSAGE);
 					controller.join(joinUser);
-					frame.setVisible(false);
+					
 				} else {
 					JOptionPane.showMessageDialog(frame, "회원가입 실패", "회원가입 결과", JOptionPane.PLAIN_MESSAGE);
 

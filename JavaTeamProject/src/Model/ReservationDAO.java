@@ -442,7 +442,7 @@ public class ReservationDAO {
 	public ArrayList<RatingVO> getrating(String name) {
 		getconnection();
 
-		String sql = "select user_id,rating,review from ratings where name=?";
+		String sql = "select user_id,rating,review from ratings where Fac_Name=?";
 		ArrayList<RatingVO> arr= new ArrayList<RatingVO>(); 
 	
 		try {
@@ -450,7 +450,7 @@ public class ReservationDAO {
 			pst.setString(1, name);
 			rs = pst.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 			
 			String id= rs.getString("user_id");
 			String rating= rs.getString("rating");

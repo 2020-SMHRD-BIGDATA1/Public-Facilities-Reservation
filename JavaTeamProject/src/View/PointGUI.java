@@ -85,7 +85,8 @@ public class PointGUI {
 				}
 			
 				PointGUI2 reviews = new PointGUI2(point);
-				frame.dispose();
+				frame.setVisible(false);
+			
 			}
 		});
 		btnNewButton.setBounds(113, 308, 209, 38);

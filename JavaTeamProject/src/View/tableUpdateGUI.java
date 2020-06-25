@@ -86,7 +86,7 @@ public class tableUpdateGUI implements MouseListener {
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MyPageGUI my =new MyPageGUI();
+//				MyPageGUI my =new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});

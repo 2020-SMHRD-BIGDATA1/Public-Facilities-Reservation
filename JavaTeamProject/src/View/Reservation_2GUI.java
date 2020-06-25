@@ -302,6 +302,15 @@ public class Reservation_2GUI {
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
+		JButton btnNewButton = new JButton("<");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(12, 22, 23, 23);
+		frame.getContentPane().add(btnNewButton);
+		
 //		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 //		btn_back.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
@@ -318,7 +327,7 @@ public class Reservation_2GUI {
 		btnback_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reservation_1updateGUI re1 = new Reservation_1updateGUI(vo.getFcname());
-				frame.setVisible(false);
+			
 			}		
 		});
 //		btnback.setBounds(12, 10, 39, 37);

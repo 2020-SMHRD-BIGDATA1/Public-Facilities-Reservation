@@ -16,6 +16,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 import Controller.Reservation_1Controller;
 import Model.RatingVO;
@@ -76,12 +77,6 @@ public class fcupdateGUI extends JFrame {
 		});
 		btnNewButton.setBounds(299, 452, 97, 23);
 		panel_1.add(btnNewButton);
-
-		lb_fcname = new JLabel("<dynamic>");
-		lb_fcname.setBounds(25, 10, 277, 15);
-		frame.getContentPane().add(lb_fcname);
-		lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_fcname.setFont(new Font("굴림", Font.BOLD, 12));
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -104,7 +99,7 @@ public class fcupdateGUI extends JFrame {
 		frame.getContentPane().setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 27, 410, 518);
+		scrollPane.setBounds(12, 27, 410, 490);
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
@@ -192,27 +187,27 @@ public class fcupdateGUI extends JFrame {
 		JLabel lblNewLabel_1_1_3_1_1_1 = new JLabel("\uB2F9\uC77C \uCDE8\uC18C \uBC0F \uD658\uBD88 \uBD88\uAC00");
 		panel_2_1.add(lblNewLabel_1_1_3_1_1_1);
 
-//		ArrayList<RatingVO> myarr= con.getrating(name);
-//		for (int i = 0; i < myarr.size(); i++) {
-//			System.out.println(myarr.get(i));
-//		}	
-//     	String[][] data = new String[myarr.size()][3];
-//     	for (int i = 0; i < data.length; i++) {
-//			data[i][0] = myarr.get(i).getId();
-//			data[i][1] = myarr.get(i).getRating();
-//			data[i][2] = myarr.get(i).getReview();
-//		};
-// 
+		ArrayList<RatingVO> myarr= con.getrating(name);
+		for (int i = 0; i < myarr.size(); i++) {
+			System.out.println(myarr.get(i));
+		}	
+     	String[][] data = new String[myarr.size()][3];
+     	for (int i = 0; i < data.length; i++) {
+			data[i][0] = myarr.get(i).getId();
+			data[i][1] = myarr.get(i).getRating();
+			data[i][2] = myarr.get(i).getReview();
+		};
+		System.out.println(data.length);
 		String[] headings = new String[] { "사용자 아이디", "평점", "리뷰" };
-//		table = new JTable(data, headings);
-//		table.setPreferredScrollableViewportSize(new Dimension(320, 300));
-//		table.setBounds(12, 435, 294, 100);
-//
-////      	table.setFillsViewportHeight(true);
-//
-//		table = new JTable();
-//		table.setBounds(0, 430, 294, 26);
-//		panel_1.add(table);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(12, 435, 294, 100);
+		panel_1.add(scrollPane_1);
+
+		table = new JTable(data, headings);
+		scrollPane_1.setViewportView(table);
+		table.setPreferredScrollableViewportSize(new Dimension(320, 300));
+		table.setFillsViewportHeight(true);
 
 		lb_fcname = new JLabel("<dynamic>");
 		lb_fcname.setBounds(17, 10, 277, 15);
