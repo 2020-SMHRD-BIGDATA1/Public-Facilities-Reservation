@@ -39,18 +39,20 @@ public class Reservation_3GUI {
 
 	private void initialize(String fac_name) {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Reservation_3GUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
+		
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		lblNewLabel.setBounds(113, 38, 164, 15);
+		lblNewLabel.setBounds(134, 37, 164, 15);
 		frame.getContentPane().add(lblNewLabel);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 248, 220));
-		panel.setBounds(12, 87, 320, 35);
+		panel.setBounds(12, 87, 410, 35);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -89,17 +91,20 @@ public class Reservation_3GUI {
 		frame.getContentPane().add(lblNewLabel_3_1_1);
 
 		textField_title = new JTextField();
-		textField_title.setBounds(12, 174, 320, 63);
+		textField_title.setBackground(new Color(255, 250, 250));
+		textField_title.setBounds(12, 174, 410, 63);
 		frame.getContentPane().add(textField_title);
 		textField_title.setColumns(10);
 
 		
 
 		textField_body = new JTextField();
-		textField_body.setBounds(12, 292, 320, 161);
+		textField_body.setBackground(new Color(255, 250, 250));
+		textField_body.setBounds(12, 292, 410, 161);
 		frame.getContentPane().add(textField_body);
 		textField_body.setColumns(10);
-		frame.setBounds(100, 100, 450, 600);
+		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
