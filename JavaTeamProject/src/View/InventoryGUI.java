@@ -45,6 +45,7 @@ public class InventoryGUI {
 	private JPanel panel1;
 	private JPanel img_panel;
 	private JPanel resrveation_btn;
+	private JLabel lblNewLabel;
 
 	public InventoryGUI() {
 		initialize();
@@ -54,7 +55,7 @@ public class InventoryGUI {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(InventoryGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(100, 100, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -129,17 +130,6 @@ public class InventoryGUI {
 		panel.setBounds(12, 10, 410, 78);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JButton back_btn = new JButton("");
-		back_btn.setForeground(new Color(0, 0, 0));
-		back_btn.setBackground(new Color(255, 255, 255));
-		back_btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		back_btn.setSelectedIcon(new ImageIcon(MatchingGUI.class.getResource("/View/back.png")));
-		back_btn.setBounds(10, 10, 24, 23);
-		panel.add(back_btn);
 		
 		panel1 = new JPanel();
 		panel1.setBackground(new Color(240, 248, 255));
@@ -277,5 +267,10 @@ public class InventoryGUI {
 		comboBox_2.addItem("농구장");
 		comboBox_2.addItem("배드맨턴장");
 		panel.add(comboBox_2);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(new Color(240, 255, 255));
+		lblNewLabel.setBounds(0, 0, 434, 561);
+		frame.getContentPane().add(lblNewLabel);
 	}
 }

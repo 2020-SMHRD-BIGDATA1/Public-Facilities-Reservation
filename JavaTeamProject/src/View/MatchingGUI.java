@@ -52,33 +52,33 @@ public class MatchingGUI {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
-		frame.setBounds(100, 100, 450, 600);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MatchingGUI.class.getResource("/img/frame.jpg")));
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(panel);
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(new Color(240, 255, 255));
 		panel.setBounds(0, 0, 434, 561);
 		panel.setLayout(null);
 
 		JButton back_btn = new JButton("");
+		back_btn.setIcon(new ImageIcon(MatchingGUI.class.getResource("/img/prev.jpg")));
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		back_btn.setSelectedIcon(new ImageIcon(MatchingGUI.class.getResource("/View/back.png")));
-		back_btn.setBounds(10, 10, 24, 23);
+		back_btn.setBounds(10, 10, 23, 23);
 		panel.add(back_btn);
 
 		JLabel lblNewLabel_3_1 = new JLabel("\uC885\uBAA9");
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setBounds(65, 23, 57, 15);
+		lblNewLabel_3_1.setBounds(89, 23, 57, 15);
 		panel.add(lblNewLabel_3_1);
 		lmg_lbl = new JLabel("");
 
 		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(134, 20, 90, 21);
+		comboBox.setBounds(175, 20, 90, 21);
 
 		comboBox.addItem("축구장");
 		comboBox.addItem("야구장");
@@ -92,6 +92,7 @@ public class MatchingGUI {
 		scrollPane.setBounds(10, 62, 412, 476);
 
 		panel1 = new JPanel();
+		panel1.setBackground(new Color(255, 250, 250));
 
 		panel1.setLayout(new GridLayout(0, 1, 0, 0));
 
