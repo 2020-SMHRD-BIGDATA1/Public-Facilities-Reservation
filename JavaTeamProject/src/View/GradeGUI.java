@@ -105,6 +105,7 @@ public class GradeGUI {
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
+		
 
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\thumb_l_A4A5ADD9DF8C6A98D4C2ECB3416FEA8A.png"));

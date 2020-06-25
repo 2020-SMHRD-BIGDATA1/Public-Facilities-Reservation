@@ -41,9 +41,15 @@ public class ggggg {
 	private JPanel panel;
 	private String index;
 
-	public ggggg() {
+	public ggggg(String string) {
 		initialize();
 		frame.setVisible(true);
+		
+	    list = dao.divide(string);
+		for (int i = 0; i <list.size(); i++) {
+			addItem(i);
+		}
+	
 	}
 
 	private void initialize() {
@@ -80,11 +86,12 @@ public class ggggg {
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 
-		list= dao.divide("족구장");
-		for (int i = 0; i < list.size(); i++) {
-			addItem(i);
-		}
+//		list= dao.divide("족구장");
+//		for (int i = 0; i < list.size(); i++) {
+//			addItem(i);
+//		}
 		
+
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				Component[] componentList = panel.getComponents();
@@ -133,8 +140,9 @@ public class ggggg {
 				}
 			}
 		});
-
+		
 	}
+		
 
 	public void addItem(int i) {
 

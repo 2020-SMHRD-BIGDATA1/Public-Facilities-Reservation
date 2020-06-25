@@ -40,7 +40,7 @@ public class PointGUI2 {
 		frame.getContentPane().add(btnNewButton);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\public_background3.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\git\\Public-Facilities-Reservation\\Public-Facilities-Reservation\\JavaTeamProject\\bin\\img\\public_background3.png"));
 		lblNewLabel.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(lblNewLabel);
 	}
