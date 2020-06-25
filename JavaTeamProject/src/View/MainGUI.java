@@ -130,7 +130,7 @@ public class MainGUI {
 		btnBaseBall = new JButton("");
 		btnBaseBall.setBackground(Color.WHITE);
 		btnBaseBall.setBorderPainted(false);
-		btnBaseBall.setIcon(new ImageIcon(MainGUI.class.getResource("/img/[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg")));
+		btnBaseBall.setIcon(new ImageIcon(MainGUI.class.getResource("/img/back.png")));
 		btnBaseBall.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {

@@ -244,7 +244,7 @@ public class MyPageGUI {
 		btnback.setBounds(0, 20, 27, 28);
 		panel.add(btnback);
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uC0AC\uBCF8 -\uBA54\uC778 \uBC30\uACBD\uD654\uBA74.png"));
+		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back.png")));
 		lblNewLabel_3.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(lblNewLabel_3);
 		
