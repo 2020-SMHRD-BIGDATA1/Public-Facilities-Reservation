@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
+import javax.swing.SwingConstants;
 
 public class PointGUI2 {
 
@@ -36,12 +38,13 @@ public class PointGUI2 {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(96, 282, 141, 38);
+		btnNewButton.setBounds(147, 382, 141, 38);
 		frame.getContentPane().add(btnNewButton);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\git\\Public-Facilities-Reservation\\Public-Facilities-Reservation\\JavaTeamProject\\bin\\img\\public_background3.png"));
-		lblNewLabel.setBounds(0, 0, 344, 561);
+		lblNewLabel.setIcon(new ImageIcon(PointGUI2.class.getResource("/img/point.jpeg")));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(lblNewLabel);
 	}
 
@@ -50,22 +53,25 @@ public class PointGUI2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 360, 600);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI2.class.getResource("/img/frame.jpg")));
+		frame.getContentPane().setBackground(new Color(255, 235, 205));
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lb_now = new JLabel("\uD604\uC7AC \uD68C\uC6D0\uB2D8\uC758 \uD3EC\uC778\uD2B8\uB294 \"2000p\"\uC785\uB2C8\uB2E4");
+		lb_now.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_now.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 14));
-		lb_now.setBounds(60, 157, 301, 52);
+		lb_now.setBounds(71, 188, 301, 52);
 		frame.getContentPane().add(lb_now);
 		
 		
 		lb_now.setText("ÇöÀç Æ÷ÀÎÆ®´Â "+re_controller.getpoint()+"ÀÔ´Ï´Ù");
 		
 		lb_charge = new JLabel("\"100p\"\uC801\uB9BD\uB418\uC5C8\uC2B5\uB2C8\uB2E4. ");
+		lb_charge.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_charge.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 14));
-		lb_charge.setBounds(71, 114, 204, 47);
+		lb_charge.setBounds(71, 129, 301, 52);
 		frame.getContentPane().add(lb_charge);
 		
 

@@ -63,7 +63,7 @@ public class LoginGUI {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginGUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);

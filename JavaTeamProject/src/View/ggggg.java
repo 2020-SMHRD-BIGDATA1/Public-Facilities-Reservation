@@ -68,7 +68,7 @@ public class ggggg {
 		comboBox = new JComboBox<String>();
 		comboBox.setBackground(new Color(255, 250, 250));
 
-		comboBox.setBounds(155, 17, 106, 21);
+		comboBox.setBounds(175, 17, 106, 21);
 
 		comboBox.setBounds(99, 17, 106, 21);
 		comboBox.addItem("선택하기");

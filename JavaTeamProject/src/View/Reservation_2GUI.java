@@ -21,6 +21,7 @@ import Model.ReserVO;
 
 import java.text.SimpleDateFormat;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Reservation_2GUI {
 
@@ -34,26 +35,33 @@ public class Reservation_2GUI {
 	public Reservation_2GUI() {
 		initialize();
 		frame.setVisible(true);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 	}
 	
+	
+//	private MemberManagementSystem MMCON=LoginGUI.controller;
+//	private final JButton btn_back = new JButton("");
+	
 	private MemberManagementSystem MMCON = LoginGUI.controller;
-	private final JButton btn_back = new JButton("<");
+	private final JButton btn_back = new JButton("");
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Reservation_2GUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setFont(new Font("±¼¸²", Font.BOLD, 12));
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		lblNewLabel.setBounds(124, 22, 193, 37);
 		frame.getContentPane().add(lblNewLabel);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 102, 320, 77);
+		panel.setBackground(new Color(255, 250, 250));
+		panel.setBounds(12, 102, 410, 77);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(3, 4, 0, 0));
 
@@ -120,7 +128,8 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(lblNewLabel_13);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 297, 320, 77);
+		panel_1.setBackground(new Color(255, 250, 250));
+		panel_1.setBounds(12, 297, 410, 77);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 
@@ -155,7 +164,8 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(lblNewLabel_13_1);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(12, 205, 320, 63);
+		panel_2.setBackground(new Color(255, 250, 250));
+		panel_2.setBounds(12, 205, 410, 63);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 3, 0, 0));
 
@@ -214,7 +224,8 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(lblNewLabel_13_2);
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(12, 399, 320, 37);
+		panel_3.setBackground(new Color(255, 250, 250));
+		panel_3.setBounds(12, 399, 410, 37);
 		frame.getContentPane().add(panel_3);
 
 		JLabel label = new JLabel("? \uD300\uC6D0\uC774 \uBD80\uC871\uD558\uC2ED\uB2C8\uAE4C?");
@@ -271,14 +282,15 @@ public class Reservation_2GUI {
 			}
 
 		});
-		btnNewButton_2.setBounds(235, 499, 97, 23);
+		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}
 		});
-		btn_back.setBounds(0, 28, 72, 31);
+		btn_back.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btn_back);
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
