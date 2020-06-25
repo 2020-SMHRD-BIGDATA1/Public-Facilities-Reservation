@@ -1,7 +1,7 @@
 drop table publics CASCADE CONSTRAINTS;
 drop table reservation CASCADE CONSTRAINTS;
 drop table Ratings CASCADE CONSTRAINTS;
-drop table MemberMactching CASCADE CONSTRAINTS;
+drop table MemberMatching CASCADE CONSTRAINTS;
 drop table members CASCADE CONSTRAINTS;
 
 create table Publics(
@@ -24,8 +24,8 @@ create table Publics(
 create table Ratings(
 	user_id varchar(20),
 	Fac_Name varchar2(100),
-	Rating varchar(5),
-	Review varchar(1000)
+	Rating varchar(5) NOT NULL,
+	Review varchar(1000) NOT NULL
 	);
 	
 create table MEMBERS(
@@ -39,7 +39,7 @@ create table MEMBERS(
 	point NUMBER(30),
 	constraint mem_user_id_pk primary key(user_id)
 	);
-create table MemberMactching(
+create table MemberMatching(
 	Fac_ID number,
 	user_id varchar(20),
 	addnum number,
@@ -49,27 +49,28 @@ create table MemberMactching(
 create table reservation(
 	user_id varchar2(20),
     fac_id number,
-	Fac_Name varchar2(100),
-	reserdate varchar2(200),
-	usedate varchar2(200),
-	usetime varchar2(200),
-	fee varchar2(20)
+	Fac_Name varchar2(100) NOT NULL,
+	reserdate varchar2(30) NOT NULL,
+	usedate varchar2(30) NOT NULL,
+	usetime varchar2(30) NOT NULL,
+	fee varchar2(20) 
 );
 alter table Ratings
 add constraint rating_u_id_fk foreign key(user_id)
 references MEMBERS(user_id); 	
 
-alter table MemberMactching
+alter table MemberMatching
 add constraint memmat_fac_id_fk foreign key(Fac_ID)
 references Publics(fac_id); 
-alter table MemberMactching
+
+alter table MemberMatching
 add constraint memmat_u_id_fk foreign key(user_id)
 references MEMBERS(user_id); 
 
 	
 alter table reservation
 add constraint reserv_u_id_fk foreign key(user_id)
-references members(user_id); 
+references MEMBERS(user_id); 
 
 alter table reservation
 add constraint reserv_fac_id_fk foreign key(fac_id)
@@ -81,11 +82,11 @@ insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집',
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 
-insert into MEMBERMACTCHING values (2,'ljh2723',3,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMACTCHING values (13,'ljh2723',2,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMACTCHING values (12,'ljh',2,'놀자~!!','야구할사람 구해욥');
-insert into MEMBERMACTCHING values (15,'ljh2723',5,'덤벼라!!','축구할사람!!');
-insert into MEMBERMACTCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
+insert into MEMBERMATCHING values (2,'ljh2723',3,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (13,'ljh2723',2,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (12,'ljh',2,'놀자~!!','야구할사람 구해욥');
+insert into MEMBERMATCHING values (15,'ljh2723',5,'덤벼라!!','축구할사람!!');
+insert into MEMBERMATCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
 	
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
