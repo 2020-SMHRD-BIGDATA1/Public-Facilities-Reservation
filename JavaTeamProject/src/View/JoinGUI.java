@@ -56,7 +56,7 @@ public class JoinGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(JoinGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(100, 100, 360, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -165,7 +165,8 @@ public class JoinGUI {
 		textFieldEmail.setBounds(60, 426, 218, 32);
 		frame.getContentPane().add(textFieldEmail);
 		
-		JButton btn_idCheck = new JButton("@");
+		JButton btn_idCheck = new JButton("");
+		btn_idCheck.setIcon(new ImageIcon(JoinGUI.class.getResource("/img/check.png")));
 		btn_idCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String id = textFieldID.getText();
@@ -183,10 +184,11 @@ public class JoinGUI {
 				}
 			}
 		});
-		btn_idCheck.setBounds(179, 116, 18, 17);
+		btn_idCheck.setBounds(174, 116, 21, 17);
 		frame.getContentPane().add(btn_idCheck);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
+		lblNewLabel_3.setForeground(Color.YELLOW);
 		lblNewLabel_3.setFont(new Font("±¼¸²", Font.PLAIN, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(70, 116, 97, 15);
@@ -197,7 +199,7 @@ public class JoinGUI {
 		frame.getContentPane().add(textFieldPW);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\frame.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon(JoinGUI.class.getResource("/img/frame.jpg")));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(0, 0, 344, 561);
 		frame.getContentPane().add(lblNewLabel_2);

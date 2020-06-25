@@ -62,7 +62,7 @@ public class MainDAO {
 		
 		try {
 			//UPDATE SET WHERE
-			String sql = "UPDATE MEMBERS SET pw = ?, name = ?, age = ?, PHONE = ?, mail = ?, Address = ? WHERE id =?";
+			String sql = "UPDATE MEMBERS SET pw = ?, name = ?, age = ?, PHONE = ?, mail = ?, Address = ? WHERE user_id =?";
 			pst = conn.prepareCall(sql);
 			
 			
@@ -92,7 +92,7 @@ public class MainDAO {
 	public String getpw(MemberVO vo) {
 		getConnection();
 		
-		String sql= "select pw from members where id=?";
+		String sql= "select pw from members where user_id=?";
 		String pw = null;
 		try {
 			pst=conn.prepareStatement(sql);

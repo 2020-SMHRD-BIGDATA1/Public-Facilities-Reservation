@@ -28,25 +28,25 @@ public class confirmGUI {
 	}
 
 	public void view(String name) {
-//		System.out.println(""+name);
-//		
-//		JFrame frame = new JFrame("Table Prac.");
-//		JPanel panel = new JPanel();
-//		
-//		String[] headings = new String[] {"Id", "Name","Location","Charge","Time"};
-//		Object[][] data = new Object[][] {
-//			{controller.getVo().getId(),"보라","체육관이름?","500won","10am"},
-//			{controller.getVo().getId(),"Sunny","동네?","1000won","11am"},
-//			{controller.getVo().getId(),"John","??","1500won","12am"},
-//		};
-//		JTable table = new JTable(data,headings);
-//		table.setPreferredScrollableViewportSize(new Dimension(700,600));
-//		
-//		table.setFillsViewportHeight(true);
-//		
-//		panel.add(new JScrollPane(table));
-//		
-//		frame.getContentPane().add(panel);
+		System.out.println(""+name);
+		
+		JFrame frame = new JFrame("Table Prac.");
+		JPanel panel = new JPanel();
+		
+		String[] headings = new String[] {"Id", "Name","Location","Charge","Time"};
+		Object[][] data = new Object[][] {
+			{controller.getVo().getId(),"보라","체육관이름?","500won","10am"},
+			{controller.getVo().getId(),"Sunny","동네?","1000won","11am"},
+			{controller.getVo().getId(),"John","??","1500won","12am"},
+		};
+		JTable table = new JTable(data,headings);
+		table.setPreferredScrollableViewportSize(new Dimension(700,600));
+		
+		table.setFillsViewportHeight(true);
+		
+		panel.add(new JScrollPane(table));
+		
+		frame.getContentPane().add(panel);
 		
 		
 		
