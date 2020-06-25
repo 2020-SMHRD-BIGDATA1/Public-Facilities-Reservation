@@ -299,25 +299,13 @@ public class Reservation_2GUI {
 		});
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
-<<<<<<< HEAD
-//		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
-//		btn_back.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			}
-//		});
-//		btn_back.setBounds(12, 10, 23, 23);
-//		frame.getContentPane().add(btn_back);
-//		frame.setBounds(100, 100, 360, 600);
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//	}
-=======
 		
 		JButton btnback;
 		btnback_1 = new JButton("");
 		btnback_1.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 		btnback_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Reservation_2GUI re2 = new Reservation_2GUI(vo);
+				Reservation_1updateGUI re1 = new Reservation_1updateGUI(vo.getFcname());
 				frame.setVisible(false);
 			}		
 		});
@@ -336,6 +324,5 @@ public class Reservation_2GUI {
 
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	}
 }

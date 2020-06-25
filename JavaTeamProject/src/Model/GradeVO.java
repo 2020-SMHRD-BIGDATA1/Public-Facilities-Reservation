@@ -27,6 +27,15 @@ public class GradeVO {
 
 
 
+	public GradeVO(String name, String rating, String review) {
+		this.Name=name;
+		this.Rating=rating;
+		this.Review=review;
+	}
+
+
+
+
 	public String getId() {
 		return Id;
 	}

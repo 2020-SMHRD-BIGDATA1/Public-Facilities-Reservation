@@ -29,8 +29,8 @@ public class ReviewcheckGUI {
 	
 	Reservation_1Controller re_controller= new Reservation_1Controller();
 	GradeDAO dao= new GradeDAO();
-	public ReviewcheckGUI() {
-		initialize();
+	public ReviewcheckGUI(GradeVO userReview) {
+		initialize(userReview);
 		
 		frame.setVisible(true);
 		
@@ -40,7 +40,7 @@ public class ReviewcheckGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(GradeVO userReview) {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ReviewcheckGUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(new Color(255, 235, 205));
@@ -87,29 +87,49 @@ public class ReviewcheckGUI {
 		
 		
 		JLabel output3 = new JLabel("New label");
-		output3.setBounds(234, 148, 162, 206);
+		output3.setBounds(236, 260, 162, 114);
 		panel.add(output3);
 		output3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		output3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		output3.setText("REVIEW");
 		
-		output3.setText(dao.select().getReview());
+		output3.setText(userReview.getReview());
 		
 		JLabel output2 = new JLabel("New label");
-		output2.setBounds(165, 154, 57, 194);
+		output2.setBounds(134, 260, 90, 114);
 		panel.add(output2);
 		output2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		output2.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		output2.setText("RATING");
 		
-		output2.setText(dao.select().getRating());
+		output2.setText(userReview.getRating());
 		
 		JLabel output_1 = new JLabel("New label");
-		output_1.setBounds(68, 151, 50, 201);
+		output_1.setBounds(27, 263, 93, 111);
 		panel.add(output_1);
+		output_1.setText(userReview.getName());
+		
 		output_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		output_1.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JLabel output_1_1 = new JLabel("\uC2DC\uC124\uBA85");
+		output_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output_1_1.setFont(new Font("Dialog", Font.BOLD, 15));
+		output_1_1.setBounds(27, 170, 93, 113);
+		panel.add(output_1_1);
+		
+		JLabel output2_1 = new JLabel("\uD3C9\uC810");
+		output2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output2_1.setFont(new Font("Dialog", Font.BOLD, 15));
+		output2_1.setBounds(134, 173, 90, 110);
+		panel.add(output2_1);
+		
+		JLabel output3_1 = new JLabel("\uB9AC\uBDF0");
+		output3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output3_1.setFont(new Font("Dialog", Font.BOLD, 15));
+		output3_1.setBounds(236, 167, 162, 116);
+		panel.add(output3_1);
 	}
 }

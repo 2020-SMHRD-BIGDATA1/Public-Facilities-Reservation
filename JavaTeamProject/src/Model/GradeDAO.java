@@ -91,7 +91,7 @@ public class GradeDAO {
 		return row;
 	}
 
-	public GradeVO search(String gg) {
+	public GradeVO search() {
 
 		GradeVO result = null;
 
@@ -99,7 +99,7 @@ public class GradeDAO {
 		try {
 			String sql = "select * from Ratings where fac_name = ?";
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, gg);
+			pst.setString(1,"dsfsd" );
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
@@ -135,8 +135,8 @@ public class GradeDAO {
 				String name = rs.getString("fac_Name");
 				String rating = rs.getString("Rating");
 				String review = rs.getString("Review");
-				vo = new GradeVO(rating, review);
-
+				vo = new GradeVO(name,rating, review);
+				System.out.println("asd"+rs.getString("fac_Name"));
 			}
 		} catch (SQLException e) {
 

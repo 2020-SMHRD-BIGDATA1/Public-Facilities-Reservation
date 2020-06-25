@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Controller.Reservation_1Controller;
 import Model.GradeDAO;
 import Model.GradeVO;
 import java.awt.Toolkit;
@@ -23,22 +24,23 @@ public class GradeGUI {
 	private JFrame frame;
 	private JTextField input2;
 	private JTextField input1;
-
+	Reservation_1Controller con = new Reservation_1Controller();
 	static ArrayList<GradeVO> list = new ArrayList<GradeVO>();
 
 	/**
 	 * Launch the application.
+	 * @param fcname 
 	 */
 
-	public GradeGUI() {
-		initialize();
+	public GradeGUI(String fcname) {
+		initialize(fcname);
 		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(String fcname) {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 235, 205));
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
@@ -74,17 +76,15 @@ public class GradeGUI {
 				String rating = input1.getText();
 				String review = input2.getText();
 				String id = LoginGUI.controller.getLoginUser().getId();
-				System.out.println(id);
-				String name = "fcname";
+		
 
-				GradeVO userReview = new GradeVO(id, name, rating, review);
+				GradeVO userReview = new GradeVO(id, fcname, rating, review);
 
 				GradeDAO dao = new GradeDAO();
 				dao.insert(userReview);
 
-				ReviewcheckGUI reviews = new ReviewcheckGUI();
+				ReviewcheckGUI reviews = new ReviewcheckGUI(userReview);
 				frame.setVisible(false);
-				
 			}
 		});
 		frame.getContentPane().add(btnNewButton_1);

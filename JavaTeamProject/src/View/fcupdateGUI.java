@@ -32,10 +32,6 @@ public class fcupdateGUI extends JFrame {
 	private JFrame frame;
 	JPanel panel;
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	private JLabel lb_fcname;
 	JLabel lb_division;
 	private JLabel lb_closure;
@@ -48,23 +44,16 @@ public class fcupdateGUI extends JFrame {
 	Reservation_1Controller con = new Reservation_1Controller();
 	private JTable table1;
 	private String fcname;
-	private JButton btnNewButton;
 	private JTable table;
-<<<<<<< HEAD
 	private JTable table_1;
-	
-	
-	
-=======
+
 	private JLabel lblNewLabel;
 	private JPanel panel_1;
 
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	public fcupdateGUI(String name) {
 		initialize(name);
 		frame.setVisible(true);
-		
-		
+
 		lb_division.setText(con.getdvision(name));
 		lb_closure.setText(con.getclosure(name));
 		lb_weekday.setText("평일: " + con.getweekday(name));
@@ -77,17 +66,17 @@ public class fcupdateGUI extends JFrame {
 		String path = con.getImg(name);
 		lblNewLabel.setIcon(new ImageIcon(path));
 		panel_1.add(lblNewLabel);
-				btnNewButton = new JButton("\uC608\uC57D");
-				
-						btnNewButton.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
-								frame.setVisible(false);
-							}
-						});
-						btnNewButton.setBounds(276, 502, 97, 23);
-						frame.getContentPane().add(btnNewButton);
 		
+		JButton btnNewButton = new JButton("\uC608\uC57D");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(299, 452, 97, 23);
+		panel_1.add(btnNewButton);
+
 		lb_fcname = new JLabel("<dynamic>");
 		lb_fcname.setBounds(25, 10, 277, 15);
 		frame.getContentPane().add(lb_fcname);
@@ -96,15 +85,14 @@ public class fcupdateGUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ggggg gg= new ggggg(name);
+				ggggg gg = new ggggg(name);
 				frame.setVisible(false);
 			}
-		
+
 		});
 		btnNewButton_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.setBounds(12, 6, 23, 23);
 		frame.getContentPane().add(btnNewButton_1);
-		
 
 	}
 
@@ -116,7 +104,7 @@ public class fcupdateGUI extends JFrame {
 		frame.getContentPane().setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 27, 320, 518);
+		scrollPane.setBounds(12, 27, 410, 518);
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
@@ -146,7 +134,7 @@ public class fcupdateGUI extends JFrame {
 
 		JPanel panel_2_1 = new JPanel();
 		panel_2_1.setBackground(Color.WHITE);
-		panel_2_1.setBounds(0, 228, 294, 167);
+		panel_2_1.setBounds(0, 228, 396, 167);
 		panel_1.add(panel_2_1);
 		panel_2_1.setLayout(new GridLayout(8, 2, 0, 0));
 
@@ -203,9 +191,6 @@ public class fcupdateGUI extends JFrame {
 
 		JLabel lblNewLabel_1_1_3_1_1_1 = new JLabel("\uB2F9\uC77C \uCDE8\uC18C \uBC0F \uD658\uBD88 \uBD88\uAC00");
 		panel_2_1.add(lblNewLabel_1_1_3_1_1_1);
-<<<<<<< HEAD
-		
-=======
 
 //		ArrayList<RatingVO> myarr= con.getrating(name);
 //		for (int i = 0; i < myarr.size(); i++) {
@@ -228,7 +213,6 @@ public class fcupdateGUI extends JFrame {
 //		table = new JTable();
 //		table.setBounds(0, 430, 294, 26);
 //		panel_1.add(table);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 		lb_fcname = new JLabel("<dynamic>");
 		lb_fcname.setBounds(17, 10, 277, 15);
@@ -236,92 +220,12 @@ public class fcupdateGUI extends JFrame {
 		lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_fcname.setFont(new Font("굴림", Font.BOLD, 12));
 		fcname = name;
-		
-<<<<<<< HEAD
-		
 
-		
 		JPanel panel2 = new JPanel();
 		panel.setBounds(12, 52, 410, 199);
 		frame.getContentPane().add(panel2);
-		
-		
-		
-//		String[] headings ={"사용자 아이디", "평점","리뷰"};
-//		ArrayList<RatingVO> myarr= con.getrating(name);
-//		System.out.println("ddsf"+name);
-//		
-//		for (int i = 0; i < myarr.size(); i++) {
-//			System.out.println(myarr.get(i));
-//		}
-//		
-//     	String[][] data = new String[myarr.size()][3];
-//     	
-//     	for (int i = 0; i < data.length; i++) {
-//			data[i][0] = myarr.get(i).getId();
-//			data[i][1] = myarr.get(i).getRating();
-//			data[i][2] = myarr.get(i).getReview();
-//		};
-//		
-//		
-//
-//		JTable table_3 = new JTable(data,headings);
-//		table_3.setBounds(0, 430, 294, 48);
-////		panel_1.add(table_3);
-//     	panel_1.add (table_3, BorderLayout.CENTER ) ;
-////		panel_1.add (new JScrollPane( table_3 )  , BorderLayout.CENTER) ; 
-//		table_3.setBackground(Color.LIGHT_GRAY);
-//		table_3.setPreferredScrollableViewportSize(new Dimension(360,300));
-//		table_3.setFillsViewportHeight(true);
-		
-		
+		fcname = name;
 
-		
-//		ArrayList<RatingVO> myarr= con.getrating(name);
-//		
-//		for (int i = 0; i < myarr.size(); i++) {
-//			System.out.println(myarr.get(i));
-//		}
-//		
-//     	String[][] data = new String[myarr.size()][3];
-//     	
-//     	for (int i = 0; i < data.length; i++) {
-//			data[i][0] = myarr.get(i).getId();
-//			data[i][1] = myarr.get(i).getRating();
-//			data[i][2] = myarr.get(i).getReview();
-//		};
-// 
-//	String[] headings = new String[]{"사용자 아이디", "평점","리뷰"};
-		
-//       String[] headings = new String[]{"사용자 아이디", "평점","리뷰"};
-//    	Object[][] data = new Object[][]	{
-//    		{"ㄴㄹㅇ","5","ㄴㅇㄹㄴㄹㅇㄴㅇㄹㄴㅇㄹㄴㄹ"}
-//    	};
-////		
-//		table_2 = new JTable(data,headings);
-//		table_2.setBackground(Color.LIGHT_GRAY);
-//		table1.setPreferredScrollableViewportSize(new Dimension(250,50));
-//		table_2.setBounds(0, 471, 289, -40);
-//		panel_1.add(table_2);
-    	
-  
-	
-		btnNewButton = new JButton("\uC608\uC57D");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Reservation_1updateGUI re1upgui= new Reservation_1updateGUI(name);
-			}
-		});
-		btnNewButton.setBounds(235, 555, 97, 23);
-		frame.getContentPane().add(btnNewButton);
-		fcname=name;
-     	
-
-		
 	}
-	
 
-	
-	
 }

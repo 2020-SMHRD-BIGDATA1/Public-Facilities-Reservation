@@ -126,7 +126,7 @@ public class Reservation_3GUI {
 
 				} else {
 
-					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
+					int count = con.insert(con.getfac_id(fac_name),LoginGUI.controller.getLoginUser().getId(), cnt, title, body);
 					if (count > 0) {
 						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
 					}

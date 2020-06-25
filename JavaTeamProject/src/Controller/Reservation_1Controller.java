@@ -41,9 +41,9 @@ public class Reservation_1Controller {
 		return phone;
 	}
 
-	public int insert(int num,String string, int cnt, String title, String body) {
+	public int insert(int num, String string, int cnt, String title, String body) {
 
-		int count = dao.insert(num,string, cnt, title, body);
+		int count = dao.insert(num, string, cnt, title, body);
 
 		return count;
 
@@ -62,8 +62,7 @@ public class Reservation_1Controller {
 
 		return weekday;
 	}
-	
-	
+
 	public String getweekend(String fc_name) {
 
 		String weekend = dao.getweekend(fc_name);
@@ -77,10 +76,10 @@ public class Reservation_1Controller {
 
 		return homepage;
 	}
-	
+
 	public String getImg(String fc_name) {
 		String Img = dao.getimg(fc_name);
-		
+
 		return Img;
 	}
 
@@ -112,37 +111,35 @@ public class Reservation_1Controller {
 
 	public void minuspoint() {
 
-
-
 	}
-	
-
-
 
 	public int insertreservation(ReserVO revo) {
-		
-		int cnt=dao.insertReservation(revo);
-		
+
+		int cnt = dao.insertReservation(revo);
+
 		return cnt;
 	}
 
-
-
-
-
-
-
-	public int getfac_id(String fac_name) {
-	  
-		int fac_id =dao.getfac_id(fac_name);
-		
-		return fac_id;
-	}
 	
 
+	public int getfac_id(String fac_name) {
+
+		int fac_id = dao.getfac_id(fac_name);
+
+		return fac_id;
+	}
+
 	public ArrayList<RatingVO> getrating(String name) {
+
+		return dao.getrating(name);
+	}
+
+	public ArrayList<ReserVO> getreservation(String id) {
 		
-       return dao.getrating(name);
+		ArrayList<ReserVO> list =dao.getreservation(id);
+		
+		
+		return list;
 	}
 
 }
