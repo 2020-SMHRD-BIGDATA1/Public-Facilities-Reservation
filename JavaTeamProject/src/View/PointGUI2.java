@@ -31,8 +31,23 @@ public class PointGUI2 {
 		
 		lb_charge.setText(point2+"°¡ ÃæÀüÀÌ µÇ¾ú½À´Ï´Ù~ ");
 		
+		JButton btnback = new JButton("");
+		btnback.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
+			
+			}
+		});
+		btnback.setIcon(new ImageIcon(PointGUI2.class.getResource("/img/prev.jpg")));
+		btnback.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		btnback.setBorderPainted(false);
+		btnback.setBackground(Color.WHITE);
+		btnback.setBounds(12, 10, 23, 23);
+		frame.getContentPane().add(btnback);
+		
+		
 		JButton btnNewButton = new JButton("\uD655\uC778");
-		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		btnNewButton.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
@@ -46,6 +61,8 @@ public class PointGUI2 {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(lblNewLabel);
+		
+
 	}
 
 	/**
@@ -61,7 +78,7 @@ public class PointGUI2 {
 		
 		JLabel lb_now = new JLabel("\uD604\uC7AC \uD68C\uC6D0\uB2D8\uC758 \uD3EC\uC778\uD2B8\uB294 \"2000p\"\uC785\uB2C8\uB2E4");
 		lb_now.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_now.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 14));
+		lb_now.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		lb_now.setBounds(71, 188, 301, 52);
 		frame.getContentPane().add(lb_now);
 		
@@ -70,7 +87,7 @@ public class PointGUI2 {
 		
 		lb_charge = new JLabel("\"100p\"\uC801\uB9BD\uB418\uC5C8\uC2B5\uB2C8\uB2E4. ");
 		lb_charge.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_charge.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 14));
+		lb_charge.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		lb_charge.setBounds(71, 129, 301, 52);
 		frame.getContentPane().add(lb_charge);
 		

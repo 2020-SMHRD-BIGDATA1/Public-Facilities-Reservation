@@ -56,7 +56,7 @@ public class ReviewcheckGUI {
 		String gg3="¾È³ç";
 		
 		JLabel lblNewLabel_1 = new JLabel("ID");
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		lblNewLabel_1.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		lblNewLabel_1.setBounds(25, 132, 121, 31);
 		frame.getContentPane().add(lblNewLabel_1);
 		
@@ -79,16 +79,16 @@ public class ReviewcheckGUI {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\uB0B4\uB9AC\uBDF0\uBCF4\uAE30");
-		lblNewLabel.setBounds(132, 62, 153, 53);
+		lblNewLabel.setBounds(132, 62, 201, 53);
 		panel.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 17));
+		lblNewLabel.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª´Â ¿­ÇÑ»ì", Font.BOLD,30));
 		
 		
 		JLabel output3 = new JLabel("New label");
 		output3.setBounds(234, 148, 162, 206);
 		panel.add(output3);
-		output3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		output3.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		output3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		output3.setText("REVIEW");
@@ -98,7 +98,7 @@ public class ReviewcheckGUI {
 		JLabel output2 = new JLabel("New label");
 		output2.setBounds(165, 154, 57, 194);
 		panel.add(output2);
-		output2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		output2.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		output2.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		output2.setText("RATING");
@@ -108,7 +108,7 @@ public class ReviewcheckGUI {
 		JLabel output_1 = new JLabel("New label");
 		output_1.setBounds(68, 151, 50, 201);
 		panel.add(output_1);
-		output_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		output_1.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		output_1.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 }

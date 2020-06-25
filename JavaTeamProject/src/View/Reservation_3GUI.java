@@ -71,8 +71,8 @@ public class Reservation_3GUI {
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 12));
-		lblNewLabel.setBounds(134, 37, 164, 15);
+		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
+		lblNewLabel.setBounds(79, 18, 297, 35);
 		frame.getContentPane().add(lblNewLabel);
 
 		JPanel panel = new JPanel();
@@ -82,14 +82,17 @@ public class Reservation_3GUI {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JLabel lblNewLabel_1 = new JLabel(" \uD544\uC694\uD55C \uC778\uC6D0\uC218 ");
+		lblNewLabel_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		panel.add(lblNewLabel_1);
 
 		JLabel lb_cnt = new JLabel("1");
+		lb_cnt.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		lb_cnt.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lb_cnt);
 
 		JButton btnNewButton = new JButton("+");
 		btnNewButton.setBackground(new Color(255, 160, 122));
+		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -101,17 +104,17 @@ public class Reservation_3GUI {
 		panel.add(btnNewButton);
 
 		JLabel lblNewLabel_3 = new JLabel("\uC778\uC6D0\uC218");
-		lblNewLabel_3.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		lblNewLabel_3.setBounds(12, 63, 164, 15);
 		frame.getContentPane().add(lblNewLabel_3);
 
 		JLabel lblNewLabel_3_1 = new JLabel("\uC81C\uBAA9 \uC124\uC815 ");
-		lblNewLabel_3_1.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_3_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		lblNewLabel_3_1.setBounds(12, 149, 164, 15);
 		frame.getContentPane().add(lblNewLabel_3_1);
 
 		JLabel lblNewLabel_3_1_1 = new JLabel("\uB0B4\uC6A9 \uC124\uC815 ");
-		lblNewLabel_3_1_1.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_3_1_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		lblNewLabel_3_1_1.setBounds(12, 260, 164, 15);
 		frame.getContentPane().add(lblNewLabel_3_1_1);
 
@@ -131,35 +134,6 @@ public class Reservation_3GUI {
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-
-		btnNewButton_1 = new JButton("\uD655\uC778");
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBackground(new Color(123, 104, 238));
-		btnNewButton_1.setVisible(true);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				String body = textField_body.getText();
-				String title = textField_title.getText();
-				if (title.equals("") && body.equals("")) {
-
-					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-
-				} else {
-
-					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
-					if (count > 0) {
-						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-					}
-					frame.dispose();
-
-				}
-
-			}
-		});
-		btnNewButton_1.setBounds(325, 463, 97, 23);
-		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btn_back = new JButton("");
 		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/img/prev.jpg")));
