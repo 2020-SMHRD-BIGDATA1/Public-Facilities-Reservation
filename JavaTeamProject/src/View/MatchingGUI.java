@@ -51,6 +51,7 @@ public class MatchingGUI {
 		frame.getContentPane().setBackground(new Color(175, 238, 238));
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MatchingGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(panel);

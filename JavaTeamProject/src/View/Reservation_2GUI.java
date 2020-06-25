@@ -93,7 +93,7 @@ public class Reservation_2GUI {
 
 //		lb_phone.setText(con.getphone());
 
-		lb_phone.setText(con.getphone(fac_name));
+//		lb_phone.setText(con.getphone(fac_name));
 
 		JLabel lblNewLabel_8 = new JLabel(" \uC811\uC218\uC77C");
 		lblNewLabel_8.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
@@ -299,6 +299,18 @@ public class Reservation_2GUI {
 		});
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
+<<<<<<< HEAD
+//		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
+//		btn_back.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+//		btn_back.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btn_back);
+//		frame.setBounds(100, 100, 360, 600);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	}
+=======
 		
 		JButton btnback;
 		btnback_1 = new JButton("");
@@ -324,5 +336,6 @@ public class Reservation_2GUI {
 
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	}
 }

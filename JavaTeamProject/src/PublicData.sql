@@ -114,3 +114,8 @@ select * from Ratings ;
 insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git

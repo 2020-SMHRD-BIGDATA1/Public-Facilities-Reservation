@@ -134,9 +134,12 @@ public class MainGUI {
 				ggggg gg = new ggggg("≥Û±∏¿Â");
 			}
 		});
+<<<<<<< HEAD
+=======
 	
 
 		btnbasketBall.setBounds(229, 161, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnbasketBall);
 
 		btnFutSal = new JButton("");
