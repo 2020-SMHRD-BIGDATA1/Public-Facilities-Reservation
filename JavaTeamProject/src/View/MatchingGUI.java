@@ -67,7 +67,7 @@ public class MatchingGUI {
 		back_btn.setIcon(new ImageIcon(MatchingGUI.class.getResource("/img/prev.jpg")));
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				frame.setVisible(false);
 			}
 		});
 		back_btn.setBounds(10, 10, 23, 23);

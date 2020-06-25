@@ -60,7 +60,8 @@ public class PointGUI {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8 \uCDA9\uC804\uD558\uAE30");
-		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 17));
+		btnNewButton.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -83,19 +84,19 @@ public class PointGUI {
 		
 		JLabel lblNewLabel = new JLabel("\uD3EC\uC778\uD2B8 \uAD00\uB9AC");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª´Â ¿­ÇÑ»ì", Font.BOLD,30));
 		lblNewLabel.setBounds(119, 43, 192, 68);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uD604\uC7AC\uD3EC\uC778\uD2B8");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
+		lblNewLabel_1.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		lblNewLabel_1.setBounds(80, 140, 97, 24);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uCDA9\uC804\uD3EC\uC778\uD2B8");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
+		lblNewLabel_2.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
 		lblNewLabel_2.setBounds(80, 188, 97, 24);
 		panel.add(lblNewLabel_2);
 		

@@ -22,6 +22,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class fcupdateGUI {
 
@@ -48,6 +49,8 @@ public class fcupdateGUI {
 	public fcupdateGUI(String name) {
 		initialize(name);
 		frame.setVisible(true);
+		
+		
 		lb_division.setText(con.getdvision(name));
 		lb_closure.setText(con.getclosure(name));
 		lb_weekday.setText("∆Ú¿œ: " + con.getweekday(name));
@@ -56,6 +59,7 @@ public class fcupdateGUI {
 		lb_phone.setText(con.getphone(name));
 		lb_homepage.setText(con.gethomepage(name));
 		lb_fcname.setText(name);
+<<<<<<< HEAD
 		System.out.println(con.getImg(name));
 		String path = con.getImg(name);
 		lblNewLabel.setIcon(new ImageIcon(path));
@@ -70,6 +74,26 @@ public class fcupdateGUI {
 						});
 						btnNewButton.setBounds(276, 502, 97, 23);
 						frame.getContentPane().add(btnNewButton);
+=======
+		
+		lb_fcname = new JLabel("<dynamic>");
+		lb_fcname.setBounds(25, 10, 277, 15);
+		frame.getContentPane().add(lb_fcname);
+		lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_fcname.setFont(new Font("±º∏≤", Font.BOLD, 12));
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				frame.setVisible(false);
+			}
+		
+		});
+		btnNewButton_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton_1.setBounds(12, 6, 23, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 	}
 

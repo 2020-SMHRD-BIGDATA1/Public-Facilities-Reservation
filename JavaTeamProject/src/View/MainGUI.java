@@ -90,7 +90,7 @@ public class MainGUI {
 		JPanel panel = new JPanel();
 
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 10, 422, 551);
+		panel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(panel);
 
 		btnSoccer = new JButton("");

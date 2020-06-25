@@ -2,6 +2,7 @@ package View;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -24,6 +25,8 @@ import Model.timevo;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Reservation_1updateGUI implements MouseListener{
 
@@ -48,6 +51,7 @@ public class Reservation_1updateGUI implements MouseListener{
 	private String time;
 	private String date1;
 	String name;
+	private JButton btnNewButton;
 	/**
 	 * Launch the application.
 	 * @param fcname 
@@ -78,6 +82,7 @@ public class Reservation_1updateGUI implements MouseListener{
 	 */
 	private void initialize(String fcname) {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Reservation_1updateGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,9 +108,10 @@ public class Reservation_1updateGUI implements MouseListener{
 		
 		panel_4 = new JPanel();
 		panel.add(panel_4);
-		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
-		
+		panel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		panel_4.setLayout(null);
 		lb_date1 = new JLabel("New label");
+		lb_date1.setBounds(0, 0, 144, 559);
 		panel_4.add(lb_date1);
 //		lb_date.setText(format_time1);
 //		ddate = format_time1;
@@ -120,6 +126,7 @@ public class Reservation_1updateGUI implements MouseListener{
 	
 		
 		lb_day1 = new JLabel("New label");
+		lb_day1.setBounds(144, 0, 144, 559);
 		panel_4.add(lb_day1);
 		lb_day1.setText(getDate(date1));
 	
@@ -129,7 +136,22 @@ public class Reservation_1updateGUI implements MouseListener{
 		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
 		
 		JTable table_2 = new JTable(rows,colummn);
+		table_2.setBounds(288, 0, 144, 559);
+		table_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		panel_4.add(table_2);
+		
+		btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+					frame.setVisible(false);
+				
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon(Reservation_1updateGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton.setBounds(12, 10, 23, 23);
+		
+		panel_4.add(btnNewButton);
 		
 		
 		table = new JTable();

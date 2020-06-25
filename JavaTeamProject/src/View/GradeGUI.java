@@ -49,7 +49,7 @@ public class GradeGUI {
 
 		JLabel lblNewLabel = new JLabel("\uD3C9\uC810/\uB9AC\uBDF0");
 		lblNewLabel.setBounds(106, 60, 205, 44);
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 17));
+		lblNewLabel.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼", Font.BOLD,30));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel);
 
@@ -61,13 +61,13 @@ public class GradeGUI {
 		JLabel lblNewLabel_1 = new JLabel("\uC774\uC6A9\uD6C4\uAE30\uB97C \uB0A8\uACA8\uC8FC\uC138\uC694");
 		lblNewLabel_1.setBounds(126, 172, 185, 21);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		lblNewLabel_1.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_1);
 
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.setBounds(94, 424, 110, 35);
 		btnNewButton_1.setBackground(new Color(220, 220, 220));
-		btnNewButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		btnNewButton_1.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ ", Font.BOLD,15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -88,9 +88,13 @@ public class GradeGUI {
 		frame.getContentPane().add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("\uCDE8\uC18C");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton_2.setBounds(216, 424, 110, 35);
 		btnNewButton_2.setBackground(new Color(220, 220, 220));
-		btnNewButton_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		btnNewButton_2.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼", Font.BOLD,15));
 		frame.getContentPane().add(btnNewButton_2);
 
 		input1 = new JTextField();
@@ -101,7 +105,7 @@ public class GradeGUI {
 		JLabel lblNewLabel_2 = new JLabel("\uD3C9\uC810");
 		lblNewLabel_2.setBounds(72, 142, 57, 15);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		lblNewLabel_2.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_2);
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setBounds(12, 10, 23, 23);
