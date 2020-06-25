@@ -85,4 +85,4 @@ insert into test values('몰라','44:00~66:00');
 insert into test values('있어라','04:00~06:00');
 
 
-select * from reservation;
+select * from publics;
