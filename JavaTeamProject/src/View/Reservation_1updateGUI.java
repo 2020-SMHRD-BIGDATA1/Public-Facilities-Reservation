@@ -7,6 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,11 +18,14 @@ import java.util.Locale;
 
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
+
+import Model.timevo;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Reservation_1updateGUI {
+public class Reservation_1updateGUI implements MouseListener{
 
 	private JFrame frame;
 	private JTable table;
@@ -38,23 +45,42 @@ public class Reservation_1updateGUI {
 	private JLabel lb_day1;
 	private JTable table_2;
 	String ddate ;
+	private String time;
+	private String date1;
+	String name;
 	/**
 	 * Launch the application.
+	 * @param fcname 
 	 */
+	
+//	public static void main(String[] args) {
+//EventQueue.invokeLater(new Runnable() {
+//	public void run() {
+//		try {
+//			Reservation_1updateGUI window = new Reservation_1updateGUI();
+//			window.frame.setVisible(true);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+//});
+//}
 
-	public Reservation_1updateGUI() {
-		initialize();
+	public Reservation_1updateGUI(String fcname) {
+		initialize(fcname);
 		frame.setVisible(true);
+		name=fcname;
 	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(String fcname) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		//frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 48, 320, 478);
@@ -74,26 +100,6 @@ public class Reservation_1updateGUI {
 		format_time1 = format1.format (System.currentTimeMillis());
 		ddate = format_time1;
 		
-		for (int i = 0; i < 20; i++) {
-		
-			addItem();
-			day=day+i;
-			System.out.println(day);
-
-		}
-		
-		table.addMouseListener(new java.awt.event.MouseAdapter(){
-		 public void mouseClicked(java.awt.event.MouseEvent e){
-			 int row=table.rowAtPoint(e.getPoint());
-			 int col= table.columnAtPoint(e.getPoint());
-			 JOptionPane.showMessageDialog(null,"Value in the cell clicked :"+ ""+table.getValueAt(row,col).toString());
-			 System.out.println(" Value in the cell clicked :"+ " " +table.getValueAt(row,col).toString()); 
-		 }
-		});
-		
-	}
-	
-	public void addItem() {
 		panel_4 = new JPanel();
 		panel.add(panel_4);
 		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
@@ -123,7 +129,67 @@ public class Reservation_1updateGUI {
 		
 		JTable table_2 = new JTable(rows,colummn);
 		panel_4.add(table_2);
+		
+		
+		table = new JTable();
+		
+		
+		
+		for (int i = 0; i < 20; i++) {
+		
+			addItem();
+			day=day+i;
 
+		}
+		
+		table.addMouseListener(this);
+		
+//		table.addMouseListener(new java.awt.event.MouseAdapter(){
+//		 public void mouseClicked(java.awt.event.MouseEvent e){
+//			 int row=table.rowAtPoint(e.getPoint());
+//			 int col= table.columnAtPoint(e.getPoint());
+//			 JOptionPane.showMessageDialog(null,"Value in the cell clicked :"+ ""+table.getValueAt(row,col).toString());
+//			 System.out.println(" Value in the cell clicked :"+ " " +table.getValueAt(row,col).toString()); 
+//		 }
+//		});
+		
+	}
+	
+	public void addItem() {
+		panel_4 = new JPanel();
+		panel.add(panel_4);
+		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		
+		lb_date1 = new JLabel("New label");
+		panel_4.add(lb_date1);
+//		lb_date.setText(format_time1);
+//		ddate = format_time1;
+		String[] dddate = ddate.split("-");
+		int month = Integer.parseInt(dddate[1]);
+		System.out.println(dddate[2]);
+		//day = Integer.parseInt(dddate[2]);
+		date1 = dddate[0]+"-"+dddate[1]+"-"+day;
+		System.out.println("이야야야야 : "+day);
+		day++;
+		lb_date1.setText(date1);
+	
+	
+		
+		lb_day1 = new JLabel("New label");
+		panel_4.add(lb_day1);
+		lb_day1.setText(getDate(date1));
+	
+		
+        String[] colummn= new String[]{""};
+		
+		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
+		
+		JTable table_2 = new JTable(rows,colummn);
+		table_2.addMouseListener(this);
+		panel_4.add(table_2);
+		
+		
 	
 		
 	}
@@ -175,4 +241,53 @@ public class Reservation_1updateGUI {
 			       
 		}
 			return day;
-}}
+}
+
+	
+
+
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		JTable table = (JTable)e.getSource();
+		time = (String) table.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
+		// 클릭한 데이터
+		
+
+		timevo timevo= new timevo(name, date1, time);
+		Reservation_2GUI re2= new Reservation_2GUI(timevo);
+		
+//		System.out.println(time);
+//		System.out.println("df"+name);
+//		System.out.println("df"+date1);
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}}

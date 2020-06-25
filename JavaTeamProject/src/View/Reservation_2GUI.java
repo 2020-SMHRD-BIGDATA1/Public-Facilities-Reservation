@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
 import Model.ReserVO;
+import Model.timevo;
 
 import java.text.SimpleDateFormat;
 import java.awt.Toolkit;
@@ -31,8 +32,10 @@ public class Reservation_2GUI {
 	private int remainpoint;
 	MemberManagementSystem controller= new MemberManagementSystem();
 	Reservation_1Controller con= new Reservation_1Controller();
-	public Reservation_2GUI() {
-		initialize();
+	
+	
+	public Reservation_2GUI(timevo vo) {
+		initialize(vo);
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 	
@@ -42,7 +45,7 @@ public class Reservation_2GUI {
 	private MemberManagementSystem MMCON=LoginGUI.controller;
 	private final JButton btn_back = new JButton("<");
 	
-	private void initialize() {
+	private void initialize(timevo vo) {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setFont(new Font("굴림", Font.BOLD, 12));
@@ -66,7 +69,7 @@ public class Reservation_2GUI {
 
 		JLabel lb_fcname = new JLabel("New label");
 		panel.add(lb_fcname);
-		String fac_name= "fcname 가져와야되";
+		String fac_name= vo.getFcname();
 		lb_fcname.setText(fac_name);
 		
 		
@@ -80,7 +83,7 @@ public class Reservation_2GUI {
 		JLabel lb_phone = new JLabel("New label");
 		panel.add(lb_phone);
 		
-		lb_phone.setText(con.getphone());
+//		lb_phone.setText(con.getphone());
 		
 		
 		
@@ -101,7 +104,7 @@ public class Reservation_2GUI {
 		
 		JLabel lb_usedate = new JLabel("New label");
 		panel.add(lb_usedate);
-		String usedate="가져와야되";
+		String usedate=vo.getDate();
 		lb_usedate.setText(usedate);
 		
 		JLabel lblNewLabel_6 = new JLabel(" \uC774\uC6A9\uC2DC\uAC04");
@@ -110,7 +113,7 @@ public class Reservation_2GUI {
 		
 		JLabel lb_usetime = new JLabel("New label");
 		panel.add(lb_usetime);
-		String usetime = "100:00~200:00";
+		String usetime = vo.getTime();
 		lb_usetime.setText(usetime);
 		
 		JLabel lb_charge = new JLabel("\uC774\uC6A9\uB8CC");

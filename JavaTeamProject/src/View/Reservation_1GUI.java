@@ -31,19 +31,7 @@ public class Reservation_1GUI {
 
 	/**
 	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Reservation_1GUI window = new Reservation_1GUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
@@ -51,7 +39,7 @@ public class Reservation_1GUI {
 	public Reservation_1GUI() {
 		initialize();
 		frame.setVisible(true);
-		frame.setLocationRelativeTo(null);
+		
 	}
 
 	/**
@@ -122,12 +110,8 @@ public class Reservation_1GUI {
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(230, 230, 250));
-<<<<<<< HEAD
-//		panel_1.setBounds(12, 22, 193, 37);
 		
-=======
-		panel_1.setBounds(12, 22, 193, 37);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+//		panel_1.setBounds(12, 22, 193, 37);
 		panel_1.setBounds(139, 22, 193, 37);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
@@ -186,7 +170,7 @@ public class Reservation_1GUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Reservation_2GUI RE2 = new Reservation_2GUI();
+			Reservation_2GUI RE2 = new Reservation_2GUI("¸ô¶ó");
 				frame.dispose();
 
 			}

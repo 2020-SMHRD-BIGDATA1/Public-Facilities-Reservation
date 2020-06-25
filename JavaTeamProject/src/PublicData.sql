@@ -20,10 +20,10 @@ create table Publics(
 );
 
 create table Ratings(
-	id varchar(30),
-	Name varchar(30),
-	Rating varchar(5),
-	Review varchar(1000));
+	id varchar2(30),
+	Name varchar2(300),
+	Rating varchar2(5),
+	Review varchar2(600));
 	
 create table MemberMactching(
 	Fac_ID number,
@@ -43,7 +43,7 @@ create table MEMBERS(
 	point NUMBER(30));
 	
 create table reservation(
-user_id varchar2(200),
+   user_id varchar2(200),
     fac_id varchar2(200),
 	fac_name varchar2(200),
 	reserdate varchar2(200),
@@ -85,4 +85,5 @@ insert into test values('몰라','44:00~66:00');
 insert into test values('있어라','04:00~06:00');
 
 
-select * from publics;
+select * from Ratings ;
+insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');

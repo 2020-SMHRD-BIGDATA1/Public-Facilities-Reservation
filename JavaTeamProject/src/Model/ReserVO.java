@@ -3,7 +3,7 @@ package Model;
 public class ReserVO {
 
 	
-		private String user_id;
+		private String  user_id;
 		private String  fac_id;
 		private String	fac_name;
 		private String  Reserdate;
