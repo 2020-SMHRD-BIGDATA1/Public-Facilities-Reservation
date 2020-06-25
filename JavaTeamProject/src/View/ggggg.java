@@ -3,6 +3,7 @@ package View;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -87,6 +88,7 @@ public class ggggg {
 
 		panel = new JPanel();
 		panel.setBackground(new Color(255, 250, 250));
+		
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		

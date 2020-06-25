@@ -73,6 +73,7 @@ public class MatchingGUI {
 		JLabel lblNewLabel_3_1 = new JLabel("\uC885\uBAA9");
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1.setBounds(89, 23, 57, 15);
+		lblNewLabel_3_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		panel.add(lblNewLabel_3_1);
 		lmg_lbl = new JLabel("");
 

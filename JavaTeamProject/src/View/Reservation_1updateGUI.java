@@ -112,6 +112,7 @@ public class Reservation_1updateGUI implements MouseListener{
 		panel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		panel_4.setLayout(null);
 		lb_date1 = new JLabel("New label");
+		lb_date1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		lb_date1.setBounds(0, 0, 144, 559);
 		panel_4.add(lb_date1);
 //		lb_date.setText(format_time1);
@@ -125,9 +126,12 @@ public class Reservation_1updateGUI implements MouseListener{
 		day++;
 		lb_date1.setText(date1);
 	
+	
+		
 		lb_day1 = new JLabel("New label");
 		lb_day1.setBounds(144, 0, 144, 559);
 		panel_4.add(lb_day1);
+		lb_day1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		lb_day1.setText(getDate(date1));
 	
 		
@@ -136,8 +140,8 @@ public class Reservation_1updateGUI implements MouseListener{
 		Object[][] rows= new Object[][]{{"    "},{"08:00~10:00"},{"10:00~12:00"},{"12:00~14:00"},{"14:00~16:00"},{"16:00~18:00"}};
 		
 		JTable table_2 = new JTable(rows,colummn);
-		table_2.setBounds(288, 0, 144, 559);
-		table_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		table_2.setBounds(276, 0, 144, 559);
+		
 		panel_4.add(table_2);
 		
 		btnNewButton = new JButton("");
@@ -152,12 +156,11 @@ public class Reservation_1updateGUI implements MouseListener{
 		
 		panel_4.add(btnNewButton);
 		
-		
 		table = new JTable();
 	
 		
 		for (int i = 0; i < 20; i++) {
-		
+			
 			addItem();
 //			day=day+i;
 

@@ -73,7 +73,7 @@ public class PointGUI2 {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI2.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(new Color(255, 235, 205));
 		frame.setBounds(500, 500, 450, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lb_now = new JLabel("\uD604\uC7AC \uD68C\uC6D0\uB2D8\uC758 \uD3EC\uC778\uD2B8\uB294 \"2000p\"\uC785\uB2C8\uB2E4");

@@ -96,7 +96,7 @@ public class MainGUI {
 		btnSoccer = new JButton("");
 		btnSoccer.setBounds(77, 164, 68, 67);
 		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer.jpg")));
-		btnSoccer.setSelectedIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uCD95\uAD6C.PNG"));
+		
 		btnSoccer.setBorderPainted(false);
 		btnSoccer.addActionListener(new ActionListener() {
 
@@ -123,13 +123,18 @@ public class MainGUI {
 		panel.add(btnjokgu);
 
 		btnbasketBall = new JButton("");
-		btnbasketBall.setBounds(279, 164, 68, 67);
+		btnbasketBall.setBounds(269, 164, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
 		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basket.jpg")));
+
+		panel.add(btnbasketBall);
+		panel.add(btnbasketBall);
+
 		btnbasketBall.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
+			
 				frame.setVisible(false);
 				ggggg gg = new ggggg("농구장");
 			}
@@ -180,7 +185,7 @@ public class MainGUI {
 		panel.add(btnMyPage);
 
 		lb_id = new JLabel("New label");
-		lb_id.setBounds(242, 115, 57, 15);
+		lb_id.setBounds(221, 115, 57, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId() + "님");
 		lb_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -210,7 +215,8 @@ public class MainGUI {
 		panel.add(lblNewLabel_1);
 
 		lblNewLabel_2 = new JLabel("\uB18D\uAD6C");
-		lblNewLabel_2.setBounds(290, 241, 57, 15);
+		lblNewLabel_2.setBounds(279, 241, 57, 15);
+		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 14));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
@@ -280,8 +286,8 @@ public class MainGUI {
 		panel.add(lblNewLabel_9);
 
 		lblNewLabel_11 = new JLabel("");
-		lblNewLabel_11.setIcon(new ImageIcon(MainGUI.class.getResource("/img/public_background1.png")));
 		lblNewLabel_11.setBounds(374, 66, 48, 422);
+		lblNewLabel_11.setIcon(new ImageIcon(MainGUI.class.getResource("/img/public_background1.png")));
 		panel.add(lblNewLabel_11);
 
 		lblNewLabel_10 = new JLabel("");

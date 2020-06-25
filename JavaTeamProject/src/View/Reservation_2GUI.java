@@ -300,6 +300,16 @@ public class Reservation_2GUI {
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
+//		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
+//		btn_back.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+//		btn_back.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btn_back);
+//		frame.setBounds(100, 100, 360, 600);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	}
 		JButton btnback;
 		btnback_1 = new JButton("");
 		btnback_1.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
@@ -309,8 +319,11 @@ public class Reservation_2GUI {
 				frame.setVisible(false);
 			}		
 		});
-		btnback_1.setBounds(12, 10, 39, 37);
-		frame.getContentPane().add(btnback_1);
+//		btnback.setBounds(12, 10, 39, 37);
+//		frame.getContentPane().add(btnback);
+		
+//		btnback_1.setBounds(12, 10, 39, 37);
+//		frame.getContentPane().add(btnback_1);
 //		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 //		btn_back.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
@@ -320,9 +333,22 @@ public class Reservation_2GUI {
 //		btn_back.setBounds(12, 10, 23, 23);
 //		frame.getContentPane().add(btn_back);
 		frame.setBounds(500, 500, 450, 600);
-	
-
-		frame.setBounds(100, 100, 360, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		btn_back.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btn_back);
+//		
+//		JButton btnback = new JButton("");
+//		btnback.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//			}
+//		});
+//		btnback.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
+//		btnback.setFont(new Font("±¼¸²", Font.BOLD, 12));
+//		btnback.setBorderPainted(false);
+//		btnback.setBackground(Color.WHITE);
+//		btnback.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btnback);
+//		frame.setBounds(100, 100, 360, 600);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
