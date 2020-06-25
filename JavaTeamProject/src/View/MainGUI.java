@@ -87,7 +87,7 @@ public class MainGUI {
 		fm.FontChange(ge);
 		
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MainGUI.class.getResource("/img/frame.jpg")));
 		
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
