@@ -61,16 +61,10 @@ public class ggggg {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ggggg.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		SpringLayout springLayout = new SpringLayout();
-//		frame.getContentPane().setLayout(springLayout);
-		frame.getContentPane().setLayout(null);
 
 		comboBox = new JComboBox<String>();
+		comboBox.setBounds(156, 17, 106, 21);
 		comboBox.setBackground(new Color(255, 250, 250));
-
-		comboBox.setBounds(175, 17, 106, 21);
-
-		comboBox.setBounds(99, 17, 106, 21);
 		comboBox.addItem("선택하기");
 		comboBox.addItem("족구장");
 		comboBox.addItem("야구장");
@@ -78,15 +72,16 @@ public class ggggg {
 		comboBox.addItem("축구장");
 		comboBox.addItem("농구장");
 		comboBox.addItem("배드맨턴장");
+		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(comboBox);
 
 //		   list = dao.divide(comboBox.getSelectedItem().toString());
 //		   list = dao.divide(index);
 
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 48, 410, 503);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(12, 48, 410, 503);
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
@@ -95,8 +90,8 @@ public class ggggg {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
 		btnNewButton.setBounds(12, 10, 23, 23);
+		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
 		frame.getContentPane().add(btnNewButton);
 
 //		list= dao.divide("족구장");
