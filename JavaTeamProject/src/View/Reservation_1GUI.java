@@ -62,10 +62,15 @@ public class Reservation_1GUI {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
+		
+				JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC815\uBCF4");
+				lblNewLabel.setBounds(79, 22, 193, 37);
+				frame.getContentPane().add(lblNewLabel);
+				lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
 		panel.setBounds(12, 78, 83, 421);
+		panel.setBackground(new Color(255, 250, 250));
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(5, 3, 0, 0));
 
@@ -121,21 +126,14 @@ public class Reservation_1GUI {
 		lb_date3.setText(date3);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(79, 22, 193, 37);
 		panel_1.setBackground(new Color(230, 230, 250));
-//		panel_1.setBounds(12, 22, 193, 37);
-		
-		panel_1.setBounds(12, 22, 193, 37);
-		panel_1.setBounds(139, 22, 193, 37);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC815\uBCF4");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(lblNewLabel);
-
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBounds(94, 78, 97, 421);
+		panel_2.setBackground(new Color(255, 250, 250));
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(5, 0, 0, 0));
 
@@ -165,8 +163,8 @@ public class Reservation_1GUI {
 		lb_day3.setText(getDate(date3));
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 255, 255));
 		panel_3.setBounds(189, 78, 143, 421);
+		panel_3.setBackground(new Color(255, 250, 250));
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(new GridLayout(5, 0, 0, 0));
 
@@ -175,7 +173,7 @@ public class Reservation_1GUI {
 		panel_3.add(lblNewLabel_10);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(255, 255, 255));
+		panel_4.setBackground(new Color(255, 250, 250));
 		panel_3.add(panel_4);
 
 		JButton btnNewButton = new JButton("16:00-18:00");
@@ -199,7 +197,7 @@ public class Reservation_1GUI {
 		panel_4.add(btnNewButton_1);
 
 		JPanel panel_4_1 = new JPanel();
-		panel_4_1.setBackground(new Color(255, 255, 255));
+		panel_4_1.setBackground(new Color(255, 250, 250));
 		panel_3.add(panel_4_1);
 
 		JButton btnNewButton_2 = new JButton("New button");
@@ -209,7 +207,7 @@ public class Reservation_1GUI {
 		panel_4_1.add(btnNewButton_1_1);
 
 		JPanel panel_4_2_1 = new JPanel();
-		panel_4_2_1.setBackground(new Color(255, 255, 255));
+		panel_4_2_1.setBackground(new Color(255, 250, 250));
 		panel_3.add(panel_4_2_1);
 
 		JButton btnNewButton_3_1 = new JButton("New button");
@@ -219,7 +217,7 @@ public class Reservation_1GUI {
 		panel_4_2_1.add(btnNewButton_1_2_1);
 
 		JPanel panel_4_2 = new JPanel();
-		panel_4_2.setBackground(new Color(255, 255, 255));
+		panel_4_2.setBackground(new Color(255, 250, 250));
 		panel_3.add(panel_4_2);
 
 		JButton btnNewButton_3 = new JButton("New button");
@@ -228,19 +226,14 @@ public class Reservation_1GUI {
 		JButton btnNewButton_1_2 = new JButton("New button");
 		panel_4_2.add(btnNewButton_1_2);
 
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(
-				"C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\\uBCF4\uB77C\uBC30\uACBD.png"));
-		lblNewLabel_1.setBounds(0, 0, 344, 561);
-		frame.getContentPane().add(lblNewLabel_1);
-
-		JButton btn_back = new JButton("\uB4A4\uB85C");
+		JButton btn_back = new JButton("");
+		btn_back.setBounds(12, 10, 23, 23);
+		btn_back.setIcon(new ImageIcon(Reservation_1GUI.class.getResource("/img/prev.jpg")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}
 		});
-		btn_back.setBounds(12, 22, 97, 23);
 		frame.getContentPane().add(btn_back);
 
 		frame.setBounds(100, 100, 360, 600);
