@@ -31,9 +31,9 @@ public class Reservation_1Controller {
 		Reservation_1Controller.vo = vo;
 	}
 
-	public String getphone() {
+	public String getphone(String fc_name) {
 
-		String phone = dao.getphone();
+		String phone = dao.getphone(fc_name);
 
 		return phone;
 	}
@@ -46,37 +46,37 @@ public class Reservation_1Controller {
 
 	}
 
-	public String getvision() {
+	public String getdvision(String fc_name) {
 
-		String division = dao.getdivision();
+		String division = dao.getdivision(fc_name);
 
 		return division;
 	}
 
-	public String getweekday() {
+	public String getweekday(String fc_name) {
 
-		String weekday = dao.getweekday();
+		String weekday = dao.getweekday(fc_name);
 
 		return weekday;
 	}
 
-	public String getweekend() {
+	public String getweekend(String fc_name) {
 
-		String weekend = dao.getweekend();
+		String weekend = dao.getweekend(fc_name);
 
 		return weekend;
 	}
 
-	public String gethomepage() {
+	public String gethomepage(String fc_name) {
 
-		String homepage = dao.gethomepage();
+		String homepage = dao.gethomepage(fc_name);
 
 		return homepage;
 	}
 
-	public String getpeople() {
+	public String getpeople(String fc_name) {
 
-		String people = dao.getpeople();
+		String people = dao.getpeople(fc_name);
 
 		return people;
 	}
@@ -87,9 +87,9 @@ public class Reservation_1Controller {
 		return charge;
 	}
 
-	public String getclosure() {
+	public String getclosure(String fc_name) {
 
-		String closure = dao.getclosure();
+		String closure = dao.getclosure(fc_name);
 
 		return closure;
 

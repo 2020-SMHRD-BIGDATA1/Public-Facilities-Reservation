@@ -119,7 +119,9 @@ public class MainGUI {
 		btnjokgu.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uC871\uAD6C\uD558\uB294\uADF8\uB9BC.jpg"));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InventoryGUI inventory = new InventoryGUI();
+//				InventoryGUI inventory = new InventoryGUI();
+				
+				ggggg gg=new ggggg();
 			}
 		});
 		btnjokgu.setBounds(121, 161, 68, 67);
