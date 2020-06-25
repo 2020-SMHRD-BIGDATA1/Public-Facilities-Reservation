@@ -19,9 +19,9 @@ public class Reservation_1Controller {
 		return point;
 	}
 
-	public int getfee() {
+	public int getfee(String fcname) {
 
-		int fee = dao.getfee();
+		int fee = dao.getfee(fcname);
 
 		return fee;
 	}

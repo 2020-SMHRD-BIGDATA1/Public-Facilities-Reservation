@@ -38,7 +38,6 @@ public class MemberManagementSystem {
 		}else {
 			return true;
 		}
-		
 	}
 
 	public String check(String id) {

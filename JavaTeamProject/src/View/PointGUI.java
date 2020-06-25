@@ -32,6 +32,7 @@ public class PointGUI {
 	private JFrame frame;
 	private JTextField inputText;
 
+	MemberDAO dao = new MemberDAO();
 	
 	public PointGUI() {
 		initialize();
@@ -59,8 +60,17 @@ public class PointGUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
+		
+		inputText = new JTextField();
+		inputText.setBounds(225, 188, 97, 24);
+		panel.add(inputText);
+		inputText.setColumns(10);
+		
+//       int point=Integer.parseInt(inputText.getText());
+		
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8 \uCDA9\uC804\uD558\uAE30");
 		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -73,8 +83,7 @@ public class PointGUI {
 				}else {
 					System.out.println("실패");
 				}
-				
-				
+			
 				PointGUI2 reviews = new PointGUI2(point);
 				frame.dispose();
 			}
@@ -100,11 +109,11 @@ public class PointGUI {
 		lblNewLabel_2.setBounds(80, 188, 97, 24);
 		panel.add(lblNewLabel_2);
 		
-		inputText = new JTextField();
-		inputText.setBounds(225, 188, 97, 24);
-		panel.add(inputText);
-		inputText.setColumns(10);
-		
+//		inputText = new JTextField();
+//		inputText.setBounds(225, 188, 97, 24);
+//		panel.add(inputText);
+//		inputText.setColumns(10);
+//		
 //       int point=Integer.parseInt(inputText.getText());
 	
 		
@@ -115,6 +124,7 @@ public class PointGUI {
 
 		
 		nowPoint.setText(controller.getpoint()+"");
+		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setIcon(new ImageIcon(PointGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.addActionListener(new ActionListener() {

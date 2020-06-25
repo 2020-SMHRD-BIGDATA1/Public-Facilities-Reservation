@@ -52,7 +52,7 @@ import View.LoginGUI;
 		getConnection();
 		
 		try {
-			String sql = "SELECT * FROM MEMBERS WHERE user_ID = ? AND PW = ?";
+			String sql = "SELECT * FROM MEMBERS WHERE USER_ID = ? AND PW = ?";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, user.getId());
 			pst.setString(2, user.getPw());
@@ -150,8 +150,9 @@ import View.LoginGUI;
 	int row=0;
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setInt(1, point+re_controller.getpoint());
-			pst.setString(2, logingui.controller.getLoginUser().getId() );
+//			pst.setInt(1, point+re_controller.getpoint());
+      		pst.setInt(1, re_controller.getpoint());
+			pst.setString(2, LoginGUI.controller.getLoginUser().getId() );
 	
 			row = pst.executeUpdate();
 		}catch (SQLException e) {

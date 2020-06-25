@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.SpringLayout;
 
 import Controller.Reservation_1Controller;
+import Model.MemberDAO;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -20,13 +21,13 @@ import javax.swing.SwingConstants;
 public class PointGUI2 {
 
 	private JFrame frame;
-	private String point;
-
+	private int point;
+	MemberDAO dao = new MemberDAO();
 	JLabel lb_charge;
 	Reservation_1Controller re_controller =new Reservation_1Controller();
 	private JLabel lblNewLabel;
 	public  PointGUI2(int point2) {
-		initialize();
+		initialize(point2);
 		frame.setVisible(true);
 		
 		lb_charge.setText(point2+"가 충전이 되었습니다~ ");
@@ -45,12 +46,18 @@ public class PointGUI2 {
 		btnback.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btnback);
 		
+		point=re_controller.getpoint()+point2;
 		
 		JButton btnNewButton = new JButton("\uD655\uC778");
 		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				
+				dao.updatepoint(point);
+				
+				PointGUI pt = new PointGUI();
+
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(147, 382, 141, 38);
@@ -68,7 +75,7 @@ public class PointGUI2 {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(int point2) {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI2.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(new Color(255, 235, 205));
@@ -82,8 +89,8 @@ public class PointGUI2 {
 		lb_now.setBounds(71, 188, 301, 52);
 		frame.getContentPane().add(lb_now);
 		
-		
-		lb_now.setText("현재 포인트는 "+re_controller.getpoint()+"입니다");
+		point=re_controller.getpoint()+point2;
+		lb_now.setText("현재 포인트는 "+point+"입니다");
 		
 		lb_charge = new JLabel("\"100p\"\uC801\uB9BD\uB418\uC5C8\uC2B5\uB2C8\uB2E4. ");
 		lb_charge.setHorizontalAlignment(SwingConstants.CENTER);

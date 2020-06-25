@@ -10,7 +10,6 @@ public class MemberVO {
 	private String mail;
 
 	public MemberVO(String id, String pw, String name, int age, String phone, String address, String mail) {
-		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;

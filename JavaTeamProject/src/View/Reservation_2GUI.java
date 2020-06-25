@@ -130,7 +130,7 @@ public class Reservation_2GUI {
 
 		JLabel lb_fee = new JLabel("New label");
 		panel.add(lb_fee);
-		int fee = con.getfee();
+		int fee = con.getfee(vo.getFcname());
 		lb_fee.setText(fee + "");
 
 		JLabel lblNewLabel_13 = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
@@ -192,6 +192,7 @@ public class Reservation_2GUI {
 		point = con.getpoint();
 
 		// lb_point.setText(String.valueOf(point));
+		
 		int cnt=controller.insertpoint(point);
 		if(cnt>0) {
 			lb_point.setText(point + "");
@@ -227,7 +228,8 @@ public class Reservation_2GUI {
 		btn_charge.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		btn_charge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
+				
 				PointGUI pointgui = new PointGUI();
 			}
 		});

@@ -67,7 +67,7 @@ public class ReservationDAO {
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, logingui.controller.getLoginUser().getId());
+			pst.setString(1, LoginGUI.controller.getLoginUser().getId());
 		
 			rs = pst.executeQuery();
 
@@ -84,7 +84,7 @@ public class ReservationDAO {
 		return point;
 	}
 
-	public int getfee() {
+	public int getfee(String fc_name) {
 		
 		getconnection();
 		int fee = 0;
@@ -93,7 +93,7 @@ public class ReservationDAO {
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, "풍영체육시설단지 축구장");
+			pst.setString(1, fc_name );
 			rs = pst.executeQuery();
 
 			if (rs.next()) {

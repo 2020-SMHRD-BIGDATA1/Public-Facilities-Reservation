@@ -250,39 +250,23 @@ public class MyPageGUI {
 		});
 		btnback.setBounds(12, 10, 23, 23);
 		panel.add(btnback);
+		
+		JButton btn예약확인_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		btn예약확인_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+			}
+		});
+		btn예약확인_1.setFont(new Font("Dialog", Font.BOLD, 15));
+		btn예약확인_1.setBorderPainted(false);
+		btn예약확인_1.setBackground(Color.WHITE);
+		btn예약확인_1.setBounds(237, 423, 97, 41);
+		panel.add(btn예약확인_1);
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back2.png")));
 		lblNewLabel_3.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(lblNewLabel_3);
-
-		JButton btnNewButton_1 = new JButton("\uB9AC\uBDF0\uC4F0\uAE30");
-		btnNewButton_1.setBackground(Color.WHITE);
-		btnNewButton_1.setBorderPainted(false);
-		btnNewButton_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				GradeGUI gradegui = new GradeGUI();
-				frame.setVisible(false);
-
-			}
-		});
-		btnNewButton_1.setBounds(161, 423, 97, 41);
-		panel.add(btnNewButton_1);
-
-		JButton btnNewButton_1_1 = new JButton("\uB9AC\uBDF0\uBCF4\uAE30");
-		btnNewButton_1_1.setBackground(Color.WHITE);
-		btnNewButton_1_1.setBorderPainted(false);
-		btnNewButton_1_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		btnNewButton_1_1.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				ReviewcheckGUI review = new ReviewcheckGUI();
-				frame.setVisible(false);
-			}
-		});
-		btnNewButton_1_1.setBounds(282, 423, 97, 41);
-		panel.add(btnNewButton_1_1);
 
 	}
 }
