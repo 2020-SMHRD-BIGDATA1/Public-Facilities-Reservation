@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Model.RatingVO;
 import Model.ReserVO;
 import Model.ReservationDAO;
+import Model.RoomMatchingVO;
 import Model.fcnamevo;
 import Model.reservationvo;
 
@@ -141,5 +142,13 @@ public class Reservation_1Controller {
 		
 		return list;
 	}
+
+	public ArrayList<ReserVO> getreservation2(int fc_id) {
+		
+		ArrayList<ReserVO> list1=dao.getreservation2(fc_id);
+		
+		return list1;
+	}
+
 
 }

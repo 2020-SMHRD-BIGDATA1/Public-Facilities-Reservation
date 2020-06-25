@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.ComboBoxEditor;
 import javax.swing.JComboBox;
 
+import View.LoginGUI;
 import View.MatchingGUI;
 
 public class MatchingDAO {
@@ -104,6 +105,37 @@ public class MatchingDAO {
 		}
 		return infolist;
 	}
+
+	
+
+
+	public int minusnum(RoomMatchingVO vo1) {
+		getConnection();
+		String sql = "update MemberMatching set addnum=?  where Fac_ID=? and body=?";
+	    int row=0;
+		
+	    try {
+
+			pst = conn.prepareStatement(sql);
+//			pst.setInt(1, point+re_controller.getpoint());
+      		pst.setInt(1,Integer.parseInt(vo1.getAddnum())-1);
+			pst.setInt(2, vo1.getFac_ID() );
+			pst.setString(3, vo1.getBody() );
+	     	row = pst.executeUpdate();
+		
+	    }catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	
+		return row;
+	}
+
+		
+	
+		
+	}
 	
 
 
@@ -176,4 +208,4 @@ public class MatchingDAO {
 //		}
 //		return result;
 //	}
-}
+

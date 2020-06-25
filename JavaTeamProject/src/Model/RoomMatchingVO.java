@@ -55,4 +55,14 @@ public class RoomMatchingVO {
 		this.body = body;
 	}
 
+	public RoomMatchingVO(int Fac_ID, String addnum, String body) {
+	
+		this.addnum = addnum;
+
+		this.body = body;
+		this.Fac_ID = Fac_ID;
+	}
+	
+	
+	
 }

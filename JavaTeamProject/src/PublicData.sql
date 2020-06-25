@@ -115,4 +115,4 @@ insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴ�
 select * from reservation ;
 
 
-
+update tablename set col1=val1 from tablename where condition

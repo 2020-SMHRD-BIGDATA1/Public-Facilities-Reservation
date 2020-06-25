@@ -164,7 +164,8 @@ public class MainGUI {
 		btnteam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 		
-				MatchingGUI matching = new MatchingGUI();
+//				MatchingGUI matching = new MatchingGUI();
+				matchingupdateGUI matchingupdate= new matchingupdateGUI();
 			}
 		});
 		panel.add(btnteam);

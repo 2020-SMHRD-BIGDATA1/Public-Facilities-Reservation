@@ -501,6 +501,42 @@ public class ReservationDAO {
 		
 	}
 
+	public ArrayList<ReserVO> getreservation2(int fc_id) {
+		getconnection();
+		String sql = "select * from reservation where fac_id=?";
+		ArrayList<ReserVO> list1 = new ArrayList<ReserVO>(); 
+		
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, fc_id);
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+			
+			ReserVO vo= new ReserVO(rs.getString(1), rs.getInt(2),  rs.getString(3),  rs.getString(4),rs.getString(5), rs.getString(6),rs.getString(7));
+//				System.out.println(rs.getString(1));
+			list1.add(vo);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list1;
+	
+
+	}
+
+
+		
+		
+		
+		
+		
+
 	}
 
 

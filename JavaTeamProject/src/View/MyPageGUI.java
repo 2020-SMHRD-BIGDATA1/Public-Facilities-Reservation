@@ -251,18 +251,19 @@ public class MyPageGUI {
 		btnback.setBounds(12, 10, 23, 23);
 		panel.add(btnback);
 		
-		JButton btn예약확인_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
-		btn예약확인_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				frame.dispose();
-			}
-		});
-		btn예약확인_1.setFont(new Font("Dialog", Font.BOLD, 15));
-		btn예약확인_1.setBorderPainted(false);
-		btn예약확인_1.setBackground(Color.WHITE);
-		btn예약확인_1.setBounds(237, 423, 97, 41);
-		panel.add(btn예약확인_1);
+//		JButton btn예약확인_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+//		btn예약확인_1.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.dispose();
+//				
+//			}
+//		});
+//		btn예약확인_1.setFont(new Font("Dialog", Font.BOLD, 15));
+//		btn예약확인_1.setBorderPainted(false);
+//		btn예약확인_1.setBackground(Color.WHITE);
+//		btn예약확인_1.setBounds(237, 423, 97, 41);
+//		panel.add(btn예약확인_1);
+		
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back2.png")));
 		lblNewLabel_3.setBounds(0, 0, 434, 561);
