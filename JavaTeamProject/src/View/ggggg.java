@@ -41,9 +41,15 @@ public class ggggg {
 	private JPanel panel;
 	private String index;
 
-	public ggggg() {
+	public ggggg(String string) {
 		initialize();
 		frame.setVisible(true);
+		
+	    list = dao.divide(string);
+		for (int i = 0; i <list.size(); i++) {
+			addItem(i);
+		}
+	
 	}
 
 	private void initialize() {
@@ -67,10 +73,6 @@ public class ggggg {
 		comboBox.addItem("배드맨턴장");
 		frame.getContentPane().add(comboBox);
 
-		list = dao.divide(comboBox.getSelectedItem().toString());
-
-//		   list = dao.divide(comboBox.getSelectedItem().toString());
-//		   list = dao.divide(index);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -81,6 +83,7 @@ public class ggggg {
 		panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
+
 
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
@@ -130,8 +133,9 @@ public class ggggg {
 				}
 			}
 		});
-
+		
 	}
+		
 
 	public void addItem(int i) {
 
