@@ -27,7 +27,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 public class FCdetailGUI {
-
+	
 	private JFrame frame;
 
 	/**
