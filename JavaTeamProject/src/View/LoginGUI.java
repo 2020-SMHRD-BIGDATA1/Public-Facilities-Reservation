@@ -25,7 +25,7 @@ import javax.swing.JPasswordField;
 import java.awt.Toolkit;
 
 public class LoginGUI {
-
+	
 	private JFrame frame;
 	private JTextField inputID;
 	private JPasswordField inputPW;
@@ -75,10 +75,11 @@ public class LoginGUI {
 		panel.setBounds(0, -25, 434, 586);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-
+		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/HARANGKKE.png")));
-		lblNewLabel_1.setBounds(118, 132, 200, 71);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC194\uAC1C\\HARANGKKE.png"));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(126, 117, 226, 107);
 		panel.add(lblNewLabel_1);
 
 		JLabel lblNewLabel = new JLabel("");
@@ -112,12 +113,12 @@ public class LoginGUI {
 				JoinGUI join = new JoinGUI();
 			}
 		});
-		btn_Join.setFont(new Font("굴림", Font.PLAIN, 11));
+		btn_Join.setFont(new Font("Dialog", Font.BOLD, 12));
 
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
 		btn_Login.setBounds(59, 526, 80, 30);
 		panel.add(btn_Login);
-		btn_Login.setFont(new Font("한컴 고딕", Font.BOLD, 12));
+		btn_Login.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,12));
 		btn_Login.setForeground(new Color(255, 255, 255));
 		btn_Login.setBackground(new Color(135, 206, 250));
 		btn_Login.addActionListener(new ActionListener() {

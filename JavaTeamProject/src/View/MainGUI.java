@@ -135,7 +135,10 @@ public class MainGUI {
 		});
 		panel.add(btnjokgu);
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		btnBaseBall = new JButton("");
 		btnBaseBall.setBounds(280, 164, 68, 67);
 		btnBaseBall.setBackground(Color.WHITE);
@@ -145,16 +148,25 @@ public class MainGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				ggggg gg=new ggggg("야구장");
+<<<<<<< HEAD
 			}
 		});
 
+=======
+			
+			}
+		});
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		btnbasketBall = new JButton("");
 		btnbasketBall.setBounds(280, 164, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
 		btnbasketBall.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
 		btnbasketBall.addActionListener(new ActionListener() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 			
 			public void actionPerformed(ActionEvent arg0) {
 			
@@ -162,9 +174,20 @@ public class MainGUI {
 			
 			}
 		});
+<<<<<<< HEAD
+=======
+		btnBaseBall.setBounds(280, 164, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnBaseBall);
+<<<<<<< HEAD
+=======
+		btnbasketBall.setBounds(229, 161, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnbasketBall);
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		
 		btnFutSal = new JButton("");
 		btnFutSal.setBounds(77, 266, 68, 67);
@@ -176,9 +199,15 @@ public class MainGUI {
 				ggggg gg=new ggggg("풋살경기장");
 			}
 		});
+<<<<<<< HEAD
 
 		
 
+=======
+		btnFutSal.setBounds(77, 264, 68, 67);
+		btnFutSal.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uD48B\uC0B4\uC0AC\uB78C.jpg"));
+		btnFutSal.setBounds(26, 263, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnFutSal);
 		
 		btnteam = new JButton("");
@@ -258,7 +287,12 @@ public class MainGUI {
 		lblNewLabel_3.setBounds(88, 343, 57, 15);
 		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+<<<<<<< HEAD
 
+=======
+		lblNewLabel_3.setBounds(77, 340, 57, 15);
+		lblNewLabel_3.setBounds(36, 340, 57, 15);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(lblNewLabel_3);
 		
 		btnBadMinton = new JButton("");
@@ -270,17 +304,32 @@ public class MainGUI {
 				ggggg gg=new ggggg("배드맨턴장");
 			}
 		});
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminturn.jpg")));
+<<<<<<< HEAD
 
 		
 
+=======
+		btnBadMinton.setBounds(172, 264, 68, 67);
+		btnBadMinton.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBC30\uBBFC\uC0AC\uB78C.jpg"));
+		btnBadMinton.setBounds(121, 261, 68, 67);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(btnBadMinton);
 		
 		lblNewLabel_4 = new JLabel("\uBC30\uB4DC\uBBFC\uD134");
+<<<<<<< HEAD
 		lblNewLabel_4.setBounds(182, 343, 68, 15);
 		lblNewLabel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 
+=======
+		lblNewLabel_4.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(174, 340, 57, 15);
+		lblNewLabel_4.setBounds(136, 338, 57, 15);
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		panel.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
@@ -295,7 +344,10 @@ public class MainGUI {
 		lblNewLabel_6.setBackground(Color.WHITE);
 		panel.add(lblNewLabel_6);
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		JButton btnbaseball = new JButton("");
 		btnbaseball.setBounds(280, 264, 68, 67);
 		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball1.jpg")));
@@ -316,10 +368,15 @@ public class MainGUI {
 		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		panel.add(lblNewLabel_4_1);
+<<<<<<< HEAD
 
 		btnBaseBall_1 = new JButton("");
 		btnBaseBall_1.setBounds(280, 263, 68, 67);
 		btnBaseBall_1.addActionListener(new ActionListener() {
+=======
+		btnBaseBall = new JButton("");
+		btnBaseBall.addActionListener(new ActionListener() {
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
@@ -331,12 +388,15 @@ public class MainGUI {
 		lblNewLabel_9.setIcon(new ImageIcon(MainGUI.class.getResource("/img/public_background3.png")));
 		lblNewLabel_9.setBounds(0, 66, 48, 422);
 		panel.add(lblNewLabel_9);
+<<<<<<< HEAD
 		
 		lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));
 		lblNewLabel_10.setBounds(374, 66, 48, 422);
 		panel.add(lblNewLabel_10);
 
+=======
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		
 		
 
