@@ -44,6 +44,30 @@ public class Reservation_3GUI {
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
 		
+		
+		JButton btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(123, 104, 238));
+		btnNewButton_1.setBounds(237, 485, 97, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String body = textField_body.getText();
+				String title = textField_title.getText();
+				if (title.equals("") && body.equals("")) {
+					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+				} else {
+					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
+					if (count > 0) {
+						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+					}
+					frame.dispose();
+
+				}
+
+			}
+		});
+		
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -108,9 +132,8 @@ public class Reservation_3GUI {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
 
-		JButton btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1 = new JButton("\uD655\uC778");
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(123, 104, 238));
 		btnNewButton_1.setVisible(true);

@@ -22,6 +22,10 @@ create table Publics(
 );
 
 create table Ratings(
+	id varchar2(30),
+	Name varchar2(300),
+	Rating varchar2(5),
+	Review varchar2(600));
 	user_id varchar(20),
 	Fac_Name varchar2(100),
 	Rating varchar(5) NOT NULL,
@@ -29,6 +33,23 @@ create table Ratings(
 	);
 	
 create table MEMBERS(
+	id varchar(20),
+	pw varchar(20),
+	name varchar(10),
+	age NUMBER (10),
+	phone varchar(20),
+	address varchar(100),
+	mail varchar(100),
+	point NUMBER(30));
+	
+create table reservation(
+   user_id varchar2(200),
+    fac_id varchar2(200),
+	fac_name varchar2(200),
+	reserdate varchar2(200),
+	usedate varchar2(200),
+	usetime varchar2(200),
+	fee varchar2(200)
 	user_id varchar(20) ,
 	pw varchar(20) not null,
 	name varchar(10) not null,
@@ -45,6 +66,7 @@ create table MemberMatching(
 	addnum number,
 	title varchar2(30) not null,
 	body varchar2(100) not null
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 );
 create table reservation(
 	user_id varchar2(20),
@@ -74,23 +96,20 @@ references MEMBERS(user_id);
 alter table reservation
 add constraint reserv_fac_id_fk foreign key(fac_id)
 references Publics(fac_id); 
-<<<<<<< HEAD
 
 select * from MEMBERS
-=======
 -----------------------------------
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 
-insert into MEMBERMATCHING values (2,'ljh2723',3,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMATCHING values (13,'ljh2723',2,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMATCHING values (12,'ljh',2,'놀자~!!','야구할사람 구해욥');
-insert into MEMBERMATCHING values (15,'ljh2723',5,'덤벼라!!','축구할사람!!');
-insert into MEMBERMATCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
+insert into MEMBERMATCHING values (2,'123',3,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (13,'123',2,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (12,'123',2,'놀자~!!','야구할사람 구해욥');
+insert into MEMBERMATCHING values (15,'123',5,'덤벼라!!','축구할사람!!');
+insert into MEMBERMATCHING values (20,'123',1,'와주라~','축구하자~!!');
 	
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
@@ -112,4 +131,5 @@ insert into test values('몰라','44:00~66:00');
 insert into test values('있어라','04:00~06:00');
 
 
-select * from publics;
+select * from Ratings ;
+insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');

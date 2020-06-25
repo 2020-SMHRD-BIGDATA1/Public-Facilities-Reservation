@@ -178,7 +178,7 @@ public class ggggg {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				FCdetailGUI fcdetailgui = new FCdetailGUI(list.get(i).getName());
+				fcupdateGUI fcupgui = new fcupdateGUI(list.get(i).getName());
 			}
 		});
 		btn.setBounds(212, 56, 106, 39);
