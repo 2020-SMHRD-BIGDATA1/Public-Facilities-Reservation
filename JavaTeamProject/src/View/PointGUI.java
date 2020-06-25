@@ -47,14 +47,15 @@ public class PointGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 360, 600);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 0, 344, 561);
+		panel.setBackground(new Color(255, 235, 205));
+		panel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -77,27 +78,29 @@ public class PointGUI {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(60, 244, 209, 38);
+		btnNewButton.setBounds(113, 308, 209, 38);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("\uD3EC\uC778\uD2B8 \uAD00\uB9AC");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel.setBounds(56, 43, 192, 68);
+		lblNewLabel.setBounds(119, 43, 192, 68);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uD604\uC7AC\uD3EC\uC778\uD2B8");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(60, 121, 85, 31);
+		lblNewLabel_1.setBounds(80, 140, 97, 24);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uCDA9\uC804\uD3EC\uC778\uD2B8");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 16));
-		lblNewLabel_2.setBounds(60, 162, 97, 31);
+		lblNewLabel_2.setBounds(80, 188, 97, 24);
 		panel.add(lblNewLabel_2);
 		
 		inputText = new JTextField();
-		inputText.setBounds(153, 168, 116, 24);
+		inputText.setBounds(225, 188, 97, 24);
 		panel.add(inputText);
 		inputText.setColumns(10);
 		
@@ -105,23 +108,20 @@ public class PointGUI {
 	
 		
 		JLabel nowPoint = new JLabel("New label");
-		nowPoint.setBounds(157, 128, 116, 21);
+		nowPoint.setHorizontalAlignment(SwingConstants.CENTER);
+		nowPoint.setBounds(225, 140, 97, 24);
 		panel.add(nowPoint);
 
 		
 		nowPoint.setText(controller.getpoint()+"");
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\git\\Public-Facilities-Reservation\\Public-Facilities-Reservation\\JavaTeamProject\\bin\\img\\public_background1.png"));
-		lblNewLabel_3.setBounds(0, 0, 344, 561);
-		panel.add(lblNewLabel_3);
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(PointGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton_1.setBounds(0, 10, 64, 38);
+		btnNewButton_1.setBounds(12, 10, 23, 23);
 		panel.add(btnNewButton_1);
 		
 		

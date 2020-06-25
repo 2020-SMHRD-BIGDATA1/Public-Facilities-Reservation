@@ -63,7 +63,7 @@ public class MatchingDAO {
 
 			while (rs.next()) {
 				int Fac_ID = Integer.parseInt(rs.getString("Fac_ID"));
-				String Name = rs.getString("Name");
+				String Name = rs.getString("fac_Name");
 				String addr = rs.getString("ADDRESS");
 				String time =rs.getString("WEEKDAY");
 				String img = rs.getString("IMG");
@@ -83,14 +83,14 @@ public class MatchingDAO {
 	public ArrayList<RoomMatchingVO> roomInfo() {
 		ArrayList<RoomMatchingVO> infolist = new ArrayList<RoomMatchingVO>();
 		getConnection();
-		String sql = "SELECT * FROM MEMBERMACTCHING";
+		String sql = "SELECT * FROM MEMBERMATCHING";
 		try {
 			pst = conn.prepareStatement(sql);
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
 				int Fac_ID = Integer.parseInt(rs.getString("Fac_ID"));
-				String ID = rs.getString("id");
+				String ID = rs.getString("user_id");
 				String addnum = rs.getString("addnum");
 				String title =rs.getString("title");
 				String body = rs.getString("body");

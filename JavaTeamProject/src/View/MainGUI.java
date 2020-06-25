@@ -2,6 +2,7 @@ package View;
 
 
 import java.awt.Graphics;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Color;
 import java.awt.Font;
@@ -33,9 +34,10 @@ public class MainGUI {
 
 	private MemberManagementSystem controller= LoginGUI.controller;
 
-
+	private FontMaker fm = new FontMaker();
 
 	MainDAO dao = new MainDAO();
+	
 	
 	
 	
@@ -54,7 +56,8 @@ public class MainGUI {
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
 	private JButton btnBaseBall;
-	private JLabel lblNewLabel_9;
+	private JButton btnBaseBall_1;
+	private JLabel lblNewLabel_10;
 	/**
 	 * Launch the application.
 	 */
@@ -73,17 +76,20 @@ public class MainGUI {
 		initialize();
 
 		frame.setVisible(true); // 새로운창으로 띄울시 적어야하는 코드
-	
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		fm.FontChange(ge);
+		
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		
-		frame.setBounds(100, 100, 360, 600);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -93,15 +99,15 @@ public class MainGUI {
 		JPanel panel = new JPanel();
 		
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 10, 320, 541);
+		panel.setBounds(12, 10, 422, 551);
 		frame.getContentPane().add(panel);
-		panel.setLayout(null);
 		
 		
 		
 		
 		btnSoccer = new JButton("");
-		btnSoccer.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uCD95\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
+		btnSoccer.setBounds(77, 164, 68, 67);
+		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer.jpg")));
 		btnSoccer.setSelectedIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uCD95\uAD6C.PNG"));
 		btnSoccer.setBorderPainted(false);
 		btnSoccer.addActionListener(new ActionListener() {
@@ -111,39 +117,67 @@ public class MainGUI {
 				ggggg gg=new ggggg("축구장");
 			}
 		});
-		btnSoccer.setBounds(26, 161, 68, 67);
+		panel.setLayout(null);
 		panel.add(btnSoccer);
 		
 		btnjokgu = new JButton("");
+		btnjokgu.setBounds(172, 164, 68, 67);
 		btnjokgu.setBackground(Color.WHITE);
 		btnjokgu.setForeground(Color.WHITE);
 		btnjokgu.setBorderPainted(false);
-		btnjokgu.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uC871\uAD6C\uD558\uB294\uADF8\uB9BC.jpg"));
+		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu.jpg")));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				ggggg gg=new ggggg("족구장");
 			}
 		});
-		btnjokgu.setBounds(121, 161, 68, 67);
 		panel.add(btnjokgu);
 		
+
+		btnBaseBall = new JButton("");
+		btnBaseBall.setBounds(280, 164, 68, 67);
+		btnBaseBall.setBackground(Color.WHITE);
+		btnBaseBall.setBorderPainted(false);
+		btnBaseBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basket.jpg")));
+		btnBaseBall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				ggggg gg=new ggggg("야구장");
+
+			}
+		});
+
+
+			
+
+
 		btnbasketBall = new JButton("");
+		btnbasketBall.setBounds(280, 164, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
 		btnbasketBall.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
 		btnbasketBall.addActionListener(new ActionListener() {
+
+
+
 			
 			public void actionPerformed(ActionEvent arg0) {
 			
 				ggggg gg=new ggggg("농구장");
-			
-			}
-		});
+
+		btnBaseBall.setBounds(280, 164, 68, 67);
+
+		panel.add(btnBaseBall);
+
+
 		btnbasketBall.setBounds(229, 161, 68, 67);
 		panel.add(btnbasketBall);
+
 		
 		btnFutSal = new JButton("");
+		btnFutSal.setBounds(77, 266, 68, 67);
+		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/futsal1.jpg")));
 		btnFutSal.setBackground(Color.WHITE);
 		btnFutSal.setBorderPainted(false);
 		btnFutSal.addActionListener(new ActionListener() {
@@ -151,12 +185,15 @@ public class MainGUI {
 				ggggg gg=new ggggg("풋살경기장");
 			}
 		});
+
+		btnFutSal.setBounds(77, 264, 68, 67);
 		btnFutSal.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uD48B\uC0B4\uC0AC\uB78C.jpg"));
 		btnFutSal.setBounds(26, 263, 68, 67);
 		panel.add(btnFutSal);
 		
 		btnteam = new JButton("");
-		btnteam.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uD300\uB9E4\uCE6D1.png"));
+		btnteam.setBounds(145, 391, 138, 67);
+		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/teamhope.png")));
 		btnteam.setBackground(Color.WHITE);
 		btnteam.setBorderPainted(false);
 		btnteam.addActionListener(new ActionListener() {
@@ -164,13 +201,13 @@ public class MainGUI {
 				MatchingGUI matching = new MatchingGUI();
 			}
 		});
-		btnteam.setBounds(79, 389, 138, 67);
 		panel.add(btnteam);
 		
 		btnMyPage = new JButton("");
+		btnMyPage.setBounds(280, 79, 57, 51);
 		btnMyPage.setBackground(Color.WHITE);
 		btnMyPage.setBorderPainted(false);
-		btnMyPage.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\[\uD06C\uAE30\uBCC0\uD658]\uB9C8\uD398 \uCC10\uC0AC\uC9C4.jpg"));
+		btnMyPage.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/mypareal.png")));
 		btnMyPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//마이페이지 클릭시
@@ -178,58 +215,66 @@ public class MainGUI {
 			
 			}
 		});
-		btnMyPage.setBounds(245, 69, 52, 58);
 		panel.add(btnMyPage);
 		
 		
 		
 		lb_id = new JLabel("New label");
-		lb_id.setBounds(160, 102, 57, 15);
+		lb_id.setBounds(242, 115, 57, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId()+"님");
+		lb_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		
 		
 		JLabel lblNewLabel = new JLabel("\uCD95\uAD6C");
-		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel.setBounds(88, 241, 57, 15);
+		lblNewLabel.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(37, 238, 57, 15);
 		panel.add(lblNewLabel);
 		
 		
-		lblNewLabel_8 = new JLabel("\uD558\uB791\uAED8");
+		lblNewLabel_8 = new JLabel("\uD558\uB791\uAED8!!!!!");
+		
+		lblNewLabel_8.setBounds(12, 18, 410, 38);
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_8.setFont(new Font("굴림", Font.BOLD, 16));
-		lblNewLabel_8.setBounds(12, 10, 285, 38);
+		lblNewLabel_8.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD, 30));
 		panel.add(lblNewLabel_8);
 		
 		
 		
+		
+		
 		lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBA54\uC778 \uBC30\uACBD\uD654\uBA74.PNG"));
+		lblNewLabel_7.setBounds(-15, 0, 437, 67);
+		lblNewLabel_7.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/mainup.png")));
 		lblNewLabel_7.setBackground(Color.WHITE);
-		lblNewLabel_7.setBounds(-15, -8, 347, 67);
 		panel.add(lblNewLabel_7);
 		
 		
 		
 		lblNewLabel_1 = new JLabel("\uC871\uAD6C");
-		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(182, 239, 57, 15);
+		lblNewLabel_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(131, 236, 57, 15);
 		panel.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("\uB18D\uAD6C");
-		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(290, 241, 57, 15);
+		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(239, 238, 57, 15);
 		panel.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("\uD48B\uC0B4");
-		lblNewLabel_3.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(88, 343, 57, 15);
+		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+
+		lblNewLabel_3.setBounds(77, 340, 57, 15);
 		lblNewLabel_3.setBounds(36, 340, 57, 15);
 		panel.add(lblNewLabel_3);
 		
 		btnBadMinton = new JButton("");
+		btnBadMinton.setBounds(172, 266, 68, 67);
 		btnBadMinton.setBackground(Color.WHITE);
 		btnBadMinton.setBorderPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
@@ -237,49 +282,82 @@ public class MainGUI {
 				ggggg gg=new ggggg("배드맨턴장");
 			}
 		});
+
+		btnBadMinton.setBounds(172, 264, 68, 67);
 		btnBadMinton.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBC30\uBBFC\uC0AC\uB78C.jpg"));
 		btnBadMinton.setBounds(121, 261, 68, 67);
 		panel.add(btnBadMinton);
 		
 		lblNewLabel_4 = new JLabel("\uBC30\uB4DC\uBBFC\uD134");
+		lblNewLabel_4.setBounds(182, 343, 68, 15);
+		lblNewLabel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
+
 		lblNewLabel_4.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(174, 340, 57, 15);
 		lblNewLabel_4.setBounds(136, 338, 57, 15);
 		panel.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
-		lblNewLabel_5.setFont(new Font("굴림", Font.BOLD, 14));
-		lblNewLabel_5.setBounds(105, 466, 112, 23);
+		lblNewLabel_5.setBounds(155, 454, 112, 23);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		panel.add(lblNewLabel_5);
 		
-		lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBA54\uC778 \uBC30\uACBD\uD654\uBA74.PNG"));
+		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setBounds(-15, 487, 437, 67);
+		lblNewLabel_6.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/maindown.png")));
 		lblNewLabel_6.setBackground(Color.WHITE);
-		lblNewLabel_6.setBounds(-15, 487, 347, 67);
 		panel.add(lblNewLabel_6);
+		
+		JButton btnbaseball = new JButton("");
+		btnbaseball.setBounds(280, 264, 68, 67);
+		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball1.jpg")));
+		btnbaseball.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			
+			
+			
+			}
+		});
+		btnbaseball.setBorderPainted(false);
+		btnbaseball.setBackground(Color.WHITE);
+		panel.add(btnbaseball);
+		
+		JLabel lblNewLabel_4_1 = new JLabel("\uC57C\uAD6C");
+		lblNewLabel_4_1.setBounds(280, 340, 57, 15);
+		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
+		panel.add(lblNewLabel_4_1);
+
+		btnBaseBall_1 = new JButton("");
+		btnBaseBall_1.setBounds(280, 263, 68, 67);
 		
 		btnBaseBall = new JButton("");
 		btnBaseBall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnBaseBall.setBorderPainted(false);
-		btnBaseBall.setBackground(Color.WHITE);
-		btnBaseBall.setBounds(229, 263, 68, 67);
-		panel.add(btnBaseBall);
+		btnBaseBall_1.setBorderPainted(false);
+		btnBaseBall_1.setBackground(Color.WHITE);
+		panel.add(btnBaseBall_1);
 		
-		lblNewLabel_9 = new JLabel("\uC57C\uAD6C");
-		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_9.setFont(new Font("굴림", Font.BOLD, 12));
-		lblNewLabel_9.setBounds(240, 340, 57, 15);
+		JLabel lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setIcon(new ImageIcon(MainGUI.class.getResource("/img/public_background3.png")));
+		lblNewLabel_9.setBounds(0, 66, 48, 422);
 		panel.add(lblNewLabel_9);
 		
+		lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));
+		lblNewLabel_10.setBounds(374, 66, 48, 422);
+
 		
 
 
+			}
+		}
 	}
 	
-	}
-
 	
 	
 
