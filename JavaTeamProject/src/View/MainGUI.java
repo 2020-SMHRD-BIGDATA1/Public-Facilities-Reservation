@@ -76,7 +76,6 @@ public class MainGUI {
 		initialize();
 
 		frame.setVisible(true); // 새로운창으로 띄울시 적어야하는 코드
-	
 	}
 
 	/**
@@ -151,8 +150,7 @@ public class MainGUI {
 
 
 			
-			}
-		});
+
 
 		btnbasketBall = new JButton("");
 		btnbasketBall.setBounds(280, 164, 68, 67);
@@ -334,7 +332,7 @@ public class MainGUI {
 
 		btnBaseBall_1 = new JButton("");
 		btnBaseBall_1.setBounds(280, 263, 68, 67);
-		btnBaseBall_1.addActionListener(new ActionListener() {
+		
 		btnBaseBall = new JButton("");
 		btnBaseBall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -356,9 +354,10 @@ public class MainGUI {
 		
 
 
+			}
+		}
 	}
-	}
-
+	
 	
 	
 
