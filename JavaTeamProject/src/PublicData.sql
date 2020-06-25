@@ -74,7 +74,12 @@ references MEMBERS(user_id);
 alter table reservation
 add constraint reserv_fac_id_fk foreign key(fac_id)
 references Publics(fac_id); 
+<<<<<<< HEAD
+
+select * from MEMBERS
+=======
 -----------------------------------
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 insert into MEMBERS values ('mty6893', 1234, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);

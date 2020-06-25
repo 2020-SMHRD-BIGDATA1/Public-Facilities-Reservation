@@ -198,14 +198,14 @@ public class MyPageGUI2 {
 		lbPoint.setText(controller.getpoint()+"");
 		
 		JButton btnback = new JButton("");
-		btnback.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB4A4\uB85C\uAC00\uAE30 \uCC10\uCC10.PNG"));
+		btnback.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/img/prev.jpg")));
 		btnback.setBackground(Color.WHITE);
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}
 		});
-		btnback.setBounds(12, 25, 27, 28);
+		btnback.setBounds(12, 10, 23, 23);
 		panel.add(btnback);
 		
 	
