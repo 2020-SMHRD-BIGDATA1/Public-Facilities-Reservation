@@ -45,11 +45,12 @@ public class MatchingGUI {
 		initialize();
 		frame.setVisible(true);
 	}
-
+	MyMatching matching = new MyMatching();
 	MatchingDAO dao = new MatchingDAO();
 	private JScrollPane scrollPane;
 	private JPanel panel1;
-
+	ArrayList<MatchingVO> list ;
+	ArrayList<RoomMatchingVO> infolist;
 	private void initialize() {
 
 		frame = new JFrame();
@@ -96,6 +97,29 @@ public class MatchingGUI {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(12, 48, 410, 503);
 		
+		
+
+		comboBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Component[] componentList = panel1.getComponents();
+				for (Component c : componentList) {
+					if (c instanceof JPanel) {
+						panel1.remove(c);
+					}
+				}
+				
+				lmg_lbl.setBounds(0, 40, 100, 100);
+				
+				for (int i = 0; i < list.size(); i++) {
+					for (int j = 0; j < infolist.size(); j++) {
+						addItem(i, j);
+					}
+				}
+			}
+
+		});
+	}
+	public void addItem(int i, int j) {
 		panel1 = new JPanel();
 		panel1.setBackground(new Color(255, 250, 250));
 
@@ -106,110 +130,14 @@ public class MatchingGUI {
 		panel1.setPreferredSize(size);
 		scrollPane.setViewportView(panel1);
 		panel.add(scrollPane);
-
-		comboBox.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent e) {
-				Component[] componentList = panel1.getComponents();
-
-				// Loop through the components
-				for (Component c : componentList) {
-					// Find the components you want to remove
-					if (c instanceof JPanel) {
-						// Remove it
-						panel1.remove(c);
-					}
-				}
-				ArrayList<MatchingVO> list = dao.divide(comboBox.getSelectedItem().toString());
-				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
-				lmg_lbl.setBounds(0, 40, 100, 100);
-				
-				MyMatching matching = new MyMatching();
-				if (comboBox.getSelectedItem().toString().equals("축구장")) {
-					for (int i = 0; i < list.size(); i++) {
-						for (int j = 0; j < infolist.size(); j++) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									System.out.println(list.get(i).getAddress());
-									panel1.add(jyp);
-									frame.setVisible(true);
-								}
-							}
-						}
-					}
-				}
-
-				for (int i = 0; i < list.size(); i++) {
-					for (int j = 0; j < infolist.size(); j++) {
-						if (comboBox.getSelectedItem().toString().equals("야구장")) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									panel1.add(jyp);
-									frame.setVisible(true);
-								}
-							}
-						}
-					}
-				}
-
-				for (int i = 0; i < list.size(); i++) {
-					for (int j = 0; j < infolist.size(); j++) {
-						if (comboBox.getSelectedItem().toString().equals("농구장")) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									panel1.add(jyp);
-									frame.setVisible(true);
-
-								}
-							}
-						}
-					}
-				}
-				for (int i = 0; i < list.size(); i++) {
-					for (int j = 0; j < infolist.size(); j++) {
-						if (comboBox.getSelectedItem().toString().equals("배드맨턴장")) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									panel1.add(jyp);
-									frame.setVisible(true);
-								}
-							}
-						}
-					}
-				}
-				for (int i = 0; i < list.size(); i++) {
-					for (int j = 0; j < infolist.size(); j++) {
-						if (comboBox.getSelectedItem().toString().equals("풋살경기장")) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									panel1.add(jyp);
-									frame.setVisible(true);
-								}
-							}
-						}
-					}
-				}
-				for (int i = 0; i < list.size(); i++) {
-					for (int j = 0; j < infolist.size(); j++) {
-						if (comboBox.getSelectedItem().toString().equals("족구장")) {
-							if (e.getStateChange() == ItemEvent.SELECTED) {
-								if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
-									JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
-									panel1.add(jyp);
-									frame.setVisible(true);
-								}
-							}
-						}
-					}
-				}
-
-			}
-
-		});
-
+		
+		list = dao.divide(comboBox.getSelectedItem().toString());
+		infolist = dao.roomInfo();
+		
+		if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
+			JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
+			panel1.add(jyp);
+			frame.setVisible(true);
+}
 	}
 }
