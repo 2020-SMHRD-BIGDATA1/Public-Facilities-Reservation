@@ -64,7 +64,7 @@ public class ggggg {
 		comboBox = new JComboBox<String>();
 
 		comboBox.setBounds(99, 17, 106, 21);
-
+		comboBox.addItem("선택하기");
 		comboBox.addItem("족구장");
 		comboBox.addItem("야구장");
 		comboBox.addItem("풋살경기장");

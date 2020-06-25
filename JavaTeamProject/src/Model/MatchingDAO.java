@@ -63,7 +63,7 @@ public class MatchingDAO {
 
 			while (rs.next()) {
 				int Fac_ID = Integer.parseInt(rs.getString("Fac_ID"));
-				String Name = rs.getString("Name");
+				String Name = rs.getString("fac_Name");
 				String addr = rs.getString("ADDRESS");
 				String time =rs.getString("WEEKDAY");
 				String img = rs.getString("IMG");

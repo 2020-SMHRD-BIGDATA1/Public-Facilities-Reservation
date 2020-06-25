@@ -52,14 +52,14 @@ import View.LoginGUI;
 		getConnection();
 		
 		try {
-			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
+			String sql = "SELECT * FROM MEMBERS WHERE user_ID = ? AND PW = ?";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, user.getId());
 			pst.setString(2, user.getPw());
 			rs = pst.executeQuery();
 			
 			if(rs.next()) {
-				String id = rs.getString("id");
+				String id = rs.getString("user_id");
 				String pw = rs.getString("pw");
 				String name=rs.getString("name");
 				int age =rs.getInt("age");
@@ -105,12 +105,12 @@ import View.LoginGUI;
 		getConnection();
 		
 		try {
-			String sql = "SELECT id FROM members WHERE id = ?";
+			String sql = "SELECT user_id FROM members WHERE user_id = ?";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, id_check.getId());
 			rs = pst.executeQuery();
 			if(rs.next()) {
-				String id = rs.getString("id");
+				String id = rs.getString("user_id");
 				id_duple = new MemberVO(id);
 			}
 		}catch(Exception e) {
@@ -127,13 +127,13 @@ import View.LoginGUI;
 		getConnection();
 		String cid = "";
 		try {
-			String sql = "SELECT id FROM members WHERE id = ?";
+			String sql = "SELECT user_id FROM members WHERE user_id = ?";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1,id);
 			rs = pst.executeQuery();
 			
 			if(rs.next()) {
-			cid = rs.getString("id");	
+			cid = rs.getString("user_id");	
 			}
 			
 		}catch(Exception e) {
@@ -146,7 +146,7 @@ import View.LoginGUI;
 
 	public  int insertpoint(int point) {
 		getConnection();
-		String sql = "update members set point=?  where id=?";
+		String sql = "update members set point=?  where user_id=?";
 	int row=0;
 		try {
 			pst = conn.prepareStatement(sql);
@@ -170,7 +170,7 @@ import View.LoginGUI;
 	public int updatepoint(int remainpoint) {
 		
 		getConnection();
-		String sql = "update members set point=? where id=?";
+		String sql = "update members set point=? where user_id=?";
 		int row = 0;
 		try {
 			pst = conn.prepareStatement(sql);
