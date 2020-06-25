@@ -66,7 +66,7 @@ public class JoinGUI {
 		lblNewLabel.setForeground(new Color(255, 255, 0));
 		lblNewLabel.setBounds(50, 23, 324, 40);
 		frame.getContentPane().add(lblNewLabel);
-		lblNewLabel.setFont(new Font("HY헤드라인M", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("배달의민족 한나체", Font.BOLD,25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
@@ -100,7 +100,7 @@ public class JoinGUI {
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
 		JButton btn_JoinComple = new JButton("\uAC00\uC785\uD558\uAE30");
-		btn_JoinComple.setFont(new Font("휴먼둥근헤드라인", Font.BOLD | Font.ITALIC, 14));
+		btn_JoinComple.setFont(new Font("배달의민족 한나체 ", Font.BOLD,14));
 		btn_JoinComple.setForeground(new Color(0, 0, 0));
 		btn_JoinComple.setBackground(new Color(255, 255, 255));
 		btn_JoinComple.addActionListener(new ActionListener() {
@@ -189,7 +189,7 @@ public class JoinGUI {
 		
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
 		lblNewLabel_3.setForeground(Color.YELLOW);
-		lblNewLabel_3.setFont(new Font("굴림", Font.PLAIN, 12));
+		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(145, 116, 97, 15);
 		frame.getContentPane().add(lblNewLabel_3);

@@ -75,6 +75,12 @@ public class LoginGUI {
 		panel.setBounds(0, -25, 434, 586);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/proname.png")));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(124, 107, 241, 102);
+		panel.add(lblNewLabel_1);
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/GJLogo.png")));
@@ -89,8 +95,8 @@ public class LoginGUI {
 		lbl_id.setBounds(182, 219, 118, 29);
 		panel.add(lbl_id);
 		lbl_id.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_id.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
-
+		lbl_id.setFont(new Font("배달의민족 한나체", Font.BOLD,25));
+		
 		inputID = new JTextField();
 		inputID.setToolTipText("");
 		inputID.setBounds(272, 218, 150, 30);
@@ -100,20 +106,21 @@ public class LoginGUI {
 		JButton btn_Join = new JButton("\uD68C\uC6D0\uAC00\uC785");
 		btn_Join.setForeground(new Color(255, 255, 255));
 		btn_Join.setBackground(new Color(135, 206, 250));
-		btn_Join.setBounds(296, 526, 80, 30);
+		btn_Join.setFont(new Font("배달의민족 한나체 ", Font.BOLD,15));
+		btn_Join.setBounds(283, 526, 102, 30);
 		panel.add(btn_Join);
 		btn_Join.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JoinGUI join = new JoinGUI();
 			}
 		});
-		btn_Join.setFont(new Font("Dialog", Font.BOLD, 12));
 
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
-		btn_Login.setBounds(59, 526, 80, 30);
+		btn_Login.setBounds(59, 526, 102, 30);
 		panel.add(btn_Login);
 		btn_Login.setForeground(new Color(255, 255, 255));
 		btn_Login.setBackground(new Color(135, 206, 250));
+		btn_Login.setFont(new Font("배달의민족 한나체 ", Font.BOLD,15));
 		btn_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -139,7 +146,7 @@ public class LoginGUI {
 		JLabel lbl_pw = new JLabel("PW");
 		lbl_pw.setBounds(182, 258, 117, 30);
 		panel.add(lbl_pw);
-		lbl_pw.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
+		lbl_pw.setFont(new Font("배달의민족 한나체 ", Font.BOLD,25));
 		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
 
 		
