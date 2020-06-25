@@ -22,7 +22,6 @@ import javax.swing.SwingConstants;
 
 import Model.MatchingDAO;
 import Model.MatchingVO;
-<<<<<<< HEAD
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -32,9 +31,7 @@ import java.awt.event.ItemEvent;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
-=======
 import Model.RoomMatchingVO;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 public class MatchingGUI {
 
@@ -105,9 +102,7 @@ public class MatchingGUI {
 		panel.add(scrollPane);
 
 		comboBox.addItemListener(new ItemListener() {
-
 			public void itemStateChanged(ItemEvent e) {
-
 				Component[] componentList = panel1.getComponents();
 
 				// Loop through the components

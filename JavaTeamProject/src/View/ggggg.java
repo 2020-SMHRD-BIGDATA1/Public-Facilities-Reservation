@@ -1,5 +1,6 @@
 package View;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
@@ -19,6 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class ggggg {
 
@@ -30,17 +33,17 @@ public class ggggg {
 	private JLabel lb_pic;
 	private JButton btn;
 
-	public ggggg() {
-		initialize();
-		frame.setVisible(true);
-	}
-
 	MatchingDAO dao = new MatchingDAO();
 	ArrayList<MatchingVO> list;
 	private JComboBox<String> comboBox;
 	private String fc_name;
 	private JPanel panel;
 
+	
+	public ggggg() {
+		initialize();
+		frame.setVisible(true);
+	}
 	private void initialize() {
 
 		frame = new JFrame();
@@ -51,6 +54,7 @@ public class ggggg {
 		frame.getContentPane().setLayout(null);
 
 		comboBox = new JComboBox<String>();
+
 		comboBox.setBounds(99, 17, 106, 21);
 
 		comboBox.addItem("축구장");
@@ -60,7 +64,6 @@ public class ggggg {
 		comboBox.addItem("농구장");
 		comboBox.addItem("배드맨턴장");
 		frame.getContentPane().add(comboBox);
-		list = dao.divide(comboBox.getSelectedItem().toString());
 
 //		if (comboBox.getSelectedItem().toString().equals("축구장")) {
 //			System.out.println(list.get(0).getName());
@@ -73,13 +76,55 @@ public class ggggg {
 		panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
-
-		for (int i = 0; i < list.size(); i++) {
-
-			addItem(i);
-
-		}
-
+		
+		comboBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Component[] componentList = panel.getComponents();
+				for (Component c : componentList) {
+					if (c instanceof JPanel) {
+						panel.remove(c);
+					}
+				}
+				list = dao.divide(comboBox.getSelectedItem().toString());
+				if (comboBox.getSelectedItem().toString().equals("축구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}else if(comboBox.getSelectedItem().toString().equals("야구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}else if(comboBox.getSelectedItem().toString().equals("배드맨턴장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}else if(comboBox.getSelectedItem().toString().equals("풋살경기장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}else if(comboBox.getSelectedItem().toString().equals("족구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}else if(comboBox.getSelectedItem().toString().equals("농구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < list.size(); i++) {
+							addItem(i);
+						}
+					}
+				}
+			}
+		});
 	}
 
 	public void addItem(int i) {
@@ -91,41 +136,38 @@ public class ggggg {
 		lb_closure = new JLabel("\uD734\uBB34");
 		lb_closure.setBounds(115, 72, 106, 39);
 		panel_7.add(lb_closure);
-		lb_closure.setText(list.get(i).getClosure());
 
 		lb_charge = new JLabel("\uC720\uB8CC");
 		lb_charge.setBounds(115, 39, 106, 39);
 		panel_7.add(lb_charge);
-//		System.out.println(list.get(i).getCharge());
-		if (list.get(i).getCharge().equals("N")) {
-			lb_charge.setText("무료");
-		} else {
-			lb_charge.setText("유료");
-		}
 
 		lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
 		lb_fcname.setBounds(0, 0, 106, 39);
 		panel_7.add(lb_fcname);
-		
-		lb_fcname.setText(list.get(i).getName());
 
-		lb_pic = new JLabel("fefe");
+		lb_pic = new JLabel(" ");
 		lb_pic.setBounds(0, 39, 106, 72);
-		panel_7.add(lb_pic);
-		String path = list.get(i).getImg();
-		lb_pic.setIcon(new ImageIcon(path));
-		panel_7.add(lb_pic);
 
 		btn = new JButton("\uB354\uBCF4\uAE30");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				FCdetailGUI fcdetailgui = new FCdetailGUI(list.get(i).getName());
-
 			}
 		});
 		btn.setBounds(212, 56, 106, 39);
 		panel_7.add(btn);
+
+		if (list.get(i).getCharge().equals("N")) {
+			lb_charge.setText("무료");
+		} else {
+			lb_charge.setText("유료");
+		}
+		lb_closure.setText(list.get(i).getClosure());
+		lb_fcname.setText(list.get(i).getName());
+		String path = list.get(i).getImg();
+		lb_pic.setIcon(new ImageIcon(path));
+		panel_7.add(lb_pic);
 
 	}
 }

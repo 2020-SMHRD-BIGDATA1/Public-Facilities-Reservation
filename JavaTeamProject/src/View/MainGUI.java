@@ -1,13 +1,9 @@
 package View;
 
-<<<<<<< HEAD
-
 import java.awt.Graphics;
 import java.awt.Image;
-=======
 import java.awt.Color;
 import java.awt.Font;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
