@@ -127,7 +127,6 @@ public class MainGUI {
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
 		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basket.jpg")));
-		btnbasketBall.setBounds(280, 164, 68, 67);
 
 		panel.add(btnbasketBall);
 		panel.add(btnbasketBall);
@@ -138,13 +137,6 @@ public class MainGUI {
 			
 				ggggg gg=new ggggg("농구장");
 			}});
-		
-		
-
-		
-	
-
-		btnbasketBall.setBounds(229, 161, 68, 67);
 		panel.add(btnbasketBall);
 
 		btnFutSal = new JButton("");
@@ -218,7 +210,6 @@ public class MainGUI {
 		lblNewLabel_2 = new JLabel("\uB18D\uAD6C");
 		lblNewLabel_2.setBounds(279, 241, 57, 15);
 		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
-		lblNewLabel_2.setBounds(290, 241, 57, 15);
 		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 14));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
