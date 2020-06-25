@@ -62,7 +62,7 @@ public class ReservationDAO {
 		getconnection();
 		int point = 0;
 
-		String sql = "select point from members where id=?";
+		String sql = "select point from members where user_id=?";
 
 		try {
 			pst = conn.prepareStatement(sql);
@@ -92,7 +92,7 @@ public class ReservationDAO {
 		getconnection();
 		int fee = 0;
 
-		String sql = "select pay from Publics where NAME=?";
+		String sql = "select pay from Publics where fac_NAME=?";
 
 		try {
 			pst = conn.prepareStatement(sql);
@@ -120,7 +120,7 @@ public class ReservationDAO {
 		
 		getconnection();
 		
-		String sql= "select phone from publics where name=?";
+		String sql= "select phone from publics where fac_name=?";
 		String phone = null;
 		
 		try {
@@ -143,18 +143,19 @@ public class ReservationDAO {
 		return phone;
 	}
 
-	public int insert(String string, int cnt, String title, String body) {
+	public int insert(int num ,String string, int cnt, String title, String body) {
 		
         getconnection();
 		
-		String sql= "insert into MemberMactching values(?,?,?,?)";
+		String sql= "insert into MemberMatching values(?,?,?,?,?)";
 		int count = 0;
 		try {
 			pst= conn.prepareStatement(sql);
-			pst.setString(1,string);
-			pst.setInt(2, cnt);
-			pst.setString(3,title);
-			pst.setString(4,body);
+			pst.setInt(1,num);
+			pst.setString(2,string);
+			pst.setInt(3, cnt);
+			pst.setString(4,title);
+			pst.setString(5,body);
 			count=pst.executeUpdate();
 
 		} catch (SQLException e) {
@@ -171,7 +172,7 @@ public class ReservationDAO {
 	
 		getconnection();
 			
-			String sql= "select division from publics where name=?";
+			String sql= "select division from publics where fac_name=?";
 			
 			String division=null;
 			try {
@@ -199,7 +200,7 @@ public class ReservationDAO {
 		
 		getconnection();
 		
-		String sql= "select closure from publics where name=?";
+		String sql= "select closure from publics where fac_name=?";
 		
 		String closure=null;
 		try {
@@ -227,7 +228,7 @@ public class ReservationDAO {
 		
 		getconnection();
 
-		String sql = "select weekday from publics where name=?";
+		String sql = "select weekday from publics where fac_name=?";
 
 		String weekday = null;
 		try {
@@ -254,7 +255,7 @@ public class ReservationDAO {
 		
 		getconnection();
 
-		String sql = "select weekend from publics where name=?";
+		String sql = "select weekend from publics where fac_name=?";
 
 		String weekend = null;
 		try {
@@ -280,7 +281,7 @@ public class ReservationDAO {
 	public String gethomepage(String fc_name) {
 		getconnection();
 
-		String sql = "select homepage from publics where name=?";
+		String sql = "select homepage from publics where fac_name=?";
 
 		String homepage = null;
 		try {
@@ -307,7 +308,7 @@ public class ReservationDAO {
 		
 		getconnection();
 
-		String sql = "select people from publics where name=?";
+		String sql = "select people from publics where fac_name=?";
 
 		String people = null;
 		try {
@@ -335,7 +336,7 @@ public class ReservationDAO {
 		
 		getconnection();
 
-		String sql = "select charge from publics where name=?";
+		String sql = "select charge from publics where fac_name=?";
 
 		char charge1 = 0;
 		try {
@@ -362,7 +363,7 @@ public class ReservationDAO {
 	public String getfac_id(String fac_name) {
 		getconnection();
 
-		String sql = "select fac_id from publics where name=?";
+		String sql = "select fac_id from publics where fac_name=?";
 		String	fac_id = null;
 	
 		try {

@@ -38,9 +38,9 @@ public class Reservation_1Controller {
 		return phone;
 	}
 
-	public int insert(String string, int cnt, String title, String body) {
+	public int insert(int num,String string, int cnt, String title, String body) {
 
-		int count = dao.insert(string, cnt, title, body);
+		int count = dao.insert(num,string, cnt, title, body);
 
 		return count;
 
