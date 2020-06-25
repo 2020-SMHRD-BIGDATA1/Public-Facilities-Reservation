@@ -103,6 +103,7 @@ public class MyPageGUI {
 		JButton btnmdfy = new JButton("\uC218\uC815");
 		btnmdfy.setBackground(Color.WHITE);
 		btnmdfy.setBorderPainted(false);
+		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI2 My2 = new MyPageGUI2();
@@ -168,6 +169,7 @@ public class MyPageGUI {
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.setBackground(Color.WHITE);
 		btnmdfy_1.setBorderPainted(false);
+		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
@@ -255,7 +257,7 @@ public class MyPageGUI {
 		JButton btnNewButton_1 = new JButton("\uB9AC\uBDF0\uC4F0\uAE30");
 		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.setBorderPainted(false);
-		
+		btnNewButton_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -269,6 +271,7 @@ public class MyPageGUI {
 		JButton btnNewButton_1_1 = new JButton("\uB9AC\uBDF0\uBCF4\uAE30");
 		btnNewButton_1_1.setBackground(Color.WHITE);
 		btnNewButton_1_1.setBorderPainted(false);
+		btnNewButton_1_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {

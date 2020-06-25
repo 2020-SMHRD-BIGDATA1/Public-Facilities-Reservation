@@ -75,12 +75,6 @@ public class LoginGUI {
 		panel.setBounds(0, -25, 434, 586);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC194\uAC1C\\HARANGKKE.png"));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(126, 117, 226, 107);
-		panel.add(lblNewLabel_1);
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/GJLogo.png")));
@@ -150,10 +144,6 @@ public class LoginGUI {
 		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
 
 		String path = "C:\\Users\\SMHRD\\Desktop\\image\\login.jpg";
-
-		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(path));
-		lblNewLabel_2.setBounds(20, 446, 95, 40);
-		panel.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/login.jpg")));

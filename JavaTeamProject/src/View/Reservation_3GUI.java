@@ -20,6 +20,7 @@ import Model.fcnamevo;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Reservation_3GUI {
 
@@ -131,15 +132,43 @@ public class Reservation_3GUI {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-	
+
+		btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(123, 104, 238));
+		btnNewButton_1.setVisible(true);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String body = textField_body.getText();
+				String title = textField_title.getText();
+				if (title.equals("") && body.equals("")) {
+
+					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+
+				} else {
+
+					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
+					if (count > 0) {
+						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+					}
+					frame.dispose();
+
+				}
+
+			}
+		});
+		btnNewButton_1.setBounds(325, 463, 97, 23);
+		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btn_back = new JButton("<");
+		JButton btn_back = new JButton("");
+		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/img/prev.jpg")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(true);
 			}
 		});
-		btn_back.setBounds(4, 34, 97, 23);
+		btn_back.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btn_back);
 
 	}
