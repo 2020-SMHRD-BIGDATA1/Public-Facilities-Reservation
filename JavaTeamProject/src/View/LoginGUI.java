@@ -77,9 +77,9 @@ public class LoginGUI {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC194\uAC1C\\HARANGKKE.png"));
+		lblNewLabel_1.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/proname.png")));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(126, 117, 226, 107);
+		lblNewLabel_1.setBounds(152, 62, 248, 143);
 		panel.add(lblNewLabel_1);
 
 		JLabel lblNewLabel = new JLabel("");
