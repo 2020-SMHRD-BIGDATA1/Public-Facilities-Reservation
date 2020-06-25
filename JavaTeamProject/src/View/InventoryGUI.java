@@ -44,7 +44,7 @@ public class InventoryGUI {
 	private JPanel panel;
 	private JPanel panel1;
 	private JPanel img_panel;
-	private JPanel resrveation_btn;
+	private JButton resrveation_btn;
 	private JLabel lblNewLabel;
 
 	public InventoryGUI() {

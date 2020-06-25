@@ -71,7 +71,6 @@ public class FCdetailGUI {
 
 		JButton btnNewButton_1 = new JButton("New button");
 		
-		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setIcon(new ImageIcon(FCdetailGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
