@@ -56,43 +56,44 @@ public class MyPageGUI2 {
 		panel.setLayout(null);
 		
 		JLabel text_NAME = new JLabel("\uC774\uB984");
-		text_NAME.setFont(new Font("굴림", Font.BOLD, 12));
+		text_NAME.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_NAME.setHorizontalAlignment(SwingConstants.CENTER);
 		text_NAME.setBounds(104, 179, 57, 15);
 		panel.add(text_NAME);
 		
 		JLabel text_id = new JLabel("ID");
-		text_id.setFont(new Font("굴림", Font.BOLD, 12));
+		text_id.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_id.setHorizontalAlignment(SwingConstants.CENTER);
 		text_id.setBounds(104, 117, 57, 15);
 		panel.add(text_id);
 		
 		JLabel text_phone = new JLabel("\uC804\uD654\uBC88\uD638");
-		text_phone.setFont(new Font("굴림", Font.BOLD, 12));
+		text_phone.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_phone.setHorizontalAlignment(SwingConstants.CENTER);
-		text_phone.setBounds(104, 262, 57, 15);
+		text_phone.setBounds(86, 262, 75, 15);
 		panel.add(text_phone);
 		
 		JLabel text_addr = new JLabel("\uC8FC\uC18C");
-		text_addr.setFont(new Font("굴림", Font.BOLD, 12));
+		text_addr.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_addr.setHorizontalAlignment(SwingConstants.CENTER);
 		text_addr.setBounds(104, 304, 57, 15);
 		panel.add(text_addr);
 		
 		JLabel text_Email = new JLabel("\uC774\uBA54\uC77C");
-		text_Email.setFont(new Font("굴림", Font.BOLD, 12));
+		text_Email.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_Email.setHorizontalAlignment(SwingConstants.CENTER);
 		text_Email.setBounds(104, 351, 57, 15);
 		panel.add(text_Email);
 		
 		JLabel lblNewLabel_2 = new JLabel("My Page");
-		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 15));
+		lblNewLabel_2.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(69, 10, 296, 56);
 		panel.add(lblNewLabel_2);
 		
 		JButton btnmdfy = new JButton("\uC218\uC815");
 		btnmdfy.setBackground(Color.WHITE);
+		btnmdfy.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -138,7 +139,7 @@ public class MyPageGUI2 {
 		panel.add(inPutEmail);
 		
 		JLabel text_Email_1 = new JLabel("\uD3EC\uC778\uD2B8");
-		text_Email_1.setFont(new Font("굴림", Font.BOLD, 12));
+		text_Email_1.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_Email_1.setHorizontalAlignment(SwingConstants.CENTER);
 		text_Email_1.setBounds(104, 392, 57, 15);
 		panel.add(text_Email_1);
@@ -154,14 +155,16 @@ public class MyPageGUI2 {
 		panel.add(inPutidAge);
 		
 		JLabel lblNewLabel = new JLabel("\uB098\uC774");
-		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(104, 219, 57, 15);
 		panel.add(lblNewLabel);
 		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.setBackground(Color.WHITE);
+		btnmdfy_1.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		btnmdfy_1.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				
@@ -177,7 +180,7 @@ public class MyPageGUI2 {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel text_NAME_1 = new JLabel("PW");
-		text_NAME_1.setFont(new Font("굴림", Font.BOLD, 12));
+		text_NAME_1.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,15));
 		text_NAME_1.setHorizontalAlignment(SwingConstants.CENTER);
 		text_NAME_1.setBounds(104, 145, 57, 15);
 		panel.add(text_NAME_1);
