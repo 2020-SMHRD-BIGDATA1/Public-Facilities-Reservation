@@ -111,6 +111,7 @@ public class LoginGUI {
 		panel.add(btn_Join);
 		btn_Join.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				JoinGUI join = new JoinGUI();
 			}
 		});

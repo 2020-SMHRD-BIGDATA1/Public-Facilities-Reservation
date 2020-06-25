@@ -23,7 +23,7 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Reservation_3GUI {
-
+	private JButton btnNewButton_1;
 	private JFrame frame;
 	private JTextField textField_title;
 	private JTextField textField_body;
@@ -43,30 +43,6 @@ public class Reservation_3GUI {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Reservation_3GUI.class.getResource("/img/frame.jpg")));
 		frame.getContentPane().setBackground(new Color(240, 255, 255));
 		frame.getContentPane().setLayout(null);
-		
-		
-		JButton btnNewButton_1 = new JButton("\uD655\uC778");
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBackground(new Color(123, 104, 238));
-		btnNewButton_1.setBounds(237, 485, 97, 23);
-		frame.getContentPane().add(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String body = textField_body.getText();
-				String title = textField_title.getText();
-				if (title.equals("") && body.equals("")) {
-					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-				} else {
-					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
-					if (count > 0) {
-						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
-					}
-					frame.dispose();
-
-				}
-
-			}
-		});
 		
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
@@ -134,7 +110,34 @@ public class Reservation_3GUI {
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
+		btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(123, 104, 238));
+		btnNewButton_1.setVisible(true);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String body = textField_body.getText();
+				String title = textField_title.getText();
+				if (title.equals("") && body.equals("")) {
+
+					JOptionPane.showMessageDialog(frame, "제목과 설명이 올바르지 않습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+
+				} else {
+
+					int count = con.insert(con.getfac_id(fac_name),Reservation_1Controller.getVo().getId(), cnt, title, body);
+					if (count > 0) {
+						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
+					}
+					frame.dispose();
+
+				}
+
+			}
+		});
+		btnNewButton_1.setBounds(325, 463, 97, 23);
+		frame.getContentPane().add(btnNewButton_1);
 		JButton btn_back = new JButton("");
 		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/img/prev.jpg")));
 		btn_back.addActionListener(new ActionListener() {

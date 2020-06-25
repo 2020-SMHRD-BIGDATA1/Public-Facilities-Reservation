@@ -25,15 +25,13 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Reservation_2GUI {
-	private JButton btn_back;
 	private JFrame frame;
 	int point = 0;
 	JLabel lb_remainpoint;
 	private int remainpoint;
-	MemberManagementSystem controller= new MemberManagementSystem();
-	Reservation_1Controller con= new Reservation_1Controller();
-	
-	
+	MemberManagementSystem controller = new MemberManagementSystem();
+	Reservation_1Controller con = new Reservation_1Controller();
+
 	public Reservation_2GUI(timevo vo) {
 		initialize(vo);
 //	MemberManagementSystem controller = new MemberManagementSystem();
@@ -41,16 +39,15 @@ public class Reservation_2GUI {
 //
 //	public Reservation_2GUI() {
 //		initialize();
-		
+
 		frame.setVisible(true);
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 	}
-	
-	
+
 //	private MemberManagementSystem MMCON=LoginGUI.controller;
 //	private final JButton btn_back = new JButton("");
-	
+
 	private void initialize(timevo vo) {
 //	private MemberManagementSystem MMCON = LoginGUI.controller;
 //	private final JButton btn_back = new JButton("");
@@ -80,7 +77,7 @@ public class Reservation_2GUI {
 
 		JLabel lb_fcname = new JLabel("New label");
 		panel.add(lb_fcname);
-		String fac_name= vo.getFcname();
+		String fac_name = vo.getFcname();
 		lb_fcname.setText(fac_name);
 
 //		lb_name.setText(MMCON.getLoginUser().getId());
@@ -91,11 +88,8 @@ public class Reservation_2GUI {
 
 		JLabel lb_phone = new JLabel("New label");
 		panel.add(lb_phone);
-		
+
 //		lb_phone.setText(con.getphone());
-		
-		
-		
 
 		lb_phone.setText(con.getphone(fac_name));
 
@@ -116,7 +110,7 @@ public class Reservation_2GUI {
 
 		JLabel lb_usedate = new JLabel("New label");
 		panel.add(lb_usedate);
-		String usedate=vo.getDate();
+		String usedate = vo.getDate();
 		lb_usedate.setText(usedate);
 
 		JLabel lblNewLabel_6 = new JLabel(" \uC774\uC6A9\uC2DC\uAC04");
@@ -291,7 +285,6 @@ public class Reservation_2GUI {
 
 					}
 
-
 					frame.dispose();
 
 				} else {
@@ -304,21 +297,34 @@ public class Reservation_2GUI {
 		});
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
-		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
-		btn_back.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-			}
-		});
-		btn_back.setBounds(12, 10, 23, 23);
-		frame.getContentPane().add(btn_back);
 		
 		JButton btnback = new JButton("");
+		btnback.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-			}
+				frame.dispose();
+			}		
 		});
+		btnback.setBounds(12, 10, 39, 37);
+		frame.getContentPane().add(btnback);
+//		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
+//		btn_back.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//			}
+//		});
+//		btn_back.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btn_back);
+		frame.setBounds(500, 500, 450, 600);
+//		btn_back.setBounds(12, 10, 23, 23);
+//		frame.getContentPane().add(btn_back);
+//		
+//		JButton btnback = new JButton("");
+//		btnback.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//			}
+//		});
 		btnback.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 		btnback.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		btnback.setBorderPainted(false);
@@ -328,5 +334,4 @@ public class Reservation_2GUI {
 		frame.setBounds(100, 100, 360, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
 }
