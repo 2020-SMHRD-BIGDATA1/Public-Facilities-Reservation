@@ -2,6 +2,7 @@ package View;
 
 
 import java.awt.Graphics;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Color;
 import java.awt.Font;
@@ -33,9 +34,10 @@ public class MainGUI {
 
 	private MemberManagementSystem controller= LoginGUI.controller;
 
-
+	private FontMaker fm = new FontMaker();
 
 	MainDAO dao = new MainDAO();
+	
 	
 	
 	
@@ -55,6 +57,7 @@ public class MainGUI {
 	private JLabel lblNewLabel_8;
 	private JButton btnBaseBall;
 	private JButton btnBaseBall_1;
+	private JLabel lblNewLabel_10;
 	/**
 	 * Launch the application.
 	 */
@@ -80,6 +83,10 @@ public class MainGUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		fm.FontChange(ge);
+		
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
 		
@@ -187,10 +194,10 @@ public class MainGUI {
 		panel.add(btnteam);
 		
 		btnMyPage = new JButton("");
-		btnMyPage.setBounds(278, 107, 48, 38);
+		btnMyPage.setBounds(280, 79, 57, 51);
 		btnMyPage.setBackground(Color.WHITE);
 		btnMyPage.setBorderPainted(false);
-		btnMyPage.setIcon(new ImageIcon(MainGUI.class.getResource("/img/mypage.jpg")));
+		btnMyPage.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/mypareal.png")));
 		btnMyPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//마이페이지 클릭시
@@ -203,22 +210,27 @@ public class MainGUI {
 		
 		
 		lb_id = new JLabel("New label");
-		lb_id.setBounds(226, 122, 57, 15);
+		lb_id.setBounds(242, 115, 57, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId()+"님");
+		lb_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		
 		
 		JLabel lblNewLabel = new JLabel("\uCD95\uAD6C");
 		lblNewLabel.setBounds(88, 241, 57, 15);
-		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 		
 		
 		lblNewLabel_8 = new JLabel("\uD558\uB791\uAED8!!!!!");
+		
 		lblNewLabel_8.setBounds(12, 18, 410, 38);
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_8.setFont(new Font("굴림", Font.BOLD, 16));
+		lblNewLabel_8.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD, 30));
 		panel.add(lblNewLabel_8);
+		
+		
 		
 		
 		
@@ -232,19 +244,19 @@ public class MainGUI {
 		
 		lblNewLabel_1 = new JLabel("\uC871\uAD6C");
 		lblNewLabel_1.setBounds(182, 239, 57, 15);
-		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("\uB18D\uAD6C");
 		lblNewLabel_2.setBounds(290, 241, 57, 15);
-		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("\uD48B\uC0B4");
 		lblNewLabel_3.setBounds(88, 343, 57, 15);
-		lblNewLabel_3.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 
 		panel.add(lblNewLabel_3);
@@ -266,15 +278,15 @@ public class MainGUI {
 		panel.add(btnBadMinton);
 		
 		lblNewLabel_4 = new JLabel("\uBC30\uB4DC\uBBFC\uD134");
-		lblNewLabel_4.setBounds(182, 343, 57, 15);
-		lblNewLabel_4.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(182, 343, 68, 15);
+		lblNewLabel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 
 		panel.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
 		lblNewLabel_5.setBounds(155, 454, 112, 23);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setFont(new Font("굴림", Font.BOLD, 14));
+		lblNewLabel_5.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		panel.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("");
@@ -302,7 +314,7 @@ public class MainGUI {
 		JLabel lblNewLabel_4_1 = new JLabel("\uC57C\uAD6C");
 		lblNewLabel_4_1.setBounds(280, 340, 57, 15);
 		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1.setFont(new Font("굴림", Font.BOLD, 12));
+		lblNewLabel_4_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,14));
 		panel.add(lblNewLabel_4_1);
 
 		btnBaseBall_1 = new JButton("");
@@ -314,6 +326,16 @@ public class MainGUI {
 		btnBaseBall_1.setBorderPainted(false);
 		btnBaseBall_1.setBackground(Color.WHITE);
 		panel.add(btnBaseBall_1);
+		
+		JLabel lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setIcon(new ImageIcon(MainGUI.class.getResource("/img/public_background3.png")));
+		lblNewLabel_9.setBounds(0, 66, 48, 422);
+		panel.add(lblNewLabel_9);
+		
+		lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));
+		lblNewLabel_10.setBounds(374, 66, 48, 422);
+		panel.add(lblNewLabel_10);
 
 		
 		
