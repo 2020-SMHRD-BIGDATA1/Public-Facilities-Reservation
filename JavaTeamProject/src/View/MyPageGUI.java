@@ -232,7 +232,7 @@ public class MyPageGUI {
 		panel.add(btn예약확인);
 
 		JButton btnback = new JButton("");
-		btnback.setIcon(new ImageIcon(MyPageGUI.class.getResource("/View/back.png")));
+		btnback.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/prev.jpg")));
 		btnback.setFont(new Font("굴림", Font.BOLD, 12));
 		btnback.setBackground(Color.WHITE);
 		btnback.setBorderPainted(false);
@@ -241,7 +241,7 @@ public class MyPageGUI {
 				frame.setVisible(false);
 			}
 		});
-		btnback.setBounds(12, 28, 23, 23);
+		btnback.setBounds(12, 10, 23, 23);
 		panel.add(btnback);
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back2.png")));

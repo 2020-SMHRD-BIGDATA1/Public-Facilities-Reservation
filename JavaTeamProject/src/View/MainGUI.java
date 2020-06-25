@@ -54,7 +54,7 @@ public class MainGUI {
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
 	private JButton btnBaseBall;
-	private JLabel lblNewLabel_9;
+	private JButton btnBaseBall_1;
 	/**
 	 * Launch the application.
 	 */
@@ -95,12 +95,12 @@ public class MainGUI {
 		panel.setBackground(Color.WHITE);
 		panel.setBounds(12, 10, 422, 551);
 		frame.getContentPane().add(panel);
-		panel.setLayout(null);
 		
 		
 		
 		
 		btnSoccer = new JButton("");
+		btnSoccer.setBounds(77, 164, 68, 67);
 		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer.jpg")));
 		btnSoccer.setSelectedIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uCD95\uAD6C.PNG"));
 		btnSoccer.setBorderPainted(false);
@@ -111,10 +111,11 @@ public class MainGUI {
 				ggggg gg=new ggggg("√‡±∏¿Â");
 			}
 		});
-		btnSoccer.setBounds(77, 164, 68, 67);
+		panel.setLayout(null);
 		panel.add(btnSoccer);
 		
 		btnjokgu = new JButton("");
+		btnjokgu.setBounds(172, 164, 68, 67);
 		btnjokgu.setBackground(Color.WHITE);
 		btnjokgu.setForeground(Color.WHITE);
 		btnjokgu.setBorderPainted(false);
@@ -125,22 +126,28 @@ public class MainGUI {
 				ggggg gg=new ggggg("¡∑±∏¿Â");
 			}
 		});
-		btnjokgu.setBounds(172, 164, 68, 67);
 		panel.add(btnjokgu);
 		
-<<<<<<< HEAD
+
 		btnBaseBall = new JButton("");
+		btnBaseBall.setBounds(280, 164, 68, 67);
 		btnBaseBall.setBackground(Color.WHITE);
 		btnBaseBall.setBorderPainted(false);
 		btnBaseBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basket.jpg")));
 		btnBaseBall.addActionListener(new ActionListener() {
-=======
+			public void actionPerformed(ActionEvent arg0) {
+				
+				ggggg gg=new ggggg("æﬂ±∏¿Â");
+			}
+		});
+
 		btnbasketBall = new JButton("");
+		btnbasketBall.setBounds(280, 164, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
 		btnbasketBall.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uB18D\uAD6C\uD558\uB294\uC0AC\uB78C.jpg"));
 		btnbasketBall.addActionListener(new ActionListener() {
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 			
 			public void actionPerformed(ActionEvent arg0) {
 			
@@ -148,15 +155,12 @@ public class MainGUI {
 			
 			}
 		});
-<<<<<<< HEAD
-		btnBaseBall.setBounds(280, 164, 68, 67);
 		panel.add(btnBaseBall);
-=======
-		btnbasketBall.setBounds(229, 161, 68, 67);
 		panel.add(btnbasketBall);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 		
 		btnFutSal = new JButton("");
+		btnFutSal.setBounds(77, 266, 68, 67);
 		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/futsal1.jpg")));
 		btnFutSal.setBackground(Color.WHITE);
 		btnFutSal.setBorderPainted(false);
@@ -165,15 +169,13 @@ public class MainGUI {
 				ggggg gg=new ggggg("«≤ªÏ∞Ê±‚¿Â");
 			}
 		});
-<<<<<<< HEAD
-		btnFutSal.setBounds(77, 264, 68, 67);
-=======
-		btnFutSal.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uD48B\uC0B4\uC0AC\uB78C.jpg"));
-		btnFutSal.setBounds(26, 263, 68, 67);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
+		
+
 		panel.add(btnFutSal);
 		
 		btnteam = new JButton("");
+		btnteam.setBounds(145, 391, 138, 67);
 		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/teamhope.png")));
 		btnteam.setBackground(Color.WHITE);
 		btnteam.setBorderPainted(false);
@@ -182,10 +184,10 @@ public class MainGUI {
 				MatchingGUI matching = new MatchingGUI();
 			}
 		});
-		btnteam.setBounds(145, 391, 138, 67);
 		panel.add(btnteam);
 		
 		btnMyPage = new JButton("");
+		btnMyPage.setBounds(278, 107, 48, 38);
 		btnMyPage.setBackground(Color.WHITE);
 		btnMyPage.setBorderPainted(false);
 		btnMyPage.setIcon(new ImageIcon(MainGUI.class.getResource("/img/mypage.jpg")));
@@ -196,7 +198,6 @@ public class MainGUI {
 			
 			}
 		});
-		btnMyPage.setBounds(278, 107, 48, 38);
 		panel.add(btnMyPage);
 		
 		
@@ -207,51 +208,49 @@ public class MainGUI {
 		lb_id.setText(controller.getLoginUser().getId()+"¥‘");
 		
 		JLabel lblNewLabel = new JLabel("\uCD95\uAD6C");
+		lblNewLabel.setBounds(88, 241, 57, 15);
 		lblNewLabel.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(88, 241, 57, 15);
 		panel.add(lblNewLabel);
 		
 		
 		lblNewLabel_8 = new JLabel("\uD558\uB791\uAED8!!!!!");
+		lblNewLabel_8.setBounds(12, 18, 410, 38);
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_8.setFont(new Font("±º∏≤", Font.BOLD, 16));
-		lblNewLabel_8.setBounds(12, 18, 410, 38);
 		panel.add(lblNewLabel_8);
 		
 		
 		
 		lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setBounds(-15, 0, 437, 67);
 		lblNewLabel_7.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/mainup.png")));
 		lblNewLabel_7.setBackground(Color.WHITE);
-		lblNewLabel_7.setBounds(-15, 0, 437, 67);
 		panel.add(lblNewLabel_7);
 		
 		
 		
 		lblNewLabel_1 = new JLabel("\uC871\uAD6C");
+		lblNewLabel_1.setBounds(182, 239, 57, 15);
 		lblNewLabel_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(182, 239, 57, 15);
 		panel.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("\uB18D\uAD6C");
+		lblNewLabel_2.setBounds(290, 241, 57, 15);
 		lblNewLabel_2.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(290, 241, 57, 15);
 		panel.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("\uD48B\uC0B4");
+		lblNewLabel_3.setBounds(88, 343, 57, 15);
 		lblNewLabel_3.setFont(new Font("±º∏≤", Font.BOLD, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-<<<<<<< HEAD
-		lblNewLabel_3.setBounds(77, 340, 57, 15);
-=======
-		lblNewLabel_3.setBounds(36, 340, 57, 15);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 		panel.add(lblNewLabel_3);
 		
 		btnBadMinton = new JButton("");
+		btnBadMinton.setBounds(172, 266, 68, 67);
 		btnBadMinton.setBackground(Color.WHITE);
 		btnBadMinton.setBorderPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
@@ -259,38 +258,34 @@ public class MainGUI {
 				ggggg gg=new ggggg("πËµÂ∏«≈œ¿Â");
 			}
 		});
-<<<<<<< HEAD
+
 		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminturn.jpg")));
-		btnBadMinton.setBounds(172, 264, 68, 67);
-=======
-		btnBadMinton.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\\uC9C0\uD6C8\uC774\uC640\uBCF4\uB77C\uB124\\\uC0AC\uC9C4\\[\uD06C\uAE30\uBCC0\uD658]\uBC30\uBBFC\uC0AC\uB78C.jpg"));
-		btnBadMinton.setBounds(121, 261, 68, 67);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
+		
+
 		panel.add(btnBadMinton);
 		
 		lblNewLabel_4 = new JLabel("\uBC30\uB4DC\uBBFC\uD134");
+		lblNewLabel_4.setBounds(182, 343, 57, 15);
 		lblNewLabel_4.setFont(new Font("±º∏≤", Font.BOLD, 12));
-<<<<<<< HEAD
-		lblNewLabel_4.setBounds(174, 340, 57, 15);
-=======
-		lblNewLabel_4.setBounds(136, 338, 57, 15);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+
 		panel.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("\uD300 \uB9E4\uCE6D\uD558\uAE30");
+		lblNewLabel_5.setBounds(155, 454, 112, 23);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setFont(new Font("±º∏≤", Font.BOLD, 14));
-		lblNewLabel_5.setBounds(155, 454, 112, 23);
 		panel.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setBounds(-15, 487, 437, 67);
 		lblNewLabel_6.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/maindown.png")));
 		lblNewLabel_6.setBackground(Color.WHITE);
-		lblNewLabel_6.setBounds(-15, 487, 437, 67);
 		panel.add(lblNewLabel_6);
 		
-<<<<<<< HEAD
+
 		JButton btnbaseball = new JButton("");
+		btnbaseball.setBounds(280, 264, 68, 67);
 		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball1.jpg")));
 		btnbaseball.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -302,31 +297,24 @@ public class MainGUI {
 		});
 		btnbaseball.setBorderPainted(false);
 		btnbaseball.setBackground(Color.WHITE);
-		btnbaseball.setBounds(280, 264, 68, 67);
 		panel.add(btnbaseball);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("\uC57C\uAD6C");
+		lblNewLabel_4_1.setBounds(280, 340, 57, 15);
 		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4_1.setFont(new Font("±º∏≤", Font.BOLD, 12));
-		lblNewLabel_4_1.setBounds(280, 340, 57, 15);
 		panel.add(lblNewLabel_4_1);
-=======
-		btnBaseBall = new JButton("");
-		btnBaseBall.addActionListener(new ActionListener() {
+
+		btnBaseBall_1 = new JButton("");
+		btnBaseBall_1.setBounds(280, 263, 68, 67);
+		btnBaseBall_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnBaseBall.setBorderPainted(false);
-		btnBaseBall.setBackground(Color.WHITE);
-		btnBaseBall.setBounds(229, 263, 68, 67);
-		panel.add(btnBaseBall);
-		
-		lblNewLabel_9 = new JLabel("\uC57C\uAD6C");
-		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_9.setFont(new Font("±º∏≤", Font.BOLD, 12));
-		lblNewLabel_9.setBounds(240, 340, 57, 15);
-		panel.add(lblNewLabel_9);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+		btnBaseBall_1.setBorderPainted(false);
+		btnBaseBall_1.setBackground(Color.WHITE);
+		panel.add(btnBaseBall_1);
+
 		
 		
 
