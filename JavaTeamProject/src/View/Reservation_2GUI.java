@@ -31,6 +31,8 @@ public class Reservation_2GUI {
 	private int remainpoint;
 	MemberManagementSystem controller = new MemberManagementSystem();
 	Reservation_1Controller con = new Reservation_1Controller();
+	private JButton btnback_1;
+	
 
 	public Reservation_2GUI(timevo vo) {
 		initialize(vo);
@@ -190,8 +192,10 @@ public class Reservation_2GUI {
 		point = con.getpoint();
 
 		// lb_point.setText(String.valueOf(point));
-		lb_point.setText(point + "");
-
+		int cnt=controller.insertpoint(point);
+		if(cnt>0) {
+			lb_point.setText(point + "");
+		}
 		JButton btn_use = new JButton("\uC0AC\uC6A9\uD558\uAE30 ");
 		btn_use.setBackground(new Color(255, 255, 255));
 		btn_use.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
@@ -272,12 +276,10 @@ public class Reservation_2GUI {
 
 				if (remainpoint > 0 && cnt1 > 0) {
 					JOptionPane.showMessageDialog(frame, "예약 성공", "예약신청결과", JOptionPane.PLAIN_MESSAGE);
-
-//						main main= new main();
-
 					System.out.println("예약 성공");
+					frame.setVisible(false);
+					MainGUI main = new MainGUI();
 					int cnt = controller.updatepoint(remainpoint);
-
 					if (cnt > 0) {
 						System.out.println("포인트 업데이트 성공");
 					} else {
@@ -298,16 +300,17 @@ public class Reservation_2GUI {
 		btnNewButton_2.setBounds(325, 458, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnback = new JButton("");
-		btnback.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
-		btnback.addActionListener(new ActionListener() {
+		JButton btnback;
+		btnback_1 = new JButton("");
+		btnback_1.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
+		btnback_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				Reservation_2GUI re2 = new Reservation_2GUI(vo);
+				frame.setVisible(false);
 			}		
 		});
-<<<<<<< HEAD
-		btnback.setBounds(12, 10, 39, 37);
-		frame.getContentPane().add(btnback);
+		btnback_1.setBounds(12, 10, 39, 37);
+		frame.getContentPane().add(btnback_1);
 //		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 //		btn_back.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
@@ -317,24 +320,9 @@ public class Reservation_2GUI {
 //		btn_back.setBounds(12, 10, 23, 23);
 //		frame.getContentPane().add(btn_back);
 		frame.setBounds(500, 500, 450, 600);
-=======
-		btn_back.setBounds(12, 10, 23, 23);
-		frame.getContentPane().add(btn_back);
-		
-		JButton btnback = new JButton("");
-		btnback.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-			}
-		});
-		btnback.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
-		btnback.setFont(new Font("굴림", Font.BOLD, 12));
-		btnback.setBorderPainted(false);
-		btnback.setBackground(Color.WHITE);
-		btnback.setBounds(12, 10, 23, 23);
-		frame.getContentPane().add(btnback);
+	
+
 		frame.setBounds(100, 100, 360, 600);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

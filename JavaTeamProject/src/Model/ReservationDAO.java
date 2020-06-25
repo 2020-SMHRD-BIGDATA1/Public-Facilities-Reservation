@@ -67,16 +67,12 @@ public class ReservationDAO {
 
 		try {
 			pst = conn.prepareStatement(sql);
-
 			pst.setString(1, logingui.controller.getLoginUser().getId());
-
 		
-
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
 				point = rs.getInt("point");
-				System.out.println(point);
 			}
 
 		} catch (SQLException e) {

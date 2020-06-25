@@ -143,9 +143,8 @@ public class Reservation_1updateGUI implements MouseListener{
 		btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+					fcupdateGUI fcup = new fcupdateGUI(fcname);
 					frame.setVisible(false);
-				
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(Reservation_1updateGUI.class.getResource("/img/prev.jpg")));
@@ -301,7 +300,7 @@ public class Reservation_1updateGUI implements MouseListener{
 
 		timevo timevo= new timevo(name, date1, time);
 		Reservation_2GUI re2= new Reservation_2GUI(timevo);
-		
+		frame.setVisible(false);
 //		System.out.println(time);
 //		System.out.println("df"+name);
 //		System.out.println("df"+date1);

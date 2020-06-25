@@ -109,7 +109,7 @@ insert into test values('아니야','24:00~02:00');
 insert into test values('몰라','44:00~66:00');
 insert into test values('있어라','04:00~06:00');
 
-
+select * from MEMBERMATCHING;
 select * from Ratings ;
 insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');
 

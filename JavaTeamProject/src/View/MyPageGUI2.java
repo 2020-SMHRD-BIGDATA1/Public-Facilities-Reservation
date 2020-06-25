@@ -45,7 +45,7 @@ public class MyPageGUI2 {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI2.class.getResource("/img/frame.jpg")));
-		frame.setBounds(100, 100, 450, 600);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -205,6 +205,7 @@ public class MyPageGUI2 {
 		btnback.setBackground(Color.WHITE);
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MyPageGUI my1 = new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});

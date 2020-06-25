@@ -101,7 +101,7 @@ public class MainGUI {
 		btnSoccer.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+				frame.setVisible(false);
 				ggggg gg = new ggggg("축구장");
 			}
 		});
@@ -116,7 +116,7 @@ public class MainGUI {
 		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu.jpg")));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				frame.setVisible(false);
 				ggggg gg = new ggggg("족구장");
 			}
 		});
@@ -130,7 +130,7 @@ public class MainGUI {
 		btnbasketBall.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
-
+				frame.setVisible(false);
 				ggggg gg = new ggggg("농구장");
 			}
 		});
@@ -146,6 +146,7 @@ public class MainGUI {
 		btnFutSal.setBorderPainted(false);
 		btnFutSal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
 				ggggg gg = new ggggg("풋살경기장");
 			}
 		});
@@ -158,6 +159,7 @@ public class MainGUI {
 		btnteam.setBorderPainted(false);
 		btnteam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
 				MatchingGUI matching = new MatchingGUI();
 			}
 		});
@@ -171,6 +173,7 @@ public class MainGUI {
 		btnMyPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 마이페이지 클릭시
+				frame.setVisible(false);
 				MyPageGUI MyPage = new MyPageGUI();
 
 			}
@@ -225,6 +228,7 @@ public class MainGUI {
 		btnBadMinton.setBorderPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
 				ggggg gg = new ggggg("배드맨턴장");
 			}
 		});
@@ -255,7 +259,7 @@ public class MainGUI {
 		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball1.jpg")));
 		btnbaseball.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				frame.setVisible(false);
 				ggggg gg = new ggggg("야구장");
 
 			}
@@ -270,13 +274,6 @@ public class MainGUI {
 		lblNewLabel_4_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 14));
 		panel.add(lblNewLabel_4_1);
 
-		btnBaseBall = new JButton("");
-
-		btnBaseBall.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
 
 		JLabel lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setBounds(0, 66, 48, 422);

@@ -175,8 +175,9 @@ import View.LoginGUI;
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, remainpoint);
-			pst.setString(2, logingui.controller.getLoginUser().getId() );
+			pst.setString(2, LoginGUI.controller.getLoginUser().getId() );
 
+			
 			
 			row = pst.executeUpdate();
 		}catch (SQLException e) {

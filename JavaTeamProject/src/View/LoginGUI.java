@@ -55,6 +55,7 @@ public class LoginGUI {
 	 */
 	public LoginGUI() {
 		initialize();
+		
 	}
 
 	/**
@@ -124,7 +125,7 @@ public class LoginGUI {
 		btn_Login.setFont(new Font("배달의민족 한나체 ", Font.BOLD,15));
 		btn_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				String id = inputID.getText();
 				String pw = String.valueOf(inputPW.getPassword());
 				MemberVO user = new MemberVO(id, pw);
@@ -133,8 +134,8 @@ public class LoginGUI {
 
 				if (isSuccess == true) {
 					JOptionPane.showMessageDialog(frame, "로그인 성공", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
-					MainGUI mainGUI = new MainGUI();
-
+					MainGUI mainGUI = new MainGUI();	
+					frame.setVisible(false);
 				} else {
 					JOptionPane.showMessageDialog(frame, "로그인 실패", "로그인 결과", JOptionPane.PLAIN_MESSAGE);
 					frame.setVisible(true);

@@ -93,8 +93,8 @@ public class ggggg {
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
 				frame.setVisible(false);
+				MainGUI mian=new MainGUI();
 			}
 		});
 		btnNewButton.setBounds(12, 10, 23, 23);
@@ -184,8 +184,8 @@ public class ggggg {
 		btn = new JButton("\uB354\uBCF4\uAE30");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				fcupdateGUI fcupgui = new fcupdateGUI(list.get(i).getName());
+				frame.setVisible(false);
 			}
 		});
 		btn.setBounds(212, 56, 106, 39);

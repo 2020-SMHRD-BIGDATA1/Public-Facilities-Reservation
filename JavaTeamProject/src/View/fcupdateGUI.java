@@ -59,7 +59,6 @@ public class fcupdateGUI {
 		lb_phone.setText(con.getphone(name));
 		lb_homepage.setText(con.gethomepage(name));
 		lb_fcname.setText(name);
-<<<<<<< HEAD
 		System.out.println(con.getImg(name));
 		String path = con.getImg(name);
 		lblNewLabel.setIcon(new ImageIcon(path));
@@ -68,13 +67,12 @@ public class fcupdateGUI {
 				
 						btnNewButton.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
-				
 								Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
+								frame.setVisible(false);
 							}
 						});
 						btnNewButton.setBounds(276, 502, 97, 23);
 						frame.getContentPane().add(btnNewButton);
-=======
 		
 		lb_fcname = new JLabel("<dynamic>");
 		lb_fcname.setBounds(25, 10, 277, 15);
@@ -84,7 +82,7 @@ public class fcupdateGUI {
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				ggggg gg= new ggggg(name);
 				frame.setVisible(false);
 			}
 		
@@ -93,14 +91,13 @@ public class fcupdateGUI {
 		btnNewButton_1.setBounds(12, 6, 23, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 	}
 
 	private void initialize(String name) {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 600);
+		frame.setBounds(500, 500, 450, 600);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

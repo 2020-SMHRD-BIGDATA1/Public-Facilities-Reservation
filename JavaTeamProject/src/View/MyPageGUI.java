@@ -53,49 +53,49 @@ public class MyPageGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI.class.getResource("/img/frame.jpg")));
-		frame.setBounds(100, 100, 450, 600);
+		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255,0,0,0));
+		panel.setBackground(new Color(255, 0, 0, 0));
 		// 이미지 경로 새로운변수 , new image icon(변수);
 		panel.setBounds(12, 10, 422, 541);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 		JLabel text_NAME = new JLabel("\uC774\uB984");
-		text_NAME.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_NAME.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_NAME.setHorizontalAlignment(SwingConstants.CENTER);
 		text_NAME.setBounds(106, 129, 57, 15);
 		panel.add(text_NAME);
 
 		JLabel text_id = new JLabel("ID");
-		text_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_id.setHorizontalAlignment(SwingConstants.CENTER);
 		text_id.setBounds(106, 67, 57, 15);
 		panel.add(text_id);
 
 		JLabel text_phone = new JLabel("\uC804\uD654\uBC88\uD638");
-		text_phone.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_phone.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_phone.setHorizontalAlignment(SwingConstants.CENTER);
 		text_phone.setBounds(89, 212, 74, 15);
 		panel.add(text_phone);
 
 		JLabel text_addr = new JLabel("\uC8FC\uC18C");
-		text_addr.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_addr.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_addr.setHorizontalAlignment(SwingConstants.CENTER);
 		text_addr.setBounds(106, 254, 57, 15);
 		panel.add(text_addr);
 
 		JLabel text_Email = new JLabel("\uC774\uBA54\uC77C");
-		text_Email.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_Email.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_Email.setHorizontalAlignment(SwingConstants.CENTER);
 		text_Email.setBounds(106, 301, 57, 15);
 		panel.add(text_Email);
 
 		JLabel lb_my = new JLabel("My Page");
-		lb_my.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
+		lb_my.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD, 30));
 		lb_my.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_my.setBounds(71, 10, 296, 41);
 		panel.add(lb_my);
@@ -103,10 +103,11 @@ public class MyPageGUI {
 		JButton btnmdfy = new JButton("\uC218\uC815");
 		btnmdfy.setBackground(Color.WHITE);
 		btnmdfy.setBorderPainted(false);
-		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI2 My2 = new MyPageGUI2();
+				frame.setVisible(false);
 
 			}
 		});
@@ -134,20 +135,20 @@ public class MyPageGUI {
 //		panel.add(inPutEmail);
 
 		JLabel text_Email_1 = new JLabel("\uD3EC\uC778\uD2B8");
-		text_Email_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_Email_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_Email_1.setHorizontalAlignment(SwingConstants.CENTER);
 		text_Email_1.setBounds(106, 342, 57, 15);
 		panel.add(text_Email_1);
 
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8\uAD00\uB9AC");
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
-		
-			public void actionPerformed(ActionEvent e) {
 
+			public void actionPerformed(ActionEvent e) {
 				PointGUI MyPoint = new PointGUI();
+				frame.setVisible(false);
 
 			}
 		});
@@ -155,7 +156,7 @@ public class MyPageGUI {
 		panel.add(btnNewButton);
 
 		JLabel lblNewLabel = new JLabel("\uB098\uC774");
-		lblNewLabel.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		lblNewLabel.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(106, 169, 57, 15);
 		panel.add(lblNewLabel);
@@ -169,9 +170,10 @@ public class MyPageGUI {
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.setBackground(Color.WHITE);
 		btnmdfy_1.setBorderPainted(false);
-		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MainGUI main = new MainGUI();
 				frame.setVisible(false);
 
 			}
@@ -180,7 +182,7 @@ public class MyPageGUI {
 		panel.add(btnmdfy_1);
 
 		JLabel text_NAME_1 = new JLabel("PW");
-		text_NAME_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		text_NAME_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		text_NAME_1.setHorizontalAlignment(SwingConstants.CENTER);
 		text_NAME_1.setBounds(106, 95, 57, 15);
 		panel.add(text_NAME_1);
@@ -223,13 +225,13 @@ public class MyPageGUI {
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
 		btn예약확인.setBackground(Color.WHITE);
 		btn예약확인.setBorderPainted(false);
-		btn예약확인.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btn예약확인.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btn예약확인.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				confirmGUI con = new confirmGUI();
 //				con.view("");
-				
-				tableUpdateGUI table =new tableUpdateGUI(); 
+
+				tableUpdateGUI table = new tableUpdateGUI();
 			}
 		});
 		btn예약확인.setBounds(38, 423, 97, 41);
@@ -243,6 +245,7 @@ public class MyPageGUI {
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
+				MainGUI main = new MainGUI();
 			}
 		});
 		btnback.setBounds(12, 10, 23, 23);
@@ -251,18 +254,17 @@ public class MyPageGUI {
 		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back2.png")));
 		lblNewLabel_3.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(lblNewLabel_3);
-		
-		
-		
+
 		JButton btnNewButton_1 = new JButton("\uB9AC\uBDF0\uC4F0\uAE30");
 		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.setBorderPainted(false);
-		btnNewButton_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btnNewButton_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				GradeGUI gradegui = new GradeGUI();
-				
+				frame.setVisible(false);
+
 			}
 		});
 		btnNewButton_1.setBounds(161, 423, 97, 41);
@@ -271,17 +273,16 @@ public class MyPageGUI {
 		JButton btnNewButton_1_1 = new JButton("\uB9AC\uBDF0\uBCF4\uAE30");
 		btnNewButton_1_1.setBackground(Color.WHITE);
 		btnNewButton_1_1.setBorderPainted(false);
-		btnNewButton_1_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		btnNewButton_1_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btnNewButton_1_1.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
 				ReviewcheckGUI review = new ReviewcheckGUI();
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_1_1.setBounds(282, 423, 97, 41);
 		panel.add(btnNewButton_1_1);
-		
-		
 
 	}
 }
