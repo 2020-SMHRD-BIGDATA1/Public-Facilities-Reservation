@@ -128,7 +128,6 @@ public class Reservation_3GUI {
 					if (count > 0) {
 						JOptionPane.showMessageDialog(frame, "신청 성공하셨습니다!", "매칭신청결과", JOptionPane.PLAIN_MESSAGE);
 					}
-
 					frame.dispose();
 
 				}
