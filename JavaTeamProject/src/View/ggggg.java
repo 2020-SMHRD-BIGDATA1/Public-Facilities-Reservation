@@ -175,10 +175,10 @@ public class ggggg {
 		lb_fcname = new JLabel("\uC2DC\uC124\uBA85");
 		lb_fcname.setBounds(0, 0, 300, 39);
 		panel_7.add(lb_fcname);
-
+		
 		lb_pic = new JLabel(" ");
 		lb_pic.setBounds(0, 39, 106, 72);
-
+		
 		btn = new JButton("\uB354\uBCF4\uAE30");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

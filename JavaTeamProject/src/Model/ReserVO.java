@@ -4,7 +4,7 @@ public class ReserVO {
 
 	
 		private String user_id;
-		private String  fac_id;
+		private int  fac_id;
 		private String	fac_name;
 		private String  Reserdate;
 		private String	usedate ;
@@ -12,7 +12,7 @@ public class ReserVO {
 		private String	 fee ;
 		
 		
-		public ReserVO(String user_id, String fac_id, String fac_name,String  Reserdate, String usedate, String usetime, String fee) {
+		public ReserVO(String user_id, int fac_id, String fac_name,String  Reserdate, String usedate, String usetime, String fee) {
 			super();
 			this.user_id = user_id;
 			this.fac_id = fac_id;
@@ -34,12 +34,12 @@ public class ReserVO {
 		}
 
 
-		public String getFac_id() {
+		public int getFac_id() {
 			return fac_id;
 		}
 
 
-		public void setFac_id(String fac_id) {
+		public void setFac_id(int fac_id) {
 			this.fac_id = fac_id;
 		}
 

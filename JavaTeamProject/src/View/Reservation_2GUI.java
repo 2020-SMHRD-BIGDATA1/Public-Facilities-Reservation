@@ -235,8 +235,7 @@ public class Reservation_2GUI {
 		btnNewButton_3.setBackground(new Color(211, 211, 211));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				Reservation_3GUI re3 = new Reservation_3GUI();
+				Reservation_3GUI re3 = new Reservation_3GUI(fac_name);
 			}
 		});
 		panel_3.add(btnNewButton_3);
@@ -249,7 +248,7 @@ public class Reservation_2GUI {
 			public void actionPerformed(ActionEvent e) {
 
 //				String fac_id=con.getfac_id(fac_name);
-				String fac_id = "1";
+				int fac_id = con.getfac_id(fac_name);
 				String user_id = LoginGUI.controller.getLoginUser().getId();
 
 				ReserVO revo = new ReserVO(user_id, fac_id, fac_name, format_time1, usedate, usetime, (fee + ""));

@@ -277,7 +277,6 @@ public class ReservationDAO {
 		
 		return weekend;
 	}
-
 	public String gethomepage(String fc_name) {
 		getconnection();
 
@@ -360,11 +359,11 @@ public class ReservationDAO {
 	
 	}
 
-	public String getfac_id(String fac_name) {
+	public int getfac_id(String fac_name) {
 		getconnection();
 
 		String sql = "select fac_id from publics where fac_name=?";
-		String	fac_id = null;
+		int	fac_id =0;
 	
 		try {
 			pst = conn.prepareStatement(sql);
@@ -375,7 +374,7 @@ public class ReservationDAO {
 			
 			if (rs.next()) {
 
-			fac_id=rs.getString("fac_id");
+			fac_id=Integer.parseInt(rs.getString("fac_id"));
 			
 			}
 
