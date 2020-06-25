@@ -151,6 +151,12 @@ public class MainGUI {
 			
 				ggggg gg=new ggggg("≥Û±∏¿Â");
 			}});
+		btnBaseBall.setBounds(280, 164, 68, 67);
+
+		panel.add(btnBaseBall);
+
+
+		btnbasketBall.setBounds(229, 161, 68, 67);
 		panel.add(btnbasketBall);
 
 		
@@ -318,9 +324,12 @@ public class MainGUI {
 		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));
 		lblNewLabel_10.setBounds(374, 66, 48, 422);
 
+		
 			
-			}
-		}
+		
+	}
+}
+			
 
 	
 	

@@ -40,6 +40,7 @@ public class fcupdateGUI {
 	private JTable table1;
 	private String fcname;
 	private JButton btnNewButton;
+	private JTable table;
 	
 	
 	public fcupdateGUI(String name) {
@@ -53,12 +54,6 @@ public class fcupdateGUI {
 		lb_phone.setText(con.getphone(name));
 		lb_homepage.setText(con.gethomepage(name));
 		lb_fcname.setText(name);
-		
-		lb_fcname = new JLabel("<dynamic>");
-		lb_fcname.setBounds(25, 10, 277, 15);
-		frame.getContentPane().add(lb_fcname);
-		lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_fcname.setFont(new Font("굴림", Font.BOLD, 12));
 		
 
      	
@@ -76,7 +71,7 @@ public class fcupdateGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 27, 320, 476);
+		scrollPane.setBounds(12, 27, 320, 465);
 		frame.getContentPane().add(scrollPane);
 		
 		panel = new JPanel();
@@ -92,7 +87,7 @@ public class fcupdateGUI {
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC0AC\uC9C4");
 		lblNewLabel_1.setFont(new Font("HY견명조", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(0, 10, 294, 159);
+		lblNewLabel_1.setBounds(0, 29, 294, 165);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC2DC\uC124\uC124\uBA85");
@@ -166,6 +161,36 @@ public class fcupdateGUI {
 		JLabel lblNewLabel_1_1_3_1_1_1 = new JLabel("\uB2F9\uC77C \uCDE8\uC18C \uBC0F \uD658\uBD88 \uBD88\uAC00");
 		panel_2_1.add(lblNewLabel_1_1_3_1_1_1);
 		
+		
+//		ArrayList<RatingVO> myarr= con.getrating(name);
+//		for (int i = 0; i < myarr.size(); i++) {
+//			System.out.println(myarr.get(i));
+//		}	
+//     	String[][] data = new String[myarr.size()][3];
+//     	for (int i = 0; i < data.length; i++) {
+//			data[i][0] = myarr.get(i).getId();
+//			data[i][1] = myarr.get(i).getRating();
+//			data[i][2] = myarr.get(i).getReview();
+//		};
+// 
+        String[] headings = new String[]{"사용자 아이디", "평점","리뷰"};
+        		
+		table = new JTable(data,headings);
+		table.setPreferredScrollableViewportSize(new Dimension(320,300));
+		table.setBounds(12, 435, 294, 100);
+	
+//      	table.setFillsViewportHeight(true);
+		
+		table = new JTable();
+		table.setBounds(0, 430, 294, 26);
+		panel_1.add(table);
+		
+		lb_fcname = new JLabel("<dynamic>");
+		lb_fcname.setBounds(17, 10, 277, 15);
+		panel_1.add(lb_fcname);
+		lb_fcname.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_fcname.setFont(new Font("굴림", Font.BOLD, 12));
+		
 	
 		btnNewButton = new JButton("\uC608\uC57D");
 		
@@ -175,7 +200,7 @@ public class fcupdateGUI {
 				Reservation_1updateGUI re1upgui= new Reservation_1updateGUI(name);
 			}
 		});
-		btnNewButton.setBounds(221, 508, 97, 23);
+		btnNewButton.setBounds(235, 643, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 		fcname=name;
      	System.out.println(name);
