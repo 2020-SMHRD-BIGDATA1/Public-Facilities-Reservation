@@ -84,11 +84,11 @@ insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집',
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('12', 12, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 
-insert into MEMBERMATCHING values (2,'ljh2723',3,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMATCHING values (13,'ljh2723',2,'놀자~~','축구할사람 구해욥');
-insert into MEMBERMATCHING values (12,'ljh',2,'놀자~!!','야구할사람 구해욥');
-insert into MEMBERMATCHING values (15,'ljh2723',5,'덤벼라!!','축구할사람!!');
-insert into MEMBERMATCHING values (20,'ljh2723',1,'와주라~','축구하자~!!');
+insert into MEMBERMATCHING values (2,'123',3,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (13,'123',2,'놀자~~','축구할사람 구해욥');
+insert into MEMBERMATCHING values (12,'123',2,'놀자~!!','야구할사람 구해욥');
+insert into MEMBERMATCHING values (15,'123',5,'덤벼라!!','축구할사람!!');
+insert into MEMBERMATCHING values (20,'123',1,'와주라~','축구하자~!!');
 	
 insert into MEMBERS values ('mty6893', 1234, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '민태윤', 29, '010-6515-6893', '우리집', 'eliote_min@naver.com', 0);

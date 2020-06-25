@@ -78,7 +78,7 @@ public class LoginGUI {
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/GJLogo.png")));
-		lblNewLabel.setBounds(20, 42, 119, 80);
+		lblNewLabel.setBounds(12, 41, 119, 80);
 		panel.add(lblNewLabel);
 
 		inputPW = new JPasswordField();
@@ -112,7 +112,6 @@ public class LoginGUI {
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
 		btn_Login.setBounds(59, 526, 80, 30);
 		panel.add(btn_Login);
-		btn_Login.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,12));
 		btn_Login.setForeground(new Color(255, 255, 255));
 		btn_Login.setBackground(new Color(135, 206, 250));
 		btn_Login.addActionListener(new ActionListener() {
@@ -143,7 +142,7 @@ public class LoginGUI {
 		lbl_pw.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 20));
 		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
 
-		String path = "C:\\Users\\SMHRD\\Desktop\\image\\login.jpg";
+		
 
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/login.jpg")));
