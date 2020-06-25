@@ -13,13 +13,10 @@ import javax.swing.SwingConstants;
 
 import Model.GradeDAO;
 import Model.GradeVO;
-<<<<<<< HEAD
 import java.awt.Toolkit;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-=======
 import java.awt.Font;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 public class GradeGUI {
 
@@ -93,13 +90,10 @@ public class GradeGUI {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uCDE8\uC18C");
-<<<<<<< HEAD
 		btnNewButton_2.setBackground(new Color(220, 220, 220));
 		btnNewButton_2.setBounds(179, 416, 107, 50);
-=======
 		btnNewButton_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		btnNewButton_2.setBounds(176, 371, 110, 35);
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		frame.getContentPane().add(btnNewButton_2);
 		
 		input1 = new JTextField();
@@ -108,20 +102,15 @@ public class GradeGUI {
 		input1.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uD3C9\uC810");
-<<<<<<< HEAD
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-=======
 		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		lblNewLabel_2.setBounds(58, 142, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-<<<<<<< HEAD
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\thumb_l_A4A5ADD9DF8C6A98D4C2ECB3416FEA8A.png"));
 		lblNewLabel_3.setBounds(12, 10, 320, 541);
 		frame.getContentPane().add(lblNewLabel_3);
-=======
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -131,6 +120,5 @@ public class GradeGUI {
 		btnNewButton.setBounds(12, 10, 48, 50);
 		frame.getContentPane().add(btnNewButton);
 
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 	}
 	}

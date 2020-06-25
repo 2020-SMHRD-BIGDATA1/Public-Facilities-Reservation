@@ -74,14 +74,13 @@ public class LoginGUI {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\33.png"));
-		lblNewLabel_1.setBounds(110, 132, 207, 63);
+		lblNewLabel_1.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/HARANGKKE.png")));
+		lblNewLabel_1.setBounds(118, 132, 200, 71);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\22.png"));
-		lblNewLabel.setBounds(20, 43, 108, 79);
+		lblNewLabel.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/GJLogo.png")));
+		lblNewLabel.setBounds(20, 42, 119, 80);
 		panel.add(lblNewLabel);
 		
 		inputPW = new JPasswordField();
@@ -157,7 +156,7 @@ public class LoginGUI {
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\real1.jpg"));
+		lblNewLabel_3.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/login.jpg")));
 		lblNewLabel_3.setBounds(0, 25, 434, 561);
 		panel.add(lblNewLabel_3);
 	}

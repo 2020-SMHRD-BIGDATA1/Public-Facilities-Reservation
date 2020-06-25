@@ -16,14 +16,11 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
 import java.awt.Toolkit;
 import java.awt.Color;
 import javax.swing.UIManager;
-=======
 import javax.swing.JTable;
 import javax.swing.JTabbedPane;
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 public class FCdetailGUI {
 
