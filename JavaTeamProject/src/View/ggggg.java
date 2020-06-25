@@ -180,6 +180,7 @@ public class ggggg {
 			public void actionPerformed(ActionEvent e) {
 
 				fcupdateGUI fcupgui = new fcupdateGUI(list.get(i).getName());
+				System.out.println(list.get(i).getName());
 			}
 		});
 		btn.setBounds(212, 56, 106, 39);

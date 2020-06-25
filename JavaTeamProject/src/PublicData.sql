@@ -112,3 +112,7 @@ insert into test values('있어라','04:00~06:00');
 
 select * from Ratings ;
 insert into RATINGS values('123','각화1교하부 족구장','5','ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㄹㄴㅇㄹㄴㅇㄹ');
+
+
+
+

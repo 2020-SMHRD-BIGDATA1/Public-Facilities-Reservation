@@ -398,7 +398,7 @@ public class ReservationDAO {
 			try {
 				pst= conn.prepareStatement(sql);
 				pst.setString(1,revo.getUser_id());
-				pst.setString(2, revo.getFac_id());
+				pst.setInt(2, revo.getFac_id());
 				pst.setString(3,revo.getFac_name());
 				pst.setString(4,revo.getReserdate());
 				pst.setString(5, revo.getUsedate());
@@ -420,7 +420,7 @@ public class ReservationDAO {
 	public ArrayList<RatingVO> getrating(String name) {
 		getconnection();
 
-		String sql = "select id,rating,review from ratings where name=?";
+		String sql = "select user_id,rating,review from ratings where name=?";
 		ArrayList<RatingVO> arr= new ArrayList<RatingVO>(); 
 	
 		try {
@@ -430,7 +430,7 @@ public class ReservationDAO {
 
 			if (rs.next()) {
 			
-			String id= rs.getString("id");
+			String id= rs.getString("user_id");
 			String rating= rs.getString("rating");
 			String review= rs.getString("review");
 			RatingVO ra_vo= new RatingVO(id, rating, review);
