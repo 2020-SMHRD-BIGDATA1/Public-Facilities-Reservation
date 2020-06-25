@@ -20,6 +20,7 @@ import Model.fcnamevo;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Reservation_3GUI {
 
@@ -134,16 +135,17 @@ public class Reservation_3GUI {
 
 			}
 		});
-		btnNewButton_1.setBounds(235, 487, 97, 23);
+		btnNewButton_1.setBounds(325, 463, 97, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btn_back = new JButton("<");
+		JButton btn_back = new JButton("");
+		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/img/prev.jpg")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(true);
 			}
 		});
-		btn_back.setBounds(4, 34, 97, 23);
+		btn_back.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btn_back);
 
 	}

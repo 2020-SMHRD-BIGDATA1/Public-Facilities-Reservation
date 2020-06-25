@@ -69,7 +69,7 @@ public class FCdetailGUI {
 		lblNewLabel_5.setBounds(12, 408, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
 
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("");
 		
 		btnNewButton_1.setIcon(new ImageIcon(FCdetailGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -77,7 +77,7 @@ public class FCdetailGUI {
 				frame.dispose();
 			}
 		});
-		btnNewButton_1.setBounds(12, 18, 23, 23);
+		btnNewButton_1.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btnNewButton_1);
 
 	}

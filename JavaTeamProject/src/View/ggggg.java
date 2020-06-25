@@ -96,7 +96,7 @@ public class ggggg {
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
-		btnNewButton.setBounds(12, 16, 23, 23);
+		btnNewButton.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btnNewButton);
 
 //		list= dao.divide("¡∑±∏¿Â");
