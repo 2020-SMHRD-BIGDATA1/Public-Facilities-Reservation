@@ -68,14 +68,10 @@ public class FCdetailGUI {
 		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		lblNewLabel_5.setBounds(12, 408, 132, 27);
 		frame.getContentPane().add(lblNewLabel_5);
-<<<<<<< HEAD
 
 		JButton btnNewButton_1 = new JButton("New button");
-=======
 		
-		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setIcon(new ImageIcon(FCdetailGUI.class.getResource("/img/prev.jpg")));
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
