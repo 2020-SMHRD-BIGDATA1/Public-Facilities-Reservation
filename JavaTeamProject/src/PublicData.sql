@@ -22,10 +22,6 @@ create table Publics(
 );
 
 create table Ratings(
-	id varchar2(30),
-	Name varchar2(300),
-	Rating varchar2(5),
-	Review varchar2(600));
 	user_id varchar(20),
 	Fac_Name varchar2(100),
 	Rating varchar(5) NOT NULL,
@@ -33,23 +29,6 @@ create table Ratings(
 	);
 	
 create table MEMBERS(
-	id varchar(20),
-	pw varchar(20),
-	name varchar(10),
-	age NUMBER (10),
-	phone varchar(20),
-	address varchar(100),
-	mail varchar(100),
-	point NUMBER(30));
-	
-create table reservation(
-   user_id varchar2(200),
-    fac_id varchar2(200),
-	fac_name varchar2(200),
-	reserdate varchar2(200),
-	usedate varchar2(200),
-	usetime varchar2(200),
-	fee varchar2(200)
 	user_id varchar(20) ,
 	pw varchar(20) not null,
 	name varchar(10) not null,
@@ -58,16 +37,16 @@ create table reservation(
 	address varchar(100) not null,
 	mail varchar(100) not null,
 	point NUMBER(30),
-	constraint mem_user_id_pk primary key(user_id)
-	);
+	constraint mem_user_id_pk primary key(user_id));
+	
 create table MemberMatching(
 	Fac_ID number,
 	user_id varchar(20),
 	addnum number,
 	title varchar2(30) not null,
 	body varchar2(100) not null
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
-);
+	);
+	
 create table reservation(
 	user_id varchar2(20),
     fac_id number,
@@ -99,7 +78,6 @@ references Publics(fac_id);
 
 select * from MEMBERS
 -----------------------------------
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 
 insert into MEMBERS values ('mty6893', 1234, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);
 insert into MEMBERS values ('123', 123, '團鷓彌', 29, '010-6515-6893', '辦葬餵', 'eliote_min@naver.com', 0);

@@ -165,7 +165,7 @@ public class MainGUI {
 			public void actionPerformed(ActionEvent arg0) {
 			
 				ggggg gg=new ggggg("≥Û±∏¿Â");
-
+			}});
 		btnBaseBall.setBounds(280, 164, 68, 67);
 
 		panel.add(btnBaseBall);
@@ -352,12 +352,10 @@ public class MainGUI {
 		lblNewLabel_10.setBounds(374, 66, 48, 422);
 
 		
-
-
-			}
-		}
+			
+		
 	}
-	
+}
 	
 	
 
