@@ -60,44 +60,46 @@ public class JoinGUI {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("\uD68C\uC6D0\uAC00\uC785");
-		lblNewLabel.setForeground(new Color(255, 255, 0));
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(50, 23, 324, 40);
+		lblNewLabel.setIcon(new ImageIcon(JoinGUI.class.getResource("/MainImages/joinjoin.png")));
+		lblNewLabel.setForeground(new Color(255, 255, 0));
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setFont(new Font("배달의민족 한나체", Font.BOLD, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel lblNewLabel_1_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setBounds(185, 149, 57, 15);
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_1_1);
 
 		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("\uC774\uBA54\uC77C");
-		lblNewLabel_2_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1_1_1_1_1.setBounds(185, 434, 57, 15);
+		lblNewLabel_2_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_2_1_1_1_1_1);
 
 		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("\uC8FC\uC18C");
-		lblNewLabel_2_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1_1_1_1.setBounds(185, 380, 57, 15);
+		lblNewLabel_2_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_2_1_1_1_1);
 
 		JLabel lblNewLabel_2_1_1_1 = new JLabel("\uC804\uD654\uBC88\uD638");
-		lblNewLabel_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1_1_1.setBounds(185, 329, 57, 15);
+		lblNewLabel_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_2_1_1_1);
 
 		JLabel lblNewLabel_2_1_1 = new JLabel("\uB098\uC774");
-		lblNewLabel_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1_1.setBounds(185, 271, 57, 15);
+		lblNewLabel_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_2_1_1);
 
 		JLabel lblNewLabel_2_1 = new JLabel("\uC774\uB984");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1.setBounds(185, 209, 57, 15);
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_2_1);
 
 		JButton btn_JoinComple = new JButton("\uAC00\uC785\uD558\uAE30");
+		btn_JoinComple.setBounds(174, 496, 97, 39);
 		btn_JoinComple.setFont(new Font("배달의민족 한나체 ", Font.BOLD, 14));
 		btn_JoinComple.setForeground(new Color(0, 0, 0));
 		btn_JoinComple.setBackground(new Color(255, 255, 255));
@@ -122,12 +124,11 @@ public class JoinGUI {
 
 			}
 		});
-		btn_JoinComple.setBounds(174, 496, 97, 39);
 		frame.getContentPane().add(btn_JoinComple);
 
 		JLabel lblNewLabel_1 = new JLabel("\uC544\uC774\uB514");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(185, 82, 57, 15);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_1);
 
 		textFieldID = new JTextField();
@@ -136,31 +137,32 @@ public class JoinGUI {
 		textFieldID.setColumns(10);
 
 		textFieldName = new JTextField();
-		textFieldName.setColumns(10);
 		textFieldName.setBounds(102, 201, 218, 32);
+		textFieldName.setColumns(10);
 		frame.getContentPane().add(textFieldName);
 
 		textFieldAge = new JTextField();
-		textFieldAge.setColumns(10);
 		textFieldAge.setBounds(102, 263, 218, 32);
+		textFieldAge.setColumns(10);
 		frame.getContentPane().add(textFieldAge);
 
 		textFieldPhone = new JTextField();
-		textFieldPhone.setColumns(10);
 		textFieldPhone.setBounds(102, 321, 218, 32);
+		textFieldPhone.setColumns(10);
 		frame.getContentPane().add(textFieldPhone);
 
 		textFieldAddress = new JTextField();
-		textFieldAddress.setColumns(10);
 		textFieldAddress.setBounds(102, 372, 218, 32);
+		textFieldAddress.setColumns(10);
 		frame.getContentPane().add(textFieldAddress);
 
 		textFieldEmail = new JTextField();
-		textFieldEmail.setColumns(10);
 		textFieldEmail.setBounds(102, 426, 218, 32);
+		textFieldEmail.setColumns(10);
 		frame.getContentPane().add(textFieldEmail);
 
 		JButton btn_idCheck = new JButton("");
+		btn_idCheck.setBounds(260, 116, 21, 17);
 		btn_idCheck.setIcon(new ImageIcon(JoinGUI.class.getResource("/img/check.png")));
 		btn_idCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -177,14 +179,13 @@ public class JoinGUI {
 				}
 			}
 		});
-		btn_idCheck.setBounds(260, 116, 21, 17);
 		frame.getContentPane().add(btn_idCheck);
 
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
+		lblNewLabel_3.setBounds(145, 116, 97, 15);
 		lblNewLabel_3.setForeground(Color.YELLOW);
 		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(145, 116, 97, 15);
 		frame.getContentPane().add(lblNewLabel_3);
 
 		textFieldPW = new JPasswordField();
@@ -192,13 +193,14 @@ public class JoinGUI {
 		frame.getContentPane().add(textFieldPW);
 
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\SMHRD\\Desktop\\frame2.jpg"));
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2.setBounds(0, 0, 434, 561);
+		lblNewLabel_2.setBackground(Color.WHITE);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		frame.getContentPane().add(lblNewLabel_2);
 
 		back_btn = new JButton("");
-		back_btn.setIcon(new ImageIcon(JoinGUI.class.getResource("/img/prev.jpg")));
+		back_btn.setForeground(Color.YELLOW);
+		back_btn.setIcon(new ImageIcon(JoinGUI.class.getResource("/MainImages/go to prev.png")));
 		back_btn.setBounds(12, 10, 23, 23);
 		back_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -207,6 +209,22 @@ public class JoinGUI {
 			}
 		});
 		frame.getContentPane().add(back_btn);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setBounds(0, 0, 434, 68);
+		lblNewLabel_4.setIcon(new ImageIcon(JoinGUI.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 68, 434, 493);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(JoinGUI.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		lblNewLabel_5.setBounds(0, 412, 434, 81);
+		panel.add(lblNewLabel_5);
 
 	}
 
