@@ -26,6 +26,9 @@ public class PointGUI2 {
 	JLabel lb_charge;
 	Reservation_1Controller re_controller =new Reservation_1Controller();
 	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_3_1;
 	public  PointGUI2(int point2) {
 		initialize(point2);
 		frame.setVisible(true);
@@ -39,17 +42,19 @@ public class PointGUI2 {
 			
 			}
 		});
-		btnback.setIcon(new ImageIcon(PointGUI2.class.getResource("/img/prev.jpg")));
+		btnback.setIcon(new ImageIcon(PointGUI2.class.getResource("/MainImages/go to prev.png")));
 		btnback.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		btnback.setBorderPainted(false);
 		btnback.setBackground(Color.WHITE);
-		btnback.setBounds(12, 10, 23, 23);
+		btnback.setBounds(12, 10, 16, 19);
 		frame.getContentPane().add(btnback);
 		
 		point=re_controller.getpoint()+point2;
 		
 		JButton btnNewButton = new JButton("\uD655\uC778");
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD,15));
+		btnNewButton.setForeground(new Color(255, 215, 0));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -65,10 +70,27 @@ public class PointGUI2 {
 		frame.getContentPane().add(btnNewButton);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(PointGUI2.class.getResource("/img/point.jpeg")));
+		lblNewLabel.setBackground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(PointGUI2.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(0, 0, 434, 68);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(0, 492, 434, 69);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		lblNewLabel_3_1 = new JLabel("");
+		lblNewLabel_3_1.setIcon(new ImageIcon(PointGUI2.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setBounds(0, 492, 434, 69);
+		frame.getContentPane().add(lblNewLabel_3_1);
 		
 
 	}
@@ -79,7 +101,7 @@ public class PointGUI2 {
 	private void initialize(int point2) {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PointGUI2.class.getResource("/img/frame.jpg")));
-		frame.getContentPane().setBackground(new Color(255, 235, 205));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

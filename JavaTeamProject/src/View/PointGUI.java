@@ -56,7 +56,7 @@ public class PointGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 235, 205));
+		panel.setBackground(Color.WHITE);
 		panel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -70,9 +70,10 @@ public class PointGUI {
 //       int point=Integer.parseInt(inputText.getText());
 		
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8 \uCDA9\uC804\uD558\uAE30");
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		
-		
+		btnNewButton.setForeground(new Color(255, 215, 0));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -90,13 +91,14 @@ public class PointGUI {
 			
 			}
 		});
-		btnNewButton.setBounds(113, 308, 209, 38);
+		btnNewButton.setBounds(113, 308, 203, 56);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("\uD3EC\uC778\uD2B8 \uAD00\uB9AC");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
-		lblNewLabel.setBounds(119, 43, 192, 68);
+		lblNewLabel.setForeground(new Color(255, 215, 0));
+		lblNewLabel.setBounds(113, 0, 192, 68);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uD604\uC7AC\uD3EC\uC778\uD2B8");
@@ -128,14 +130,26 @@ public class PointGUI {
 		nowPoint.setText(controller.getpoint()+"");
 		
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon(PointGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton_1.setIcon(new ImageIcon(PointGUI.class.getResource("/MainImages/go to prev.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton_1.setBounds(12, 10, 23, 23);
+		btnNewButton_1.setBounds(12, 10, 16, 18);
 		panel.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		lblNewLabel_1_1.setIcon(new ImageIcon(PointGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1_1.setBackground(Color.WHITE);
+		lblNewLabel_1_1.setBounds(0, 0, 434, 68);
+		panel.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("");
+		lblNewLabel_3_1.setIcon(new ImageIcon(PointGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setBounds(0, 492, 434, 69);
+		panel.add(lblNewLabel_3_1);
 		
 		
 	}

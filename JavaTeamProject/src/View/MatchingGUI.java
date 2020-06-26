@@ -34,8 +34,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import Model.RoomMatchingVO;
 
-public class MatchingGUI {
-
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
 	private JComboBox comboBox;

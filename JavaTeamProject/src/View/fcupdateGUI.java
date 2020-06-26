@@ -27,6 +27,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class fcupdateGUI extends JFrame {
 
@@ -50,6 +51,7 @@ public class fcupdateGUI extends JFrame {
 
 	private JLabel lblNewLabel;
 	private JPanel panel_1;
+	private JButton btnNewButton_2;
 
 	public fcupdateGUI(String name) {
 		initialize(name);
@@ -67,6 +69,20 @@ public class fcupdateGUI extends JFrame {
 		String path = con.getImg(name);
 		lblNewLabel.setIcon(new ImageIcon(path));
 		panel_1.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("\uC608\uC57D");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(299, 452, 97, 23);
+		panel_1.add(btnNewButton);
+		
+		JLabel label = new JLabel("New label");
+		label.setBounds(-31, 442, 452, 91);
+		panel_1.add(label);
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,25 +91,32 @@ public class fcupdateGUI extends JFrame {
 			}
 
 		});
-		btnNewButton_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/img/prev.jpg")));
-		btnNewButton_1.setBounds(12, 6, 23, 23);
+		btnNewButton_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/MainImages/go to prev.png")));
+		btnNewButton_1.setBounds(12, 6, 23, 20);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("\uC608\uC57D");
-		btnNewButton.setBounds(309, 528, 97, 23);
-		frame.getContentPane().add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnNewButton_2;
+		btnNewButton_2 = new JButton("\uC608\uC57D");
+		btnNewButton_2.setBounds(309, 528, 97, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
 //				frame.setVisible(false);
 			}
 		});
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/MainImages/\uBC30\uACBD\uD654\uBA74.png")));
+		lblNewLabel_1.setBounds(0, 0, 434, 561);
+		frame.getContentPane().add(lblNewLabel_1);
 
 	}
 
 	private void initialize(String name) {
 
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(fcupdateGUI.class.getResource("/img/frame.jpg")));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

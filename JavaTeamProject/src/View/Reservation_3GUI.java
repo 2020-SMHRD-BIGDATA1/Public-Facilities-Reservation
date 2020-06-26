@@ -47,6 +47,7 @@ public class Reservation_3GUI {
 
 		JLabel lblNewLabel = new JLabel("\uD300\uC6D0 \uAD6C\uD558\uAE30 \uBC29 \uAC1C\uC124 ");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(255, 215, 0));
 		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
 		lblNewLabel.setBounds(79, 18, 297, 35);
 		frame.getContentPane().add(lblNewLabel);
@@ -139,14 +140,19 @@ public class Reservation_3GUI {
 		btnNewButton_1.setBounds(325, 463, 97, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		JButton btn_back = new JButton("");
-		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/img/prev.jpg")));
+		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/MainImages/go to prev.png")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(true);
 			}
 		});
-		btn_back.setBounds(12, 10, 23, 23);
+		btn_back.setBounds(12, 10, 23, 15);
 		frame.getContentPane().add(btn_back);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_2.setBounds(0, 0, 434, 561);
+		frame.getContentPane().add(lblNewLabel_2);
 
 	}
 }
