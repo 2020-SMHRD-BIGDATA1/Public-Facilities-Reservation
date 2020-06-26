@@ -43,9 +43,10 @@ public class MainGUI {
 	private JButton btnBadMinton;
 	private JButton btnBaseBall;
 	private JLabel lblNewLabel_10;
-	private JPanel panel_1;
+	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	private JPanel panel_2;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_4;
 	/**
 	 * Launch the application.
 	 */
@@ -89,9 +90,10 @@ public class MainGUI {
 		frame.getContentPane().add(panel);
 
 		btnSoccer = new JButton("");
-		btnSoccer.setBounds(77, 164, 68, 68);
-		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer.jpg")));
-		
+		btnSoccer.setBounds(75, 253, 68, 68);
+		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer(yell).png")));
+		btnSoccer.setContentAreaFilled(false);
+		btnSoccer.setFocusPainted(false);
 		btnSoccer.setBorderPainted(false);
 		btnSoccer.addActionListener(new ActionListener() {
 
@@ -101,14 +103,28 @@ public class MainGUI {
 			}
 		});
 		panel.setLayout(null);
+		
+		lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/\uADF8\uB9BC4.png")));
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setBounds(12, 104, 410, 34);
+		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/1.png")));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(0, 0, 434, 121);
+		panel.add(lblNewLabel_3);
 		panel.add(btnSoccer);
 
 		btnjokgu = new JButton("");
-		btnjokgu.setBounds(172, 164, 68, 68);
+		btnjokgu.setBounds(170, 253, 68, 68);
 		btnjokgu.setBackground(Color.WHITE);
 		btnjokgu.setForeground(Color.WHITE);
 		btnjokgu.setBorderPainted(false);
-		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu.jpg")));
+		btnjokgu.setContentAreaFilled(false);
+		btnjokgu.setFocusPainted(false);
+		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu(yell).png")));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		
@@ -118,10 +134,12 @@ public class MainGUI {
 		panel.add(btnjokgu);
 
 		btnbasketBall = new JButton("");
-		btnbasketBall.setBounds(269, 164, 68, 67);
+		btnbasketBall.setBounds(267, 253, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
-		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basketball.jpg")));
+		btnbasketBall.setContentAreaFilled(false);
+		btnbasketBall.setFocusPainted(false);
+		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basketball(yell).png")));
 
 		panel.add(btnbasketBall);
 		panel.add(btnbasketBall);
@@ -137,10 +155,12 @@ public class MainGUI {
 		panel.add(btnbasketBall);
 
 		btnFutSal = new JButton("");
-		btnFutSal.setBounds(77, 263, 68, 68);
-		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/putsal.jpg")));
+		btnFutSal.setBounds(75, 352, 68, 68);
+		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/putsal(yel).png")));
 		btnFutSal.setBackground(Color.WHITE);
 		btnFutSal.setBorderPainted(false);
+		btnFutSal.setContentAreaFilled(false);
+		btnFutSal.setFocusPainted(false);
 		btnFutSal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		
@@ -150,8 +170,8 @@ public class MainGUI {
 		panel.add(btnFutSal);
 
 		btnteam = new JButton("");
-		btnteam.setBounds(165, 430, 100, 100);
-		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/matching2.png")));
+		btnteam.setBounds(154, 430, 100, 100);
+		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/matching.png")));
 		btnteam.setBackground(Color.WHITE);
 		btnteam.setBorderPainted(false);
 		btnteam.setContentAreaFilled(false);
@@ -161,13 +181,13 @@ public class MainGUI {
 		
 //				MatchingGUI matching = new MatchingGUI();
 				matchingupdateGUI matchingupdate= new matchingupdateGUI();
-				MatchingGUI matching = new MatchingGUI();
+//				MatchingGUI matching = new MatchingGUI();
 			}
 		});
 		panel.add(btnteam);
 
 		btnMyPage = new JButton("");
-		btnMyPage.setBounds(348, 92, 60, 60);
+		btnMyPage.setBounds(349, 176, 60, 60);
 		btnMyPage.setBackground(Color.WHITE);
 		btnMyPage.setBorderPainted(false);
 		btnMyPage.setContentAreaFilled(false);
@@ -185,26 +205,28 @@ public class MainGUI {
 
 		lb_id = new JLabel("New label");
 		lb_id.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_id.setBounds(201, 92, 136, 15);
+		lb_id.setBounds(205, 200, 136, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId() + "님");
 		lb_id.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 
 		btnBadMinton = new JButton("");
-		btnBadMinton.setBounds(172, 263, 68, 68);
+		btnBadMinton.setBounds(170, 352, 68, 68);
 		btnBadMinton.setBackground(Color.WHITE);
 		btnBadMinton.setBorderPainted(false);
+		btnBadMinton.setContentAreaFilled(false);
+		btnBadMinton.setFocusPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ggggg gg = new ggggg("배드맨턴장");
 			}
 		});
-		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminton.jpg")));
+		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminton(yel).png")));
 		panel.add(btnBadMinton);
 
 		JButton btnbaseball = new JButton("");
-		btnbaseball.setBounds(269, 263, 68, 68);
-		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball.jpg")));
+		btnbaseball.setBounds(267, 352, 68, 68);
+		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball(yel).png")));
 		btnbaseball.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -216,23 +238,20 @@ public class MainGUI {
 		btnbaseball.setBackground(Color.WHITE);
 		panel.add(btnbaseball);
 		
-		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(176, 224, 230));
-		panel_1.setBounds(0, 0, 434, 81);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel.setBounds(0, 0, 434, 151);
+		panel.add(lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("\uD558\uB791\uAED8");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(0, 0, 434, 81);
-		lblNewLabel_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1.setFont(new Font("배달의민족 주아", Font.BOLD, 42));
-		panel_1.add(lblNewLabel_1);
+		lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1.setBounds(0, 0, 434, 37);
+		panel.add(lblNewLabel_1);
 		
-		panel_2 = new JPanel();
-		panel_2.setBackground(new Color(176, 224, 230));
-		panel_2.setBounds(0, 394, 434, 167);
-		panel.add(panel_2);
+		lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_2.setBounds(0, 525, 434, 36);
+		panel.add(lblNewLabel_2);
 
 		lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));

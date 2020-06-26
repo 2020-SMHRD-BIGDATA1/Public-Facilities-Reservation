@@ -52,7 +52,8 @@ public class MyPageGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI.class.getResource("/img/frame.jpg")));
+		frame.getContentPane().setBackground(Color.WHITE);
+   	frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -63,6 +64,12 @@ public class MyPageGUI {
 		panel.setBounds(12, 10, 422, 541);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/as.png")));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(0, 10, 66, 39);
+		panel.add(lblNewLabel_1);
 
 		JLabel text_NAME = new JLabel("\uC774\uB984");
 		text_NAME.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -94,10 +101,11 @@ public class MyPageGUI {
 		text_Email.setBounds(106, 301, 57, 15);
 		panel.add(text_Email);
 
-		JLabel lb_my = new JLabel("My Page");
+		JLabel lb_my = new JLabel("");
+		lb_my.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/123.png")));
 		lb_my.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD, 30));
 		lb_my.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_my.setBounds(71, 10, 296, 41);
+		lb_my.setBounds(22, -12, 372, 69);
 		panel.add(lb_my);
 
 		JButton btnmdfy = new JButton("\uC218\uC815");
@@ -111,7 +119,7 @@ public class MyPageGUI {
 
 			}
 		});
-		btnmdfy.setBounds(125, 502, 66, 39);
+		btnmdfy.setBounds(106, 502, 66, 39);
 		panel.add(btnmdfy);
 
 //		inPutPW = new JTextField();
@@ -141,9 +149,9 @@ public class MyPageGUI {
 		panel.add(text_Email_1);
 
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8\uAD00\uB9AC");
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		btnNewButton.setBorderPainted(false);
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(255, 140, 0));
+		btnNewButton.setFont(new Font("HY견고딕", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -152,7 +160,7 @@ public class MyPageGUI {
 
 			}
 		});
-		btnNewButton.setBounds(225, 335, 109, 28);
+		btnNewButton.setBounds(276, 335, 134, 28);
 		panel.add(btnNewButton);
 
 		JLabel lblNewLabel = new JLabel("\uB098\uC774");
@@ -178,7 +186,7 @@ public class MyPageGUI {
 
 			}
 		});
-		btnmdfy_1.setBounds(225, 502, 66, 39);
+		btnmdfy_1.setBounds(220, 502, 66, 39);
 		panel.add(btnmdfy_1);
 
 		JLabel text_NAME_1 = new JLabel("PW");
@@ -234,22 +242,14 @@ public class MyPageGUI {
 				tableUpdateGUI table = new tableUpdateGUI();
 			}
 		});
-		btn예약확인.setBounds(38, 423, 97, 41);
+		btn예약확인.setBounds(159, 406, 97, 41);
 		panel.add(btn예약확인);
-
-		JButton btnback = new JButton("");
-		btnback.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/prev.jpg")));
-		btnback.setFont(new Font("굴림", Font.BOLD, 12));
-		btnback.setBackground(Color.WHITE);
-		btnback.setBorderPainted(false);
-		btnback.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				MainGUI main = new MainGUI();
-			}
-		});
-		btnback.setBounds(12, 10, 23, 23);
-		panel.add(btnback);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("");
+		lblNewLabel_3_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setBounds(-12, 482, 434, 69);
+		panel.add(lblNewLabel_3_1);
 		
 //		JButton btn예약확인_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
 //		btn예약확인_1.addActionListener(new ActionListener() {
@@ -265,9 +265,9 @@ public class MyPageGUI {
 //		panel.add(btn예약확인_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/img/back2.png")));
-		lblNewLabel_3.setBounds(0, 0, 434, 561);
+		lblNewLabel_3.setBounds(0, 0, 434, 69);
 		frame.getContentPane().add(lblNewLabel_3);
+		lblNewLabel_3.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/image1.png")));
 
 	}
 }

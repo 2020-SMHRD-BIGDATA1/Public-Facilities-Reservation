@@ -26,7 +26,6 @@ import Model.MatchingDAO;
 import Model.MatchingVO;
 import Model.RoomMatchingVO;
 
-public class MatchingGUI {
 
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
