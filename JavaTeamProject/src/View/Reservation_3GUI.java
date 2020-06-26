@@ -143,7 +143,7 @@ public class Reservation_3GUI {
 		btn_back.setIcon(new ImageIcon(Reservation_3GUI.class.getResource("/MainImages/go to prev.png")));
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(true);
+				frame.setVisible(false);
 			}
 		});
 		btn_back.setBounds(12, 10, 23, 15);

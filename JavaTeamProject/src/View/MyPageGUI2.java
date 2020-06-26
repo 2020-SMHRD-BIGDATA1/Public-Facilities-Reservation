@@ -55,7 +55,7 @@ public class MyPageGUI2 {
 		
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 10, 422, 551);
+		panel.setBounds(0, 0, 434, 561);
 		panel.setBackground(new Color(255,0,0,0));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -103,7 +103,7 @@ public class MyPageGUI2 {
 		
 		JButton btnmdfy = new JButton("\uC218\uC815");
 		btnmdfy.setBackground(Color.WHITE);
-		btnmdfy.setForeground(new Color(255, 215, 0));
+		btnmdfy.setForeground(new Color(0, 0, 139));
 		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		
 		btnmdfy.addActionListener(new ActionListener() {
@@ -176,7 +176,7 @@ public class MyPageGUI2 {
 		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.setBackground(Color.WHITE);
-		btnmdfy_1.setForeground(new Color(255, 215, 0));
+		btnmdfy_1.setForeground(new Color(0, 0, 139));
 		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			
@@ -229,7 +229,7 @@ public class MyPageGUI2 {
 		JLabel lblNewLabel_3_1 = new JLabel("");
 		lblNewLabel_3_1.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/image1.png")));
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setBounds(-12, 482, 434, 69);
+		lblNewLabel_3_1.setBounds(0, 492, 434, 69);
 		panel.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("");

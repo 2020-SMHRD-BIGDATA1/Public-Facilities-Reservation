@@ -239,7 +239,9 @@ public class Reservation_2GUI {
 		panel_2.add(btn_charge);
 
 		JLabel lblNewLabel_13_2 = new JLabel("\uC2E0\uCCAD\uC790\uC815\uBCF4");
+		lblNewLabel_13_2.setForeground(Color.ORANGE);
 		lblNewLabel_13_2.setBounds(12, 278, 85, 15);
+		lblNewLabel_13_2.setForeground(new Color(255, 215, 0));
 		lblNewLabel_13_2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_13_2);
 

@@ -70,16 +70,6 @@ public class fcupdateGUI extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(path));
 		panel_1.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("\uC608\uC57D");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
-				frame.setVisible(false);
-			}
-		});
-		btnNewButton.setBounds(299, 452, 97, 23);
-		panel_1.add(btnNewButton);
-		
 		JLabel label = new JLabel("New label");
 		label.setBounds(-31, 442, 452, 91);
 		panel_1.add(label);

@@ -54,7 +54,7 @@ public class PointGUI2 {
 		JButton btnNewButton = new JButton("\uD655\uC778");
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
-		btnNewButton.setForeground(new Color(255, 215, 0));
+		btnNewButton.setForeground(new Color(0, 0, 139));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

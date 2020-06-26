@@ -183,7 +183,7 @@ public class JoinGUI {
 
 		JLabel lblNewLabel_3 = new JLabel("\uC544\uC774\uB514 \uC911\uBCF5 \uCCB4\uD06C");
 		lblNewLabel_3.setBounds(145, 116, 97, 15);
-		lblNewLabel_3.setForeground(Color.YELLOW);
+		lblNewLabel_3.setForeground(new Color(0, 0, 139));
 		lblNewLabel_3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_3);

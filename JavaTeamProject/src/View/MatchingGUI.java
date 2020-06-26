@@ -34,6 +34,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import Model.RoomMatchingVO;
 
+public class MatchingGUI {
 	private JFrame frame;
 	private final JPanel panel = new JPanel();
 	private JComboBox comboBox;
@@ -89,12 +90,12 @@ import Model.RoomMatchingVO;
 		panel.add(comboBox);
 
 		scrollPane = new JScrollPane();
-		
+
 		scrollPane.setBounds(10, 62, 412, 476);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(12, 48, 410, 503);
-		
+
 		panel1 = new JPanel();
 		panel1.setBackground(new Color(255, 250, 250));
 
@@ -106,7 +107,6 @@ import Model.RoomMatchingVO;
 		scrollPane.setViewportView(panel1);
 		panel.add(scrollPane);
 
-		
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				Component[] componentList = panel1.getComponents();
@@ -123,7 +123,7 @@ import Model.RoomMatchingVO;
 				ArrayList<MatchingVO> list = dao.divide(comboBox.getSelectedItem().toString());
 				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
 				lmg_lbl.setBounds(0, 40, 100, 100);
-				
+
 				for (int i = 0; i < list.size(); i++) {
 					for (int j = 0; j < infolist.size(); j++) {
 						if (e.getStateChange() == ItemEvent.SELECTED) {

@@ -89,6 +89,7 @@ public class ReviewcheckGUI {
 		
 		
 		JLabel output3 = new JLabel("New label");
+		output3.setForeground(Color.ORANGE);
 		output3.setBounds(236, 260, 162, 114);
 		panel.add(output3);
 		output3.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
@@ -99,6 +100,7 @@ public class ReviewcheckGUI {
 		output3.setText(userReview.getReview());
 		
 		JLabel output2 = new JLabel("New label");
+		output2.setForeground(Color.ORANGE);
 		output2.setBounds(134, 260, 90, 114);
 		panel.add(output2);
 		output2.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
@@ -109,6 +111,7 @@ public class ReviewcheckGUI {
 		output2.setText(userReview.getRating());
 		
 		JLabel output_1 = new JLabel("New label");
+		output_1.setForeground(Color.ORANGE);
 		output_1.setBounds(27, 263, 93, 111);
 		panel.add(output_1);
 		output_1.setText(userReview.getName());

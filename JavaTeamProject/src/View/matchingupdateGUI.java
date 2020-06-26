@@ -204,10 +204,11 @@ public class matchingupdateGUI {
 				RoomMatchingVO vo1 = new RoomMatchingVO(7, "2", "나와라");
 				int cnt = dao.minusnum(vo1);
 				if (cnt > 0) {
-					JOptionPane.showMessageDialog(frame, "신청 성공", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "신청 성공!", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
 					frame.setVisible(false);
 				} else {
-					JOptionPane.showMessageDialog(frame, "신청실패", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "신청 성공!", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
+					frame.setVisible(false);
 				}
 			}
 		});

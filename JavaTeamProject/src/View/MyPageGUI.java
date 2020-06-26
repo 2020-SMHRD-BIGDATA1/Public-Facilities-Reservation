@@ -62,7 +62,7 @@ public class MyPageGUI {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 0, 0, 0));
 		// 이미지 경로 새로운변수 , new image icon(변수);
-		panel.setBounds(12, 10, 422, 541);
+		panel.setBounds(0, 10, 434, 551);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
@@ -107,7 +107,7 @@ public class MyPageGUI {
 		btnmdfy.setBackground(Color.WHITE);
 		btnmdfy.setBorderPainted(false);
 		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		btnmdfy.setForeground(new Color(255, 215, 0));
+		btnmdfy.setForeground(new Color(0, 0, 139));
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI2 My2 = new MyPageGUI2();
@@ -145,7 +145,7 @@ public class MyPageGUI {
 		panel.add(text_Email_1);
 
 		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8\uAD00\uB9AC");
-		btnNewButton.setForeground(new Color(255, 215,0 ));
+		btnNewButton.setForeground(new Color(0, 0, 139));
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("HY견고딕", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -175,7 +175,7 @@ public class MyPageGUI {
 		btnmdfy_1.setBackground(Color.WHITE);
 		btnmdfy_1.setBorderPainted(false);
 		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		btnmdfy_1.setForeground(new Color(255, 215, 0));
+		btnmdfy_1.setForeground(new Color(0, 0, 139));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainGUI main = new MainGUI();
@@ -229,7 +229,7 @@ public class MyPageGUI {
 
 		
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
-		btn예약확인.setForeground(new Color(255, 215, 0));
+		btn예약확인.setForeground(new Color(0, 0, 139));
 		btn예약확인.setBackground(new Color(255, 255, 255));
 		btn예약확인.setBorderPainted(false);
 		btn예약확인.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -247,7 +247,7 @@ public class MyPageGUI {
 		JLabel lblNewLabel_3_1 = new JLabel("");
 		lblNewLabel_3_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/image1.png")));
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setBounds(-12, 482, 434, 69);
+		lblNewLabel_3_1.setBounds(0, 482, 434, 69);
 		panel.add(lblNewLabel_3_1);
 		
 		JButton btnNewButton_1 = new JButton("New button");

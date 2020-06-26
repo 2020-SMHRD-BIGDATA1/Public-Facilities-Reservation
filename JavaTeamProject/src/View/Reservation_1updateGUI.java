@@ -61,6 +61,7 @@ public class Reservation_1updateGUI implements MouseListener {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
 
 	/**
 	 * Launch the application.
@@ -115,7 +116,7 @@ public class Reservation_1updateGUI implements MouseListener {
 		lb_date1 = new JLabel("New label");
 		lb_date1.setBackground(Color.WHITE);
 		lb_date1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
-		lb_date1.setBounds(0, 43, 144, 516);
+		lb_date1.setBounds(0, 114, 144, 445);
 		panel_4.add(lb_date1);
 //		lb_date.setText(format_time1);
 //		ddate = format_time1;
@@ -134,7 +135,7 @@ public class Reservation_1updateGUI implements MouseListener {
 
 		lb_day1 = new JLabel("New label");
 		lb_day1.setBackground(Color.WHITE);
-		lb_day1.setBounds(144, 43, 144, 516);
+		lb_day1.setBounds(144, 114, 144, 445);
 		panel_4.add(lb_day1);
 		lb_day1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		lb_day1.setText(getDate(date1));
@@ -145,6 +146,7 @@ public class Reservation_1updateGUI implements MouseListener {
 				{ "14:00~16:00" }, { "16:00~18:00" } };
 
 		JTable table_2 = new JTable(rows, colummn);
+		table_2.setBackground(Color.LIGHT_GRAY);
 		table_2.setBounds(276, 114, 144, 445);
 
 		panel_4.add(table_2);
@@ -178,6 +180,10 @@ public class Reservation_1updateGUI implements MouseListener {
 		lblNewLabel_2 = new JLabel("\uC2DC\uAC04");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_6.add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setBounds(0, 0, 432, 559);
+		panel_4.add(lblNewLabel_3);
 
 		table = new JTable();
 

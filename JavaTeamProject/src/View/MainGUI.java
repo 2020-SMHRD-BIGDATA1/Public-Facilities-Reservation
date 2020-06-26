@@ -207,9 +207,9 @@ public class MainGUI {
 		panel.add(btnMyPage);
 
 		lb_id = new JLabel("New label");
-		lb_id.setForeground(new Color(255, 255, 0));
-		lb_id.setHorizontalAlignment(SwingConstants.CENTER);
-		lb_id.setBounds(205, 200, 136, 15);
+		lb_id.setForeground(Color.BLACK);
+		lb_id.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_id.setBounds(211, 197, 136, 15);
 		panel.add(lb_id);
 		lb_id.setText(controller.getLoginUser().getId() + "´Ô");
 		lb_id.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ªÃ¼ Air", Font.BOLD, 15));
