@@ -44,10 +44,14 @@ public class MyPageGUI2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI2.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(12, 10, 422, 551);
@@ -85,15 +89,22 @@ public class MyPageGUI2 {
 		text_Email.setBounds(104, 351, 57, 15);
 		panel.add(text_Email);
 		
-		JLabel lblNewLabel_2 = new JLabel("My Page");
+		
+		
+		
+		
+		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
+		lblNewLabel_2.setForeground(new Color(255, 215, 0));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(69, 10, 296, 56);
 		panel.add(lblNewLabel_2);
 		
 		JButton btnmdfy = new JButton("\uC218\uC815");
 		btnmdfy.setBackground(Color.WHITE);
+		btnmdfy.setForeground(new Color(255, 215, 0));
 		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -120,9 +131,11 @@ public class MyPageGUI2 {
 			
 			}
 		});
-		btnmdfy.setBounds(120, 461, 66, 39);
+		btnmdfy.setBounds(118, 512, 66, 39);
 		panel.add(btnmdfy);
 
+		
+		
 		inPutidPhone = new JTextField();
 		inPutidPhone.setColumns(10);
 		inPutidPhone.setBounds(173, 259, 116, 21);
@@ -162,6 +175,7 @@ public class MyPageGUI2 {
 		
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
 		btnmdfy_1.setBackground(Color.WHITE);
+		btnmdfy_1.setForeground(new Color(255, 215, 0));
 		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			
@@ -171,13 +185,8 @@ public class MyPageGUI2 {
 			
 			}
 		});
-		btnmdfy_1.setBounds(239, 461, 66, 39);
+		btnmdfy_1.setBounds(237, 512, 66, 39);
 		panel.add(btnmdfy_1);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/img/back2.png")));
-		lblNewLabel_1.setBounds(0, 0, 434, 561);
-		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel text_NAME_1 = new JLabel("PW");
 		text_NAME_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
@@ -201,7 +210,7 @@ public class MyPageGUI2 {
 		lbPoint.setText(controller.getpoint()+"");
 		
 		JButton btnback = new JButton("");
-		btnback.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/img/prev.jpg")));
+		btnback.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/go to prev.png")));
 		btnback.setBackground(Color.WHITE);
 		btnback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -209,8 +218,34 @@ public class MyPageGUI2 {
 				frame.setVisible(false);
 			}
 		});
-		btnback.setBounds(12, 10, 23, 23);
+		btnback.setBounds(12, 10, 16, 15);
 		panel.add(btnback);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setBounds(-12, -11, 434, 69);
+		panel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("");
+		lblNewLabel_3_1.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setBounds(-12, 482, 434, 69);
+		panel.add(lblNewLabel_3_1);
+		
+		JLabel lblNewLabel_3_2 = new JLabel("");
+		lblNewLabel_3_2.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/123.png")));
+		lblNewLabel_3_2.setBounds(-12, -11, 434, 69);
+		panel.add(lblNewLabel_3_2);
+		
+		JLabel lblNewLabel_3_3 = new JLabel("");
+		lblNewLabel_3_3.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_3_3.setBounds(-12, -11, 434, 69);
+		panel.add(lblNewLabel_3_3);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI2.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(0, 0, 434, 68);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 	
 	}

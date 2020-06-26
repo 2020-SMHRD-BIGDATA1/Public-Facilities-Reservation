@@ -90,8 +90,8 @@ public class tableUpdateGUI implements MouseListener {
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(tableUpdateGUI.class.getResource("/img/prev.jpg")));
-		btnNewButton.setBounds(12, 10, 23, 23);
+		btnNewButton.setIcon(new ImageIcon(tableUpdateGUI.class.getResource("/MainImages/go to prev.png")));
+		btnNewButton.setBounds(12, 10, 23, 16);
 		frame.getContentPane().add(btnNewButton);
 		
 

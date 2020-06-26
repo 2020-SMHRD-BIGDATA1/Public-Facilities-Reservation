@@ -57,24 +57,25 @@ public class ReviewcheckGUI {
 		
 		JLabel lblNewLabel_1 = new JLabel("ID");
 		lblNewLabel_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
+		lblNewLabel_1.setForeground(new Color(255, 215, 0));
 		lblNewLabel_1.setBounds(25, 132, 121, 31);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		lblNewLabel_1.setText(LoginGUI.controller.getLoginUser().getId()+"님");
 		
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(ReviewcheckGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton.setIcon(new ImageIcon(ReviewcheckGUI.class.getResource("/MainImages/go to prev.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI my = new MyPageGUI();
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(12, 10, 23, 23);
+		btnNewButton.setBounds(12, 10, 23, 14);
 		frame.getContentPane().add(btnNewButton);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 235, 205));
+		panel.setBackground(Color.WHITE);
 		panel.setBounds(0, 0, 434, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -82,6 +83,7 @@ public class ReviewcheckGUI {
 		JLabel lblNewLabel = new JLabel("\uB0B4\uB9AC\uBDF0\uBCF4\uAE30");
 		lblNewLabel.setBounds(132, 62, 201, 53);
 		panel.add(lblNewLabel);
+		lblNewLabel.setForeground(new Color(255, 215, 0));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
 		
@@ -116,20 +118,28 @@ public class ReviewcheckGUI {
 		
 		JLabel output_1_1 = new JLabel("\uC2DC\uC124\uBA85");
 		output_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output_1_1.setForeground(new Color(255, 215, 0));
 		output_1_1.setFont(new Font("Dialog", Font.BOLD, 15));
 		output_1_1.setBounds(27, 170, 93, 113);
 		panel.add(output_1_1);
 		
 		JLabel output2_1 = new JLabel("\uD3C9\uC810");
 		output2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output2_1.setForeground(new Color(255, 215, 0));
 		output2_1.setFont(new Font("Dialog", Font.BOLD, 15));
 		output2_1.setBounds(134, 173, 90, 110);
 		panel.add(output2_1);
 		
 		JLabel output3_1 = new JLabel("\uB9AC\uBDF0");
 		output3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		output3_1.setForeground(new Color(255, 215, 0));
 		output3_1.setFont(new Font("Dialog", Font.BOLD, 15));
 		output3_1.setBounds(236, 167, 162, 116);
 		panel.add(output3_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(ReviewcheckGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_2.setBounds(0, 0, 434, 561);
+		panel.add(lblNewLabel_2);
 	}
 }

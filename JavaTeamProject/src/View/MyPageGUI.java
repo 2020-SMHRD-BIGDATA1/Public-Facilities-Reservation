@@ -64,12 +64,6 @@ public class MyPageGUI {
 		panel.setBounds(12, 10, 422, 541);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/go to prev.png")));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(0, 10, 23, 20);
-		panel.add(lblNewLabel_1);
 
 		JLabel text_NAME = new JLabel("\uC774\uB984");
 		text_NAME.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -109,10 +103,10 @@ public class MyPageGUI {
 		panel.add(lb_my);
 
 		JButton btnmdfy = new JButton("\uC218\uC815");
-		btnmdfy.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/mfy1.png")));
 		btnmdfy.setBackground(Color.WHITE);
 		btnmdfy.setBorderPainted(false);
 		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
+		btnmdfy.setForeground(new Color(255, 215, 0));
 		btnmdfy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI2 My2 = new MyPageGUI2();
@@ -149,10 +143,9 @@ public class MyPageGUI {
 		text_Email_1.setBounds(106, 342, 57, 15);
 		panel.add(text_Email_1);
 
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/Pointmt1.png")));
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(255, 140, 0));
+		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8\uAD00\uB9AC");
+		btnNewButton.setForeground(new Color(255, 215,0 ));
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("HY견고딕", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -178,10 +171,10 @@ public class MyPageGUI {
 		lb_point.setText(controller.getpoint() + "");
 
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
-		btnmdfy_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/confirm1.png")));
 		btnmdfy_1.setBackground(Color.WHITE);
 		btnmdfy_1.setBorderPainted(false);
 		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
+		btnmdfy_1.setForeground(new Color(255, 215, 0));
 		btnmdfy_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainGUI main = new MainGUI();
@@ -233,9 +226,10 @@ public class MyPageGUI {
 		lb_ID.setBounds(173, 67, 118, 15);
 		panel.add(lb_ID);
 
+		
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
-		btn예약확인.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/resercon.png")));
-		btn예약확인.setBackground(Color.WHITE);
+		btn예약확인.setForeground(new Color(255, 215, 0));
+		btn예약확인.setBackground(new Color(255, 255, 255));
 		btn예약확인.setBorderPainted(false);
 		btn예약확인.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		btn예약확인.addActionListener(new ActionListener() {
@@ -246,7 +240,7 @@ public class MyPageGUI {
 				tableUpdateGUI table = new tableUpdateGUI();
 			}
 		});
-		btn예약확인.setBounds(159, 406, 97, 41);
+		btn예약확인.setBounds(140, 405, 118, 51);
 		panel.add(btn예약확인);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("");
@@ -254,6 +248,19 @@ public class MyPageGUI {
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1.setBounds(-12, 482, 434, 69);
 		panel.add(lblNewLabel_3_1);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/go to prev.png")));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			frame.setVisible(false);
+			
+			}
+		});
+		btnNewButton_1.setBounds(0, 10, 24, 15);
+		panel.add(btnNewButton_1);
+		
+
 		
 //		JButton btn예약확인_1 = new JButton("\uB85C\uADF8\uC544\uC6C3");
 //		btn예약확인_1.addActionListener(new ActionListener() {

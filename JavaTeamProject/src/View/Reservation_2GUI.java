@@ -63,6 +63,7 @@ public class Reservation_2GUI {
 
 		JLabel lblNewLabel = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(255, 215, 0));
 		lblNewLabel.setFont(new Font("배달의민족 한나는 열한살", Font.BOLD,30));
 		lblNewLabel.setBounds(124, 22, 193, 37);
 		frame.getContentPane().add(lblNewLabel);
@@ -135,6 +136,7 @@ public class Reservation_2GUI {
 
 		JLabel lblNewLabel_13 = new JLabel("\uC608\uC57D\uC2E0\uCCAD");
 		lblNewLabel_13.setBounds(12, 84, 74, 15);
+		lblNewLabel_13.setForeground(new Color(255, 215, 0));
 		lblNewLabel_13.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_13);
 
@@ -172,6 +174,7 @@ public class Reservation_2GUI {
 
 		JLabel lblNewLabel_13_1 = new JLabel("\uACB0\uC81C");
 		lblNewLabel_13_1.setBounds(12, 189, 57, 15);
+		lblNewLabel_13_1.setForeground(new Color(255, 215, 0));
 		lblNewLabel_13_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_13_1);
 		
@@ -303,13 +306,19 @@ public class Reservation_2GUI {
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnNewButton = new JButton("<");
+		btnNewButton.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/MainImages/go to prev.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(12, 22, 23, 23);
+		btnNewButton.setBounds(12, 10, 19, 15);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1.setBounds(0, 0, 434, 561);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 //		btn_back.setIcon(new ImageIcon(Reservation_2GUI.class.getResource("/img/prev.jpg")));
 //		btn_back.addActionListener(new ActionListener() {
