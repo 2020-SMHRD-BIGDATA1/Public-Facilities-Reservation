@@ -66,9 +66,9 @@ public class MyPageGUI {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/as.png")));
+		lblNewLabel_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/go to prev.png")));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(0, 10, 66, 39);
+		lblNewLabel_1.setBounds(0, 10, 23, 20);
 		panel.add(lblNewLabel_1);
 
 		JLabel text_NAME = new JLabel("\uC774\uB984");
@@ -148,7 +148,8 @@ public class MyPageGUI {
 		text_Email_1.setBounds(106, 342, 57, 15);
 		panel.add(text_Email_1);
 
-		JButton btnNewButton = new JButton("\uD3EC\uC778\uD2B8\uAD00\uB9AC");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/\uADF8\uB9BC2.png")));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(255, 140, 0));
 		btnNewButton.setFont(new Font("HY°ß°íµñ", Font.BOLD, 15));
