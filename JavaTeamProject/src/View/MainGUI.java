@@ -158,13 +158,10 @@ public class MainGUI {
 		btnteam.setFocusPainted(false);
 		btnteam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
 		
 //				MatchingGUI matching = new MatchingGUI();
 				matchingupdateGUI matchingupdate= new matchingupdateGUI();
-=======
 				MatchingGUI matching = new MatchingGUI();
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
 			}
 		});
 		panel.add(btnteam);
