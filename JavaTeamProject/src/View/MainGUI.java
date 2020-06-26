@@ -180,8 +180,11 @@ public class MainGUI {
 			public void actionPerformed(ActionEvent arg0) {
 		
 //				MatchingGUI matching = new MatchingGUI();
-				matchingupdateGUI matchingupdate= new matchingupdateGUI();
+//				matchingupdateGUI matchingupdate= new matchingupdateGUI();
 //				MatchingGUI matching = new MatchingGUI();
+//				MatchingGUI matching = new MatchingGUI();
+//				matchingupdateGUI matchingupdate= new matchingupdateGUI();
+				MatchingGUI matching = new MatchingGUI();
 			}
 		});
 		panel.add(btnteam);
@@ -204,6 +207,7 @@ public class MainGUI {
 		panel.add(btnMyPage);
 
 		lb_id = new JLabel("New label");
+		lb_id.setForeground(new Color(255, 255, 0));
 		lb_id.setHorizontalAlignment(SwingConstants.CENTER);
 		lb_id.setBounds(205, 200, 136, 15);
 		panel.add(lb_id);

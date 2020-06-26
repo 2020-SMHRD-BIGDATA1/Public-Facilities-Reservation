@@ -42,14 +42,15 @@ public class GradeGUI {
 	 */
 	private void initialize(String fcname) {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 235, 205));
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SMHRD\\Desktop\\image\\frame.jpg"));
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(GradeGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("\uD3C9\uC810/\uB9AC\uBDF0");
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(GradeGUI.class.getResource("/MainImages/\uD3C9\uC810\uB9AC\uBDF0.png")));
 		lblNewLabel.setBounds(106, 60, 205, 44);
 		lblNewLabel.setFont(new Font("배달의민족 한나체", Font.BOLD,30));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -112,8 +113,8 @@ public class GradeGUI {
 		lblNewLabel_2.setFont(new Font("배달의민족 한나체", Font.BOLD,15));
 		frame.getContentPane().add(lblNewLabel_2);
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setBounds(12, 10, 23, 23);
-		btnNewButton.setIcon(new ImageIcon(GradeGUI.class.getResource("/img/prev.jpg")));
+		btnNewButton.setIcon(new ImageIcon(GradeGUI.class.getResource("/MainImages/go to prev.png")));
+		btnNewButton.setBounds(12, 10, 23, 20);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MyPageGUI my= new MyPageGUI();
@@ -123,9 +124,14 @@ public class GradeGUI {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setBounds(0, 0, 434, 561);
-		lblNewLabel_3.setIcon(new ImageIcon(GradeGUI.class.getResource("/img/celebration.png")));
+		lblNewLabel_3.setIcon(new ImageIcon(GradeGUI.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		lblNewLabel_3.setBounds(0, 0, 434, 120);
 		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(GradeGUI.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		lblNewLabel_4.setBounds(0, 490, 434, 71);
+		frame.getContentPane().add(lblNewLabel_4);
 
 	}
 }

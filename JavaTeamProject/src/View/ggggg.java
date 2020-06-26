@@ -43,6 +43,8 @@ public class ggggg {
 	private String fc_name;
 	private JPanel panel;
 	private String index;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
 
 	public ggggg(String string) {
 		initialize();
@@ -58,7 +60,7 @@ public class ggggg {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(240, 255, 255));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(ggggg.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
 		frame.setLocationRelativeTo(null);
@@ -87,21 +89,31 @@ public class ggggg {
 		frame.getContentPane().add(scrollPane);
 
 		panel = new JPanel();
-		panel.setBackground(new Color(255, 250, 250));
+		panel.setBackground(Color.WHITE);
 		
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/MainImages/go to prev.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				MainGUI mian=new MainGUI();
 			}
 		});
-		btnNewButton.setBounds(12, 10, 23, 23);
-		btnNewButton.setIcon(new ImageIcon(ggggg.class.getResource("/img/prev.jpg")));
+		btnNewButton.setBounds(12, 10, 23, 20);
 		frame.getContentPane().add(btnNewButton);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(ggggg.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		lblNewLabel.setBounds(0, 0, 434, 50);
+		frame.getContentPane().add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(ggggg.class.getResource("/MainImages/\uD328\uB110\uC0C9.png")));
+		lblNewLabel_1.setBounds(0, 505, 434, 56);
+		frame.getContentPane().add(lblNewLabel_1);
 
 //		list= dao.divide("¡∑±∏¿Â");
 //		for (int i = 0; i < list.size(); i++) {

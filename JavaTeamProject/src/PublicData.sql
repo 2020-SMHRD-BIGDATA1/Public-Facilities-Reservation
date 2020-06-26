@@ -116,3 +116,7 @@ select * from reservation ;
 
 
 update tablename set col1=val1 from tablename where condition
+
+select * from members
+
+select * from publics

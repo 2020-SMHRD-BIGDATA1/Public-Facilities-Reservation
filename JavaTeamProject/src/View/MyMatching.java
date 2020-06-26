@@ -5,9 +5,11 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Model.MatchingDAO;
 import Model.MatchingVO;
 import Model.RoomMatchingVO;
 import java.awt.event.ActionListener;
@@ -27,6 +29,7 @@ public class MyMatching extends JPanel {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	
+	MatchingDAO dao = new MatchingDAO();
 	public JPanel getMyMatching(MatchingVO mvo, RoomMatchingVO rvo) {
 		
 		title_lbl.setText(rvo.getTitle());
@@ -77,7 +80,15 @@ public class MyMatching extends JPanel {
 		apply_btn = new JButton("\uC2E0\uCCAD");
 		apply_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				RoomMatchingVO vo1 = new RoomMatchingVO(7, "2", "나와라");
+				int cnt = dao.minusnum(vo1);
+				if (cnt > 0) {
+					JOptionPane.showMessageDialog(panel, "신청 성공", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
+					
+					panel.setVisible(false);
+				} else {
+					JOptionPane.showMessageDialog(panel, "신청실패", "팀매칭 신청결과", JOptionPane.PLAIN_MESSAGE);
+				}
 			}
 		});
 		apply_btn.setBounds(342, 238, 70, 62);
