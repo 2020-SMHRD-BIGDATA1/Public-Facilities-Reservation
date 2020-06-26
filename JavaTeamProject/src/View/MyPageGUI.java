@@ -54,6 +54,7 @@ public class MyPageGUI {
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(MyPageGUI.class.getResource("/img/frame.jpg")));
 		frame.setBounds(500, 500, 450, 600);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
