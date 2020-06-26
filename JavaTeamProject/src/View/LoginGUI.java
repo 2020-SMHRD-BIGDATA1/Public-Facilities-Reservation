@@ -33,6 +33,7 @@ public class LoginGUI {
 	private JButton btnJoin;
 	public static MemberManagementSystem controller = new MemberManagementSystem();
 	MemberVO user1;
+	private final JLabel lblNewLabel_2 = new JLabel("");
 
 	/**
 	 * Launch the application.
@@ -77,38 +78,39 @@ public class LoginGUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/proname.png")));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(124, 107, 241, 102);
-		panel.add(lblNewLabel_1);
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon(LoginGUI.class.getResource("/MainImages/\uADF8\uB9BC1.png")));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(2, 27, 444, 171);
+		panel.add(lblNewLabel_3);
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/GJLogo.png")));
-		lblNewLabel.setBounds(12, 41, 119, 80);
+		lblNewLabel.setBounds(162, 534, 192, 42);
 		panel.add(lblNewLabel);
 
 		inputPW = new JPasswordField();
-		inputPW.setBounds(272, 258, 150, 30);
+		inputPW.setBounds(182, 299, 150, 30);
 		panel.add(inputPW);
 
 		JLabel lbl_id = new JLabel("ID");
-		lbl_id.setBounds(182, 219, 118, 29);
+		lbl_id.setForeground(Color.ORANGE);
+		lbl_id.setBounds(92, 260, 118, 29);
 		panel.add(lbl_id);
 		lbl_id.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_id.setFont(new Font("배달의민족 한나체", Font.BOLD,25));
 		
 		inputID = new JTextField();
 		inputID.setToolTipText("");
-		inputID.setBounds(272, 218, 150, 30);
+		inputID.setBounds(182, 259, 150, 30);
 		panel.add(inputID);
 		inputID.setColumns(10);
 
 		JButton btn_Join = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btn_Join.setForeground(new Color(255, 255, 255));
-		btn_Join.setBackground(new Color(135, 206, 250));
+		btn_Join.setForeground(Color.ORANGE);
+		btn_Join.setBackground(Color.WHITE);
 		btn_Join.setFont(new Font("배달의민족 한나체 ", Font.BOLD,15));
-		btn_Join.setBounds(283, 526, 102, 30);
+		btn_Join.setBounds(235, 372, 102, 30);
 		panel.add(btn_Join);
 		btn_Join.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,10 +120,10 @@ public class LoginGUI {
 		});
 
 		JButton btn_Login = new JButton("\uB85C\uADF8\uC778");
-		btn_Login.setBounds(59, 526, 102, 30);
+		btn_Login.setBounds(105, 372, 102, 30);
 		panel.add(btn_Login);
-		btn_Login.setForeground(new Color(255, 255, 255));
-		btn_Login.setBackground(new Color(135, 206, 250));
+		btn_Login.setForeground(Color.ORANGE);
+		btn_Login.setBackground(Color.WHITE);
 		btn_Login.setFont(new Font("배달의민족 한나체 ", Font.BOLD,15));
 		btn_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -146,16 +148,14 @@ public class LoginGUI {
 		});
 
 		JLabel lbl_pw = new JLabel("PW");
-		lbl_pw.setBounds(182, 258, 117, 30);
+		lbl_pw.setForeground(Color.ORANGE);
+		lbl_pw.setBounds(92, 299, 117, 30);
 		panel.add(lbl_pw);
 		lbl_pw.setFont(new Font("배달의민족 한나체 ", Font.BOLD,25));
 		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
-
-		
-
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon(LoginGUI.class.getResource("/img/login.jpg")));
-		lblNewLabel_3.setBounds(0, 25, 434, 561);
-		panel.add(lblNewLabel_3);
+		lblNewLabel_2.setIcon(new ImageIcon(LoginGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(2, 184, 434, 411);
+		panel.add(lblNewLabel_2);
 	}
 }

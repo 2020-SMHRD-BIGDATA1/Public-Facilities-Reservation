@@ -48,9 +48,13 @@ public class tableUpdateGUI implements MouseListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 52, 410, 199);
+		frame.getContentPane().add(scrollPane);
+		
 		JPanel panel = new JPanel();
-		panel.setBounds(12, 52, 410, 199);
-		frame.getContentPane().add(panel);
+		scrollPane.setViewportView(panel);
+		String[] headings = new String[] {"Fac_Name", "reserdate","usedate","fee"};
 		
 //		create table reservation(
 //				user_id varchar2(20),
@@ -65,7 +69,7 @@ public class tableUpdateGUI implements MouseListener {
 		String id= LoginGUI.controller.getLoginUser().getId();
 		
 		ArrayList<ReserVO> list =con.getreservation(id);
-		String[] headings = new String[] {"Fac_Name", "reserdate","usedate","fee"};
+		
 		
 		String[][] data = new String[list.size()][4] ;
 	
@@ -75,14 +79,17 @@ public class tableUpdateGUI implements MouseListener {
 			data[i][2]=list.get(i).getUsedate();
 			data[i][3]=list.get(i).getFee();
 		};
+		JTable table_1 = new JTable(data,headings);
 		
-		JTable table = new JTable(data,headings);
-		table.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
-		table.setPreferredScrollableViewportSize(new Dimension(360,300));
+		table_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
+		table_1.setPreferredScrollableViewportSize(new Dimension(400,300));
 		
-		table.setFillsViewportHeight(true);
+		table_1.setFillsViewportHeight(true);
 		
-		panel.add(table);
+		panel.add(new JScrollPane(table_1));
+		
+		
+		table_1.addMouseListener(this);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -94,9 +101,6 @@ public class tableUpdateGUI implements MouseListener {
 		btnNewButton.setIcon(new ImageIcon(tableUpdateGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton.setBounds(12, 10, 23, 23);
 		frame.getContentPane().add(btnNewButton);
-		
-
-		table.addMouseListener(this);
 	
 	}
 

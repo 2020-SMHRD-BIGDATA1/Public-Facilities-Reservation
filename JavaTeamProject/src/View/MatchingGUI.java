@@ -108,6 +108,7 @@ public class MatchingGUI {
 		scrollPane.setViewportView(panel1);
 		panel.add(scrollPane);
 
+		
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				Component[] componentList = panel1.getComponents();
@@ -120,11 +121,23 @@ public class MatchingGUI {
 						panel1.remove(c);
 					}
 				}
+				MyMatching matching = new MyMatching();
 				ArrayList<MatchingVO> list = dao.divide(comboBox.getSelectedItem().toString());
 				ArrayList<RoomMatchingVO> infolist = dao.roomInfo();
 				lmg_lbl.setBounds(0, 40, 100, 100);
 				
-				MyMatching matching = new MyMatching();
+				for (int i = 0; i < list.size(); i++) {
+					for (int j = 0; j < infolist.size(); j++) {
+						if (e.getStateChange() == ItemEvent.SELECTED) {
+							if (list.get(i).getFac_ID() == infolist.get(j).getFac_ID()) {
+								JPanel jyp = matching.getMyMatching(list.get(i), infolist.get(j));
+								System.out.println(list.get(i).getAddress());
+								panel1.add(jyp);
+								frame.setVisible(true);
+							}
+						}
+					}
+				}
 				if (comboBox.getSelectedItem().toString().equals("Ãà±¸Àå")) {
 					for (int i = 0; i < list.size(); i++) {
 						for (int j = 0; j < infolist.size(); j++) {

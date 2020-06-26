@@ -39,6 +39,7 @@ create table MEMBERS(
 	point NUMBER(30),
 	constraint mem_user_id_pk primary key(user_id));
 	
+	select * from MEMBERS;
 create table MemberMatching(
 	Fac_ID number,
 	user_id varchar(20),
@@ -76,7 +77,7 @@ alter table reservation
 add constraint reserv_fac_id_fk foreign key(fac_id)
 references Publics(fac_id); 
 
-select * from MEMBERS
+select * from publics
 -----------------------------------
 
 insert into MEMBERS values ('mty6893', 1234, '¹ÎÅÂÀ±', 29, '010-6515-6893', '¿ì¸®Áý', 'eliote_min@naver.com', 0);

@@ -67,16 +67,6 @@ public class fcupdateGUI extends JFrame {
 		String path = con.getImg(name);
 		lblNewLabel.setIcon(new ImageIcon(path));
 		panel_1.add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("\uC608\uC57D");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
-				frame.setVisible(false);
-			}
-		});
-		btnNewButton.setBounds(299, 452, 97, 23);
-		panel_1.add(btnNewButton);
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -88,13 +78,23 @@ public class fcupdateGUI extends JFrame {
 		btnNewButton_1.setIcon(new ImageIcon(fcupdateGUI.class.getResource("/img/prev.jpg")));
 		btnNewButton_1.setBounds(12, 6, 23, 23);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton = new JButton("\uC608\uC57D");
+		btnNewButton.setBounds(309, 528, 97, 23);
+		frame.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservation_1updateGUI re1upgui = new Reservation_1updateGUI(name);
+//				frame.setVisible(false);
+			}
+		});
 
 	}
 
 	private void initialize(String name) {
 
 		frame = new JFrame();
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -203,7 +203,7 @@ public class fcupdateGUI extends JFrame {
 		String[] headings = new String[] { "사용자 아이디", "평점", "리뷰" };
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(12, 435, 294, 100);
+		scrollPane_1.setBounds(12, 435, 367, 100);
 		panel_1.add(scrollPane_1);
 
 		table = new JTable(data, headings);

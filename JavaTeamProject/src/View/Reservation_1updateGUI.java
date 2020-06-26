@@ -27,6 +27,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class Reservation_1updateGUI implements MouseListener {
 
@@ -55,6 +57,10 @@ public class Reservation_1updateGUI implements MouseListener {
 	private JButton btnNewButton;
 	private String[] list;
 	String list1[] = new String[20];
+	private JPanel panel_6;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
 
 	/**
 	 * Launch the application.
@@ -102,10 +108,12 @@ public class Reservation_1updateGUI implements MouseListener {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 
 		panel_4 = new JPanel();
+		panel_4.setBackground(Color.WHITE);
 		panel.add(panel_4);
 		panel_4.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		panel_4.setLayout(null);
 		lb_date1 = new JLabel("New label");
+		lb_date1.setBackground(Color.WHITE);
 		lb_date1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
 		lb_date1.setBounds(0, 43, 144, 516);
 		panel_4.add(lb_date1);
@@ -125,6 +133,7 @@ public class Reservation_1updateGUI implements MouseListener {
 		lb_date1.setText(date1);
 
 		lb_day1 = new JLabel("New label");
+		lb_day1.setBackground(Color.WHITE);
 		lb_day1.setBounds(144, 43, 144, 516);
 		panel_4.add(lb_day1);
 		lb_day1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -151,6 +160,24 @@ public class Reservation_1updateGUI implements MouseListener {
 		btnNewButton.setBounds(12, 10, 23, 23);
 
 		panel_4.add(btnNewButton);
+		
+		panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(12, 47, 408, 67);
+		panel_4.add(panel_6);
+		panel_6.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		lblNewLabel = new JLabel("\uB0A0\uC9DC");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_6.add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("\uC694\uC77C");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_6.add(lblNewLabel_1);
+		
+		lblNewLabel_2 = new JLabel("\uC2DC\uAC04");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_6.add(lblNewLabel_2);
 
 		table = new JTable();
 
@@ -292,7 +319,7 @@ public class Reservation_1updateGUI implements MouseListener {
 
 		timevo timevo = new timevo(name, date8, time);
 		Reservation_2GUI re2 = new Reservation_2GUI(timevo);
-		frame.setVisible(false);
+
 //		System.out.println(time);
 //		System.out.println("df"+name);
 //		System.out.println("df"+date1);

@@ -93,7 +93,7 @@ public class Reservation_2GUI {
 
 //		lb_phone.setText(con.getphone());
 
-//		lb_phone.setText(con.getphone(fac_name));
+		lb_phone.setText(con.getphone(fac_name));
 
 		JLabel lblNewLabel_8 = new JLabel(" \uC811\uC218\uC77C");
 		lblNewLabel_8.setFont(new Font("배달의민족 한나체 Air", Font.BOLD,12));
@@ -293,6 +293,7 @@ public class Reservation_2GUI {
 
 				} else {
 					JOptionPane.showMessageDialog(frame, "예약 실패", "예약신청결과", JOptionPane.PLAIN_MESSAGE);
+					
 					System.out.println("예약 실패");
 				}
 
