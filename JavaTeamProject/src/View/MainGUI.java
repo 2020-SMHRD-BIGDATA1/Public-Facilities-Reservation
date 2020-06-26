@@ -43,9 +43,9 @@ public class MainGUI {
 	private JButton btnBadMinton;
 	private JButton btnBaseBall;
 	private JLabel lblNewLabel_10;
-	private JPanel panel_1;
+	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	private JPanel panel_2;
+	private JLabel lblNewLabel_2;
 	/**
 	 * Launch the application.
 	 */
@@ -90,8 +90,9 @@ public class MainGUI {
 
 		btnSoccer = new JButton("");
 		btnSoccer.setBounds(77, 164, 68, 68);
-		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer.jpg")));
-		
+		btnSoccer.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/soccer(yell).png")));
+		btnSoccer.setContentAreaFilled(false);
+		btnSoccer.setFocusPainted(false);
 		btnSoccer.setBorderPainted(false);
 		btnSoccer.addActionListener(new ActionListener() {
 
@@ -108,7 +109,9 @@ public class MainGUI {
 		btnjokgu.setBackground(Color.WHITE);
 		btnjokgu.setForeground(Color.WHITE);
 		btnjokgu.setBorderPainted(false);
-		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu.jpg")));
+		btnjokgu.setContentAreaFilled(false);
+		btnjokgu.setFocusPainted(false);
+		btnjokgu.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/jokgu(yell).png")));
 		btnjokgu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		
@@ -121,7 +124,9 @@ public class MainGUI {
 		btnbasketBall.setBounds(269, 164, 68, 67);
 		btnbasketBall.setBackground(Color.WHITE);
 		btnbasketBall.setBorderPainted(false);
-		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basketball.jpg")));
+		btnbasketBall.setContentAreaFilled(false);
+		btnbasketBall.setFocusPainted(false);
+		btnbasketBall.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/basketball(yell).png")));
 
 		panel.add(btnbasketBall);
 		panel.add(btnbasketBall);
@@ -138,9 +143,11 @@ public class MainGUI {
 
 		btnFutSal = new JButton("");
 		btnFutSal.setBounds(77, 263, 68, 68);
-		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/putsal.jpg")));
+		btnFutSal.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/putsal(yel).png")));
 		btnFutSal.setBackground(Color.WHITE);
 		btnFutSal.setBorderPainted(false);
+		btnFutSal.setContentAreaFilled(false);
+		btnFutSal.setFocusPainted(false);
 		btnFutSal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		
@@ -151,20 +158,17 @@ public class MainGUI {
 
 		btnteam = new JButton("");
 		btnteam.setBounds(165, 430, 100, 100);
-		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/matching2.png")));
+		btnteam.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/matching.png")));
 		btnteam.setBackground(Color.WHITE);
 		btnteam.setBorderPainted(false);
 		btnteam.setContentAreaFilled(false);
 		btnteam.setFocusPainted(false);
 		btnteam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
 		
 //				MatchingGUI matching = new MatchingGUI();
 				matchingupdateGUI matchingupdate= new matchingupdateGUI();
-=======
-				MatchingGUI matching = new MatchingGUI();
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Public-Facilities-Reservation.git
+//				MatchingGUI matching = new MatchingGUI();
 			}
 		});
 		panel.add(btnteam);
@@ -197,17 +201,19 @@ public class MainGUI {
 		btnBadMinton.setBounds(172, 263, 68, 68);
 		btnBadMinton.setBackground(Color.WHITE);
 		btnBadMinton.setBorderPainted(false);
+		btnBadMinton.setContentAreaFilled(false);
+		btnBadMinton.setFocusPainted(false);
 		btnBadMinton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ggggg gg = new ggggg("배드맨턴장");
 			}
 		});
-		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminton.jpg")));
+		btnBadMinton.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/badminton(yel).png")));
 		panel.add(btnBadMinton);
 
 		JButton btnbaseball = new JButton("");
 		btnbaseball.setBounds(269, 263, 68, 68);
-		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball.jpg")));
+		btnbaseball.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/baseball(yel).png")));
 		btnbaseball.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -219,23 +225,20 @@ public class MainGUI {
 		btnbaseball.setBackground(Color.WHITE);
 		panel.add(btnbaseball);
 		
-		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(176, 224, 230));
-		panel_1.setBounds(0, 0, 434, 81);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel.setBounds(0, 0, 434, 561);
+		panel.add(lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("\uD558\uB791\uAED8");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(0, 0, 434, 81);
-		lblNewLabel_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1.setFont(new Font("배달의민족 주아", Font.BOLD, 42));
-		panel_1.add(lblNewLabel_1);
+		lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_1.setBounds(0, 0, 434, 37);
+		panel.add(lblNewLabel_1);
 		
-		panel_2 = new JPanel();
-		panel_2.setBackground(new Color(176, 224, 230));
-		panel_2.setBounds(0, 394, 434, 167);
-		panel.add(panel_2);
+		lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(MainGUI.class.getResource("/MainImages/image1.png")));
+		lblNewLabel_2.setBounds(0, 525, 434, 36);
+		panel.add(lblNewLabel_2);
 
 		lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setIcon(new ImageIcon(MainGUI.class.getResource("/img/login.jpg")));
