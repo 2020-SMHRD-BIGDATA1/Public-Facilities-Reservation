@@ -1,6 +1,7 @@
 package View;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -20,19 +21,24 @@ import javax.swing.SwingConstants;
 import Controller.MemberManagementSystem;
 import Controller.Reservation_1Controller;
 import Model.MatchingDAO;
+import Model.MatchingVO;
 import Model.ReserVO;
 import Model.RoomMatchingVO;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class matchingupdateGUI {
 
 	private JFrame frame;
 	MatchingDAO dao = new MatchingDAO();
+	ArrayList<MatchingVO> mainlist;
 	private JLabel title_lbl;
 	private JLabel name_lbl;
 
@@ -45,6 +51,7 @@ public class matchingupdateGUI {
 	ArrayList<RoomMatchingVO> list;
 	private JPanel panel;
 	private ArrayList<ReserVO> reservo;
+	private JComboBox<String> comboBox_1;
 
 	public matchingupdateGUI() {
 		initialize();
@@ -70,14 +77,19 @@ public class matchingupdateGUI {
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(137, 6, 129, 21);
-		frame.getContentPane().add(comboBox);
-		comboBox = new JComboBox<String>();
-		comboBox.setBounds(156, 17, 106, 21);
-		comboBox.setBackground(new Color(255, 250, 250));
-		
-		
+		comboBox_1 = new JComboBox<String>();
+
+		comboBox_1.setBounds(156, 17, 106, 21);
+		comboBox_1.setBackground(new Color(255, 250, 250));
+		comboBox_1.addItem("선택하기");
+		comboBox_1.addItem("족구장");
+		comboBox_1.addItem("야구장");
+		comboBox_1.addItem("풋살경기장");
+		comboBox_1.addItem("축구장");
+		comboBox_1.addItem("농구장");
+		comboBox_1.addItem("배드맨턴장");
+		frame.getContentPane().add(comboBox_1);
+
 		JLabel lblNewLabel_1 = new JLabel("\uC885\uB958");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(68, 9, 57, 15);
@@ -91,10 +103,67 @@ public class matchingupdateGUI {
 //		}
 //		
 		reservo = con.getreservation2(1);
+		comboBox_1.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Component[] componentList = panel.getComponents();
+				for (Component c : componentList) {
+					if (c instanceof JPanel) {
+						panel.remove(c);
+					}
+				}
+				mainlist = dao.divide(comboBox_1.getSelectedItem().toString());
+				if (comboBox_1.getSelectedItem().toString().equals("축구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				} else if (comboBox_1.getSelectedItem().toString().equals("농구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				} else if (comboBox_1.getSelectedItem().toString().equals("족구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				} else if (comboBox_1.getSelectedItem().toString().equals("배드맨턴장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				} else if (comboBox_1.getSelectedItem().toString().equals("풋살경기장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				} else if (comboBox_1.getSelectedItem().toString().equals("야구장")) {
+					if (e.getStateChange() == ItemEvent.SELECTED) {
+						for (int i = 0; i < mainlist.size(); i++) {
+							if (mainlist.get(i).getFac_ID() == reservo.get(i).getFac_id()) {
+								additem(i);
+							}
+						}
+					}
+				}
+			}
+		});
 
-		for (int i = 0; i < reservo.size(); i++) {
-			additem(i);
-		}
 		System.out.println(list.size());
 		System.out.println(reservo.size());
 
@@ -176,6 +245,9 @@ public class matchingupdateGUI {
 		name_lbl.setText(reservo.get(i).getFac_name());
 		lblNewLabel_6.setText(reservo.get(i).getUsetime());
 		lblNewLabel_3.setText(reservo.get(i).getUsedate());
+		String path = mainlist.get(i).getImg();
+		img_lbl.setIcon(new ImageIcon(path));
+		panel_3.add(img_lbl);
 
 	}
 }
