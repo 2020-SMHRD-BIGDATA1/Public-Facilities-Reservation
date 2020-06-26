@@ -109,6 +109,7 @@ public class MyPageGUI {
 		panel.add(lb_my);
 
 		JButton btnmdfy = new JButton("\uC218\uC815");
+		btnmdfy.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/mfy1.png")));
 		btnmdfy.setBackground(Color.WHITE);
 		btnmdfy.setBorderPainted(false);
 		btnmdfy.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -149,7 +150,7 @@ public class MyPageGUI {
 		panel.add(text_Email_1);
 
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/\uADF8\uB9BC2.png")));
+		btnNewButton.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/Pointmt1.png")));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(255, 140, 0));
 		btnNewButton.setFont(new Font("HY견고딕", Font.BOLD, 15));
@@ -177,6 +178,7 @@ public class MyPageGUI {
 		lb_point.setText(controller.getpoint() + "");
 
 		JButton btnmdfy_1 = new JButton("\uD655\uC778");
+		btnmdfy_1.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/confirm1.png")));
 		btnmdfy_1.setBackground(Color.WHITE);
 		btnmdfy_1.setBorderPainted(false);
 		btnmdfy_1.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
@@ -232,6 +234,7 @@ public class MyPageGUI {
 		panel.add(lb_ID);
 
 		JButton btn예약확인 = new JButton("\uC608\uC57D\uD655\uC778");
+		btn예약확인.setIcon(new ImageIcon(MyPageGUI.class.getResource("/MainImages/resercon.png")));
 		btn예약확인.setBackground(Color.WHITE);
 		btn예약확인.setBorderPainted(false);
 		btn예약확인.setFont(new Font("배달의민족 한나체 Air", Font.BOLD, 15));
